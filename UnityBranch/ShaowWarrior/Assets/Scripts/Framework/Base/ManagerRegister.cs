@@ -1,12 +1,12 @@
 // manager的注册表
 
+using Modules.Input;
+
 namespace Framework
 {
     public class ManagerRegister
     {
-        /**
-     * 底层框架注册表
-     */
+        /** 底层框架注册表 */
         public ManagerInfo[][]  GetFrameworkManagers()
         {
             ManagerInfo[][] managerInfos =
@@ -45,13 +45,6 @@ namespace Framework
                         needLateUpdate = false,
                         needFixedUpdate = false,
                     },
-                    new ManagerInfo{
-                        ManagerName = "InputManager",
-                        managerCtor = () => new ResourceManager(),
-                        needUpdate = true,
-                        needLateUpdate = false,
-                        needFixedUpdate = false,
-                    },
                 },
             };
             return managerInfos;
@@ -67,6 +60,13 @@ namespace Framework
         {
             ManagerInfo[] managerInfos = new ManagerInfo[]
             {
+                new ManagerInfo{
+                    ManagerName = "InputManager",
+                    managerCtor = () => new InputManager(),
+                    needUpdate = true,
+                    needLateUpdate = false,
+                    needFixedUpdate = false,
+                },
             };
             return managerInfos;
         }

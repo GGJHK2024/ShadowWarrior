@@ -41,15 +41,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Framework\Driver.cs" />
-    <Compile Include="Assets\Scripts\Framework\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Framework\BasicManager.cs" />
-    <Compile Include="Assets\Scripts\Framework\EventManager.cs" />
-    <Compile Include="Assets\Scripts\Framework\ConfigManager.cs" />
+    <Compile Include="Assets\Scripts\Framework\Base\ManagerRegister.cs" />
+    <Compile Include="Assets\Scripts\Modules\Input\InputManager.cs" />
     <Compile Include="Assets\Scripts\Framework\ResourceManager.cs" />
-    <Compile Include="Assets\Scripts\Framework\ManagerRegister.cs" />
+    <Compile Include="Assets\Scripts\Framework\Base\BasicManager.cs" />
+    <Compile Include="Assets\Scripts\Framework\EventManager.cs" />
+    <Compile Include="Assets\Scripts\Framework\Base\Driver.cs" />
+    <Compile Include="Assets\Scripts\Framework\GameManager.cs" />
     <Compile Include="Assets\Scripts\Framework\GameSceneManager.cs" />
-    <Compile Include="Assets\Scripts\Framework\InputManager.cs" />
+    <Compile Include="Assets\Scripts\Framework\ConfigManager.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity 2021.3.34f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

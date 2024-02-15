@@ -3,11 +3,21 @@ namespace Framework
 {
     public class ConfigManager : BasicManager
     {
-        public override void OnAwake()
+        protected override void OnAwake()
         {
         }
 
-        public override void OnDestroy()
+        protected override void OnStart()
+        {
+            
+        }
+
+        protected override void OnDestroy()
+        {
+            
+        }
+
+        public override void Destroy()
         {
         }
     }

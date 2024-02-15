@@ -30,6 +30,7 @@ namespace Framework
         private List<ManagerStruct> _frameworkManagers;
         private List<ManagerStruct> _moduleManagers;
         private List<ManagerStruct> _tempModuleManagers;
+        private List<int> _removedTempModuleIndexList;
 
         #region Life Cycle
 
@@ -42,7 +43,7 @@ namespace Framework
             } 
             GameManager._instance = this;
             DontDestroyOnLoad(this.gameObject);
-            this.OnAwake();
+            this.OnInitialize();
         }
 
         // Update is called once per frame
@@ -56,7 +57,7 @@ namespace Framework
             this.OnLateUpdate(Time.deltaTime);
         }
     
-        public void OnAwake()
+        public void OnInitialize()
         {
             this._managerName2ManagerDic = new Dictionary<string, BasicManager>();
             this._managerName2CtorDic = new Dictionary<string, ManagerCtorStruct>();
@@ -64,54 +65,75 @@ namespace Framework
             this._moduleManagers = new List<ManagerStruct>();
             this._tempModuleManagers = new List<ManagerStruct>();
             this._newTempModules = new List<string>();
+            this._removedTempModuleIndexList = new List<int>();
             
             ManagerRegister registerTable = new ManagerRegister();
             this.RegisterFrameWork(registerTable.GetFrameworkManagers());
+            
+            Debug.Log("正在初始化框架层");
             foreach (var frameworkManager in this._frameworkManagers)
             {
-                frameworkManager.manager.OnAwake();
+                frameworkManager.manager.OnInitialize();
             }
             
+            Debug.Log("正在初始化常驻模块层");
             this.RegisterModule(registerTable.GetMainModuleManagers());
             foreach (var moduleManager in this._moduleManagers)
             {
-                moduleManager.manager.OnAwake();
+                moduleManager.manager.OnInitialize();
             }
             this.RegisterTempModule(registerTable.GetTempModuleManagers());
         }
-        public void OnDestroy()
+
+        public void Start()
+        {
+        }
+
+        public void Destroy()
         {
             for (int i = this._tempModuleManagers.Count - 1; i >= 0; i--)
             {
-                this._tempModuleManagers[i].manager.OnDestroy();
+                this._tempModuleManagers[i].manager.Destroy();
             }
 
             for (int i = this._moduleManagers.Count - 1; i >= 0; i--)
             {
-                this._tempModuleManagers[i].manager.OnDestroy();                
+                this._tempModuleManagers[i].manager.Destroy();                
             }
 
             for (int i = this._frameworkManagers.Count - 1; i >= 0; i--)
             {
-                this._frameworkManagers[i].manager.OnDestroy();
+                this._frameworkManagers[i].manager.Destroy();
             }
         }
 
+        /** 主要更新逻辑在Update中，同时也负责一些Manager的初始化，删除 */
         public void OnUpdate(float deltaTime)
         {
+            
             for (int i = 0; i < this._frameworkManagers.Count; i++)
             {
                 var mgr = this._frameworkManagers[i];
-                if (mgr.needUpdate)
+                if (mgr.manager.managerState == ManagerState.Ready)
+                {
+                    mgr.manager.Start();
+                }
+
+                if (mgr.needUpdate && mgr.manager.managerState == ManagerState.Started)
                     mgr.manager.OnUpdate(deltaTime);
             }
             for (int i = 0; i < this._moduleManagers.Count; i++)
             {
                 var mgr = this._moduleManagers[i];
-                if (mgr.needUpdate)
+                if (mgr.manager.managerState == ManagerState.Ready)
+                {
+                    mgr.manager.Start();
+                }
+                if (mgr.needUpdate && mgr.manager.managerState == ManagerState.Started)
                     mgr.manager.OnUpdate(deltaTime);
             }
 
+            // 增加一些非长期Module的Manager
             for (int i = 0; i < this._newTempModules.Count; i++)
             {
                 var ctorStruct = this._managerName2CtorDic[this._newTempModules[i]];
@@ -126,12 +148,30 @@ namespace Framework
                 });
             }
             this._newTempModules.Clear();
+            
             for (int i = 0; i < this._tempModuleManagers.Count; i++)
             {
                 var mgr = this._tempModuleManagers[i];
-                if (mgr.needUpdate)
+                if (mgr.manager.managerState == ManagerState.Ready)
+                {
+                    mgr.manager.Start();
+                }
+                if (mgr.needUpdate && mgr.manager.managerState == ManagerState.Started)
                     mgr.manager.OnUpdate(deltaTime);
+                if (mgr.manager.managerState == ManagerState.Destroy)
+                {
+                    this._managerName2ManagerDic.Remove(mgr.manager.GetType().Name);
+                    this._removedTempModuleIndexList.Add(i);
+                }
             }
+
+            // 从循环列表中删除被成功卸载的Manager
+            for (int i = this._removedTempModuleIndexList.Count - 1; i >= 0; i--)
+            {
+                this._tempModuleManagers.RemoveAt(this._removedTempModuleIndexList[i]);
+            }
+            this._removedTempModuleIndexList.Clear();
+
             
         }
 
@@ -140,19 +180,19 @@ namespace Framework
             for (int i = 0; i < _frameworkManagers.Count; i++)
             {
                 var mgr = this._frameworkManagers[i];
-                if (mgr.needLateUpdate)
+                if (mgr.needLateUpdate && mgr.manager.managerState == ManagerState.Started)
                     mgr.manager.OnUpdate(deltaTime);
             }
             for (int i = 0; i < _moduleManagers.Count; i++)
             {
                 var mgr = this._moduleManagers[i];
-                if (mgr.needLateUpdate)
+                if (mgr.needLateUpdate && mgr.manager.managerState == ManagerState.Started)
                     mgr.manager.OnUpdate(deltaTime);
             }
             for (int i = 0; i < _tempModuleManagers.Count; i++)
             {
                 var mgr = this._tempModuleManagers[i];
-                if (mgr.needLateUpdate)
+                if (mgr.needLateUpdate && mgr.manager.managerState == ManagerState.Started)
                     mgr.manager.OnUpdate(deltaTime);
             }
         }
@@ -162,19 +202,19 @@ namespace Framework
             for (int i = 0; i < _frameworkManagers.Count; i++)
             {
                 var mgr = this._frameworkManagers[i];
-                if (mgr.needFixedUpdate)
+                if (mgr.needFixedUpdate && mgr.manager.managerState == ManagerState.Started)
                     mgr.manager.OnUpdate(fixedDeltaTime);
             }
             for (int i = 0; i < _moduleManagers.Count; i++)
             {
                 var mgr = this._moduleManagers[i];
-                if (mgr.needFixedUpdate)
+                if (mgr.needFixedUpdate && mgr.manager.managerState == ManagerState.Started)
                     mgr.manager.OnUpdate(fixedDeltaTime);
             }
             for (int i = 0; i < _tempModuleManagers.Count; i++)
             {
                 var mgr = this._tempModuleManagers[i];
-                if (mgr.needFixedUpdate)
+                if (mgr.needFixedUpdate && mgr.manager.managerState == ManagerState.Started)
                     mgr.manager.OnUpdate(fixedDeltaTime);
             }
         }
@@ -224,11 +264,11 @@ namespace Framework
                 }
                 else
                 {
-                    BasicManager frameManager = info.managerCtor();
-                    this._managerName2ManagerDic.Add(info.ManagerName, frameManager);
-                    this._frameworkManagers.Add(new ManagerStruct
+                    BasicManager moduleManager = info.managerCtor();
+                    this._managerName2ManagerDic.Add(info.ManagerName, moduleManager);
+                    this._moduleManagers.Add(new ManagerStruct
                     {
-                        manager = frameManager,
+                        manager = moduleManager,
                         needUpdate = info.needUpdate,
                         needFixedUpdate = info.needFixedUpdate,
                         needLateUpdate = info.needLateUpdate,
@@ -332,7 +372,7 @@ namespace Framework
                         needFixedUpdate = ctorStruct.needFixedUpdate,
                         needLateUpdate = ctorStruct.needLateUpdate,
                     });
-                    mgr.OnAwake();
+                    mgr.OnInitialize();
                 }
                 else
                 {
@@ -349,7 +389,35 @@ namespace Framework
         {
             CreateManager(typeof(T).Name, awakeImmediately);
         }
+
+        /// <summary>
+        /// 请求卸载特定的Manager，只有属于TempModule的Manager可以被卸载
+        /// </summary>
+        /// <param name="managerName">被卸载的Manager名</param>
+        public static void DestroyManager(string managerName)
+        {
+            if (!_instance._managerName2CtorDic.ContainsKey(managerName))
+            {
+                Debug.LogErrorFormat("Manager {0} 未注册或者不是TempModule的Manager");
+            }
+            else
+            {
+                BasicManager mgr;
+                if (_instance._managerName2ManagerDic.TryGetValue(managerName, out mgr))
+                {
+                    mgr.Destroy();
+                }
+            }
+        }
         
+        /// <summary>
+        /// 请求卸载特定的Manager，只有属于TempModule的Manager可以被卸载
+        /// </summary>
+        public static void DestroyManager<T>() where T: BasicManager
+        {
+            DestroyManager(typeof(T).Name);
+        }
+
         #endregion
         
     }
