@@ -1,0 +1,27 @@
+# 框架使用指南
+## 框架设计思路
+此框架的设计思路的如下：
+- 将所有的Manager进行分层管理，上层Manager可以依赖下层，但是下层不允许依赖下层。同一层之间的Manager之间允许存在依赖关系，但是应该尽可能避免。同时也能确保当初始化Manager的时候，底层依赖Manager已经允许使用。
+- 将生命周期的控制权从MonoBehaviour交给框架，可以一定程度避免代码更新顺序导致的错误。
+- 所有的Manager都可以通过同一个接口进行访问而不用全局单例。
+- 允许动态创建与销毁临时Manager，这些Manager通常只有特殊的场合需要，生命周期不必贯穿整个游戏。
+- 分离组件和逻辑控制，组件负责表现层内容，而框架负责整个逻辑层内容。
+## 如何注册Manager
+
+所有的Manager都在ManagerRegister文件中注册，ManagerRegister里面有三个函数，分别为GetFrameworkManagers，GetMainModuleManagers，以及GetTempModuleManagers。需要程序手动在这三个函数中注册自己的Manager。
+
+其中GetFrameWorkManager中注册的是框架层代码，其是一个双层数组，因为框架之间会有一些分层结构，需要更底层的框架初始化完成后才能进行初始化。框架层代码的生命周期贯穿整个游戏，是最底层。
+
+GetMainModuleManagers中注册的是常驻业务层代码，它们都会在框架层初始化完成后再初始化，同时因为框架层的设计可能性更多，业务层并没有分层结构。如果对其他业务层Manager有依赖，则需要确保在注册时，注册顺序在被依赖业务层Manager之后。属于框架中间层。
+
+GetTempModuleManagers中注册的是非常驻业务层代码，它们不会像前两层一样在框架进行初始化的时候就被初始化。而是在游戏的一些结点中，由别的Manager通过GameManager进行动态创建。非常驻业务层之间不应该存在依赖关系。属于最顶层。
+
+注册Manager使用的数据结构参考BasicManager中ManagerInfo的注释。
+
+**只有在TempModuleManagers中注册的Manager允许代码动态创建和删除。其它Manager的生命周期贯穿整个游戏。**
+
+## 如何访问Manager
+
+所有的Manager都能够通过GameManager提供的静态方法GetManager访问，提供了根据类名访问和根据类型访问的复写接口。
+
+非常驻业务层模块需要被在GameManager调用CreateManager后才可以使用GetManager访问。
