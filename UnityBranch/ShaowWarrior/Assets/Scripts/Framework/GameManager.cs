@@ -181,19 +181,19 @@ namespace Framework
             {
                 var mgr = this._frameworkManagers[i];
                 if (mgr.needLateUpdate && mgr.manager.managerState == ManagerState.Started)
-                    mgr.manager.OnUpdate(deltaTime);
+                    mgr.manager.OnLateUpdate(deltaTime);
             }
             for (int i = 0; i < _moduleManagers.Count; i++)
             {
                 var mgr = this._moduleManagers[i];
                 if (mgr.needLateUpdate && mgr.manager.managerState == ManagerState.Started)
-                    mgr.manager.OnUpdate(deltaTime);
+                    mgr.manager.OnLateUpdate(deltaTime);
             }
             for (int i = 0; i < _tempModuleManagers.Count; i++)
             {
                 var mgr = this._tempModuleManagers[i];
                 if (mgr.needLateUpdate && mgr.manager.managerState == ManagerState.Started)
-                    mgr.manager.OnUpdate(deltaTime);
+                    mgr.manager.OnLateUpdate(deltaTime);
             }
         }
 
@@ -203,19 +203,19 @@ namespace Framework
             {
                 var mgr = this._frameworkManagers[i];
                 if (mgr.needFixedUpdate && mgr.manager.managerState == ManagerState.Started)
-                    mgr.manager.OnUpdate(fixedDeltaTime);
+                    mgr.manager.OnFixedUpdate(fixedDeltaTime);
             }
             for (int i = 0; i < _moduleManagers.Count; i++)
             {
                 var mgr = this._moduleManagers[i];
                 if (mgr.needFixedUpdate && mgr.manager.managerState == ManagerState.Started)
-                    mgr.manager.OnUpdate(fixedDeltaTime);
+                    mgr.manager.OnFixedUpdate(fixedDeltaTime);
             }
             for (int i = 0; i < _tempModuleManagers.Count; i++)
             {
                 var mgr = this._tempModuleManagers[i];
                 if (mgr.needFixedUpdate && mgr.manager.managerState == ManagerState.Started)
-                    mgr.manager.OnUpdate(fixedDeltaTime);
+                    mgr.manager.OnFixedUpdate(fixedDeltaTime);
             }
         }
 

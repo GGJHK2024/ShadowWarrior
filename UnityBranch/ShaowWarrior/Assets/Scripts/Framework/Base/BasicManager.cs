@@ -70,7 +70,6 @@ public abstract class BasicManager: IManager
     }
 
     /** 在Start阶段完成后，Unity每个FixedUpdate调用 */
-
     public virtual void OnFixedUpdate(float fixedDeltaTime)
     {
     }
@@ -86,6 +85,7 @@ public abstract class BasicManager: IManager
 }
 
 public delegate BasicManager ManagerConstructorDelegate();
+
 /** 注册Manager使用的结构体 */
 public struct ManagerInfo
 {
