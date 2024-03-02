@@ -44,7 +44,7 @@ namespace MoreMountains.CorgiEngine
 				return;
 			}
 			
-			if (_inputManager.TimeControlButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+			if (_inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
 			{
 				TimeControlStart();
 			}
