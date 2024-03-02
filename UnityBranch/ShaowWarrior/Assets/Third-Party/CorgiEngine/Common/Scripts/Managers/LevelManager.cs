@@ -6,7 +6,6 @@ using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using MoreMountains.Tools;
-using UnityEngine.Serialization;
 
 namespace MoreMountains.CorgiEngine
 {
@@ -703,11 +702,12 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// Freezes the character(s)
 		/// </summary>
-		public virtual void FreezeCharacters()
+		public virtual void FreezeCharacters(bool freezePlayer = true)
 		{
 			foreach (Character player in Players)
 			{
-				player.Freeze();
+				if (freezePlayer || player.CharacterType != Character.CharacterTypes.Player)
+					player.Freeze();
 			}
 		}
 
@@ -720,6 +720,7 @@ namespace MoreMountains.CorgiEngine
 			{
 				player.UnFreeze();
 			}
+
 		}
 
 		/// <summary>

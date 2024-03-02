@@ -7,6 +7,13 @@ using MoreMountains.Feedbacks;
 
 namespace MoreMountains.CorgiEngine
 {
+
+		public class GameEventType {
+   		public const string FreezeNpc = "FreezeNpc";
+   		public const string UnFreeNpc = "UnFreezeNpc";
+	}
+
+
 	/// <summary>
 	/// A list of the possible Corgi Engine base events
 	/// LevelStart : triggered by the LevelManager when a level starts
