@@ -44,8 +44,10 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     {
         switch (eventType.EventType) {
             case CorgiEngineEventTypes.LevelStart: {
-                player.GetComponent<Health>().InitialHealth = hp;
-                player.GetComponent<Health>().MaximumHealth = hp;
+                var health = player.GetComponent<Health>(); 
+                health.InitialHealth = hp;
+                health.MaximumHealth = hp;
+                health.SetHealth(hp, null);
                 return;
             }
             case CorgiEngineEventTypes.LevelComplete: {
@@ -64,6 +66,13 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     {
         base.Awake();
         player = GameManager.Instance.PersistentCharacter = (Character)Instantiate(playerPrefab);
+    }
+
+    void Start()
+    {
+        MMEventManager.AddListener<CorgiEngineEvent>(this);
+        MMEventManager.AddListener<MMGameEvent>(this);
+
     }
 
     /// <summary>

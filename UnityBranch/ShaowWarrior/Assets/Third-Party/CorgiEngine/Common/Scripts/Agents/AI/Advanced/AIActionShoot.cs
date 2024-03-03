@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Tools;
+using System;
 
 namespace MoreMountains.CorgiEngine
 {
@@ -26,6 +27,7 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("the ability to pilot")]
 		public CharacterHandleWeapon TargetHandleWeapon;
 
+		public bool isMeleeWeapon;
 		protected Character _character;
 		protected WeaponAim _weaponAim;
 		protected ProjectileWeapon _projectileWeapon;
@@ -144,7 +146,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void Shoot()
 		{
-			if (_numberOfShoots < 1)
+			if (_numberOfShoots < 1 || isMeleeWeapon)
 			{
 				TargetHandleWeapon.ShootStart();
 				_numberOfShoots++;
