@@ -4774,7 +4774,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e0e80ff7156603346bbdc8c121863234, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5231,7 +5230,7 @@ MonoBehaviour:
   SuccessiveDashesLeft: 1
   SuccessiveDashResetMethod: 0
   SuccessiveDashResetDuration: 2
-  InvincibleWhileDashing: 0
+  InvincibleWhileDashing: 1
 --- !u!114 &114067210621431476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5525,7 +5524,7 @@ GameObject:
   - component: {fileID: 4783168384591572}
   - component: {fileID: 198746352860039076}
   - component: {fileID: 199993470464068376}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WallclingingParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10289,7 +10288,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: f0e84f126615c4432b13bcee92a2ff8b, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10350,7 +10348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4388140234087536}
   - component: {fileID: 212269458490869740}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RetroSwordSlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15200,7 +15198,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 40ecb205691fb1e47adc78750fb4c833, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15261,7 +15258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1165743180637052789}
   - component: {fileID: 3496406596516489769}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GlideFeedbacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15540,7 +15537,7 @@ GameObject:
   - component: {fileID: 558168077995084675}
   - component: {fileID: 1062068606394285415}
   - component: {fileID: 4145567469508878859}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WalkParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20373,7 +20370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3829638266425169260}
   - component: {fileID: 7969800018894229679}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DashFeedbacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21321,7 +21318,7 @@ GameObject:
   - component: {fileID: 40484203569372698}
   - component: {fileID: 7218698452173647412}
   - component: {fileID: 623839103591573981}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WallClingingDust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21365,7 +21362,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: f5b7ac523bdec1748a0957cb4219b271, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26190,7 +26186,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: f5b7ac523bdec1748a0957cb4219b271, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -36001,7 +35996,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 54bad539260b17649af3fa6e50c6d9a1, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -36063,7 +36057,7 @@ GameObject:
   - component: {fileID: 7862611172597675444}
   - component: {fileID: 3800181151919796116}
   - component: {fileID: 1987639744679090946}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WalkParticles2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40895,7 +40889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5041878705448611217}
   - component: {fileID: 3954242864737784057}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TouchTheGroundFeedbacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41292,7 +41286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4415775527188744528}
   - component: {fileID: 4591564151755040636}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WallJumpFeedbacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41575,7 +41569,7 @@ GameObject:
   - component: {fileID: 5356668847280525378}
   - component: {fileID: 4851659664261850790}
   - component: {fileID: 8386182586538359242}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RunParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46356,7 +46350,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 034a366a6e7559e4b9e3f3d94c200249, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -51248,7 +51241,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a1a494236fc81314c8aa9585a019ccdc, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -51309,7 +51301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1181181279938251138}
   - component: {fileID: 8866267779907346761}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DiveStopFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51707,7 +51699,7 @@ GameObject:
   - component: {fileID: 5064168908247813226}
   - component: {fileID: 5712167310707784334}
   - component: {fileID: 8678589883596514786}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: JumpGroundParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56588,7 +56580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8302495903085780268}
   - component: {fileID: 3283184865601537552}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: JumpAirFeedbacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56886,7 +56878,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6134249480004949277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -57004,7 +56996,7 @@ GameObject:
   - component: {fileID: 7898325458285101341}
   - component: {fileID: 7744522289484780523}
   - component: {fileID: 9056340296199698885}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TouchTheGroundParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61885,7 +61877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5036039584030452145}
   - component: {fileID: 8229259819979299594}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WalkFeedbacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62168,7 +62160,7 @@ GameObject:
   - component: {fileID: 8903212263187940809}
   - component: {fileID: 5666915249764613775}
   - component: {fileID: 3275294747617489170}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: StunParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67137,7 +67129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7358361131131198178}
   - component: {fileID: 6397893989031167702}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: JetpackFeedbacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67498,7 +67490,7 @@ GameObject:
   - component: {fileID: 2065840054481202913}
   - component: {fileID: 6874915276485891226}
   - component: {fileID: 2702416556247518461}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: JumpAirParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72380,7 +72372,7 @@ GameObject:
   - component: {fileID: 7668030990769093407}
   - component: {fileID: 7163092454665604603}
   - component: {fileID: 6079103865148117655}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TouchTheGroundParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77585,7 +77577,7 @@ GameObject:
   - component: {fileID: 8460804565925147457}
   - component: {fileID: 1746030676548032222}
   - component: {fileID: 4023641491622400181}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WallJumpParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82406,7 +82398,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 0f0391ab7f0c7774180de4df6c1b4cc0, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82467,7 +82458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 446843379124203283}
   - component: {fileID: 2923252228442884711}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RunFeedbacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82797,7 +82788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5725095695975062665}
   - component: {fileID: 6773202691821123309}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: JumpFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83080,7 +83071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6421148938357873782}
   - component: {fileID: 8656313568225783935}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DeathFeedbacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83370,7 +83361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1325478321580382034}
   - component: {fileID: 2069311532136203226}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WallClingingFeedbacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88696,7 +88687,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 4f4225e49dbb2e0448fc5fdd8cb57e64, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88757,7 +88747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5234997667267186119}
   - component: {fileID: 5012707982616224640}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DamageFeedbacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
