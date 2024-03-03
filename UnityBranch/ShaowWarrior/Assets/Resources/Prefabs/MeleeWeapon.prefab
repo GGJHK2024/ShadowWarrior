@@ -156,6 +156,7 @@ MonoBehaviour:
     RecoilStyle: 2
     Delay: 0
     RecoilFeedback: {fileID: 0}
+  weaponLable: 
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
   AreaOffset: {x: 0.85, y: 0}
@@ -291,6 +292,7 @@ MonoBehaviour:
     RecoilStyle: 2
     Delay: 0
     RecoilFeedback: {fileID: 0}
+  weaponLable: 
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
   AreaOffset: {x: 2, y: 0}
@@ -426,6 +428,7 @@ MonoBehaviour:
     RecoilStyle: 2
     Delay: 0
     RecoilFeedback: {fileID: 0}
+  weaponLable: 
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
   AreaOffset: {x: 0.5, y: 0}

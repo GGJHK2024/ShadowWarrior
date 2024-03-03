@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a557e2b93323f4831a62221b200348c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageSrcType: 0
   TriggerMode: 0
   Interruptable: 0
   InitializeOnStart: 0
@@ -156,10 +157,11 @@ MonoBehaviour:
     RecoilStyle: 2
     Delay: 0
     RecoilFeedback: {fileID: 0}
+  weaponLable: 
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
-  AreaOffset: {x: 0.85, y: 0}
-  AreaSize: {x: 1, y: 1}
+  AreaOffset: {x: 5.04, y: 0}
+  AreaSize: {x: 10, y: 1}
   ExistingDamageArea: {fileID: 0}
   InitialDelay: 0
   ActiveDuration: 0.2
@@ -185,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a557e2b93323f4831a62221b200348c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageSrcType: 0
   TriggerMode: 0
   Interruptable: 0
   InitializeOnStart: 0
@@ -291,6 +294,7 @@ MonoBehaviour:
     RecoilStyle: 2
     Delay: 0
     RecoilFeedback: {fileID: 0}
+  weaponLable: 
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
   AreaOffset: {x: 2, y: 0}
@@ -320,6 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a557e2b93323f4831a62221b200348c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageSrcType: 0
   TriggerMode: 0
   Interruptable: 0
   InitializeOnStart: 0
@@ -426,6 +431,7 @@ MonoBehaviour:
     RecoilStyle: 2
     Delay: 0
     RecoilFeedback: {fileID: 0}
+  weaponLable: 
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
   AreaOffset: {x: 0.5, y: 0}

@@ -13,6 +13,7 @@ namespace MoreMountains.CorgiEngine
 		public const string UseSkill = "UseSkill";
    		public const string FreezeNpc = "FreezeNpc";
    		public const string UnFreeNpc = "UnFreezeNpc";
+		public const string BounceSuccess = "UnFreezeNpc";
 	}
 
 

@@ -22,6 +22,8 @@ namespace MoreMountains.CorgiEngine
 		private static int StairsLayer = 28;
 		private static int MidHeightOneWayPlatformsLayer = 26;
 
+		public static int WeaponLayer = 14;
+
 		public static int PlatformsLayerMask = 1 << PlatformsLayer;
 		public static int OneWayPlatformsLayerMask = 1 << OneWayPlatformsLayer;
 		public static int ProjectilesLayerMask = 1 << ProjectilesLayer;
@@ -33,7 +35,7 @@ namespace MoreMountains.CorgiEngine
 		public static int MovingOneWayPlatformsMask = 1 << MovingOneWayPlatformsLayer;
 		public static int StairsLayerMask = 1 << StairsLayer;
 		public static int MidHeightOneWayPlatformsLayerMask = 1 << MidHeightOneWayPlatformsLayer;
-
+		public static int WeaponLayerMask = 1 << WeaponLayer;
 		public static int ObstaclesLayerMask = LayerManager.PlatformsLayerMask | LayerManager.MovingPlatformsLayerMask | LayerManager.OneWayPlatformsLayerMask;
 	}
 }

@@ -27,10 +27,8 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
 
     public bool canUseSkill => !_isBulletTime && _bounce >= skillRequiement;
 
-    private bool _charging = false;
-    private float _skillCharge;
     private bool _isBulletTime = false;
-    private float _bulletTime;
+    [SerializeReference]
     private int _bounce = 0;
 
     [HideInInspector]
@@ -38,6 +36,12 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     
     public void OnMMEvent(MMGameEvent eventType)
     {
+        switch (eventType.EventName) {
+            case GameEventType.BounceSuccess: {
+                ++_bounce;
+                return;
+            }
+        }
     }
 
     public void OnMMEvent(CorgiEngineEvent eventType)

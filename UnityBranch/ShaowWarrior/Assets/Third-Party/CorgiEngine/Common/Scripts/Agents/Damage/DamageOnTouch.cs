@@ -8,12 +8,15 @@ using UnityEngine.Serialization;
 
 namespace MoreMountains.CorgiEngine
 {	
+	public enum DamageSrcType {A, B};
+
 	/// <summary>
 	/// Add this component to an object and it will cause damage to objects that collide with it. 
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Character/Damage/DamageOnTouch")] 
 	public class DamageOnTouch : CorgiMonoBehaviour 
 	{
+
 		/// the possible ways to add knockback : noKnockback, which won't do nothing, set force, or add force
 		public enum KnockbackStyles { NoKnockback, SetForce, AddForce }
 		/// the possible knockback directions when causing damage
@@ -293,6 +296,7 @@ namespace MoreMountains.CorgiEngine
 
 		protected virtual void Colliding(Collider2D collider)
 		{
+
 			if (!this.isActiveAndEnabled)
 			{
 				return;
@@ -304,13 +308,40 @@ namespace MoreMountains.CorgiEngine
 				return;
 			}
 
+			_collidingCollider = collider;
+			Weapon ownerWeapon;
+			
+			DamageOnTouch enemyTouch;
+			if ( Owner != null && collider.gameObject.gameObject.TryGetComponent<DamageOnTouch>(out enemyTouch) && Owner.TryGetComponent<Weapon>(out ownerWeapon)) {
+				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player)				
+				{
+						enemyTouch.gameObject.SetActive(false);
+						
+						Weapon eneWeapon;
+						if (enemyTouch.Owner != null && enemyTouch.Owner.TryGetComponent<Weapon>(out eneWeapon)) {
+							if (eneWeapon.damageSrcType == ownerWeapon.damageSrcType) {
+								if (eneWeapon.Owner != null) {
+									var hp = eneWeapon.Owner.GetComponent<Health>();
+									if (hp!= null) {
+										hp.Kill();
+									}
+								}
+							}
+						}
+
+						MMGameEvent.Trigger(GameEventType.BounceSuccess);
+						return;
+					
+				}
+			}
+
 			// if what we're colliding with isn't part of the target layers, we do nothing and exit
 			if (!MMLayers.LayerInLayerMask(collider.gameObject.layer,TargetLayerMask))
 			{
 				return;
 			}
 
-			_collidingCollider = collider;
+
 			_colliderHealth = collider.gameObject.MMGetComponentNoAlloc<Health>();
 
 			OnHit?.Invoke();

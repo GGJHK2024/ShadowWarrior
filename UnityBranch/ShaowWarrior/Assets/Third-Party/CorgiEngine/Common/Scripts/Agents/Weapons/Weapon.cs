@@ -44,12 +44,15 @@ namespace MoreMountains.CorgiEngine
 	[MMRequiresConstantRepaint]
 	public class Weapon : MMMonoBehaviour
 	{
+
 		/// the possible use modes for the trigger
 		public enum TriggerModes { SemiAuto, Auto }
 		/// the possible states the weapon can be in
 		public enum WeaponStates { WeaponIdle, WeaponStart, WeaponDelayBeforeUse, WeaponUse, WeaponDelayBetweenUses, WeaponStop, WeaponReloadNeeded, WeaponReloadStart, WeaponReload, WeaponReloadStop, WeaponInterrupted, WeaponInCooldown }
 
-		[MMInspectorGroup("General Settings", true, 12)]
+		[MMInspectorGroup("General Settings", true, 13)]
+		public DamageSrcType damageSrcType;
+
 		/// is this weapon on semi or full auto ?
 		[Tooltip("is this weapon on semi or full auto ?")]
 		public TriggerModes TriggerMode = TriggerModes.Auto;
@@ -312,6 +315,8 @@ namespace MoreMountains.CorgiEngine
 		public WeaponRecoilProperties RecoilOnKillProperties;
 
 		// ---------------------------------------------------------------------------------------------------------------------------
+
+		public string weaponLable;
 
 		/// the name of the inventory item corresponding to this weapon. Automatically set (if needed) by InventoryEngineWeapon
 		public string WeaponID { get; set; }

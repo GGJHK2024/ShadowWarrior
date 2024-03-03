@@ -107,7 +107,8 @@ namespace MoreMountains.CorgiEngine
 				DisableDamageArea();
 				RegisterEvents();
 			}
-			_damageOnTouch.Owner = Owner.gameObject;
+			_damageAreaCollider.isTrigger = Owner.CharacterType != Character.CharacterTypes.Player;
+			_damageOnTouch.Owner = gameObject;
 		}
 
 		/// <summary>
