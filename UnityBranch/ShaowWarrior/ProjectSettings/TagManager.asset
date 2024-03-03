@@ -23,7 +23,7 @@ TagManager:
   - OneWayPlatforms
   - Projectiles
   - Enemies
-  - 
+  - Weapon
   - Ladders
   - PlayerProjectiles
   - MovingObjects
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: Between
     uniqueID: 606350985
+    locked: 0
+  - name: NPC
+    uniqueID: 3691632915
     locked: 0
   - name: Player
     uniqueID: 2666359821

@@ -267,7 +267,8 @@ namespace MoreMountains.CorgiEngine
 			{
 				_controller.DetachFromMovingPlatform();
 			}
-			
+			Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemies"), true);
+
 			// we set its dashing state to true
 			_movement.ChangeState(CharacterStates.MovementStates.Dashing);
 
@@ -380,7 +381,7 @@ namespace MoreMountains.CorgiEngine
 				   && _movement.CurrentState == CharacterStates.MovementStates.Dashing)
 			{
 				_distanceTraveled = Vector3.Distance(_initialPosition,_characterTransform.position);
-
+				
 				// if we collide with something on our left or right (wall, slope), we stop dashing, otherwise we apply horizontal force
 				if ( (_controller.State.IsCollidingLeft && _dashDirection.x < -DashDirectionMinThreshold)
 					 || (_controller.State.IsCollidingRight && _dashDirection.x > DashDirectionMinThreshold)
@@ -447,11 +448,12 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void StopDash()
 		{
+
 			if (_dashCoroutine != null)
 			{
 				StopCoroutine(_dashCoroutine);    
 			}
-
+			Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemies"), false);
 			// once our dash is complete, we reset our various states
 			_controller.DefaultParameters.MaximumSlopeAngle = _slopeAngleSave;
 			_controller.Parameters.MaximumSlopeAngle = _slopeAngleSave;

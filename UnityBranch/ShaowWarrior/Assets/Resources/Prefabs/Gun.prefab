@@ -4753,7 +4753,7 @@ GameObject:
   - component: {fileID: 114000010078180980}
   - component: {fileID: 114191819752502978}
   m_Layer: 0
-  m_Name: RetroEnemyMachineGunMultiple
+  m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

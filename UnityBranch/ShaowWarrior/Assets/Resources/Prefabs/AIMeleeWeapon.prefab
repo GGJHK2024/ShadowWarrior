@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 114032460549813266}
   - component: {fileID: 114169761508843964}
   m_Layer: 0
-  m_Name: RetroComboSword
+  m_Name: AIMeleeWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a557e2b93323f4831a62221b200348c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageSrcType: 0
   TriggerMode: 0
   Interruptable: 0
   InitializeOnStart: 0
@@ -156,16 +157,17 @@ MonoBehaviour:
     RecoilStyle: 2
     Delay: 0
     RecoilFeedback: {fileID: 0}
+  weaponLable: 
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
-  AreaOffset: {x: 0.85, y: 0}
-  AreaSize: {x: 1, y: 1}
+  AreaOffset: {x: 5.04, y: 0}
+  AreaSize: {x: 10, y: 1}
   ExistingDamageArea: {fileID: 0}
   InitialDelay: 0
   ActiveDuration: 0.2
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 8448
+    m_Bits: 768
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
   MinDamageCaused: 10
@@ -185,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a557e2b93323f4831a62221b200348c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageSrcType: 0
   TriggerMode: 0
   Interruptable: 0
   InitializeOnStart: 0
@@ -291,6 +294,7 @@ MonoBehaviour:
     RecoilStyle: 2
     Delay: 0
     RecoilFeedback: {fileID: 0}
+  weaponLable: 
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
   AreaOffset: {x: 2, y: 0}
@@ -300,7 +304,7 @@ MonoBehaviour:
   ActiveDuration: 0.2
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 8448
+    m_Bits: 768
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
   MinDamageCaused: 10
@@ -320,6 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a557e2b93323f4831a62221b200348c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageSrcType: 0
   TriggerMode: 0
   Interruptable: 0
   InitializeOnStart: 0
@@ -426,6 +431,7 @@ MonoBehaviour:
     RecoilStyle: 2
     Delay: 0
     RecoilFeedback: {fileID: 0}
+  weaponLable: 
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
   AreaOffset: {x: 0.5, y: 0}
@@ -435,7 +441,7 @@ MonoBehaviour:
   ActiveDuration: 0.3
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 8448
+    m_Bits: 768
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
   MinDamageCaused: 10

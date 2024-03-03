@@ -1333,7 +1333,7 @@ namespace MoreMountains.CorgiEngine
 				{
 					hitConnected=true;
 					collidingIndex = i;
-
+					
 					if (_aboveHitsStorage[i].collider == _ignoredCollider)
 					{
 						break;
