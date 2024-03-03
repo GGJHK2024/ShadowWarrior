@@ -46,16 +46,12 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
             case CorgiEngineEventTypes.LevelStart: {
                 player.GetComponent<Health>().InitialHealth = hp;
                 player.GetComponent<Health>().MaximumHealth = hp;
-
-                this.ExitBulletTime();
                 return;
             }
             case CorgiEngineEventTypes.LevelComplete: {
-                this.ExitBulletTime();
                 return;
             }
             case CorgiEngineEventTypes.LevelEnd: {
-                this.ExitBulletTime();
                 return;
             }
         }
@@ -75,67 +71,13 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     /// </summary>
     void Update()
     {
-        if (_isBulletTime) {
-            _bulletTime -= Time.deltaTime;
-            _isBulletTime = _bulletTime > 0;
-            if (!_isBulletTime)
-                ExitBulletTime();
-        }
-
-        HandleInput();
-    }
-
-    private void HandleInput() {
-        // 检查释放技能
-        if (!canUseSkill) {
-            _charging = false;
-            _skillCharge = 0;
-            return;
-        }
-
-        bool useSkillInput = player.LinkedInputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonPressed 
-                                && player.LinkedInputManager.SecondaryShootButton.State.CurrentState == MMInput.ButtonStates.ButtonPressed;
-
-        if (useSkillInput) {
-            if (!_charging)
-                _skillCharge = skillChargeTime;
-            else
-                _skillCharge -= Time.deltaTime;
-            _charging = true;
-        } else {
-            _charging = false;
-            _skillCharge = 0;
-            return;
-        }
-        Debug.LogFormat("skillCharge {0}", _skillCharge);
-        if (_skillCharge <= 0)
-            UseSkill(); 
     }
 
     public void UseSkill() {
         if (_bounce >= skillRequiement && !_isBulletTime) {
-            EnterBulletTime();
             _bounce = 0;
-            _charging = false;
-            _skillCharge = 0;
+            MMGameEvent.Trigger(GameEventType.UseSkill);
         }
-    }
-
-    public bool EnterBulletTime() {
-        if (LevelManager.Instance == null)
-            return false;
-        MMGameEvent.Trigger(GameEventType.FreezeNpc);
-        LevelManager.Instance.FreezeCharacters(false);
-        _isBulletTime = true;
-        _bulletTime = bulletTime;
-        return true;
-    }
-
-    public void ExitBulletTime() {
-        MMGameEvent.Trigger(GameEventType.UnFreeNpc);
-        _bulletTime = 0;
-        _isBulletTime = false;
-        LevelManager.Instance.UnFreezeCharacters();
     }
 
     public void Stun(float time) {
