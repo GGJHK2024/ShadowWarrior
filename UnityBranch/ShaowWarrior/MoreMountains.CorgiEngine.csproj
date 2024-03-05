@@ -292,7 +292,6 @@
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIActionSelfDestruct.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Environment\Magnetic.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterDash.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterJetpack.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Items\PickableWeapon.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterAbilityNodeSwap.cs" />
     <None Include="Assets\Third-Party\CorgiEngine\Demos\Corgi2D\Spine\SpaceCorgi\space-corgi.json" />
