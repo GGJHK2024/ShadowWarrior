@@ -137,8 +137,7 @@ namespace MoreMountains.CorgiEngine
 			if (character.GetComponent<CharacterDive>() == null) { character.gameObject.AddComponent<CharacterDive>(); } 
 			if (character.GetComponent<CharacterDangling>() == null) { character.gameObject.AddComponent<CharacterDangling>(); } 
 			if (character.GetComponent<CharacterJump>() == null) { character.gameObject.AddComponent<CharacterJump>(); } 
-			if (character.GetComponent<CharacterRun>() == null) { character.gameObject.AddComponent<CharacterRun>(); } 
-			if (character.GetComponent<CharacterJetpack>() == null) { character.gameObject.AddComponent<CharacterJetpack>(); } 
+			if (character.GetComponent<CharacterRun>() == null) { character.gameObject.AddComponent<CharacterRun>(); }
 			if (character.GetComponent<CharacterLookUp>() == null) { character.gameObject.AddComponent<CharacterLookUp>(); } 
 			if (character.GetComponent<CharacterGrip>() == null) { character.gameObject.AddComponent<CharacterGrip>(); } 
 			if (character.GetComponent<CharacterWallClinging>() == null) { character.gameObject.AddComponent<CharacterWallClinging>(); } 

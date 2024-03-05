@@ -264,7 +264,6 @@
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Items\PickableDamageResistance.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterGlide.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\AI\Legacy\AIShootOnSight.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Items\PickableJetpack.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Items\Stimpack.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterButtonActivation.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIDecisionTimeInState.cs" />

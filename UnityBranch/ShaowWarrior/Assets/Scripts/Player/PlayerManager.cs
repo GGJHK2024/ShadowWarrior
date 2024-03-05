@@ -39,6 +39,7 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
         switch (eventType.EventName) {
             case GameEventType.BounceSuccess: {
                 ++_bounce;
+                GUIManager.Instance.SetBounceBar(_bounce);
                 return;
             }
         }
@@ -89,6 +90,7 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     public void UseSkill() {
         if (_bounce >= skillRequiement && !_isBulletTime) {
             _bounce = 0;
+            GUIManager.Instance.SetBounceBar(_bounce);
             MMGameEvent.Trigger(GameEventType.UseSkill);
         }
     }

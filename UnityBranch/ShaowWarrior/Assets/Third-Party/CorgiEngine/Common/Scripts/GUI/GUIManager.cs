@@ -19,6 +19,9 @@ namespace MoreMountains.CorgiEngine
 		/// the health bar
 		[Tooltip("the health bar")]
 		public MMProgressBar[] HealthBars;
+		///  the bounce bar
+		[Tooltip("大招准备条")]
+		public Slider bounceBar;
 		/// the panels and bars used to display current weapon ammo
 		[Tooltip("the panels and bars used to display current weapon ammo")]
 		public AmmoDisplay[] AmmoDisplays;
@@ -255,6 +258,15 @@ namespace MoreMountains.CorgiEngine
 				}
 			}
 
+		}
+		
+		/// <summary>
+		/// 设置弹反条
+		/// </summary>
+		/// <param name="v"></param>
+		public void SetBounceBar(float v)
+		{
+			bounceBar.value = v;
 		}
 
 		/// <summary>
