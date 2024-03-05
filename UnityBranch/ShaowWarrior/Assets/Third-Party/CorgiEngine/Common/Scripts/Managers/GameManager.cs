@@ -14,7 +14,8 @@ namespace MoreMountains.CorgiEngine
    		public const string FreezeNpc = "FreezeNpc";
    		public const string UnFreeNpc = "UnFreezeNpc";
 		public const string BounceSuccess = "UnFreezeNpc";
-	}
+		public const string Dead = "Dead";
+		}
 
 
 	/// <summary>

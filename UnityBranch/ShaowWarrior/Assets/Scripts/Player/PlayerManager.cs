@@ -42,6 +42,11 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
                 GUIManager.Instance.SetBounceBar(_bounce);
                 return;
             }
+            case GameEventType.Dead: {
+                _bounce = 0;
+                GUIManager.Instance.SetBounceBar(_bounce);
+                return;
+            }
         }
     }
 
