@@ -4860,6 +4860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d7ce0b8cf4b34859b9e359283b2e7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageSrcType: 0
   TriggerMode: 1
   Interruptable: 0
   InitializeOnStart: 0
@@ -4966,6 +4967,7 @@ MonoBehaviour:
     RecoilStyle: 2
     Delay: 0
     RecoilFeedback: {fileID: 0}
+  weaponLable: 
   ProjectileSpawnTransform: {fileID: 0}
   ProjectileSpawnOffset: {x: 0.7, y: 0, z: 0}
   ProjectilesPerShot: 1
