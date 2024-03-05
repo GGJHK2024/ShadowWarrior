@@ -52,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageSrcType: 0
   TriggerMode: 0
-  Interruptable: 0
+  Interruptable: 1
   InitializeOnStart: 0
   DelayBeforeUse: 0
   DelayBeforeUseReleaseInterruption: 1
@@ -160,8 +160,8 @@ MonoBehaviour:
   weaponLable: 
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
-  AreaOffset: {x: 5.04, y: 0}
-  AreaSize: {x: 10, y: 1}
+  AreaOffset: {x: 3.89, y: 0}
+  AreaSize: {x: 8.36, y: 1}
   ExistingDamageArea: {fileID: 0}
   InitialDelay: 0
   ActiveDuration: 0.2
@@ -171,7 +171,7 @@ MonoBehaviour:
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
   MinDamageCaused: 1
-  MaxDamageCaused: 0
+  MaxDamageCaused: 1
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
@@ -444,8 +444,8 @@ MonoBehaviour:
     m_Bits: 768
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 10
-  MaxDamageCaused: 0
+  MinDamageCaused: 1
+  MaxDamageCaused: 1
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
@@ -464,7 +464,10 @@ MonoBehaviour:
   DroppableCombo: 1
   DropComboDelay: 0.5
   ComboInProgressAnimationParameter: ComboInProgress
-  Weapons: []
+  Weapons:
+  - {fileID: 114066937058401760}
+  - {fileID: 114246937138071502}
+  - {fileID: 114032460549813266}
   OwnerCharacterHandleWeapon: {fileID: 0}
   TimeSinceLastWeaponStopped: 0
 --- !u!1 &263493511036029803

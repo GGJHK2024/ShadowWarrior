@@ -21,13 +21,13 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     public float skillChargeTime;
     [Tooltip("子弹时间长度")]
     public float bulletTime;
-
     [Tooltip("弹反需求次数")]
     public int skillRequiement;
 
     public bool canUseSkill => !_isBulletTime && _bounce >= skillRequiement;
 
     private bool _isBulletTime = false;
+    
     [SerializeReference]
     private int _bounce = 0;
 
