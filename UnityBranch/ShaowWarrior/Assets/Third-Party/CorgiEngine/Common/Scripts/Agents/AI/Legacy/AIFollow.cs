@@ -38,7 +38,6 @@ namespace MoreMountains.CorgiEngine
 		protected CharacterHorizontalMovement _characterHorizontalMovement;
 		protected CharacterRun _characterRun;
 		protected CharacterJump _characterJump;
-		protected CharacterJetpack _jetpack;
 		protected float _speed;
 		protected float _direction;
 
@@ -59,7 +58,6 @@ namespace MoreMountains.CorgiEngine
 			_characterHorizontalMovement = _targetCharacter?.FindAbility<CharacterHorizontalMovement>();
 			_characterRun = _targetCharacter?.FindAbility<CharacterRun>();
 			_characterJump = _targetCharacter?.FindAbility<CharacterJump>();
-			_jetpack = _targetCharacter?.FindAbility<CharacterJetpack>();
 
 			// we make the agent start following the player
 			AgentFollowsPlayer=true;
@@ -132,23 +130,6 @@ namespace MoreMountains.CorgiEngine
 				if (_controller.State.IsCollidingRight || _controller.State.IsCollidingLeft)
 				{
 					_characterJump.JumpStart();
-				}
-			}
-
-			// if the follower is equipped with a jetpack
-			if (_jetpack!=null && _jetpack.AbilityInitialized)
-			{
-				// if the player is above the agent + a magic factor, we make the agent start jetpacking
-				if (_target.position.y>transform.position.y+JetpackDistance)
-				{
-					_jetpack.JetpackStart();
-				}
-				else
-				{
-					if (_targetCharacter.MovementState.CurrentState == CharacterStates.MovementStates.Jetpacking)
-					{
-						_jetpack.JetpackStop();	
-					}
 				}
 			}
 		}

@@ -4879,8 +4879,6 @@ GameObject:
   - component: {fileID: 114703903213212616}
   - component: {fileID: 114238553675504360}
   - component: {fileID: 114225984267732342}
-  - component: {fileID: 4309780398886090872}
-  - component: {fileID: 6568008703436733419}
   - component: {fileID: 3138931876945488989}
   - component: {fileID: 5891434997493777426}
   - component: {fileID: 1317080086058223983}
@@ -5113,8 +5111,8 @@ MonoBehaviour:
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
-  InitialHealth: 30
-  MaximumHealth: 30
+  InitialHealth: 100
+  MaximumHealth: 100
   Invulnerable: 0
   ImmuneToDamage: 0
   DamageFeedbacks: {fileID: 5012707982616224640}
@@ -5396,68 +5394,6 @@ MonoBehaviour:
   TransitionForcesMode: 1
   ResetCharacterStateOnGravityChange: 1
   DrawDebugGravityArrow: 1
---- !u!114 &4309780398886090872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c732375c7af5d2469f883db01407d16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  OnStairs: 0
-  StairsBelow: 0
-  StairsAhead: 0
-  ClimbingUpPrevented: 0
-  StairsAheadDetectionRaycastOrigin: {x: -1, y: 0, z: 0}
-  StairsAheadDetectionRaycastLength: 4
-  StairsBelowDetectionRaycastOrigin: {x: 0.42, y: 0, z: 0}
-  StairsBelowDetectionRaycastLength: 1
-  StairsBelowLockTime: 0.2
-  MinimumSpeedToBoardStairs: 0.1
-  PreventClimbingPastStairs: 0
-  PreventClimbingRaycastOffset: {x: 0.22, y: 0.2, z: 0}
-  PreventClimbingRaycastLength: 0.5
---- !u!114 &6568008703436733419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d935b014254b1e498815f17116cac6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 6844657728197226674}
-  AbilityStopFeedbacks: {fileID: 2625219954065669940}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  RaycastDirection: {x: 0, y: -1, z: 0}
-  RaycastDistance: 1
-  DetectionLayerMask:
-    serializedVersion: 2
-    m_Bits: 8448
-  Grabbing: 0
-  CarryParent: {fileID: 6120759312253308241}
-  Carrying: 0
-  CarryingID: -1
-  CarriedObject: {fileID: 0}
-  ThrowForce: 1
-  RecoilModifier: 1
-  Throwing: 0
 --- !u!114 &3138931876945488989
 MonoBehaviour:
   m_ObjectHideFlags: 0

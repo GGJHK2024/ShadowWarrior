@@ -88,7 +88,8 @@ MonoBehaviour:
   AutomaticallyUnparentOnAwake: 1
   playerPrefab: {fileID: 114473069959786316, guid: d9a03ec1f93191f48af48c379887e585,
     type: 3}
-  hp: 0
+  hp: 3
   skillChargeTime: 3
-  bulletTime: 5
-  skillRequiement: 0
+  bulletTime: 3
+  skillRequiement: 5
+  _bounce: 0

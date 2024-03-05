@@ -170,7 +170,7 @@ MonoBehaviour:
     m_Bits: 768
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 10
+  MinDamageCaused: 1
   MaxDamageCaused: 0
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
@@ -307,8 +307,8 @@ MonoBehaviour:
     m_Bits: 768
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 10
-  MaxDamageCaused: 0
+  MinDamageCaused: 1
+  MaxDamageCaused: 1
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5

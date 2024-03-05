@@ -563,6 +563,7 @@ namespace MoreMountains.CorgiEngine
 
 		/// <summary>
 		/// Kills the character, instantiates death effects, handles points, etc
+		/// 在这里设置触发死亡事件
 		/// </summary>
 		public virtual void Kill()
 		{
@@ -579,6 +580,7 @@ namespace MoreMountains.CorgiEngine
 
 				if (_character.CharacterType == Character.CharacterTypes.Player)
 				{
+					MMGameEvent.Trigger(GameEventType.Dead);
 					CorgiEngineEvent.Trigger(CorgiEngineEventTypes.PlayerDeath, _character);
 				}
 			}
