@@ -662,6 +662,11 @@ PrefabInstance:
       propertyPath: States.Array.data[3].Transitions.array.Array.data[0].FalseState
       value: Idle
       objectReference: {fileID: 0}
+    - target: {fileID: 8010756260577516807, guid: 4e4b1328474fc154491f2fc56ecdc931,
+        type: 3}
+      propertyPath: Label
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4b1328474fc154491f2fc56ecdc931, type: 3}
 --- !u!1 &357580413 stripped
@@ -1349,6 +1354,11 @@ PrefabInstance:
         type: 3}
       propertyPath: States.Array.data[3].Transitions.array.Array.data[0].FalseState
       value: Idle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010756260577516807, guid: 4e4b1328474fc154491f2fc56ecdc931,
+        type: 3}
+      propertyPath: Label
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4b1328474fc154491f2fc56ecdc931, type: 3}
@@ -2506,6 +2516,11 @@ PrefabInstance:
       propertyPath: States.Array.data[3].Transitions.array.Array.data[0].FalseState
       value: Idle
       objectReference: {fileID: 0}
+    - target: {fileID: 8010756260577516807, guid: 4e4b1328474fc154491f2fc56ecdc931,
+        type: 3}
+      propertyPath: Label
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4b1328474fc154491f2fc56ecdc931, type: 3}
 --- !u!1 &1457937142 stripped
@@ -2868,6 +2883,11 @@ PrefabInstance:
         type: 3}
       propertyPath: States.Array.data[3].Transitions.array.Array.data[0].FalseState
       value: Idle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010756260577516807, guid: 4e4b1328474fc154491f2fc56ecdc931,
+        type: 3}
+      propertyPath: Label
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4b1328474fc154491f2fc56ecdc931, type: 3}
