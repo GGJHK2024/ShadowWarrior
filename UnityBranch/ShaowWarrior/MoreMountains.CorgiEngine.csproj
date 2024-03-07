@@ -293,6 +293,8 @@
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterDash.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Items\PickableWeapon.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterAbilityNodeSwap.cs" />
+    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIActionPreAttackAnim.cs" />
+    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterPreAttack.cs" />
     <None Include="Assets\Third-Party\CorgiEngine\Demos\Corgi2D\Spine\SpaceCorgi\space-corgi.json" />
     <None Include="Assets\Third-Party\CorgiEngine\Demos\Corgi2D\Spine\Heavy\heavy-corgi.atlas.txt" />
     <None Include="Assets\Third-Party\CorgiEngine\Demos\Brobro\Spine\Brobro\space-corgi.json" />
