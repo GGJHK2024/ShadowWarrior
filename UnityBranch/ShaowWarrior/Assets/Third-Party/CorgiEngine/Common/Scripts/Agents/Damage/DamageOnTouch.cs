@@ -294,6 +294,15 @@ namespace MoreMountains.CorgiEngine
 			Colliding (collider);
 		}
 
+		/// <summary>
+		/// 往layer mask中添加层
+		/// </summary>
+		/// <param name="layer"></param>
+		public void AddLayerMask(int layer)
+		{
+			TargetLayerMask |= (1 << layer);
+		}
+
 		protected virtual void Colliding(Collider2D collider)
 		{
 
@@ -338,6 +347,8 @@ namespace MoreMountains.CorgiEngine
 					print("是玩家，且攻击类型为B（弹反）");
 					collider.gameObject.GetComponent<Projectile>().SetOwner(Owner);
 					collider.gameObject.GetComponent<Projectile>().SetDamage(999);
+					// 将player(9)移除出伤害的layermask
+					collider.gameObject.GetComponent<DamageOnTouch>().TargetLayerMask &= ~(1 << 9);
 					ownerWeapon.WeaponBounceSuccessFar();	// 远程弹反效果
 					Vector3 _mousePosition;
 					#if !ENABLE_INPUT_SYSTEM || ENABLE_LEGACY_INPUT_MANAGER
