@@ -331,6 +331,31 @@ namespace MoreMountains.CorgiEngine
 					
 				}
 			}
+			if ( Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 12) {
+				print("武器攻击到子弹");
+				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player && ownerWeapon.damageSrcType == DamageSrcType.B)				
+				{
+					print("是玩家，且攻击类型为B（弹反）");
+					collider.gameObject.GetComponent<Projectile>().SetOwner(Owner);
+					collider.gameObject.GetComponent<Projectile>().SetDamage(999);
+					collider.gameObject.GetComponent<Projectile>().SetDirection(new Vector3(1,0,0),new Quaternion(0,0,0,0),true);
+					ownerWeapon.WeaponBounceSuccessFar();	// 远程弹反效果
+					// collider.gameObject.SetActive(false);
+					MMGameEvent.Trigger(GameEventType.BounceSuccess);
+					return;
+					// 鼠标移动方向代表子弹未来的飞行方向
+						/*var hp = collider.gameObject.GetComponent<Health>();
+						if (hp!= null) {
+							hp.Kill();
+							print("弹反成功");
+							ownerWeapon.WeaponBounceSuccessNear();	// 近战效果
+							MMGameEvent.Trigger(GameEventType.BounceSuccess);
+							return;
+						}*/
+					
+					
+				}
+			}
 
 			// if what we're colliding with isn't part of the target layers, we do nothing and exit
 			if (!MMLayers.LayerInLayerMask(collider.gameObject.layer,TargetLayerMask))
