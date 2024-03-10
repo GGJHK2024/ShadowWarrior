@@ -323,6 +323,7 @@ namespace MoreMountains.CorgiEngine
 						if (hp!= null) {
 							hp.Kill();
 							print("弹反成功");
+							ownerWeapon.WeaponBounceSuccessNear();	// 近战效果
 							MMGameEvent.Trigger(GameEventType.BounceSuccess);
 							return;
 						}
