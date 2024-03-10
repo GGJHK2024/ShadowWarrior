@@ -310,27 +310,23 @@ namespace MoreMountains.CorgiEngine
 
 			_collidingCollider = collider;
 			Weapon ownerWeapon;
-			
 			DamageOnTouch enemyTouch;
-			if ( Owner != null && collider.gameObject.gameObject.TryGetComponent<DamageOnTouch>(out enemyTouch) && Owner.TryGetComponent<Weapon>(out ownerWeapon)) {
-				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player)				
+			if ( Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 13) {
+				print("武器攻击到敌人");
+				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player && ownerWeapon.damageSrcType == DamageSrcType.B)				
 				{
-						enemyTouch.gameObject.SetActive(false);
-						
-						Weapon eneWeapon;
-						if (enemyTouch.Owner != null && enemyTouch.Owner.TryGetComponent<Weapon>(out eneWeapon)) {
-							if (eneWeapon.damageSrcType == ownerWeapon.damageSrcType) {
-								if (eneWeapon.Owner != null) {
-									var hp = eneWeapon.Owner.GetComponent<Health>();
-									if (hp!= null) {
-										hp.Kill();
-									}
-								}
-							}
+					print("是玩家，且攻击类型为B（弹反）");
+					if (collider.gameObject.GetComponent<AIBrain>().CurrentState.StateName == "ShowMark") {
+						print("敌人处于预攻击（出现感叹号）状态");
+						// 如果处于预攻击（出现感叹号）状态，弹反成功
+						var hp = collider.gameObject.GetComponent<Health>();
+						if (hp!= null) {
+							hp.Kill();
+							print("弹反成功");
+							MMGameEvent.Trigger(GameEventType.BounceSuccess);
+							return;
 						}
-
-						MMGameEvent.Trigger(GameEventType.BounceSuccess);
-						return;
+					}
 					
 				}
 			}
