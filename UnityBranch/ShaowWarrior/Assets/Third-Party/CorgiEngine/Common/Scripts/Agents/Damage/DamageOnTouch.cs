@@ -338,22 +338,26 @@ namespace MoreMountains.CorgiEngine
 					print("是玩家，且攻击类型为B（弹反）");
 					collider.gameObject.GetComponent<Projectile>().SetOwner(Owner);
 					collider.gameObject.GetComponent<Projectile>().SetDamage(999);
-					collider.gameObject.GetComponent<Projectile>().SetDirection(new Vector3(1,0,0),new Quaternion(0,0,0,0),true);
 					ownerWeapon.WeaponBounceSuccessFar();	// 远程弹反效果
-					// collider.gameObject.SetActive(false);
+					Vector3 _mousePosition;
+					#if !ENABLE_INPUT_SYSTEM || ENABLE_LEGACY_INPUT_MANAGER
+						_mousePosition = Input.mousePosition;
+					#else
+						_mousePosition = Mouse.current.position.ReadValue();
+					#endif
+					_mousePosition.z = Camera.main.transform.position.z * -1;
+
+					Vector3 direction = Camera.main.ScreenToWorldPoint(_mousePosition) - Owner.transform.position;
+
+					// print(Camera.main.ScreenToWorldPoint(_mousePosition).x + " " + Camera.main.ScreenToWorldPoint(_mousePosition).y + " " + Camera.main.ScreenToWorldPoint(_mousePosition).z);
+					// _direction = Camera.main.ScreenToWorldPoint (_mousePosition);
+					collider.gameObject.GetComponent<Projectile>().SetDirection(Vector3.Normalize(direction)
+						, collider.gameObject.transform.rotation);
+					
+
 					MMGameEvent.Trigger(GameEventType.BounceSuccess);
 					return;
-					// 鼠标移动方向代表子弹未来的飞行方向
-						/*var hp = collider.gameObject.GetComponent<Health>();
-						if (hp!= null) {
-							hp.Kill();
-							print("弹反成功");
-							ownerWeapon.WeaponBounceSuccessNear();	// 近战效果
-							MMGameEvent.Trigger(GameEventType.BounceSuccess);
-							return;
-						}*/
-					
-					
+
 				}
 			}
 
