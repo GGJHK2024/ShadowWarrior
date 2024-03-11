@@ -1092,7 +1092,7 @@ namespace MoreMountains.CorgiEngine
 						Freeze();
 					return;
 				}
-				case GameEventType.UnFreeNpc: {
+				case GameEventType.UnFreezeNpc: {
 					if (CharacterType == CharacterTypes.AI)
 						UnFreeze();
 					return;

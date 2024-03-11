@@ -320,7 +320,7 @@ namespace MoreMountains.CorgiEngine
 			_collidingCollider = collider;
 			Weapon ownerWeapon;
 			DamageOnTouch enemyTouch;
-			if ( Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 13) {
+			if ( this.gameObject.layer!=12 && Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 13) {
 				print("武器攻击到敌人");
 				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player && ownerWeapon.damageSrcType == DamageSrcType.B)				
 				{
@@ -340,7 +340,7 @@ namespace MoreMountains.CorgiEngine
 					
 				}
 			}
-			if ( Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 12) {
+			if ( this.gameObject.layer!=12 && Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 12) {
 				print("武器攻击到子弹");
 				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player && ownerWeapon.damageSrcType == DamageSrcType.B)				
 				{
@@ -359,13 +359,10 @@ namespace MoreMountains.CorgiEngine
 					_mousePosition.z = Camera.main.transform.position.z * -1;
 
 					Vector3 direction = Camera.main.ScreenToWorldPoint(_mousePosition) - Owner.transform.position;
-
-					// print(Camera.main.ScreenToWorldPoint(_mousePosition).x + " " + Camera.main.ScreenToWorldPoint(_mousePosition).y + " " + Camera.main.ScreenToWorldPoint(_mousePosition).z);
-					// _direction = Camera.main.ScreenToWorldPoint (_mousePosition);
+					
 					collider.gameObject.GetComponent<Projectile>().SetDirection(Vector3.Normalize(direction)
 						, collider.gameObject.transform.rotation);
 					
-
 					MMGameEvent.Trigger(GameEventType.BounceSuccess);
 					return;
 

@@ -40,7 +40,7 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     {
         switch (eventType.EventName) {
             case GameEventType.BounceSuccess: {
-                ++_bounce;
+                _bounce++;
                 GUIManager.Instance.SetBounceBar(_bounce);
                 return;
             }

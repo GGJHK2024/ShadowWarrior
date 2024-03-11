@@ -74,8 +74,17 @@ public class BulletTime : CharacterAbility,
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    enemies.Add(hit.collider.gameObject.GetComponent<Health>());
-                    Debug.Log("选中：" + hit.collider.gameObject.name);
+                    Health currentEne = hit.collider.gameObject.GetComponent<Health>();
+                    if (enemies.Contains(currentEne))
+                    {
+                        enemies.Remove(currentEne);
+                        Debug.Log("移除：" + hit.collider.gameObject.name);
+                    }
+                    else
+                    {
+                        enemies.Add(currentEne);
+                        Debug.Log("选中：" + hit.collider.gameObject.name);
+                    }
                 }
             }
             /*if (!_isBulletTime)
@@ -119,7 +128,8 @@ public class BulletTime : CharacterAbility,
     public bool EnterBulletTime() {
         if (LevelManager.Instance == null)
             return false;
-        MMGameEvent.Trigger(GameEventType.FreezeNpc);
+        // MMGameEvent.Trigger(GameEventType.FreezeNpc);
+        MMEventManager.TriggerEvent(new MMGameEvent("FreezeNpc"));
         LevelManager.Instance.FreezeCharacters(false);
         _isBulletTime = true;
         enemies.Clear();
@@ -131,7 +141,8 @@ public class BulletTime : CharacterAbility,
     /// 结束大招（离开子弹时间）
     /// </summary>
     public void ExitBulletTime() {
-        MMGameEvent.Trigger(GameEventType.UnFreeNpc);
+        // MMGameEvent.Trigger(GameEventType.UnFreezeNpc);
+        MMEventManager.TriggerEvent(new MMGameEvent("UnFreezeNpc"));
         // 一击必杀所有选中的敌人
         foreach (var e in enemies)
         {
