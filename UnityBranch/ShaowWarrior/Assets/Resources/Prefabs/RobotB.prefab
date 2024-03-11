@@ -737,7 +737,7 @@ MonoBehaviour:
         FalseState: Idle
       - Decision: {fileID: 5893394884078251563}
         TrueState: ShowMark
-        FalseState: ShowMark
+        FalseState: 
   - StateName: ShowMark
     Actions:
       array:
