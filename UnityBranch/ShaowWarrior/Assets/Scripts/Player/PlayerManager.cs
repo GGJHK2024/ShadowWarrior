@@ -17,6 +17,8 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
 
     public int hp;
 
+    [Tooltip("击杀敌人上限")] 
+    public int bulletTimeCanKillEnemyNumber;
     [Tooltip("技能蓄力时间长度")]
     public float skillChargeTime;
     [Tooltip("子弹时间长度")]

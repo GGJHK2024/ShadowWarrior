@@ -112,6 +112,8 @@ MonoBehaviour:
   WeaponOnHitDamageableFeedback: {fileID: 0}
   WeaponOnHitNonDamageableFeedback: {fileID: 0}
   WeaponOnKillFeedback: {fileID: 0}
+  WeaponOnBounceSuccessNear: {fileID: 0}
+  WeaponOnBounceSuccessFar: {fileID: 0}
   ApplyRecoilOnUse: 0
   RecoilOnUseProperties:
     RecoilForceGrounded: 10
@@ -171,7 +173,7 @@ MonoBehaviour:
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
   MinDamageCaused: 1
-  MaxDamageCaused: 0
+  MaxDamageCaused: 1
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
@@ -249,6 +251,8 @@ MonoBehaviour:
   WeaponOnHitDamageableFeedback: {fileID: 0}
   WeaponOnHitNonDamageableFeedback: {fileID: 0}
   WeaponOnKillFeedback: {fileID: 0}
+  WeaponOnBounceSuccessNear: {fileID: 0}
+  WeaponOnBounceSuccessFar: {fileID: 0}
   ApplyRecoilOnUse: 0
   RecoilOnUseProperties:
     RecoilForceGrounded: 10
@@ -307,8 +311,8 @@ MonoBehaviour:
     m_Bits: 8448
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 10
-  MaxDamageCaused: 0
+  MinDamageCaused: 1
+  MaxDamageCaused: 1
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
@@ -386,6 +390,8 @@ MonoBehaviour:
   WeaponOnHitDamageableFeedback: {fileID: 0}
   WeaponOnHitNonDamageableFeedback: {fileID: 0}
   WeaponOnKillFeedback: {fileID: 0}
+  WeaponOnBounceSuccessNear: {fileID: 0}
+  WeaponOnBounceSuccessFar: {fileID: 0}
   ApplyRecoilOnUse: 0
   RecoilOnUseProperties:
     RecoilForceGrounded: 10
@@ -444,8 +450,8 @@ MonoBehaviour:
     m_Bits: 8448
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 10
-  MaxDamageCaused: 0
+  MinDamageCaused: 1
+  MaxDamageCaused: 1
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
