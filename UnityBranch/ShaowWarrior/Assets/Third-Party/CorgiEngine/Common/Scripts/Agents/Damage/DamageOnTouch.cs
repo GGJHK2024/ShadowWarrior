@@ -290,7 +290,9 @@ namespace MoreMountains.CorgiEngine
 			if (!ApplyDamageOnTriggerEnter)
 			{
 				return;
-			}		
+			}
+
+			BounceCheck(collider);
 			Colliding (collider);
 		}
 
@@ -303,20 +305,21 @@ namespace MoreMountains.CorgiEngine
 			TargetLayerMask |= (1 << layer);
 		}
 
-		protected virtual void Colliding(Collider2D collider)
+		/// <summary>
+		/// 往layer mask中移除层
+		/// </summary>
+		/// <param name="layer"></param>
+		public void RemoveLayerMask(int layer)
 		{
+			TargetLayerMask &= ~(1 << layer);
+		}
 
-			if (!this.isActiveAndEnabled)
-			{
-				return;
-			}
-
-			// if the object we're colliding with is part of our ignore list, we do nothing and exit
-			if (_ignoredGameObjects.Contains(collider.gameObject))
-			{
-				return;
-			}
-
+		/// <summary>
+		/// 弹反检测
+		/// </summary>
+		/// <param name="collider"></param>
+		private void BounceCheck(Collider2D collider)
+		{
 			_collidingCollider = collider;
 			Weapon ownerWeapon;
 			DamageOnTouch enemyTouch;
@@ -349,6 +352,8 @@ namespace MoreMountains.CorgiEngine
 					collider.gameObject.GetComponent<Projectile>().SetDamage(999);
 					// 将player(9)移除出伤害的layermask
 					collider.gameObject.GetComponent<DamageOnTouch>().TargetLayerMask &= ~(1 << 9);
+					// 将enemy(13)加入伤害的layermask
+					collider.gameObject.GetComponent<DamageOnTouch>().TargetLayerMask |= ~(1 << 13);
 					ownerWeapon.WeaponBounceSuccessFar();	// 远程弹反效果
 					Vector3 _mousePosition;
 					#if !ENABLE_INPUT_SYSTEM || ENABLE_LEGACY_INPUT_MANAGER
@@ -368,6 +373,22 @@ namespace MoreMountains.CorgiEngine
 
 				}
 			}
+		}
+
+		protected virtual void Colliding(Collider2D collider)
+		{
+
+			if (!this.isActiveAndEnabled)
+			{
+				return;
+			}
+
+			// if the object we're colliding with is part of our ignore list, we do nothing and exit
+			if (_ignoredGameObjects.Contains(collider.gameObject))
+			{
+				return;
+			}
+			
 
 			// if what we're colliding with isn't part of the target layers, we do nothing and exit
 			if (!MMLayers.LayerInLayerMask(collider.gameObject.layer,TargetLayerMask))
