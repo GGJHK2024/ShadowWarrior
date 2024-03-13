@@ -302,7 +302,7 @@ namespace MoreMountains.CorgiEngine
 		/// <param name="layer"></param>
 		public void AddLayerMask(int layer)
 		{
-			TargetLayerMask |= (1 << layer);
+			TargetLayerMask = TargetLayerMask |= (1 << layer);
 		}
 
 		/// <summary>
@@ -311,7 +311,7 @@ namespace MoreMountains.CorgiEngine
 		/// <param name="layer"></param>
 		public void RemoveLayerMask(int layer)
 		{
-			TargetLayerMask &= ~(1 << layer);
+			TargetLayerMask = TargetLayerMask &= ~(1 << layer);
 		}
 
 		/// <summary>
@@ -353,7 +353,7 @@ namespace MoreMountains.CorgiEngine
 					// 将player(9)移除出伤害的layermask
 					collider.gameObject.GetComponent<DamageOnTouch>().TargetLayerMask &= ~(1 << 9);
 					// 将enemy(13)加入伤害的layermask
-					collider.gameObject.GetComponent<DamageOnTouch>().TargetLayerMask |= ~(1 << 13);
+					collider.gameObject.GetComponent<DamageOnTouch>().TargetLayerMask |= (1 << 13);
 					ownerWeapon.WeaponBounceSuccessFar();	// 远程弹反效果
 					Vector3 _mousePosition;
 					#if !ENABLE_INPUT_SYSTEM || ENABLE_LEGACY_INPUT_MANAGER
