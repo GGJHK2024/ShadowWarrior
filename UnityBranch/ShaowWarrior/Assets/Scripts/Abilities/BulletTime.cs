@@ -89,7 +89,8 @@ public class BulletTime : CharacterAbility,
             }
             /*if (!_isBulletTime)
                 ExitBulletTime();*/
-            if (enemies.Count >= _bulletTimeCanKillEnemyNumber)
+            if (enemies.Count >= ((EnemyManager.Instance.RemainingEnemies()>_bulletTimeCanKillEnemyNumber)?
+                    _bulletTimeCanKillEnemyNumber:EnemyManager.Instance.RemainingEnemies()))
             {
                 ExitBulletTime();
             }
