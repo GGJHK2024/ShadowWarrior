@@ -868,7 +868,7 @@ MonoBehaviour:
   RepositionToInitOnPlayerRespawn: 0
   DisableOnKill: 1
   AutoRespawnDuration: 0
-  AutoRespawnAmount: 3
+  AutoRespawnAmount: -1
   AutoRespawnRemainingAmount: 3
   IgnoreCheckpointsAlwaysRespawn: 1
   AssociatedCheckpoints: []

@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 119847008708912785}
   - component: {fileID: 5893394884078251563}
   - component: {fileID: 167059064127891269}
+  - component: {fileID: 1848806264832467988}
   m_Layer: 13
   m_Name: RobotB
   m_TagString: Player
@@ -983,6 +984,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
+--- !u!114 &1848806264832467988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1508296b0904b1ba069c225eb6482a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RespawnOnPlayerRespawn: 1
+  RepositionToInitOnPlayerRespawn: 0
+  DisableOnKill: 1
+  AutoRespawnDuration: 0
+  AutoRespawnAmount: -1
+  AutoRespawnRemainingAmount: 3
+  IgnoreCheckpointsAlwaysRespawn: 1
+  AssociatedCheckpoints: []
+  RespawnFeedback: {fileID: 0}
 --- !u!1 &1906052747890022
 GameObject:
   m_ObjectHideFlags: 0
