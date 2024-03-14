@@ -23,6 +23,7 @@ public class EnemyManager : MMSingleton<EnemyManager>,
 
     private void Start()
     {
+        Reset();
         MMEventManager.AddListener<CorgiEngineEvent>(this);
         MMEventManager.AddListener<MMGameEvent>(this);
     }
