@@ -729,6 +729,24 @@ namespace MoreMountains.CorgiEngine
 			ConditionState.ChangeState(CharacterStates.CharacterConditions.Frozen);
 		}
 
+		/// <summary>
+		/// 禁用武器(冻结时玩家无法攻击敌人)
+		/// </summary>
+		public virtual void LockAbility()
+		{
+			_controller.GetComponent<CharacterHandleWeapon>().enabled = false;
+			_controller.GetComponent<CharacterHandleSecondaryWeapon>().enabled = false;
+		}
+		
+		/// <summary>
+		/// 解禁武器
+		/// </summary>
+		public virtual void UnlockAbility()
+		{
+			_controller.GetComponent<CharacterHandleWeapon>().enabled = true;
+			_controller.GetComponent<CharacterHandleSecondaryWeapon>().enabled = true;
+		}
+
 		protected CharacterStates.CharacterConditions _conditionStateBeforeFreeze;
 
 		/// <summary>
@@ -1088,6 +1106,7 @@ namespace MoreMountains.CorgiEngine
         {
             switch(eventType.EventName) {
 				case GameEventType.FreezeNpc: {
+					
 					if (CharacterType == CharacterTypes.AI)
 						Freeze();
 					return;
