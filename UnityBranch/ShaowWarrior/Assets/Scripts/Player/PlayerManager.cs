@@ -17,17 +17,19 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
 
     public int hp;
 
+    [Tooltip("击杀敌人上限")] 
+    public int bulletTimeCanKillEnemyNumber;
     [Tooltip("技能蓄力时间长度")]
     public float skillChargeTime;
     [Tooltip("子弹时间长度")]
     public float bulletTime;
-
     [Tooltip("弹反需求次数")]
     public int skillRequiement;
 
     public bool canUseSkill => !_isBulletTime && _bounce >= skillRequiement;
 
     private bool _isBulletTime = false;
+    
     [SerializeReference]
     private int _bounce = 0;
 
@@ -38,7 +40,7 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     {
         switch (eventType.EventName) {
             case GameEventType.BounceSuccess: {
-                ++_bounce;
+                _bounce++;
                 GUIManager.Instance.SetBounceBar(_bounce);
                 return;
             }

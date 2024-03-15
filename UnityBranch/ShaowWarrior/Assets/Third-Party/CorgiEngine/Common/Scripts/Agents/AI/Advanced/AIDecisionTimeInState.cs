@@ -13,7 +13,7 @@ namespace MoreMountains.CorgiEngine
 	{
 		/// The minimum duration, in seconds, after which to return true
 		[Tooltip("The minimum duration, in seconds, after which to return true")]
-		public float AfterTimeMin = 2f;
+		public float AfterTimeMin = 1f;
 		/// The maximum duration, in seconds, after which to return true
 		[Tooltip("The maximum duration, in seconds, after which to return true")]
 		public float AfterTimeMax = 2f;

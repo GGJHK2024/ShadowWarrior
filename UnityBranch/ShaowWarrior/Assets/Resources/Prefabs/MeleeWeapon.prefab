@@ -54,7 +54,7 @@ MonoBehaviour:
   TriggerMode: 0
   Interruptable: 0
   InitializeOnStart: 0
-  DelayBeforeUse: 0
+  DelayBeforeUse: 1
   DelayBeforeUseReleaseInterruption: 1
   TimeBetweenUses: 0.3
   TimeBetweenUsesReleaseInterruption: 0
@@ -112,6 +112,8 @@ MonoBehaviour:
   WeaponOnHitDamageableFeedback: {fileID: 0}
   WeaponOnHitNonDamageableFeedback: {fileID: 0}
   WeaponOnKillFeedback: {fileID: 0}
+  WeaponOnBounceSuccessNear: {fileID: 0}
+  WeaponOnBounceSuccessFar: {fileID: 0}
   ApplyRecoilOnUse: 0
   RecoilOnUseProperties:
     RecoilForceGrounded: 10
@@ -163,7 +165,7 @@ MonoBehaviour:
   AreaOffset: {x: 0.85, y: 0}
   AreaSize: {x: 1, y: 1}
   ExistingDamageArea: {fileID: 0}
-  InitialDelay: 0
+  InitialDelay: 0.1
   ActiveDuration: 0.2
   TargetLayerMask:
     serializedVersion: 2
@@ -171,7 +173,7 @@ MonoBehaviour:
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
   MinDamageCaused: 1
-  MaxDamageCaused: 0
+  MaxDamageCaused: 1
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
@@ -249,6 +251,8 @@ MonoBehaviour:
   WeaponOnHitDamageableFeedback: {fileID: 0}
   WeaponOnHitNonDamageableFeedback: {fileID: 0}
   WeaponOnKillFeedback: {fileID: 0}
+  WeaponOnBounceSuccessNear: {fileID: 0}
+  WeaponOnBounceSuccessFar: {fileID: 0}
   ApplyRecoilOnUse: 0
   RecoilOnUseProperties:
     RecoilForceGrounded: 10
@@ -307,8 +311,8 @@ MonoBehaviour:
     m_Bits: 8448
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 10
-  MaxDamageCaused: 0
+  MinDamageCaused: 1
+  MaxDamageCaused: 1
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
@@ -386,6 +390,8 @@ MonoBehaviour:
   WeaponOnHitDamageableFeedback: {fileID: 0}
   WeaponOnHitNonDamageableFeedback: {fileID: 0}
   WeaponOnKillFeedback: {fileID: 0}
+  WeaponOnBounceSuccessNear: {fileID: 0}
+  WeaponOnBounceSuccessFar: {fileID: 0}
   ApplyRecoilOnUse: 0
   RecoilOnUseProperties:
     RecoilForceGrounded: 10
@@ -444,8 +450,8 @@ MonoBehaviour:
     m_Bits: 8448
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 10
-  MaxDamageCaused: 0
+  MinDamageCaused: 1
+  MaxDamageCaused: 1
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
@@ -464,7 +470,9 @@ MonoBehaviour:
   DroppableCombo: 1
   DropComboDelay: 0.5
   ComboInProgressAnimationParameter: ComboInProgress
-  Weapons: []
+  Weapons:
+  - {fileID: 114246937138071502}
+  - {fileID: 114032460549813266}
   OwnerCharacterHandleWeapon: {fileID: 0}
   TimeSinceLastWeaponStopped: 0
 --- !u!1 &263493511036029803

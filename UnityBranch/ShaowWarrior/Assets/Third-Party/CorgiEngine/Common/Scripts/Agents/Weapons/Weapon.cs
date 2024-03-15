@@ -276,6 +276,12 @@ namespace MoreMountains.CorgiEngine
 		/// A MMFeedback to play when the weapon kills something
 		[Tooltip("A MMFeedback to play when the weapon kills something")]
 		public MMFeedbacks WeaponOnKillFeedback;
+		/// A MMFeedback to play when the bounce success near
+		[Tooltip("A MMFeedback to play when the bounce success naer")]
+		public MMFeedbacks WeaponOnBounceSuccessNear;
+		/// A MMFeedback to play when the bounce success far
+		[Tooltip("A MMFeedback to play when the bounce success far")]
+		public MMFeedbacks WeaponOnBounceSuccessFar;
 
 		[MMInspectorGroup("Recoil", true, 33)]
         
@@ -444,6 +450,8 @@ namespace MoreMountains.CorgiEngine
 			WeaponOnHitDamageableFeedback?.Initialization(this.gameObject);
 			WeaponOnHitNonDamageableFeedback?.Initialization(this.gameObject);
 			WeaponOnKillFeedback?.Initialization(this.gameObject);
+			WeaponOnBounceSuccessNear?.Initialization(this.gameObject);
+			WeaponOnBounceSuccessFar?.Initialization(this.gameObject);
 		}
 
 		/// <summary>
@@ -1278,6 +1286,16 @@ namespace MoreMountains.CorgiEngine
 			WeaponOnKillFeedback?.PlayFeedbacks(this.transform.position);
 		}
 
+		protected virtual void TriggerWeaponOnBounceSuccessNear()
+		{
+			WeaponOnBounceSuccessNear?.PlayFeedbacks(this.transform.position);
+		}
+
+		protected virtual void TriggerWeaponOnBounceSuccessFar()
+		{
+			WeaponOnBounceSuccessFar?.PlayFeedbacks(this.transform.position);
+		}
+
 		#endregion Feedbacks
 
 		#region Animation
@@ -1467,6 +1485,16 @@ namespace MoreMountains.CorgiEngine
 		{
 			TriggerWeaponOnKillFeedback();
 			ApplyRecoil(ApplyRecoilOnKill, RecoilOnKillProperties);   
+		}
+
+		public virtual void WeaponBounceSuccessNear()
+		{
+			TriggerWeaponOnBounceSuccessNear();
+		}
+
+		public virtual void WeaponBounceSuccessFar()
+		{
+			TriggerWeaponOnBounceSuccessFar();
 		}
 
 		protected virtual void OnDisable()

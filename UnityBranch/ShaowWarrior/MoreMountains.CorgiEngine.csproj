@@ -146,6 +146,7 @@
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIActionRunStop.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Spawn\Respawnable.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Items\Loot.cs" />
+    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIActionPreAttackAnim.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\ScriptsCinemachine\Camera\CinemachineAxisLocker.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Environment\Pusher.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\Weapons\ThrownObject.cs" />
@@ -245,6 +246,7 @@
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIActionResetTarget.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\GUI\ButtonPrompt.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CorgiController\CorgiControllerState.cs" />
+    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Managers\EnemyManager.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterInventory.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIActionPatrolWithinBounds.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Demos\SuperHipsterBros\Scripts\SuperHipsterBrosHealth.cs" />
@@ -257,6 +259,7 @@
     <Compile Include="Assets\Third-Party\CorgiEngine\Demos\LevelSelection\Scripts\LevelMapCharacter.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterWalljump.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Environment\WallClingingOverride.cs" />
+    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterPreAttack.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterSwitchModel.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIActionFlyTowardsTarget.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\InventoryEngineItems\InventoryEngineTimeModifier.cs" />

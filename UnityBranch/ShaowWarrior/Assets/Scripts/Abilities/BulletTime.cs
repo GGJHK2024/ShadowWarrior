@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
@@ -6,8 +7,13 @@ public class BulletTime : CharacterAbility,
         MMEventListener<MMGameEvent>,
         MMEventListener<CorgiEngineEvent>
 {
+
+    [Tooltip("选中要击杀的敌人")] 
+    private List<Health> enemies = new List<Health>();
+    
     private PlayerManager _playerManager;
 
+    private int _bulletTimeCanKillEnemyNumber;
     private bool _charging = false;
     private float _skillCharge;
     private bool _isBulletTime = false;
@@ -20,6 +26,8 @@ public class BulletTime : CharacterAbility,
     protected override void Start()
     {
         base.Start();
+        _bulletTimeCanKillEnemyNumber = _playerManager.bulletTimeCanKillEnemyNumber;
+        enemies.Clear();
     }
 
     protected override void OnEnable()
@@ -55,10 +63,37 @@ public class BulletTime : CharacterAbility,
     public override void ProcessAbility()
     {
         if (_isBulletTime) {
-            _bulletTime -= Time.deltaTime;
-            _isBulletTime = _bulletTime > 0;
-            if (!_isBulletTime)
+            // print("现在，请玩家选择需要斩杀的敌人");
+            // 原先的计时大招功能，现在改为选择敌人
+            /*_bulletTime -= Time.deltaTime;
+            _isBulletTime = _bulletTime > 0;*/
+
+            Vector2 ray = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+            RaycastHit2D hit = Physics2D.Raycast(ray, ray);
+            if (hit.collider != null && hit.collider.gameObject.layer == 13)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Health currentEne = hit.collider.gameObject.GetComponent<Health>();
+                    if (enemies.Contains(currentEne))
+                    {
+                        enemies.Remove(currentEne);
+                        Debug.Log("移除：" + hit.collider.gameObject.name);
+                    }
+                    else
+                    {
+                        enemies.Add(currentEne);
+                        Debug.Log("选中：" + hit.collider.gameObject.name);
+                    }
+                }
+            }
+            /*if (!_isBulletTime)
+                ExitBulletTime();*/
+            if (enemies.Count >= ((EnemyManager.Instance.RemainingEnemies()>_bulletTimeCanKillEnemyNumber)?
+                    _bulletTimeCanKillEnemyNumber:EnemyManager.Instance.RemainingEnemies()))
+            {
                 ExitBulletTime();
+            }
         }
     }
 
@@ -87,19 +122,35 @@ public class BulletTime : CharacterAbility,
         _skillCharge = 0;
     }
 
+    /// <summary>
+    /// 开启大招（进入子弹时间）
+    /// </summary>
+    /// <returns></returns>
     public bool EnterBulletTime() {
         if (LevelManager.Instance == null)
             return false;
-        MMGameEvent.Trigger(GameEventType.FreezeNpc);
+        // MMGameEvent.Trigger(GameEventType.FreezeNpc);
+        MMEventManager.TriggerEvent(new MMGameEvent("FreezeNpc"));
         LevelManager.Instance.FreezeCharacters(false);
         _isBulletTime = true;
-        _bulletTime = _playerManager.bulletTime;
+        enemies.Clear();
+        // _bulletTime = _playerManager.bulletTime;
         return true;
     }
 
+    /// <summary>
+    /// 结束大招（离开子弹时间）
+    /// </summary>
     public void ExitBulletTime() {
-        MMGameEvent.Trigger(GameEventType.UnFreeNpc);
-        _bulletTime = 0;
+        // MMGameEvent.Trigger(GameEventType.UnFreezeNpc);
+        MMEventManager.TriggerEvent(new MMGameEvent("UnFreezeNpc"));
+        // 一击必杀所有选中的敌人
+        foreach (var e in enemies)
+        {
+            e.Kill();
+        }
+        // _bulletTime = 0;
+        enemies.Clear();
         _isBulletTime = false;
         LevelManager.Instance.UnFreezeCharacters();
     }
@@ -122,6 +173,11 @@ public class BulletTime : CharacterAbility,
                 return;
             }
             case CorgiEngineEventTypes.LevelEnd: {
+                ExitBulletTime();
+                return;
+            }
+            case CorgiEngineEventTypes.PlayerDeath:
+            {
                 ExitBulletTime();
                 return;
             }
