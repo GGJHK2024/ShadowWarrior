@@ -246,6 +246,7 @@
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIActionResetTarget.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\GUI\ButtonPrompt.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CorgiController\CorgiControllerState.cs" />
+    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Managers\EnemyManager.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterInventory.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIActionPatrolWithinBounds.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Demos\SuperHipsterBros\Scripts\SuperHipsterBrosHealth.cs" />

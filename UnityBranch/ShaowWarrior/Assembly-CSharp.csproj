@@ -45,6 +45,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
     <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Shaders\GreyScale.shader" />
     <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Shaders\VerticalGradient.shader" />
+    <None Include="Assets\Art\Shaders\Outline.shader" />
     <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\readme.txt" />
     <None Include="Assets\Third-Party\CorgiEngine\readme.txt" />
     <None Include="Assets\Third-Party\CorgiEngine\license.txt" />

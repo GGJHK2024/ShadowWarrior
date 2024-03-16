@@ -218,6 +218,90 @@ MonoBehaviour:
         ApplyScale: 0
         ForceSimulationSpeed: 0
         ForcedSimulationSpeed: {x: 0.1, y: 1}
+--- !u!1 &5040441584229653086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8175749020719933579}
+  - component: {fileID: 331605110010588336}
+  m_Layer: 0
+  m_Name: Pre-Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8175749020719933579
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5040441584229653086}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.01, y: 1.28, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6860181345986056332}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &331605110010588336
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5040441584229653086}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: e6c53147aa6b6154cbe7b2ca7b0c835c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.56, y: 2.56}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &5344026352212583105
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +551,11 @@ GameObject:
   - component: {fileID: 6818980704704118929}
   - component: {fileID: 6818980704704118928}
   - component: {fileID: 6818980704704118927}
+  - component: {fileID: 172889937008836105}
+  - component: {fileID: 8644780742987462159}
+  - component: {fileID: 7814626704060130512}
+  - component: {fileID: 7744435635035989323}
+  - component: {fileID: 4097391535564822741}
   m_Layer: 13
   m_Name: RobotA
   m_TagString: Untagged
@@ -488,6 +577,7 @@ Transform:
   m_Children:
   - {fileID: 3041834703397493435}
   - {fileID: 4825450947752873478}
+  - {fileID: 8175749020719933579}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -778,7 +868,7 @@ MonoBehaviour:
   RepositionToInitOnPlayerRespawn: 0
   DisableOnKill: 1
   AutoRespawnDuration: 0
-  AutoRespawnAmount: 3
+  AutoRespawnAmount: -1
   AutoRespawnRemainingAmount: 3
   IgnoreCheckpointsAlwaysRespawn: 1
   AssociatedCheckpoints: []
@@ -797,6 +887,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterType: 1
   PlayerID: 
+  spriteRenderer: {fileID: 6860181345998993036}
+  normalMat: {fileID: 2100000, guid: 62e6460cdd3fa1e4196e54a57b629913, type: 2}
+  outlineMat: {fileID: 2100000, guid: 19a7437c266059d45a79d1f59064d221, type: 2}
   InitialFacingDirection: 0
   DirectionOnSpawn: 0
   CharacterAnimator: {fileID: 6860181345995620204}
@@ -1040,8 +1133,8 @@ MonoBehaviour:
     m_Bits: 512
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 10
-  MaxDamageCaused: 10
+  MinDamageCaused: 1
+  MaxDamageCaused: 1
   TypedDamages: []
   DamageCausedKnockbackType: 1
   DamageCausedKnockbackDirection: 0
@@ -1084,6 +1177,31 @@ MonoBehaviour:
     Transitions:
       array:
       - Decision: {fileID: 6818980704704118930}
+        TrueState: Pre-Attack
+        FalseState: 
+  - StateName: Pre-Attack
+    Actions:
+      array:
+      - {fileID: 6818980704704118928}
+    Transitions:
+      array:
+      - Decision: {fileID: 6818980704704118930}
+        TrueState: 
+        FalseState: Idle
+      - Decision: {fileID: 172889937008836105}
+        TrueState: ShowMark
+        FalseState: 
+  - StateName: ShowMark
+    Actions:
+      array:
+      - {fileID: 6818980704704118928}
+      - {fileID: 7814626704060130512}
+    Transitions:
+      array:
+      - Decision: {fileID: 6818980704704118930}
+        TrueState: 
+        FalseState: Idle
+      - Decision: {fileID: 8644780742987462159}
         TrueState: Alert
         FalseState: 
   - StateName: Alert
@@ -1096,6 +1214,9 @@ MonoBehaviour:
       - Decision: {fileID: 6818980704704118930}
         TrueState: 
         FalseState: Idle
+      - Decision: {fileID: 7744435635035989323}
+        TrueState: ShowMark
+        FalseState: 
   TimeInThisState: 0
   Target: {fileID: 0}
   _lastKnownTargetPosition: {x: 0, y: 0, z: 0}
@@ -1192,3 +1313,82 @@ MonoBehaviour:
   AimAtTarget: 0
   TargetOffset: {x: 0, y: 0, z: 0}
   TargetHandleWeapon: {fileID: 0}
+  isMeleeWeapon: 0
+--- !u!114 &172889937008836105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6860181345986219180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b7939ffd2f5df4e8efb5fa83e99637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: "\u53D1\u73B0\u73A9\u5BB6\u5230\u9884\u8B66\u4E2D\u95F4\u7684\u95F4\u9694\u65F6\u95F4"
+  AfterTimeMin: 1
+  AfterTimeMax: 1
+--- !u!114 &8644780742987462159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6860181345986219180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b7939ffd2f5df4e8efb5fa83e99637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: "\u9884\u8B66\u65F6\u95F4"
+  AfterTimeMin: 0.5
+  AfterTimeMax: 0.5
+--- !u!114 &7814626704060130512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6860181345986219180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d875bf2f499814cbe8ea4de8166b4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 1
+  Label: 
+  PreAttactComp: {fileID: 4097391535564822741}
+--- !u!114 &7744435635035989323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6860181345986219180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b7939ffd2f5df4e8efb5fa83e99637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: "\u5B9E\u9645\u9020\u6210\u4F24\u5BB3\u7684\u653B\u51FB\u52A8\u753B\u65F6\u957F"
+  AfterTimeMin: 0.5
+  AfterTimeMax: 0.5
+--- !u!114 &4097391535564822741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6860181345986219180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06081068c7a5ba84faaca22f4d477542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStopFeedbacks: {fileID: 0}
+  AbilityPermitted: 1
+  BlockingMovementStates: 
+  BlockingConditionStates: 
+  BlockingWeaponStates: 

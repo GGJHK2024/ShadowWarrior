@@ -36,6 +36,14 @@ namespace MoreMountains.CorgiEngine
 		public string PlayerID = "";				
 		/// the various states of the character
 		public CharacterStates CharacterState { get; protected set; }
+
+		[Header("Renderer")] 
+		[MMInformation("sprite renderer for character",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]
+		public SpriteRenderer spriteRenderer;
+		[MMInformation("normal material for sprite renderer",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]
+		public Material normalMat;
+		[MMInformation("outline material for sprite renderer",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]
+		public Material outlineMat;
 	
 		[Header("Direction")]
 		[MMInformation("It's usually good practice to build all your characters facing right. If that's not the case of this character, select Left instead.",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]
@@ -255,7 +263,7 @@ namespace MoreMountains.CorgiEngine
 			GetMainCamera();
 			// we store our components for further use 
 			CharacterState = new CharacterStates();
-			_spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
+			_spriteRenderer = (this.spriteRenderer == null) ? this.gameObject.GetComponent<SpriteRenderer>() : this.spriteRenderer;
 			_controller = this.gameObject.GetComponent<CorgiController>();
 			_characterPersistence = this.gameObject.GetComponent<CharacterPersistence>();
 			CacheAbilitiesAtInit();
@@ -427,6 +435,22 @@ namespace MoreMountains.CorgiEngine
 					_animator.logWarnings = false;
 				}
 			}
+		}
+
+		/// <summary>
+		/// 角色描边
+		/// </summary>
+		public virtual void OutlineCharacter()
+		{
+			_spriteRenderer.material = outlineMat;
+		}
+
+		/// <summary>
+		/// 取消角色描边
+		/// </summary>
+		public virtual void CancelOutlineCharacter()
+		{
+			_spriteRenderer.material = normalMat;
 		}
         
 		/// <summary>
@@ -727,6 +751,24 @@ namespace MoreMountains.CorgiEngine
 				_conditionStateBeforeFreeze = ConditionState.CurrentState;	
 			}
 			ConditionState.ChangeState(CharacterStates.CharacterConditions.Frozen);
+		}
+
+		/// <summary>
+		/// 禁用武器(冻结时玩家无法攻击敌人)
+		/// </summary>
+		public virtual void LockAbility()
+		{
+			_controller.GetComponent<CharacterHandleWeapon>().enabled = false;
+			_controller.GetComponent<CharacterHandleSecondaryWeapon>().enabled = false;
+		}
+		
+		/// <summary>
+		/// 解禁武器
+		/// </summary>
+		public virtual void UnlockAbility()
+		{
+			_controller.GetComponent<CharacterHandleWeapon>().enabled = true;
+			_controller.GetComponent<CharacterHandleSecondaryWeapon>().enabled = true;
 		}
 
 		protected CharacterStates.CharacterConditions _conditionStateBeforeFreeze;
@@ -1092,9 +1134,15 @@ namespace MoreMountains.CorgiEngine
 						Freeze();
 					return;
 				}
-				case GameEventType.UnFreeNpc: {
+				case GameEventType.UnFreezeNpc: {
 					if (CharacterType == CharacterTypes.AI)
 						UnFreeze();
+					return;
+				}
+				case GameEventType.Dead:
+				{
+					if (CharacterType == CharacterTypes.AI)
+						CancelOutlineCharacter();
 					return;
 				}
 			}

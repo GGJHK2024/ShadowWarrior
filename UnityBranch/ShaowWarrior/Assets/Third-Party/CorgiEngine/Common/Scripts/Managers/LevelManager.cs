@@ -708,6 +708,8 @@ namespace MoreMountains.CorgiEngine
 			{
 				if (freezePlayer || player.CharacterType != Character.CharacterTypes.Player)
 					player.Freeze();
+				if (player.CharacterType == Character.CharacterTypes.Player)
+					player.LockAbility();
 			}
 		}
 
@@ -719,6 +721,8 @@ namespace MoreMountains.CorgiEngine
 			foreach (Character player in Players)
 			{
 				player.UnFreeze();
+				if (player.CharacterType == Character.CharacterTypes.Player)
+					player.UnlockAbility();
 			}
 
 		}

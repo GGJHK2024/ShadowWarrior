@@ -290,28 +290,40 @@ namespace MoreMountains.CorgiEngine
 			if (!ApplyDamageOnTriggerEnter)
 			{
 				return;
-			}		
+			}
+
+			BounceCheck(collider);
 			Colliding (collider);
 		}
 
-		protected virtual void Colliding(Collider2D collider)
+		/// <summary>
+		/// 往layer mask中添加层
+		/// </summary>
+		/// <param name="layer"></param>
+		public void AddLayerMask(int layer)
 		{
+			TargetLayerMask = TargetLayerMask |= (1 << layer);
+		}
 
-			if (!this.isActiveAndEnabled)
-			{
-				return;
-			}
+		/// <summary>
+		/// 往layer mask中移除层
+		/// </summary>
+		/// <param name="layer"></param>
+		public void RemoveLayerMask(int layer)
+		{
+			TargetLayerMask = TargetLayerMask &= ~(1 << layer);
+		}
 
-			// if the object we're colliding with is part of our ignore list, we do nothing and exit
-			if (_ignoredGameObjects.Contains(collider.gameObject))
-			{
-				return;
-			}
-
+		/// <summary>
+		/// 弹反检测
+		/// </summary>
+		/// <param name="collider"></param>
+		private void BounceCheck(Collider2D collider)
+		{
 			_collidingCollider = collider;
 			Weapon ownerWeapon;
 			DamageOnTouch enemyTouch;
-			if ( Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 13) {
+			if ( this.gameObject.layer!=12 && Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 13) {
 				print("武器攻击到敌人");
 				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player && ownerWeapon.damageSrcType == DamageSrcType.B)				
 				{
@@ -331,31 +343,52 @@ namespace MoreMountains.CorgiEngine
 					
 				}
 			}
-			if ( Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 12) {
+			if ( this.gameObject.layer!=12 && Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 12) {
 				print("武器攻击到子弹");
 				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player && ownerWeapon.damageSrcType == DamageSrcType.B)				
 				{
 					print("是玩家，且攻击类型为B（弹反）");
 					collider.gameObject.GetComponent<Projectile>().SetOwner(Owner);
 					collider.gameObject.GetComponent<Projectile>().SetDamage(999);
-					collider.gameObject.GetComponent<Projectile>().SetDirection(new Vector3(1,0,0),new Quaternion(0,0,0,0),true);
+					// 将player(9)移除出伤害的layermask
+					collider.gameObject.GetComponent<DamageOnTouch>().TargetLayerMask &= ~(1 << 9);
+					// 将enemy(13)加入伤害的layermask
+					collider.gameObject.GetComponent<DamageOnTouch>().TargetLayerMask |= (1 << 13);
 					ownerWeapon.WeaponBounceSuccessFar();	// 远程弹反效果
-					// collider.gameObject.SetActive(false);
+					Vector3 _mousePosition;
+					#if !ENABLE_INPUT_SYSTEM || ENABLE_LEGACY_INPUT_MANAGER
+						_mousePosition = Input.mousePosition;
+					#else
+						_mousePosition = Mouse.current.position.ReadValue();
+					#endif
+					_mousePosition.z = Camera.main.transform.position.z * -1;
+
+					Vector3 direction = Camera.main.ScreenToWorldPoint(_mousePosition) - Owner.transform.position;
+					
+					collider.gameObject.GetComponent<Projectile>().SetDirection(Vector3.Normalize(direction)
+						, collider.gameObject.transform.rotation);
+					
 					MMGameEvent.Trigger(GameEventType.BounceSuccess);
 					return;
-					// 鼠标移动方向代表子弹未来的飞行方向
-						/*var hp = collider.gameObject.GetComponent<Health>();
-						if (hp!= null) {
-							hp.Kill();
-							print("弹反成功");
-							ownerWeapon.WeaponBounceSuccessNear();	// 近战效果
-							MMGameEvent.Trigger(GameEventType.BounceSuccess);
-							return;
-						}*/
-					
-					
+
 				}
 			}
+		}
+
+		protected virtual void Colliding(Collider2D collider)
+		{
+
+			if (!this.isActiveAndEnabled)
+			{
+				return;
+			}
+
+			// if the object we're colliding with is part of our ignore list, we do nothing and exit
+			if (_ignoredGameObjects.Contains(collider.gameObject))
+			{
+				return;
+			}
+			
 
 			// if what we're colliding with isn't part of the target layers, we do nothing and exit
 			if (!MMLayers.LayerInLayerMask(collider.gameObject.layer,TargetLayerMask))
