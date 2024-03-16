@@ -63,7 +63,6 @@ public class BulletTime : CharacterAbility,
     public override void ProcessAbility()
     {
         if (_isBulletTime) {
-            // print("现在，请玩家选择需要斩杀的敌人");
             // 原先的计时大招功能，现在改为选择敌人
             /*_bulletTime -= Time.deltaTime;
             _isBulletTime = _bulletTime > 0;*/
@@ -78,12 +77,14 @@ public class BulletTime : CharacterAbility,
                     if (enemies.Contains(currentEne))
                     {
                         enemies.Remove(currentEne);
-                        Debug.Log("移除：" + hit.collider.gameObject.name);
+                        currentEne.GetComponent<Character>().CancelOutlineCharacter();
+                        // Debug.Log("移除：" + hit.collider.gameObject.name);
                     }
                     else
                     {
                         enemies.Add(currentEne);
-                        Debug.Log("选中：" + hit.collider.gameObject.name);
+                        currentEne.GetComponent<Character>().OutlineCharacter();
+                        // Debug.Log("选中：" + hit.collider.gameObject.name);
                     }
                 }
             }

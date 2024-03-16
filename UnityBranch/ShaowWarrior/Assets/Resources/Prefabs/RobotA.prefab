@@ -887,6 +887,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterType: 1
   PlayerID: 
+  spriteRenderer: {fileID: 6860181345998993036}
+  normalMat: {fileID: 2100000, guid: 62e6460cdd3fa1e4196e54a57b629913, type: 2}
+  outlineMat: {fileID: 2100000, guid: 19a7437c266059d45a79d1f59064d221, type: 2}
   InitialFacingDirection: 0
   DirectionOnSpawn: 0
   CharacterAnimator: {fileID: 6860181345995620204}
