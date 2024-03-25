@@ -633,6 +633,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11489144, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
+      propertyPath: CurrentLives
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489144, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
+      propertyPath: MaximumLives
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489144, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
+      propertyPath: GameOverScene
+      value: CharacterControl
+      objectReference: {fileID: 0}
     - target: {fileID: 349811737, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
       propertyPath: bulletTime
       value: 0
@@ -1012,6 +1024,10 @@ PrefabInstance:
     - target: {fileID: 100004, guid: ace2d4bf56f98df4196ff81845a465d7, type: 3}
       propertyPath: m_Name
       value: UICamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 162938, guid: ace2d4bf56f98df4196ff81845a465d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: ace2d4bf56f98df4196ff81845a465d7, type: 3}
       propertyPath: m_RootOrder
