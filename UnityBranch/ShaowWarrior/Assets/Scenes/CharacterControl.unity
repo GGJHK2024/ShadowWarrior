@@ -3223,8 +3223,8 @@ MonoBehaviour:
   ManualUpDownLookDistance: 3
   ResetSpeed: 0.5
   CameraSpeed: 0.3
-  MinimumZoom: 5
-  MaximumZoom: 10
+  MinimumZoom: 10
+  MaximumZoom: 20
   ZoomSpeed: 0.4
   PixelPerfect: 0
   ReferenceVerticalResolution: 768
