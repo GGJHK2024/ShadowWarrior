@@ -957,8 +957,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: "\u9884\u8B66\u65F6\u95F4"
-  AfterTimeMin: 0.5
-  AfterTimeMax: 0.5
+  AfterTimeMin: 0.4
+  AfterTimeMax: 0.4
 --- !u!114 &5893394884078251563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -972,8 +972,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: "\u53D1\u73B0\u73A9\u5BB6\u5230\u9884\u8B66\u4E2D\u95F4\u7684\u95F4\u9694\u65F6\u95F4"
-  AfterTimeMin: 1
-  AfterTimeMax: 1
+  AfterTimeMin: 0.8
+  AfterTimeMax: 0.8
 --- !u!114 &167059064127891269
 MonoBehaviour:
   m_ObjectHideFlags: 0
