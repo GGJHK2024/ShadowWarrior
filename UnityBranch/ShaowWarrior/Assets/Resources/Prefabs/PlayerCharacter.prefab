@@ -4933,7 +4933,7 @@ MonoBehaviour:
   outlineMat: {fileID: 0}
   InitialFacingDirection: 0
   DirectionOnSpawn: 1
-  CharacterAnimator: {fileID: 5257172717294899294}
+  CharacterAnimator: {fileID: 2474698593673882345}
   UseDefaultMecanim: 1
   PerformAnimatorSanityChecks: 1
   DisableAnimatorLogs: 0
@@ -100089,8 +100089,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7012612856699282688, guid: 4d1c2010694fdab4bbe781c336043d83,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 56baa078c9d42c54fa73797def90a61e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d1c2010694fdab4bbe781c336043d83, type: 3}
+--- !u!95 &2474698593673882345 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7012612856699282688, guid: 4d1c2010694fdab4bbe781c336043d83,
+    type: 3}
+  m_PrefabInstance: {fileID: 4829595476824346601}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5797666607726789664 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1401561149304064969, guid: 4d1c2010694fdab4bbe781c336043d83,
