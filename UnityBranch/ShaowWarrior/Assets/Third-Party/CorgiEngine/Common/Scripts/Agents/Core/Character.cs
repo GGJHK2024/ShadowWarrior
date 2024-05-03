@@ -1141,8 +1141,14 @@ namespace MoreMountains.CorgiEngine
 				}
 				case GameEventType.Dead:
 				{
+					if (CharacterType == CharacterTypes.Player)
+					{
+						UnlockAbility();
+					}
 					if (CharacterType == CharacterTypes.AI)
+					{
 						CancelOutlineCharacter();
+					}
 					return;
 				}
 			}
