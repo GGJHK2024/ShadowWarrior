@@ -172,8 +172,8 @@ MonoBehaviour:
     m_Bits: 8448
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 1
-  MaxDamageCaused: 1
+  MinDamageCaused: 25
+  MaxDamageCaused: 25
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
@@ -311,8 +311,8 @@ MonoBehaviour:
     m_Bits: 8448
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 1
-  MaxDamageCaused: 1
+  MinDamageCaused: 25
+  MaxDamageCaused: 25
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
@@ -450,8 +450,8 @@ MonoBehaviour:
     m_Bits: 8448
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 1
-  MaxDamageCaused: 1
+  MinDamageCaused: 25
+  MaxDamageCaused: 25
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
