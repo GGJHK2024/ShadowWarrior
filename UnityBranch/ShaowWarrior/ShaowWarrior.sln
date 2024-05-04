@@ -31,9 +31,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreMountains.Feedbacks.Aut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreMountains.Tools.Editor", "MoreMountains.Tools.Editor.csproj", "{d5b0966b-e42c-36b1-ba9a-9b193f300eb6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreMountains.Feedbacks.Editor", "MoreMountains.Feedbacks.Editor.csproj", "{1f53b246-03cc-ec99-9b52-6fc3e93a7417}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{94c9c6a2-a98f-771a-9c9f-0dcd32c55366}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreMountains.Feedbacks.Editor", "MoreMountains.Feedbacks.Editor.csproj", "{1f53b246-03cc-ec99-9b52-6fc3e93a7417}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreMountains.CorgiEngine.Editor", "MoreMountains.CorgiEngine.Editor.csproj", "{58807224-1aae-7f25-fe68-cb118b2e9233}"
 EndProject
@@ -78,10 +78,10 @@ Global
 		{fa70a0ac-3734-7cbb-c9a8-02ece6317055}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{d5b0966b-e42c-36b1-ba9a-9b193f300eb6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{d5b0966b-e42c-36b1-ba9a-9b193f300eb6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1f53b246-03cc-ec99-9b52-6fc3e93a7417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1f53b246-03cc-ec99-9b52-6fc3e93a7417}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94c9c6a2-a98f-771a-9c9f-0dcd32c55366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{94c9c6a2-a98f-771a-9c9f-0dcd32c55366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1f53b246-03cc-ec99-9b52-6fc3e93a7417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1f53b246-03cc-ec99-9b52-6fc3e93a7417}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58807224-1aae-7f25-fe68-cb118b2e9233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{58807224-1aae-7f25-fe68-cb118b2e9233}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{869adf9f-0e0a-b7f0-8027-e46997b02777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
