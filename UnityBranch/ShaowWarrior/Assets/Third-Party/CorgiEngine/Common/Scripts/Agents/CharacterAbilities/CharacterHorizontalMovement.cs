@@ -244,19 +244,19 @@ namespace MoreMountains.CorgiEngine
 			if (_verticalMovement > InputThreshold)
 			{
 				_normalizedVerticalSpeed = _verticalMovement;
-				if (!_character.IsFacingRight && canFlip && FlipCharacterToFaceDirection)
+				/*if (!_character.IsFacingRight && canFlip && FlipCharacterToFaceDirection)
 				{
 					_character.Flip();
-				}					
+				}	*/				
 			}		
 			// If it's negative, then we're facing left
 			else if (_verticalMovement < -InputThreshold)
 			{
 				_normalizedVerticalSpeed = _verticalMovement;
-				if (_character.IsFacingRight && canFlip && FlipCharacterToFaceDirection)
+				/*if (_character.IsFacingRight && canFlip && FlipCharacterToFaceDirection)
 				{
 					_character.Flip();
-				}					
+				}*/					
 			}
 			else
 			{
