@@ -92,9 +92,13 @@ namespace MoreMountains.CorgiEngine
 		public float ContextSpeedMultiplier => ContextSpeedStack.Count > 0 ? ContextSpeedStack.Peek() : 1;
                 
 		protected float _horizontalMovement;
+		protected float _verticalMovement;
 		protected float _lastGroundedHorizontalMovement;
+		protected float _lastGroundedVerticalMovement;
 		protected float _horizontalMovementForce;
+		protected float _verticalMovementForce;
 		protected float _normalizedHorizontalSpeed;
+		protected float _normalizedVerticalSpeed;
 		protected float _lastTimeGrounded = 0f;
 		protected float _initialMovementSpeedMultiplier;
 
@@ -125,7 +129,6 @@ namespace MoreMountains.CorgiEngine
 		public override void ProcessAbility()
 		{
 			base.ProcessAbility();
-
 			HandleHorizontalMovement();
 			DetectWalls(true);
 		}
@@ -142,12 +145,14 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			_horizontalMovement = _horizontalInput;
+			_verticalMovement = _verticalInput;
 
 			if ((AirControl < 1f) 
 			    && !_controller.State.IsGrounded
 			    && (_character.MovementState.CurrentState != CharacterStates.MovementStates.WallClinging))
 			{
 				_horizontalMovement = Mathf.Lerp(_lastGroundedHorizontalMovement, _horizontalInput, AirControl);
+				_verticalMovement = Mathf.Lerp(_lastGroundedVerticalMovement, _verticalInput, AirControl);
 			}
 		}
 
@@ -167,6 +172,10 @@ namespace MoreMountains.CorgiEngine
 		public virtual void SetHorizontalMove(float value)
 		{
 			_horizontalMovement = value;
+		}
+		public virtual void SetVerticalMove(float value)
+		{
+			_verticalMovement = value;
 		}
 
 		/// <summary>
@@ -200,6 +209,7 @@ namespace MoreMountains.CorgiEngine
 			if (MovementForbidden)
 			{
 				_horizontalMovement = _character.Airborne ? _controller.Speed.x * Time.deltaTime : 0f;
+				_verticalMovement = _character.Airborne ? _controller.Speed.y * Time.deltaTime : 0f;
 				canFlip = false;
 			}
 
@@ -230,6 +240,28 @@ namespace MoreMountains.CorgiEngine
 			{
 				_normalizedHorizontalSpeed = 0;
 			}
+			// If the value of the vertical axis is positive, the character must face right.
+			if (_verticalMovement > InputThreshold)
+			{
+				_normalizedVerticalSpeed = _verticalMovement;
+				if (!_character.IsFacingRight && canFlip && FlipCharacterToFaceDirection)
+				{
+					_character.Flip();
+				}					
+			}		
+			// If it's negative, then we're facing left
+			else if (_verticalMovement < -InputThreshold)
+			{
+				_normalizedVerticalSpeed = _verticalMovement;
+				if (_character.IsFacingRight && canFlip && FlipCharacterToFaceDirection)
+				{
+					_character.Flip();
+				}					
+			}
+			else
+			{
+				_normalizedVerticalSpeed = 0;
+			}
 
 			/// if we're dashing, we stop there
 			if (_movement.CurrentState == CharacterStates.MovementStates.Dashing)
@@ -240,6 +272,7 @@ namespace MoreMountains.CorgiEngine
 			// if we're grounded and moving, and currently Idle, Dangling or Falling, we become Walking
 			if ( (_controller.State.IsGrounded)
 			     && (_normalizedHorizontalSpeed != 0)
+			     && (_normalizedVerticalSpeed != 0)
 			     && ( (_movement.CurrentState == CharacterStates.MovementStates.Idle)
 			          || (_movement.CurrentState == CharacterStates.MovementStates.Dangling)
 			          || (_movement.CurrentState == CharacterStates.MovementStates.Falling)))
@@ -262,7 +295,7 @@ namespace MoreMountains.CorgiEngine
 
 			// if we're walking and not moving anymore, we go back to the Idle state
 			if ((_movement.CurrentState == CharacterStates.MovementStates.Walking) 
-			    && (_normalizedHorizontalSpeed == 0))
+			    && (_normalizedHorizontalSpeed == 0) && (_normalizedVerticalSpeed == 0))
 			{
 				_movement.ChangeState(CharacterStates.MovementStates.Idle);
 				PlayAbilityStopFeedbacks();
@@ -283,50 +316,59 @@ namespace MoreMountains.CorgiEngine
 			{
 				if (_normalizedHorizontalSpeed > 0f) { _normalizedHorizontalSpeed = 1f; }
 				if (_normalizedHorizontalSpeed < 0f) { _normalizedHorizontalSpeed = -1f; }
+				if (_normalizedVerticalSpeed > 0f) { _normalizedVerticalSpeed = 1f; }
+				if (_normalizedVerticalSpeed < 0f) { _normalizedVerticalSpeed = -1f; }
 			}
 
 			// we pass the horizontal force that needs to be applied to the controller.
 			float groundAcceleration = _controller.Parameters.SpeedAccelerationOnGround;
 			float airAcceleration = _controller.Parameters.SpeedAccelerationInAir;
 			
-			if (_controller.Parameters.UseSeparateDecelerationOnGround && (Mathf.Abs(_horizontalMovement) < InputThreshold))
+			if (_controller.Parameters.UseSeparateDecelerationOnGround && (Mathf.Abs(_horizontalMovement) < InputThreshold) && (Mathf.Abs(_verticalMovement) < InputThreshold))
 			{
 				groundAcceleration = _controller.Parameters.SpeedDecelerationOnGround;
 			}
-			if (_controller.Parameters.UseSeparateDecelerationInAir && (Mathf.Abs(_horizontalMovement) < InputThreshold))
+			if (_controller.Parameters.UseSeparateDecelerationInAir && (Mathf.Abs(_horizontalMovement) < InputThreshold) && (Mathf.Abs(_verticalMovement) < InputThreshold))
 			{
 				airAcceleration = _controller.Parameters.SpeedDecelerationInAir;
 			}
 			
 			float movementFactor = _controller.State.IsGrounded ? groundAcceleration : airAcceleration;
-			float movementSpeed = _normalizedHorizontalSpeed * MovementSpeed * _controller.Parameters.SpeedFactor * MovementSpeedMultiplier * ContextSpeedMultiplier * AbilityMovementSpeedMultiplier * StateSpeedMultiplier * PushSpeedMultiplier;
+			float horizontalMovementSpeed = _normalizedHorizontalSpeed * MovementSpeed * _controller.Parameters.SpeedFactor * MovementSpeedMultiplier * ContextSpeedMultiplier * AbilityMovementSpeedMultiplier * StateSpeedMultiplier * PushSpeedMultiplier;
+			float verticalMovementSpeed = _normalizedVerticalSpeed * MovementSpeed * _controller.Parameters.SpeedFactor * MovementSpeedMultiplier * ContextSpeedMultiplier * AbilityMovementSpeedMultiplier * StateSpeedMultiplier * PushSpeedMultiplier;
                         
 			if (InstantAcceleration && (_movement.CurrentState != CharacterStates.MovementStates.WallJumping))
 			{
 				// if we are in instant acceleration mode, we just apply our movement speed
-				_horizontalMovementForce = movementSpeed;
+				_horizontalMovementForce = horizontalMovementSpeed;
+				_verticalMovementForce = verticalMovementSpeed;
 
 				// and any external forces that may be active right now
 				if (Mathf.Abs(_controller.ExternalForce.x) > 0)
 				{
 					_horizontalMovementForce += _controller.ExternalForce.x;
+					_verticalMovementForce += _controller.ExternalForce.y;
 				}                
 			}
 			else
 			{
 				// if we are not in instant acceleration mode, we lerp towards our movement speed
-				_horizontalMovementForce = Mathf.Lerp(_controller.Speed.x, movementSpeed, Time.deltaTime * movementFactor);
+				_horizontalMovementForce = Mathf.Lerp(_controller.Speed.x, horizontalMovementSpeed, Time.deltaTime * movementFactor);
+				_verticalMovementForce = Mathf.Lerp(_controller.Speed.y, verticalMovementSpeed, Time.deltaTime * movementFactor);
 			}			
 						
 			// we handle friction
 			_horizontalMovementForce = HandleFriction(_horizontalMovementForce);
+			_verticalMovementForce = HandleFriction(_verticalMovementForce);
 
 			// we set our newly computed speed to the controller
 			_controller.SetHorizontalForce(_horizontalMovementForce);
+			_controller.SetVerticalForce(_verticalMovementForce);
 
 			if (_controller.State.IsGrounded)
 			{
 				_lastGroundedHorizontalMovement = _horizontalMovement;
+				_lastGroundedVerticalMovement = _verticalMovement;
 			}            
 		}
 
@@ -501,7 +543,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public override void UpdateAnimator()
 		{
-			MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _speedAnimationParameter, Mathf.Abs(_normalizedHorizontalSpeed), _character._animatorParameters, _character.PerformAnimatorSanityChecks);
+			MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _speedAnimationParameter, Mathf.Max(Mathf.Abs(_normalizedHorizontalSpeed),Mathf.Abs(_normalizedVerticalSpeed)), _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 			MMAnimatorExtensions.UpdateAnimatorBool(_animator, _walkingAnimationParameter, (_movement.CurrentState == CharacterStates.MovementStates.Walking), _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 			MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _relativeSpeedAnimationParameter, _character.IsFacingRight ? _controller.Speed.x : -_controller.Speed.x, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 		}

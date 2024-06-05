@@ -4866,7 +4866,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4135398658232238}
   - component: {fileID: 114473069959786316}
-  - component: {fileID: 50328071504155050}
   - component: {fileID: 61893930711871926}
   - component: {fileID: 114993703828558004}
   - component: {fileID: 114961038306698606}
@@ -4875,7 +4874,6 @@ GameObject:
   - component: {fileID: 114339136294938960}
   - component: {fileID: 114067210621431476}
   - component: {fileID: 114767941446374776}
-  - component: {fileID: 114720526364534534}
   - component: {fileID: 114703903213212616}
   - component: {fileID: 114238553675504360}
   - component: {fileID: 114225984267732342}
@@ -4890,6 +4888,7 @@ GameObject:
   - component: {fileID: 2319153850315743078}
   - component: {fileID: 6188829867604265156}
   - component: {fileID: 6036360106904762168}
+  - component: {fileID: 6148686223741653918}
   m_Layer: 9
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -4952,27 +4951,6 @@ MonoBehaviour:
   AirborneDistance: 0.5
   AirborneMinimumTime: 0.1
   CharacterBrain: {fileID: 0}
---- !u!50 &50328071504155050
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 0
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &61893930711871926
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5012,7 +4990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultParameters:
-    Gravity: -35
+    Gravity: 0
     FallMultiplier: 1.5
     AscentMultiplier: 1
     MaxVelocity: {x: 100, y: 100}
@@ -5299,27 +5277,6 @@ MonoBehaviour:
   ReadInput: 1
   AutoRun: 0
   AutoRunThreshold: 0.6
---- !u!114 &114720526364534534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a40489dc31af43749444be35e176198, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  HorizontalInputThreshold: 0.5
-  MoveCameraTarget: 1
-  CameraTargetOffset: {x: 0, y: 6, z: 0}
 --- !u!114 &114703903213212616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5383,7 +5340,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d66436e6d24d864b98c208398356163, type: 3}
   m_Name: 
@@ -5397,7 +5354,7 @@ MonoBehaviour:
   SubjectToGravityPoints: 1
   SubjectToGravityZones: 1
   ReverseHorizontalInputWhenUpsideDown: 1
-  ReverseVerticalInputWhenUpsideDown: 0
+  ReverseVerticalInputWhenUpsideDown: 1
   ReverseInputOnGravityPoints: 0
   InitialGravityAngle: 0
   RotationSpeed: 0
@@ -5669,6 +5626,27 @@ MonoBehaviour:
   OnUnpause:
     m_PersistentCalls:
       m_Calls: []
+--- !u!50 &6148686223741653918
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1693914667617252
 GameObject:
   m_ObjectHideFlags: 0
