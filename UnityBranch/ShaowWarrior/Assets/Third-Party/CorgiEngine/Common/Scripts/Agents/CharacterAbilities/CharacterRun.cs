@@ -101,11 +101,11 @@ namespace MoreMountains.CorgiEngine
 		protected virtual void HandleRunningExit()
 		{
 			// if we're running and not grounded, we change our state to Falling
-			if (!_controller.State.IsGrounded && (_movement.CurrentState == CharacterStates.MovementStates.Running) && _startFeedbackIsPlaying)
+			/*if (!_controller.State.IsGrounded && (_movement.CurrentState == CharacterStates.MovementStates.Running) && _startFeedbackIsPlaying)
 			{
 				_movement.ChangeState(CharacterStates.MovementStates.Falling);
 				StopFeedbacks ();
-			}
+			}*/
 
 			if (StopRunAtLowSpeed)
 			{
@@ -124,10 +124,10 @@ namespace MoreMountains.CorgiEngine
 				}	
 			}
 
-			if ((!_controller.State.IsGrounded) && _startFeedbackIsPlaying)
+			/*if ((!_controller.State.IsGrounded) && _startFeedbackIsPlaying)
 			{
 				StopFeedbacks ();
-			}
+			}*/
 
 			if ((_movement.CurrentState != CharacterStates.MovementStates.Running) && _startFeedbackIsPlaying)
 			{
@@ -141,7 +141,6 @@ namespace MoreMountains.CorgiEngine
 		public virtual void RunStart()
 		{
 			if ( !AbilityAuthorized // if the ability is not permitted
-			     || (!_controller.State.IsGrounded) // or if we're not grounded
 			     || (_condition.CurrentState != CharacterStates.CharacterConditions.Normal) // or if we're not in normal conditions
 			     || (_movement.CurrentState != CharacterStates.MovementStates.Walking) ) // or if we're not walking
 			{

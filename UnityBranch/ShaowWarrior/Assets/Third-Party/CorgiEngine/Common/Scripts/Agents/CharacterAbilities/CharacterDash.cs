@@ -209,12 +209,12 @@ namespace MoreMountains.CorgiEngine
 						SetSuccessiveDashesLeft(SuccessiveDashAmount);
 					}
 					break;
-				case SuccessiveDashResetMethods.Grounded:
+				/*case SuccessiveDashResetMethods.Grounded:
 					if (_controller.State.IsGrounded)
 					{
 						SetSuccessiveDashesLeft(SuccessiveDashAmount);
 					}
-					break;
+					break;*/
 			}
 		}
 
@@ -340,10 +340,10 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void CheckAutoCorrectTrajectory()
 		{
-			if (AutoCorrectTrajectory && _controller.State.IsCollidingBelow && (_dashDirection.y < 0f))
+			/*if (AutoCorrectTrajectory && _controller.State.IsCollidingBelow && (_dashDirection.y < 0f))
 			{
 				_dashDirection.y = 0f;
-			}
+			}*/
 		}
 
 		/// <summary>
@@ -478,15 +478,15 @@ namespace MoreMountains.CorgiEngine
 
 			// once the boost is complete, if we were dashing, we make it stop and start the dash cooldown
 			if (_movement.CurrentState == CharacterStates.MovementStates.Dashing)
-			{
+			{/*
 				if (_controller.State.IsGrounded)
 				{
 					_movement.ChangeState(CharacterStates.MovementStates.Idle);
 				}
 				else
-				{
+				{*/
 					_movement.RestorePreviousState();
-				}                
+				//}                
 			}
 		}
 
