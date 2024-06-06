@@ -4872,7 +4872,6 @@ GameObject:
   - component: {fileID: 114552395418788484}
   - component: {fileID: 114937525856734860}
   - component: {fileID: 114339136294938960}
-  - component: {fileID: 114067210621431476}
   - component: {fileID: 114767941446374776}
   - component: {fileID: 114703903213212616}
   - component: {fileID: 114238553675504360}
@@ -4880,7 +4879,6 @@ GameObject:
   - component: {fileID: 1317080086058223983}
   - component: {fileID: 7685581920512844800}
   - component: {fileID: 6128989258588890776}
-  - component: {fileID: 4151680715047685173}
   - component: {fileID: 50674036483007916}
   - component: {fileID: 6013052751628331425}
   - component: {fileID: 6689899119192264510}
@@ -5184,7 +5182,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2bb48ea7e7fc4c0fa43dce17235f4f1, type: 3}
   m_Name: 
@@ -5195,8 +5193,8 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  DashDistance: 10
-  DashForce: 40
+  DashDistance: 3
+  DashForce: 18
   ResetForcesOnExit: 1
   ForceExactDistance: 0
   DetachFromMovingPlatformsOnDash: 0
@@ -5210,47 +5208,13 @@ MonoBehaviour:
   FlipCharacterIfNeeded: 1
   AutoCorrectTrajectory: 1
   DashDirectionMinThreshold: 0.1
-  DashCooldown: 1
+  DashCooldown: 3
   LimitedDashes: 0
   SuccessiveDashAmount: 1
   SuccessiveDashesLeft: 1
   SuccessiveDashResetMethod: 0
   SuccessiveDashResetDuration: 2
   InvincibleWhileDashing: 1
---- !u!114 &114067210621431476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1c1a8bab4d234998bcbc559bb58fa11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 6773202691821123309}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  NumberOfJumps: 2
-  JumpHeight: 4
-  JumpRestrictions: 1
-  ResetCameraOffsetOnJump: 0
-  CanJumpDownOneWayPlatforms: 1
-  FixedAerialJumpCount: 0
-  JumpIsProportionalToThePressTime: 1
-  JumpMinimumAirTime: 0.1
-  JumpReleaseForceFactor: 2
-  CoyoteTime: 0
-  InputBufferDuration: 0
-  OneWayPlatformsJumpCollisionOffDuration: 0.3
-  MovingPlatformsJumpCollisionOffDuration: 0.05
-  AirJumpFeedbacks: {fileID: 3283184865601537552}
-  DoubleJumpFeedbacks: {fileID: 0}
-  NumberOfJumpsLeft: 0
 --- !u!114 &114767941446374776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5433,26 +5397,6 @@ MonoBehaviour:
   InATunnel: 0
   MoveCameraTarget: 1
   CameraTargetOffset: {x: 0, y: -3, z: 0}
---- !u!114 &4151680715047685173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 157b891c059034cea94ae0c9e235df50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  ShakeParameters: {x: 1.5, y: 0.5, z: 1}
-  DiveAcceleration: 2
 --- !u!114 &50674036483007916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99936,6 +99880,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4201729181369283233, guid: 41c508cc0f12fab47a15ccb51234348e,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201729181369283233, guid: 41c508cc0f12fab47a15ccb51234348e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201729181369283233, guid: 41c508cc0f12fab47a15ccb51234348e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201729181369283233, guid: 41c508cc0f12fab47a15ccb51234348e,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.68
       objectReference: {fileID: 0}
@@ -99984,10 +99943,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4201729181369283233, guid: 41c508cc0f12fab47a15ccb51234348e,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4201729181369283244, guid: 41c508cc0f12fab47a15ccb51234348e,
         type: 3}
       propertyPath: m_Name
       value: Player65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201729181369283244, guid: 41c508cc0f12fab47a15ccb51234348e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41c508cc0f12fab47a15ccb51234348e, type: 3}
