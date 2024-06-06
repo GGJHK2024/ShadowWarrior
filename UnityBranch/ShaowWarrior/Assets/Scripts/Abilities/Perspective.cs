@@ -36,7 +36,6 @@ public class Perspective : CharacterAbility
             // y = ax + b
             remap = Math.Abs((gameObject.transform.position.y - groundPos)/mapVal);
             curScale = Mathf.Lerp(topScale, downScale, remap);
-            print("?" + remap + ", " + curScale);
             gameObject.transform.localScale = new Vector3(curScale,curScale,curScale);
         }
     }
