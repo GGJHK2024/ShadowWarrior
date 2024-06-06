@@ -140,6 +140,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void RunStart()
 		{
+			print("Running");
 			if ( !AbilityAuthorized // if the ability is not permitted
 			     || (!_controller.State.IsGrounded) // or if we're not grounded
 			     || (_condition.CurrentState != CharacterStates.CharacterConditions.Normal) // or if we're not in normal conditions

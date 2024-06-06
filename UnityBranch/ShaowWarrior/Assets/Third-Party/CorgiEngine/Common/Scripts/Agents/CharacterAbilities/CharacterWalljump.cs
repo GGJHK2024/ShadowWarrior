@@ -142,7 +142,6 @@ namespace MoreMountains.CorgiEngine
 
 			// If the character is colliding to the right with something (probably the wall)
 			wallJumpDirection = _characterWallClinging.IsFacingRightWhileWallClinging ? -1f : 1f;
-			_characterHorizontalMovement?.SetAirControlDirection(wallJumpDirection);
 			_wallJumpVector.x = wallJumpDirection * WallJumpForce.x;
 			_wallJumpVector.y = Mathf.Sqrt( 2f * WallJumpForce.y * Mathf.Abs(_controller.Parameters.Gravity));
 			

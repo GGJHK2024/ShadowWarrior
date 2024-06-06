@@ -87,7 +87,7 @@ MonoBehaviour:
   MirrorCharacterAnimatorParameters: 0
   EquippedAnimationParameter: 
   IdleAnimationParameter: 
-  StartAnimationParameter: Sword3
+  StartAnimationParameter: Bounce
   DelayBeforeUseAnimationParameter: 
   SingleUseAnimationParameter: 
   UseAnimationParameter: 
