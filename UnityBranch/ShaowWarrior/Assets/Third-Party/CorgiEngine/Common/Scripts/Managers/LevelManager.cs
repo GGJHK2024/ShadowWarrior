@@ -685,6 +685,7 @@ namespace MoreMountains.CorgiEngine
 			
 			if (CurrentCheckPoint != null)
 			{
+				GUIManager.Instance.SwitchAvater(1);
 				CurrentCheckPoint.SpawnPlayer(Players[0]);
 			}
             

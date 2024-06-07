@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
+using UnityEngine.UI;
 
 namespace MoreMountains.CorgiEngine
 {
@@ -1056,6 +1057,7 @@ namespace MoreMountains.CorgiEngine
 					if (GUIManager.HasInstance)
 					{
 						GUIManager.Instance.UpdateHealthBar(CurrentHealth, 0f, MaximumHealth, _character.PlayerID);
+						GUIManager.Instance.SetAvaterMusk(CurrentHealth / MaximumHealth - 1);
 					}
 				}
 			}

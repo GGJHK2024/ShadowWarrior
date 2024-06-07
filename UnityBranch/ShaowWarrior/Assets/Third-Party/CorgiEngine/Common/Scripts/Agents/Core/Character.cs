@@ -1144,6 +1144,8 @@ namespace MoreMountains.CorgiEngine
 					if (CharacterType == CharacterTypes.Player)
 					{
 						UnlockAbility();
+						// GUI切换头像为死亡
+						GUIManager.Instance.SwitchAvater(2);
 					}
 					if (CharacterType == CharacterTypes.AI)
 					{
