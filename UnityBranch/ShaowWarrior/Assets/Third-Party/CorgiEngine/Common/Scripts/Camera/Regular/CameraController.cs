@@ -296,10 +296,10 @@ namespace MoreMountains.CorgiEngine
 			if (_levelBounds.size != Vector3.zero)
 			{
 				aheadTargetPos.x = Mathf.Clamp(aheadTargetPos.x, _xMin, _xMax);
-				aheadTargetPos.y = Mathf.Clamp(aheadTargetPos.y, _yMin, _yMax);
+				// aheadTargetPos.y = Mathf.Clamp(aheadTargetPos.y, _yMin, _yMax);
 			}
 
-			Vector3 newCameraPosition = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref _currentVelocity, CameraSpeed);
+			Vector3 newCameraPosition = Vector3.SmoothDamp(transform.position, new Vector3(aheadTargetPos.x, transform.position.y, aheadTargetPos.z), ref _currentVelocity, CameraSpeed);
 			Vector3 shakeFactorPosition = Vector3.zero;
 
 			// If shakeDuration is still running.
@@ -366,8 +366,8 @@ namespace MoreMountains.CorgiEngine
 
 			_xMin = _levelBounds.min.x+(cameraWidth/2);
 			_xMax = _levelBounds.max.x-(cameraWidth/2); 
-			_yMin = _levelBounds.min.y+(cameraHeight/2); 
-			_yMax = _levelBounds.max.y-(cameraHeight/2);
+			// _yMin = _levelBounds.min.y+(cameraHeight/2); 
+			// _yMax = _levelBounds.max.y-(cameraHeight/2);
             
 			// if the level is too narrow, we center the camera on the levelbound's horizontal center
 			if (_levelBounds.max.x - _levelBounds.min.x <= cameraWidth)
@@ -377,11 +377,11 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			// if the level is not high enough, we center the camera on the levelbound's vertical center
-			if (_levelBounds.max.y - _levelBounds.min.y <= cameraHeight)
+			/*if (_levelBounds.max.y - _levelBounds.min.y <= cameraHeight)
 			{
 				_yMin = _levelBounds.center.y;
 				_yMax = _levelBounds.center.y;
-			}	
+			}	*/
 		}
 
 		/// <summary>
@@ -460,7 +460,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void TeleportCameraToTarget()
 		{
-			this.transform.position = Target.position + _lookAheadPos + Vector3.forward * _offsetZ + _lookDirectionModifier + CameraOffset;
+			this.transform.position = Target.position + _lookAheadPos + Vector3.right * _offsetZ + _lookDirectionModifier + CameraOffset;
 		}
 
 		/// <summary>
