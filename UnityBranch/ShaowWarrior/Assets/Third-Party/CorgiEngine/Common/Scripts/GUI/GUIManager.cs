@@ -22,6 +22,8 @@ namespace MoreMountains.CorgiEngine
 		///  the bounce bar
 		[Tooltip("大招准备条")]
 		public Slider bounceBar;
+		[Tooltip("头像遮罩")]
+		public Image avaterMusk;
 		/// the panels and bars used to display current weapon ammo
 		[Tooltip("the panels and bars used to display current weapon ammo")]
 		public AmmoDisplay[] AmmoDisplays;
@@ -258,6 +260,15 @@ namespace MoreMountains.CorgiEngine
 				}
 			}
 
+		}
+
+		/// <summary>
+		/// 随血量设置头像遮罩
+		/// </summary>
+		/// <param name="a"></param>
+		public void SetAvaterMusk(float a)
+		{
+			avaterMusk.color = new Color(255,255,255,Mathf.Abs(a));
 		}
 		
 		/// <summary>

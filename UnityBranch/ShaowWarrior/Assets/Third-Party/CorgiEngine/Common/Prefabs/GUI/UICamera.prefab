@@ -286,7 +286,8 @@ MonoBehaviour:
   HUD: {fileID: 100034}
   HealthBars:
   - {fileID: 114000012422908832}
-  bounceBar: {fileID: 0}
+  bounceBar: {fileID: 2056739464692877234}
+  avaterMusk: {fileID: 5915204051884391590}
   AmmoDisplays: []
   PauseScreen: {fileID: 162938}
   TimeSplash: {fileID: 110768}
