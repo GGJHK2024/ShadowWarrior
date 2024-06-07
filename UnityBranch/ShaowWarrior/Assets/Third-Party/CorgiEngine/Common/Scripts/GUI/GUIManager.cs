@@ -22,6 +22,8 @@ namespace MoreMountains.CorgiEngine
 		///  the bounce bar
 		[Tooltip("大招准备条")]
 		public Slider bounceBar;
+		[Tooltip("头像")]
+		public Image avater;
 		[Tooltip("头像遮罩")]
 		public Image avaterMusk;
 		/// the panels and bars used to display current weapon ammo
@@ -58,6 +60,7 @@ namespace MoreMountains.CorgiEngine
 		protected float _initialJoystickAlpha;
 		protected float _initialArrowsAlpha;
 		protected float _initialButtonsAlpha;
+		protected Object[] sprites;	//all ui sliced sprites
 		
 		/// <summary>
 		/// Statics initialization to support enter play modes
@@ -74,6 +77,7 @@ namespace MoreMountains.CorgiEngine
 		protected override void Awake()
 		{
 			base.Awake();
+			sprites = Resources.LoadAll ("ui");
 
 			if (Joystick != null)
 			{
@@ -269,6 +273,15 @@ namespace MoreMountains.CorgiEngine
 		public void SetAvaterMusk(float a)
 		{
 			avaterMusk.color = new Color(255,255,255,Mathf.Abs(a));
+		}
+
+		/// <summary>
+		/// 切换头像。1：初始；2：死亡；3：开心
+		/// </summary>
+		/// <param name="idx"></param>
+		public void SwitchAvater(int idx)
+		{
+			avater.sprite = (Sprite)sprites[idx + 1];
 		}
 		
 		/// <summary>
