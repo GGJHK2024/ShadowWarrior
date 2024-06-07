@@ -124,20 +124,17 @@ GameObject:
   m_Component:
   - component: {fileID: 4135398658232238}
   - component: {fileID: 114473069959786316}
-  - component: {fileID: 50328071504155050}
   - component: {fileID: 61893930711871926}
   - component: {fileID: 114993703828558004}
+  - component: {fileID: 50328071504155050}
   - component: {fileID: 114961038306698606}
-  - component: {fileID: 114552395418788484}
+  - component: {fileID: 1848806264832467988}
   - component: {fileID: 114937525856734860}
-  - component: {fileID: 114339136294938960}
+  - component: {fileID: 114238553675504360}
+  - component: {fileID: 114552395418788484}
   - component: {fileID: 114067210621431476}
   - component: {fileID: 114767941446374776}
-  - component: {fileID: 114411575044845156}
   - component: {fileID: 114703903213212616}
-  - component: {fileID: 114238553675504360}
-  - component: {fileID: 114225984267732342}
-  - component: {fileID: 114144399715199832}
   - component: {fileID: 4786710359462847881}
   - component: {fileID: 2854295689687570740}
   - component: {fileID: 8010756260577516807}
@@ -151,7 +148,6 @@ GameObject:
   - component: {fileID: 119847008708912785}
   - component: {fileID: 5893394884078251563}
   - component: {fileID: 167059064127891269}
-  - component: {fileID: 1848806264832467988}
   m_Layer: 13
   m_Name: RobotB
   m_TagString: Player
@@ -213,28 +209,7 @@ MonoBehaviour:
   SendStateUpdateEvents: 1
   AirborneDistance: 0.5
   AirborneMinimumTime: 0.1
-  CharacterBrain: {fileID: 0}
---- !u!50 &50328071504155050
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 0
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  CharacterBrain: {fileID: 4786710359462847881}
 --- !u!61 &61893930711871926
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -274,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultParameters:
-    Gravity: -35
+    Gravity: 0
     FallMultiplier: 1.5
     AscentMultiplier: 1
     MaxVelocity: {x: 100, y: 100}
@@ -357,9 +332,9 @@ MonoBehaviour:
   DistanceToTheGroundRayMaximumLength: 100
   OnMovingPlatformRaycastLengthMultiplier: 2
   ObstacleHeightTolerance: 0.05
-  StickToSlopes: 0
-  StickyRaycastLength: 0
-  StickToSlopesOffsetY: 0.2
+  StickToSlopes: 1
+  StickyRaycastLength: 1
+  StickToSlopesOffsetY: 0.8
   TimeAirborne: 0
   SafeSetTransform: 0
   AutomaticallySetPhysicsSettings: 0
@@ -369,6 +344,27 @@ MonoBehaviour:
   SafetyBoxcastSizeRatio: {x: 0.8, y: 0.8}
   ExtractionIncrement: 0.05
   MaxExtractionsIterations: 10
+--- !u!50 &50328071504155050
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &114961038306698606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +408,7 @@ MonoBehaviour:
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
   TargetDamageResistanceProcessor: {fileID: 0}
---- !u!114 &114552395418788484
+--- !u!114 &1848806264832467988
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -421,14 +417,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1383539409296422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e514a2b7cbba3c94fadd9e100df51189, type: 3}
+  m_Script: {fileID: 11500000, guid: df1508296b0904b1ba069c225eb6482a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Top: 1
-  Bottom: 2
-  Left: 1
-  Right: 1
-  ResetForcesOnConstrain: 1
+  RespawnOnPlayerRespawn: 1
+  RepositionToInitOnPlayerRespawn: 0
+  DisableOnKill: 1
+  AutoRespawnDuration: 0
+  AutoRespawnAmount: -1
+  AutoRespawnRemainingAmount: 3
+  IgnoreCheckpointsAlwaysRespawn: 1
+  AssociatedCheckpoints: []
+  RespawnFeedback: {fileID: 0}
 --- !u!114 &114937525856734860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,10 +460,8 @@ MonoBehaviour:
   AirControl: 1
   AllowFlipInTheAir: 1
   ActiveAfterDeath: 0
-  TouchTheGroundFeedback: {fileID: 6822415440551431210}
-  MinimumAirTimeBeforeFeedback: 0.2
   StopWalkingWhenCollidingWithAWall: 0
---- !u!114 &114339136294938960
+--- !u!114 &114238553675504360
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -472,37 +470,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 1383539409296422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2bb48ea7e7fc4c0fa43dce17235f4f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a07c6668aa55403790d27b575279549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 492078428048280700}
+  AbilityStartFeedbacks: {fileID: 756937789482745523}
   AbilityStopFeedbacks: {fileID: 0}
   AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  DashDistance: 3
-  DashForce: 40
-  ResetForcesOnExit: 0
-  ForceExactDistance: 0
-  DetachFromMovingPlatformsOnDash: 0
-  Aim:
-    AimControl: 2
-    RotationMode: 0
-    MinimumAngle: -180
-    MaximumAngle: 180
-    CurrentAngle: 0
-  MinimumInputThreshold: 0.1
-  FlipCharacterIfNeeded: 1
-  AutoCorrectTrajectory: 1
-  DashDirectionMinThreshold: 0.1
-  DashCooldown: 1
-  LimitedDashes: 0
-  SuccessiveDashAmount: 1
-  SuccessiveDashesLeft: 1
-  SuccessiveDashResetMethod: 0
-  SuccessiveDashResetDuration: 2
-  InvincibleWhileDashing: 0
+  InitialWeapon: {fileID: 114066937058401760, guid: 43adbe632a1ad0341ba4daed1b4a1c8c,
+    type: 3}
+  CanPickupWeapons: 1
+  WeaponAttachment: {fileID: 0}
+  ForceWeaponScaleResetOnEquip: 0
+  ForceWeaponRotationResetOnEquip: 0
+  AutomaticallyBindAnimator: 1
+  AmmoDisplayID: 0
+  ContinuousPress: 0
+  GettingHitInterruptsAttack: 0
+  CanShootFromLadders: 0
+  FaceWeaponDirection: 0
+  InvertHorizontalAimWhenWallclinging: 0
+  ForceAlwaysShoot: 0
+  BufferInput: 0
+  NewInputExtendsBuffer: 0
+  MaximumBufferDuration: 0.25
+  CurrentWeapon: {fileID: 0}
+--- !u!114 &114552395418788484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e514a2b7cbba3c94fadd9e100df51189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Top: 1
+  Bottom: 2
+  Left: 1
+  Right: 1
+  ResetForcesOnConstrain: 1
 --- !u!114 &114067210621431476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,30 +572,6 @@ MonoBehaviour:
   ReadInput: 1
   AutoRun: 0
   AutoRunThreshold: 0.6
---- !u!114 &114411575044845156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d96ed8ea1ca8048f6a2b90871e211025, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  LadderClimbingSpeed: 2
-  ForceRightFacing: 0
-  ForceAnchorToGroundOnExit: 0
-  MinimumTimeAfterLadderJump: 0.5
-  NoInputClimb: 0
-  NoInputClimbAirOnly: 0
 --- !u!114 &114703903213212616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,105 +592,6 @@ MonoBehaviour:
   BlockingWeaponStates: 
   PreventJumpWhenInZone: 1
   ActivationCooldownDuration: 0
---- !u!114 &114238553675504360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a07c6668aa55403790d27b575279549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 756937789482745523}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  InitialWeapon: {fileID: 114066937058401760, guid: 43adbe632a1ad0341ba4daed1b4a1c8c,
-    type: 3}
-  CanPickupWeapons: 1
-  WeaponAttachment: {fileID: 0}
-  ForceWeaponScaleResetOnEquip: 0
-  ForceWeaponRotationResetOnEquip: 0
-  AutomaticallyBindAnimator: 1
-  AmmoDisplayID: 0
-  ContinuousPress: 0
-  GettingHitInterruptsAttack: 0
-  CanShootFromLadders: 0
-  FaceWeaponDirection: 0
-  InvertHorizontalAimWhenWallclinging: 0
-  ForceAlwaysShoot: 0
-  BufferInput: 0
-  NewInputExtendsBuffer: 0
-  MaximumBufferDuration: 0.25
-  CurrentWeapon: {fileID: 0}
---- !u!114 &114225984267732342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d66436e6d24d864b98c208398356163, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  SubjectToGravityPoints: 1
-  SubjectToGravityZones: 1
-  ReverseHorizontalInputWhenUpsideDown: 1
-  ReverseVerticalInputWhenUpsideDown: 0
-  ReverseInputOnGravityPoints: 0
-  InitialGravityAngle: 0
-  RotationSpeed: 0
-  InactiveBufferDuration: 0
-  TransitionForcesMode: 1
-  ResetCharacterStateOnGravityChange: 1
-  DrawDebugGravityArrow: 1
---- !u!114 &114144399715199832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91c51cb5f00b54cba9abf4c49a247230, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  IdleParticles: {fileID: 0}
-  WalkingParticles: {fileID: 0}
-  CrouchingParticles: {fileID: 0}
-  CrawlingParticles: {fileID: 0}
-  DanglingParticles: {fileID: 0}
-  DashingParticles: {fileID: 0}
-  DivingParticles: {fileID: 0}
-  GrippingParticles: {fileID: 0}
-  JetpackingParticles: {fileID: 0}
-  JumpingParticles: {fileID: 0}
-  LadderParticles: {fileID: 0}
-  LookupParticles: {fileID: 0}
-  PushParticles: {fileID: 0}
-  RunParticles: {fileID: 0}
-  WallclingingParticles: {fileID: 0}
-  WalljumpParticles: {fileID: 0}
 --- !u!114 &4786710359462847881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -987,27 +875,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
---- !u!114 &1848806264832467988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df1508296b0904b1ba069c225eb6482a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RespawnOnPlayerRespawn: 1
-  RepositionToInitOnPlayerRespawn: 0
-  DisableOnKill: 1
-  AutoRespawnDuration: 0
-  AutoRespawnAmount: -1
-  AutoRespawnRemainingAmount: 3
-  IgnoreCheckpointsAlwaysRespawn: 1
-  AssociatedCheckpoints: []
-  RespawnFeedback: {fileID: 0}
 --- !u!1 &1906052747890022
 GameObject:
   m_ObjectHideFlags: 0
@@ -32400,7 +32267,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2995923963298260682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5950012, y: -1.7850001, z: 0}
+  m_LocalPosition: {x: -0.5950012, y: -1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -53655,7 +53522,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7240134534890241291}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.46299744, y: -1.641, z: 0}
+  m_LocalPosition: {x: -0.46299744, y: -1.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

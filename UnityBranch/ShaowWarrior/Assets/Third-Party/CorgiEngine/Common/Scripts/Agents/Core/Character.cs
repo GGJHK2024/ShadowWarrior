@@ -714,7 +714,7 @@ namespace MoreMountains.CorgiEngine
 				{
 					if (CharacterHealth.GravityOffOnDeath)
 					{
-						_controller.GravityActive(false);
+						// _controller.GravityActive(false);
 					}
 					if (CharacterHealth.ApplyDeathForce && (CharacterHealth.DeathForce.x == 0f))
 					{
@@ -732,7 +732,7 @@ namespace MoreMountains.CorgiEngine
 			// if the character is frozen, we prevent it from moving
 			if (ConditionState.CurrentState == CharacterStates.CharacterConditions.Frozen)
 			{
-				_controller.GravityActive(false);
+				// _controller.GravityActive(false);
 				_controller.SetForce(Vector2.zero);			
 			}
 		}
@@ -742,7 +742,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void Freeze()
 		{
-			_controller.GravityActive(false);
+			// _controller.GravityActive(false);
 			_controller.SetForce(Vector2.zero);
 			if (_animator != null)
 				_animator.speed = 0;
@@ -780,7 +780,7 @@ namespace MoreMountains.CorgiEngine
 		{
 			if (_animator != null)
 				_animator.speed = 1;
-			_controller.GravityActive(true);
+			// _controller.GravityActive(true);
 			ConditionState.ChangeState(_conditionStateBeforeFreeze);
 		}	    
 		
@@ -1021,10 +1021,10 @@ namespace MoreMountains.CorgiEngine
 			}
 			this.ConditionState.ChangeState(newCondition);
 			if (resetControllerForces) { _controller?.SetForce(Vector2.zero); }
-			if (disableGravity && (_controller != null)) { _controller.GravityActive(false); }
+			// if (disableGravity && (_controller != null)) { _controller.GravityActive(false); }
 			yield return MMCoroutine.WaitFor(duration);
 			this.ConditionState.ChangeState(_lastState);
-			if (disableGravity && (_controller != null)) { _controller.GravityActive(true); }
+			// if (disableGravity && (_controller != null)) { _controller.GravityActive(true); }
 		}
 
 		/// <summary>

@@ -244,7 +244,7 @@ Transform:
   m_GameObject: {fileID: 5040441584229653086}
   m_LocalRotation: {x: -0, y: -0.008726557, z: -0, w: 0.9999619}
   m_LocalPosition: {x: 0.3884023, y: 0.8769231, z: 0.0067796037}
-  m_LocalScale: {x: 0.19230764, y: 0.1923077, z: 0.19230764}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1659664164365218924}
@@ -531,8 +531,8 @@ GameObject:
   - component: {fileID: 6860181345986056332}
   - component: {fileID: 6818802770552507356}
   - component: {fileID: 6860181345983372844}
-  - component: {fileID: 6883295214831945276}
   - component: {fileID: 6860181345996994894}
+  - component: {fileID: 6883295214831945276}
   - component: {fileID: 6860181345996994890}
   - component: {fileID: 6818802771584255496}
   - component: {fileID: 6818802771341140972}
@@ -543,7 +543,6 @@ GameObject:
   - component: {fileID: 6818980704704118925}
   - component: {fileID: 6818980704704118924}
   - component: {fileID: 6818980704704118919}
-  - component: {fileID: 6818980704704118918}
   - component: {fileID: 6818980704704118926}
   - component: {fileID: 6818980704704118930}
   - component: {fileID: 6818980704704118929}
@@ -643,27 +642,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7761774, y: 1.8257325}
   m_EdgeRadius: 0
---- !u!50 &6883295214831945276
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6860181345986219180}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &6860181345996994894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,10 +655,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultParameters:
-    Gravity: -15
-    FallMultiplier: 1
+    Gravity: 0
+    FallMultiplier: 1.5
     AscentMultiplier: 1
-    MaxVelocity: {x: 3.4028235e+38, y: 3.4028235e+38}
+    MaxVelocity: {x: 100, y: 100}
     SpeedAccelerationOnGround: 20
     UseSeparateDecelerationOnGround: 0
     SpeedDecelerationOnGround: 20
@@ -688,7 +666,7 @@ MonoBehaviour:
     UseSeparateDecelerationInAir: 0
     SpeedDecelerationInAir: 5
     SpeedFactor: 1
-    MaximumSlopeAngle: 45
+    MaximumSlopeAngle: 50
     SlopeAngleSpeedFactor:
       serializedVersion: 2
       m_Curve:
@@ -749,8 +727,8 @@ MonoBehaviour:
     _layerIndex: 0
   StandingOn: {fileID: 0}
   UpdateMode: 0
-  NumberOfHorizontalRays: 5
-  NumberOfVerticalRays: 6
+  NumberOfHorizontalRays: 8
+  NumberOfVerticalRays: 8
   RayOffsetHorizontal: 0.05
   RayOffsetVertical: 0.05
   RayExtraLengthHorizontal: 0
@@ -760,18 +738,39 @@ MonoBehaviour:
   DistanceToTheGroundRayMaximumLength: 100
   OnMovingPlatformRaycastLengthMultiplier: 2
   ObstacleHeightTolerance: 0.05
-  StickToSlopes: 0
-  StickyRaycastLength: 0
-  StickToSlopesOffsetY: 0.2
+  StickToSlopes: 1
+  StickyRaycastLength: 1
+  StickToSlopesOffsetY: 0.8
   TimeAirborne: 0
   SafeSetTransform: 0
-  AutomaticallySetPhysicsSettings: 1
+  AutomaticallySetPhysicsSettings: 0
   AutomaticGravitySettings: 1
   PerformSafetyBoxcast: 0
   SafetyBoxcastInAirOnly: 1
   SafetyBoxcastSizeRatio: {x: 0.8, y: 0.8}
   ExtractionIncrement: 0.05
   MaxExtractionsIterations: 10
+--- !u!50 &6883295214831945276
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6860181345986219180}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &6860181345996994890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,8 +866,6 @@ MonoBehaviour:
   AirControl: 1
   AllowFlipInTheAir: 1
   ActiveAfterDeath: 0
-  TouchTheGroundFeedback: {fileID: 0}
-  MinimumAirTimeBeforeFeedback: 0.2
   StopWalkingWhenCollidingWithAWall: 0
 --- !u!114 &6818802770801737222
 MonoBehaviour:
@@ -1041,46 +1038,6 @@ MonoBehaviour:
   BlockingWeaponStates: 
   PreventJumpWhenInZone: 1
   ActivationCooldownDuration: 0
---- !u!114 &6818980704704118918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6860181345986219180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76891b3b532f84acaaeed44c357bd00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  ApplyDamageOnTriggerEnter: 1
-  ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 1
-  MaxDamageCaused: 1
-  TypedDamages: []
-  DamageCausedKnockbackType: 1
-  DamageCausedKnockbackDirection: 0
-  DamageCausedKnockbackForce: {x: 10, y: 2}
-  InvincibilityDuration: 0.5
-  RepeatDamageOverTime: 0
-  AmountOfRepeats: 3
-  DurationBetweenRepeats: 1
-  DamageOverTimeInterruptible: 1
-  RepeatedDamageType: {fileID: 0}
-  DamageTakenEveryTime: 0
-  DamageTakenDamageable: 0
-  DamageTakenNonDamageable: 0
-  DamageTakenKnockbackType: 0
-  DamageTakenKnockbackDirection: 0
-  DamageTakenKnockbackForce: {x: 0, y: 0}
-  DamageTakenInvincibilityDuration: 0.5
-  HitDamageableFeedback: {fileID: 0}
-  HitNonDamageableFeedback: {fileID: 0}
-  FreezeFramesOnHitDuration: 0
-  Owner: {fileID: 0}
 --- !u!114 &6818980704704118926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1397,17 +1354,17 @@ PrefabInstance:
     - target: {fileID: 4970962947058102671, guid: b834cfd5becdc53469119c0aed679d59,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.6
+      value: 5.9999995
       objectReference: {fileID: 0}
     - target: {fileID: 4970962947058102671, guid: b834cfd5becdc53469119c0aed679d59,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.6
+      value: 5.9999995
       objectReference: {fileID: 0}
     - target: {fileID: 4970962947058102671, guid: b834cfd5becdc53469119c0aed679d59,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.6
+      value: 5.9999995
       objectReference: {fileID: 0}
     - target: {fileID: 4970962947058102671, guid: b834cfd5becdc53469119c0aed679d59,
         type: 3}
