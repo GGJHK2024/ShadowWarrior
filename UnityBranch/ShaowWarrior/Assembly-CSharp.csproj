@@ -875,9 +875,6 @@
     <Reference Include="Unity.VisualScripting.Flow">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Tilemap.Extras.Editor">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
     </Reference>
