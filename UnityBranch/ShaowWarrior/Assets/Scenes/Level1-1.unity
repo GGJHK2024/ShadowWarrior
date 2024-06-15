@@ -1142,11 +1142,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 97.65
+      value: -32.6
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 52.77
+      value: -5.5
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1186,7 +1186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
       propertyPath: LevelName
-      value: Level1-2
+      value: RollTestScene
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
       propertyPath: ButtonActivatedRequirement
@@ -1914,7 +1914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88fcac034e6398d42ac254095d9b2d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefabs: []
+  PlayerPrefabs:
+  - {fileID: 114473069959786316, guid: d9a03ec1f93191f48af48c379887e585, type: 3}
   AutoAttributePlayerIDs: 1
   SceneCharacters: []
   DebugSpawn: {fileID: 0}
@@ -1960,7 +1961,7 @@ MonoBehaviour:
     m_Center: {x: 32, y: 22, z: 0}
     m_Extent: {x: 73.4, y: 50, z: 5}
   ConvertToColliderBoundsButton: 0
-  LoadingSceneMode: 1
+  LoadingSceneMode: 0
   LoadingSceneName: LoadingScreen
   AdditiveLoadingSettings:
     LoadingSceneName: MMAdditiveLoadingScreen

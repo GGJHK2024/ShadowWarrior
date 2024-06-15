@@ -144,8 +144,8 @@
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMInput\MMAutoInputModule.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMSaveLoad\MMPersistent.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMMovement\MMPreventPassingThrough3D.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMAttributes\MMHiddenPropertiesAttribute.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMDebugMenu\Scripts\Tabs\MMDebugMenuTab.cs" />
+    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMAttributes\MMHiddenPropertiesAttribute.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMAchievements\Scripts\MMAchievementList.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMRadio\MMProperty\MMPropertyLink\MMPropertyLinkVector3.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMAchievements\Scripts\MMAchievementManager.cs" />
@@ -344,8 +344,8 @@
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMDebugMenu\Scripts\Tabs\MMDebugMenuDebugTab.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMHelpers\MMMovement.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMDebugMenu\Scripts\MMDebugMenuItems\MMDebugMenuItemButton.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMActivation\MMToggleActive.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMAttributes\MMRequiresConstantRepaintAttribute.cs" />
+    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMActivation\MMToggleActive.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMInstantiation\MMSpawnAroundTester.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Demos\MMObservable\MMObservableDemoObserver.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMProcedural\MMGridGenerators\MMGridGeneratorPath.cs" />
@@ -650,12 +650,6 @@
     <Reference Include="UnityEditor.UWP.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.34f1\Editor\Data\PlaybackEngines\MetroSupport\UnityEditor.UWP.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Plastic.Newtonsoft.Json">
-      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Plastic.Antlr3.Runtime">
-      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.visualscripting@1.9.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
@@ -664,12 +658,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.IonicZip">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.visualscripting@1.9.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
-    </Reference>
-    <Reference Include="unityplastic">
-      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
-    </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.visualscripting@1.9.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
