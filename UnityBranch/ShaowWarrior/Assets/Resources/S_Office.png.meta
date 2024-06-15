@@ -399,9 +399,9 @@ TextureImporter:
       name: S_Office_front_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 111
         y: 1080
-        width: 781
+        width: 670
         height: 270
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -500,6 +500,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: S_Office_front_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 111
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dc1e197dda11414ea14e547ab300df0
+      internalID: 1568122075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -535,6 +556,7 @@ TextureImporter:
       S_Office_background: -213347010
       S_Office_door: -615132492
       S_Office_front3: 880773170
+      S_Office_front_0: 1568122075
       S_Office_front_1: 747994357
       S_Office_front_2: -1503260810
       S_Office_front_grass_1: 1674788141
