@@ -233,4 +233,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RollTestScene.unity
     guid: 2203c63bcaf9186499f99ea4e67b1a5a
+  - enabled: 1
+    path: Assets/Scenes/Toilet.unity
+    guid: cf5e2841355d0a5458b01124e3ddc3de
   m_configObjects: {}

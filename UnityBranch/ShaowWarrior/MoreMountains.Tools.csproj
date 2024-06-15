@@ -144,8 +144,8 @@
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMInput\MMAutoInputModule.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMSaveLoad\MMPersistent.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMMovement\MMPreventPassingThrough3D.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMAttributes\MMHiddenPropertiesAttribute.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMDebugMenu\Scripts\Tabs\MMDebugMenuTab.cs" />
+    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMAttributes\MMHiddenPropertiesAttribute.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMAchievements\Scripts\MMAchievementList.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMRadio\MMProperty\MMPropertyLink\MMPropertyLinkVector3.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMAchievements\Scripts\MMAchievementManager.cs" />
@@ -344,8 +344,8 @@
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMDebugMenu\Scripts\Tabs\MMDebugMenuDebugTab.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMHelpers\MMMovement.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMDebugMenu\Scripts\MMDebugMenuItems\MMDebugMenuItemButton.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMActivation\MMToggleActive.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMAttributes\MMRequiresConstantRepaintAttribute.cs" />
+    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMActivation\MMToggleActive.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMInstantiation\MMSpawnAroundTester.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Demos\MMObservable\MMObservableDemoObserver.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMTools\Tools\MMProcedural\MMGridGenerators\MMGridGeneratorPath.cs" />

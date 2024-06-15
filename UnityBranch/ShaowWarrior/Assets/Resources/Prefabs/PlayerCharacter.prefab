@@ -5578,9 +5578,9 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  topPos: 15.8
-  groundPos: 5.4
-  topScale: 1
+  topPos: -11.3
+  groundPos: -3.9
+  topScale: 1.3
   downScale: 2
 --- !u!1 &1693914667617252
 GameObject:
