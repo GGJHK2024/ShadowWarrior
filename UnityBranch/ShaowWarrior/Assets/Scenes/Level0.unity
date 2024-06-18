@@ -147,7 +147,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8192
   AutoSetKillThreshold: 1
-  DeathThreshold: 4
+  DeathThreshold: 5
   RemainingDeaths: 0
   OnDeath:
     m_PersistentCalls:
@@ -6861,71 +6861,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4b1328474fc154491f2fc56ecdc931, type: 3}
---- !u!1001 &1371309814
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 100002, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
-      propertyPath: m_Name
-      value: GateToNextLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 16.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
-      propertyPath: LevelName
-      value: Toilet
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
 --- !u!4 &1382925628 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6860181345986056332, guid: 561595cf0a8a6af4f9ffbc360f96765a,

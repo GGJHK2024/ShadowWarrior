@@ -5208,13 +5208,13 @@ MonoBehaviour:
   FlipCharacterIfNeeded: 1
   AutoCorrectTrajectory: 1
   DashDirectionMinThreshold: 0.1
-  DashCooldown: 3
+  DashCooldown: 5
   LimitedDashes: 0
   SuccessiveDashAmount: 1
   SuccessiveDashesLeft: 1
   SuccessiveDashResetMethod: 0
   SuccessiveDashResetDuration: 2
-  InvincibleWhileDashing: 0
+  InvincibleWhileDashing: 1
   DamageWhenDashing: 0.5
 --- !u!114 &114767941446374776
 MonoBehaviour:
