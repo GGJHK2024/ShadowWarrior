@@ -551,7 +551,7 @@ MonoBehaviour:
   DisableAfterUse: 0
   InputType: 2
   InputButton: Interact
-  InputKey: 9
+  InputKey: 101
   AnimationTriggerParameterName: 
   UseVisualPrompt: 1
   ButtonPromptPrefab: {fileID: 0}
@@ -1296,7 +1296,7 @@ MonoBehaviour:
   DisableAfterUse: 0
   InputType: 2
   InputButton: Interact
-  InputKey: 9
+  InputKey: 101
   AnimationTriggerParameterName: 
   UseVisualPrompt: 1
   ButtonPromptPrefab: {fileID: 0}
