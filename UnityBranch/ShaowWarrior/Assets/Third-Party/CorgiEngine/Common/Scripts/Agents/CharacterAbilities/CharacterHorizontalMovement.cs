@@ -158,6 +158,7 @@ namespace MoreMountains.CorgiEngine
 			// if we're not walking anymore, we stop our walking sound
 			if ((_movement.CurrentState != CharacterStates.MovementStates.Walking) && _startFeedbackIsPlaying)
 			{
+				print("you shall die");
 				StopStartFeedbacks();
 			}
 

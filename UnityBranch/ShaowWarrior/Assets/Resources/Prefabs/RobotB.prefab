@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e24d0eb5fa7640038713564930581a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 1907952195515844569}
+  AbilityStartFeedbacks: {fileID: 0}
   AbilityStopFeedbacks: {fileID: 0}
   AbilityPermitted: 1
   BlockingMovementStates: 
