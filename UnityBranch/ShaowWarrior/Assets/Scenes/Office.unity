@@ -6605,6 +6605,10 @@ PrefabInstance:
       value: Toilet
       objectReference: {fileID: 0}
     - target: {fileID: 349811737, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 349811737, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
       propertyPath: bulletTime
       value: 0
       objectReference: {fileID: 0}
