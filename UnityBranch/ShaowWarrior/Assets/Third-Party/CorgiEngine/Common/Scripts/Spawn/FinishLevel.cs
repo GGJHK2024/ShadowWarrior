@@ -71,9 +71,12 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			base.TriggerButtonAction (instigator);
-
-			StartCoroutine(GoToNextLevelCoroutine());
-			ActivateZone ();
+			if (KillsManager.Instance.RemainingDeaths == 0)
+			{
+				StartCoroutine(GoToNextLevelCoroutine());
+				ActivateZone ();
+			}
+			
 		}	
         
 		/// <summary>
