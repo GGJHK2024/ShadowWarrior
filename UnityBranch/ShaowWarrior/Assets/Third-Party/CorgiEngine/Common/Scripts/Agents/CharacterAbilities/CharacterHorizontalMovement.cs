@@ -154,11 +154,14 @@ namespace MoreMountains.CorgiEngine
 		/// Called at Update(), handles horizontal movement
 		/// </summary>
 		protected virtual void HandleHorizontalMovement()
-		{	
+		{
+			if ((_movement.CurrentState == CharacterStates.MovementStates.Walking) && !_startFeedbackIsPlaying)
+			{
+				PlayAbilityStartFeedbacks();
+			}
 			// if we're not walking anymore, we stop our walking sound
 			if ((_movement.CurrentState != CharacterStates.MovementStates.Walking) && _startFeedbackIsPlaying)
 			{
-				print("you shall die");
 				StopStartFeedbacks();
 			}
 

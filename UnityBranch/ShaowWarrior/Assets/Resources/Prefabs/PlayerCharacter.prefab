@@ -30524,7 +30524,7 @@ MonoBehaviour:
           ContributeToTotalDuration: 1
           InitialDelay: 0
           CooldownDuration: 0
-          InterruptsOnStop: 1
+          InterruptsOnStop: 0
           NumberOfRepeats: 0
           RepeatForever: 0
           DelayBetweenRepeats: 1
@@ -30575,7 +30575,7 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 7969800018894229679}
         DebugActive: 0
-        SoundFX: {fileID: 8300000, guid: d4f963e1fb34c6441b5188289f973106, type: 3}
+        SoundFX: {fileID: 8300000, guid: 0afe9eb2692dc79428286fa4e1b0c30d, type: 3}
         Loop: 0
     - rid: 3
       type: {class: MMF_Bloom, ns: MoreMountains.FeedbacksForThirdParty, asm: MoreMountains.Feedbacks.PostProcessing}
@@ -72822,7 +72822,7 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 8229259819979299594}
         DebugActive: 0
-        SoundFX: {fileID: 8300000, guid: 985a67d634a47482b80dc3c840fe69f8, type: 3}
+        SoundFX: {fileID: 8300000, guid: bc4cd257e0bc5d44bbcbb316e739e253, type: 3}
         Loop: 1
 --- !u!1 &6672139166464619738
 GameObject:
@@ -93403,7 +93403,7 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 2923252228442884711}
         DebugActive: 0
-        SoundFX: {fileID: 8300000, guid: 985a67d634a47482b80dc3c840fe69f8, type: 3}
+        SoundFX: {fileID: 8300000, guid: a7321c9ad92415c43a0fa9779d21fea7, type: 3}
         Loop: 1
 --- !u!1 &7743920980962615099
 GameObject:
