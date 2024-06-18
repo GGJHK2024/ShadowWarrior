@@ -86,7 +86,11 @@ namespace MoreMountains.CorgiEngine
 		[Header("Damage")] 
 		/// if this is true, this character won't receive any damage while a dash is in progress
 		[Tooltip("if this is true, this character won't receive any damage while a dash is in progress")]
-		public bool InvincibleWhileDashing = false; 
+		public bool InvincibleWhileDashing = false;
+
+		[Tooltip("承受伤害占原始受到伤害的比例，默认为100%，即1")] 
+		/// 修改该比例会导致玩家受到的伤害变为原始伤害 * DamageWhenDashing，达到减伤目的
+		public float DamageWhenDashing = 1;
 
 		protected float _cooldownTimeStamp = 0;
 		protected float _startTime ;
@@ -295,6 +299,11 @@ namespace MoreMountains.CorgiEngine
 				_health.DamageDisabled();
 			}
 
+			if (DamageWhenDashing != 1)
+			{
+				// 修改承伤
+			}
+
 			// we prevent our character from going through slopes
 			_slopeAngleSave = _controller.Parameters.MaximumSlopeAngle;
 			_controller.Parameters.MaximumSlopeAngle = 0;
@@ -469,6 +478,11 @@ namespace MoreMountains.CorgiEngine
 			if (InvincibleWhileDashing)
 			{
 				_health.DamageEnabled();
+			}
+
+			if (DamageWhenDashing != 1)
+			{
+				// 关闭承伤调整
 			}
 			
 			// we play our exit sound
