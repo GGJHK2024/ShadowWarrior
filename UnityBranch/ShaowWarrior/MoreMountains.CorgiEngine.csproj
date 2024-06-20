@@ -58,6 +58,7 @@
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\Damage\Stompable.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIActionSetLastKnownPositionAsTarget.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Environment\MovingPlatform.cs" />
+    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Managers\LevelChooseManager.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Environment\CharacterDetector.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Environment\AutoMovementControlZone.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Demos\RetroAdventure\Scripts\RetroNextLevel.cs" />

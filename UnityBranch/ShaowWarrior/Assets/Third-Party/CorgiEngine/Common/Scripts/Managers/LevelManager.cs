@@ -803,6 +803,15 @@ namespace MoreMountains.CorgiEngine
 		}
 
 		/// <summary>
+		/// GM在场景中无法赋值导致的
+		/// </summary>
+		/// <param name="i"></param>
+		public void GoToNextLevel(int i)
+		{
+			LevelChooseManager.Instance.GoToNextLevel(i);
+		}
+
+		/// <summary>
 		/// A temporary method used to convert level bounds from the old system to actual collider bounds
 		/// </summary>
 		[ExecuteAlways]

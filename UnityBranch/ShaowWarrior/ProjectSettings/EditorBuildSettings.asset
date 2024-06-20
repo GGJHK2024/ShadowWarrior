@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CG.unity
     guid: 93c93531a84d85544af73d332fe37a6a
-  - enabled: 0
-    path: Assets/Scenes/Level1-2.unity
-    guid: 35b7fc435edb5e943a34446b9ef9f0bf
   - enabled: 1
     path: Assets/Third-Party/CorgiEngine/Demos/StartScreen/SplashScreen.unity
     guid: 7b96552fd1198fa4eaae54a2f975645e
@@ -177,27 +174,6 @@ EditorBuildSettings:
     path: Assets/Third-Party/CorgiEngine/Demos/Retro/RetroCopter.unity
     guid: 9fe3f55d8fbc69e498173731635e42f5
   - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Retro/RetroVania.unity
-    guid: 283c53fb6e78f594580ce1b6cc9db42e
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Corgi3D/Corgi3DxTheHunt.unity
-    guid: 520006148e7fc614ea1e13df3773d7cc
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/ThirdParty/MoreMountains/MMInterface/Styles/Mini/1-StyleguideIntro.unity
-    guid: b67d0d2664281d04899a99f80395448a
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/ThirdParty/MoreMountains/MMInterface/Styles/Mini/2-StyleguideButtons.unity
-    guid: de77af6972b276946bc69e387fc8d713
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/ThirdParty/MoreMountains/MMInterface/Styles/Mini/3-StyleguideButtonsAnimations.unity
-    guid: ea89bc72dea980d4abccc06d3614ecc2
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/ThirdParty/MoreMountains/MMInterface/Styles/Mini/4-StyleguideForms.unity
-    guid: 8f8c2f0b710e68d438bf4858e885b305
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/ThirdParty/MoreMountains/MMInterface/Styles/Mini/5-StyleguideDark.unity
-    guid: 53a6867d9e449ca4394561ea3eaaa7eb
-  - enabled: 0
     path: Assets/Third-Party/CorgiEngine/Demos/RetroAdventure/RetroAdventure1.unity
     guid: 2004874d46ed82941a677f3ee2b78d64
   - enabled: 0
@@ -231,9 +207,18 @@ EditorBuildSettings:
     path: Assets/Third-Party/CorgiEngine/ThirdParty/MoreMountains/MMTools/Tools/MMSceneLoading/LoadingScreens/MMAdditiveLoadingScreenSimple.unity
     guid: 945e5b97212e8e74ebcd35bddde3970c
   - enabled: 1
-    path: Assets/Scenes/Office.unity
+    path: Assets/Scenes/Normal1.unity
     guid: 2203c63bcaf9186499f99ea4e67b1a5a
   - enabled: 1
     path: Assets/Scenes/Toilet.unity
     guid: cf5e2841355d0a5458b01124e3ddc3de
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: fc55ca228a62d47438c5e748cb1e9119
+  - enabled: 1
+    path: Assets/Scenes/Normal2.unity
+    guid: 7a4484eeeb9827f40bf34d5ee2a9a5f1
+  - enabled: 1
+    path: Assets/Scenes/Normal3.unity
+    guid: f5241f2bd13aa3a45ad38ccf38eb0371
   m_configObjects: {}
