@@ -48,6 +48,7 @@
     <Compile Include="Assets\Third-Party\Cainos\Third Party\Lucid Editor\Runtime\Attributes\TitleHeaderAttribute.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_AnimationController.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Gif\NeuQuant.cs" />
+    <Compile Include="Assets\Scripts\Manager\LevelChooseMgr.cs" />
     <Compile Include="Assets\Third-Party\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ButtonAttribute.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Gif\GifFrame.cs" />
     <Compile Include="Assets\Third-Party\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ShowInInspectorAttribute.cs" />
