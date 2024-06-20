@@ -9,12 +9,12 @@ public class LevelChooseMgr : MMSingleton<LevelChooseMgr>
     {
         public string name;
         public int id;
-        public int[] parentId;
+        public int[] childId;
         public LevelStruct(string n, int i, int[] p)
         {
             name = n;
             id = i;
-            parentId = p;
+            childId = p;
         }
     }
 
