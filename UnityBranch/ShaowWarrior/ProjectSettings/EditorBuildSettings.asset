@@ -21,63 +21,6 @@ EditorBuildSettings:
     path: Assets/Third-Party/CorgiEngine/ThirdParty/MoreMountains/MMTools/Tools/MMSceneLoading/LoadingScreens/MMAdditiveLoadingScreen.unity
     guid: d89b77a7a68c1844280c6ff2e49f95b8
   - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/LevelSelection/LevelSelection.unity
-    guid: 38b3bbb0fec788241870d54b46b03e47
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/LevelSelection/LevelSelectionMap.unity
-    guid: 0bba9bfc439ed1f458ec61e4c0008ebd
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Corgi3D/NewCorgi3D.unity
-    guid: 193c7309ff376d1489dcd808b644fdef
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Corgi2D/Mesa1.unity
-    guid: 3255dcacf4a25fc4c8070322156f10cd
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Corgi2D/Mesa2.unity
-    guid: 808661879b505b84ca4f4d679b486cd5
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Corgi2D/Mountains.unity
-    guid: 95d196af875ba35478432a81627a3084
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Corgi2D/Lava.unity
-    guid: 021858c77d85c1e4a944245dd9e0cf08
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Pixel/PixelLevel.unity
-    guid: 2380b3a9640179c4791abe8cdec4ea5c
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Brobro/BrobroLevel.unity
-    guid: a4b03f0bea3ef6444819e45677eee09f
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Corgi2D/Sandbox.unity
-    guid: 834d2ad12a39c48bba0d203a2d9de965
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/SuperHipsterBros/HipsterLevel.unity
-    guid: 67d7231ca91f47a43932691bedc7be2a
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Corgi3D/Corgi3D.unity
-    guid: 21235c11eb96a4cce9524e313642ab64
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalLevel.unity
-    guid: b5dafbb7f5956d94ba41cd169cc39435
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalFlight.unity
-    guid: 5714929c69111d6479988071c2f49c7c
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalCinemachineZones.unity
-    guid: 18021034d32868049ab88f55d2a3ebdf
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/FeaturesGravity.unity
-    guid: 6bc87e572545fc543b9e3a9a445f0e44
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/FeaturesPlatforms.unity
-    guid: 7c52201ab32b101488d1487d7683ccdb
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/FeaturesInventory.unity
-    guid: 01cc8dfd93b2bf64c8ffaea6085007d9
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/FeaturesWeapons.unity
-    guid: ebcd6de0032f6a946a11ce7c5c7e5b02
-  - enabled: 0
     path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalSpawners.unity
     guid: 4c2aaf8a2f44b4dd8bcabba19d475c87
   - enabled: 0
@@ -153,27 +96,6 @@ EditorBuildSettings:
     path: Assets/Third-Party/CorgiEngine/ThirdParty/MoreMountains/InventoryEngine/Demos/PixelRogue/PixelRogueRoom2.unity
     guid: c3ccf26bc08e243b1aae7d13d40d2ec4
   - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/TheHunt/TheHunt.unity
-    guid: a54626feab65cca4dbcea4dd435ad9be
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Retro/RetroClouds.unity
-    guid: 7f88f9618b30a48dd84ec6896516d345
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Retro/RetroForest.unity
-    guid: 651fe2312d8cc4f5587ce3e96e9609b0
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Retro/RetroMountains.unity
-    guid: e2fd718f497d2408ea6a1661ea861316
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Retro/RetroAI.unity
-    guid: c04efd6e72733294a8e7c8111aa5f4c4
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Retro/RetroPush.unity
-    guid: 6941630460bbb2649a30eea54b4ef6ea
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Retro/RetroCopter.unity
-    guid: 9fe3f55d8fbc69e498173731635e42f5
-  - enabled: 0
     path: Assets/Third-Party/CorgiEngine/Demos/RetroAdventure/RetroAdventure1.unity
     guid: 2004874d46ed82941a677f3ee2b78d64
   - enabled: 0
@@ -217,8 +139,26 @@ EditorBuildSettings:
     guid: fc55ca228a62d47438c5e748cb1e9119
   - enabled: 1
     path: Assets/Scenes/Normal2.unity
-    guid: 7a4484eeeb9827f40bf34d5ee2a9a5f1
+    guid: f54d38482bb99764581c60aed7687652
   - enabled: 1
     path: Assets/Scenes/Normal3.unity
-    guid: f5241f2bd13aa3a45ad38ccf38eb0371
+    guid: 59a798b3fd6dfed488fc73c4ae74170f
+  - enabled: 1
+    path: Assets/Scenes/Hard1.unity
+    guid: 7ed12d387fbf06847b644a792bfb8ff7
+  - enabled: 1
+    path: Assets/Scenes/Hard2.unity
+    guid: 5cfc4b07904a49e459833835bff2bb8b
+  - enabled: 1
+    path: Assets/Scenes/Hard3.unity
+    guid: 1a3fa170a50e1a243861c0bd22397776
+  - enabled: 1
+    path: Assets/Scenes/MeetingRoom.unity
+    guid: 8cea75bf9507bfd4b8890785f61b8ef4
+  - enabled: 1
+    path: Assets/Scenes/RestRoom.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Opening.unity
+    guid: 42525e9f6336f31409436093ab1e5916
   m_configObjects: {}
