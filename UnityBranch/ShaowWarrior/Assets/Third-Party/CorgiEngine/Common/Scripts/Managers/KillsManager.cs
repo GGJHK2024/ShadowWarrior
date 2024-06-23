@@ -79,6 +79,7 @@ namespace MoreMountains.CorgiEngine
 			if (AutoSetKillThreshold)
 			{
 				ComputeKillThresholdBasedOnTargetLayerMask();
+				EnemyManager.Instance.Reset();
 			}
 			RefreshRemainingDeaths();
 		}
