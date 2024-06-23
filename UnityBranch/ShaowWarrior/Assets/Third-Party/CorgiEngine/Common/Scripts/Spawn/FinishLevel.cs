@@ -45,6 +45,7 @@ namespace MoreMountains.CorgiEngine
 
 		protected WaitForSeconds _delayWaitForSeconds;
 		protected Character _character;
+		public int doorID = 0;
 
 		/// <summary>
 		/// On initialization, we init our delay
@@ -73,11 +74,22 @@ namespace MoreMountains.CorgiEngine
 			base.TriggerButtonAction (instigator);
 			if (KillsManager.Instance.RemainingDeaths == 0)
 			{
+				LevelChooseManager.Instance.GoToNextLevel(doorID);
 				StartCoroutine(GoToNextLevelCoroutine());
 				ActivateZone ();
 			}
 			
-		}	
+		}
+
+		/// <summary>
+		/// 我需要门的id
+		/// </summary>
+		/// <param name="i"></param>
+		/// <returns></returns>
+		public void NeedID(int i)
+		{
+			doorID = i;
+		}
         
 		/// <summary>
 		/// A coroutine used to handle the finish level sequence

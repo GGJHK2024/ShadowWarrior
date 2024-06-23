@@ -389,6 +389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 213527045}
   - component: {fileID: 213527046}
+  - component: {fileID: 213527047}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -425,7 +426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerPrefabs:
   - {fileID: 114473069959786316, guid: d9a03ec1f93191f48af48c379887e585, type: 3}
-  AutoAttributePlayerIDs: 1
+  AutoAttributePlayerIDs: 0
   SceneCharacters: []
   DebugSpawn: {fileID: 0}
   CheckpointAttributionAxis: 0
@@ -508,6 +509,36 @@ MonoBehaviour:
     UnloadMethod: 2
     AntiSpillSceneName: 
   SetPlayerAsFeedbackRangeCenter: 0
+--- !u!114 &213527047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213527044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3260a453b5944e24ca26412f4eaf0946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mode: 0
+  TargetsList: []
+  TargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 8192
+  AutoSetKillThreshold: 1
+  DeathThreshold: 5
+  RemainingDeaths: 0
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLastDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  TotalCounter: {fileID: 0}
+  RemainingCounter: {fileID: 0}
+  TotalCounter_TMP: {fileID: 0}
+  RemainingCounter_TMP: {fileID: 0}
 --- !u!1001 &218317647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -958,48 +989,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyCount: 8
---- !u!114 &383671131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 383671124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3260a453b5944e24ca26412f4eaf0946, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Mode: 0
-  TargetsList: []
-  TargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 8192
-  AutoSetKillThreshold: 1
-  DeathThreshold: 5
-  RemainingDeaths: 0
-  OnDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 383671130}
-        m_TargetAssemblyTypeName: EnemyManager, MoreMountains.CorgiEngine
-        m_MethodName: BeKilled
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnLastDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  TotalCounter: {fileID: 0}
-  RemainingCounter: {fileID: 0}
-  TotalCounter_TMP: {fileID: 0}
-  RemainingCounter_TMP: {fileID: 0}
 --- !u!4 &424159656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 453832, guid: f50b902faf65f4146b450fae8f099172,
@@ -1863,13 +1852,10 @@ MonoBehaviour:
   ExitFeedback: {fileID: 0}
   OnActivation:
     m_PersistentCalls:
-      m_Calls: []
-  OnExit:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 213527046}
-        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.LevelManager, MoreMountains.CorgiEngine
-        m_MethodName: GoToNextLevel
+      - m_Target: {fileID: 721494729}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.FinishLevel, MoreMountains.CorgiEngine
+        m_MethodName: NeedID
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1879,6 +1865,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
   OnStay:
     m_PersistentCalls:
       m_Calls: []
@@ -1916,6 +1905,7 @@ MonoBehaviour:
     Initialized: 0
   FreezeTime: 0
   FreezeCharacter: 1
+  doorID: 0
 --- !u!1001 &727407077
 PrefabInstance:
   m_ObjectHideFlags: 0
