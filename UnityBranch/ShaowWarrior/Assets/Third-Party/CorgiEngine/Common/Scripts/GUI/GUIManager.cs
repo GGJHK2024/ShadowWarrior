@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using MoreMountains.Tools;
 using UnityEngine.EventSystems;
+using Object = UnityEngine.Object;
 
 namespace MoreMountains.CorgiEngine
 {	
@@ -62,6 +64,8 @@ namespace MoreMountains.CorgiEngine
 		protected float _initialButtonsAlpha;
 		protected Object[] sprites;	//all ui sliced sprites
 		
+		private Character player {get; set;}
+		
 		/// <summary>
 		/// Statics initialization to support enter play modes
 		/// </summary>
@@ -77,6 +81,7 @@ namespace MoreMountains.CorgiEngine
 		protected override void Awake()
 		{
 			base.Awake();
+			player = GameManager.Instance.PersistentCharacter;
 			sprites = Resources.LoadAll ("ui");
 
 			if (Joystick != null)
@@ -328,6 +333,46 @@ namespace MoreMountains.CorgiEngine
 			if (LevelText!= null)
 			{ 
 				LevelText.text=name;
+			}
+		}
+
+		/// <summary>
+		/// Level Up 事件
+		/// HP+x
+		/// </summary>
+		public void LU_AddXHP(int x)
+		{
+			PlayerManager.Instance.AddHP(x);
+		}
+
+		/// <summary>
+		/// Level Up 事件
+		/// 移速+x
+		/// </summary>
+		/// <param name="x"></param>
+		public void LU_AddXSpeed(int x)
+		{
+			player.GetComponent<CharacterHorizontalMovement>().WalkSpeed += x;
+		}
+
+		/// <summary>
+		/// 拿到Handle Weapon的武器名字，根据名字判断升级
+		/// </summary>
+		public void LU_SkillUp()
+		{
+			CharacterHandleWeapon curWeapon = player.GetComponent<CharacterHandleWeapon>();
+			string curName = curWeapon.InitialWeapon.name;
+			int curStage = int.Parse(curName.Substring(curName.Length - 1, curName.Length));
+			switch (curStage)
+			{
+				case 1:
+					curWeapon.InitialWeapon = Resources.Load<MeleeWeapon>("Prefabs/MeleeWeapon_2");
+					break;
+				case 2:
+					curWeapon.InitialWeapon = Resources.Load<MeleeWeapon>("Prefabs/MeleeWeapon_3");
+					break;
+				case 3:
+					break;
 			}
 		}
 

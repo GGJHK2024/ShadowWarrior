@@ -106,4 +106,13 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
         player.FindAbility<CharacterStun>().StunFor(time);
     }
 
+    /// <summary>
+    /// 增加 i 滴血
+    /// </summary>
+    /// <param name="i"></param>
+    public void AddHP(int i)
+    {
+        hp += i;
+    }
+
 }

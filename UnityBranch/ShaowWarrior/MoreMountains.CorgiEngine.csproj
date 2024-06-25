@@ -179,6 +179,7 @@
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\GUI\HipsterGUI.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\Weapons\WeaponLaserSight.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterRun.cs" />
+    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Managers\PlayerManager.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Environment\ProximityMine.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIDecisionGrounded.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\Damage\KillPlayerOnTouch.cs" />
