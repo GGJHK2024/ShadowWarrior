@@ -356,6 +356,34 @@ namespace MoreMountains.CorgiEngine
 		}
 
 		/// <summary>
+		/// Level Up 事件
+		/// 闪避cd-x
+		/// </summary>
+		/// <param name="x"></param>
+		public void LU_SubXDashCD(int x)
+		{
+			player.GetComponent<CharacterDash>().DashCooldown -= x;
+		}
+
+		/// <summary>
+		/// Level Up 事件
+		/// 触发一次奇遇
+		/// </summary>
+		public void LU_OpenSpecialEvent()
+		{
+			//
+		}
+
+		/// <summary>
+		/// Level Up 事件
+		/// 货币+x
+		/// </summary>
+		public void LU_AddXMoney(int x)
+		{
+			player.GetComponent<PlayerManager>().AddMoney(x);
+		}
+
+		/// <summary>
 		/// 拿到Handle Weapon的武器名字，根据名字判断升级
 		/// </summary>
 		public void LU_SkillUp()

@@ -16,6 +16,7 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     public Character playerPrefab;
 
     public int hp;
+    public int money = 0;
 
     [Tooltip("击杀敌人上限")] 
     public int bulletTimeCanKillEnemyNumber;
@@ -113,6 +114,15 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     public void AddHP(int i)
     {
         hp += i;
+    }
+
+    /// <summary>
+    /// 增加 i 点金币
+    /// </summary>
+    /// <param name="i"></param>
+    public void AddMoney(int i)
+    {
+        money += i;
     }
 
 }
