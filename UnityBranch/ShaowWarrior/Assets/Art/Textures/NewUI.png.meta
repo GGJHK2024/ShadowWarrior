@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3bb14bcdb60e3b41be1e7dcfeecb798
-      internalID: 2144656741
+      spriteID: 6aefd8aba2dff9e438155a8a0ec399ee
+      internalID: 1319132651
       vertices: []
       indices: 
       edges: []
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b07ca1756cf9ccc47a3370e8dded087a
-      internalID: 1708272183
+      spriteID: 4799ca1311387064e9890b64a761d2a3
+      internalID: -1346047911
       vertices: []
       indices: 
       edges: []
@@ -221,8 +221,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a775c9af110531547a710787d1881200
-      internalID: 1493198973
+      spriteID: f8ecf740a8a0ad6469bea12d30a8baa5
+      internalID: -136380476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Money_Board
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 350
+        width: 170
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5b431c65bd39a746bbdcb5fbac3780e
+      internalID: 1841066054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Money_Icon
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 353
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c93f266771df6c4b9c5c49b15a5cfb0
+      internalID: -2000588423
       vertices: []
       indices: 
       edges: []
@@ -242,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33d525e5af181964e902c13ae8cde274
-      internalID: -91403483
+      spriteID: 290fe61bad0b76542842f8605d7f5477
+      internalID: 1324593439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Money_Board
+      name: PlayerHP_Fill
       rect:
         serializedVersion: 2
         x: 370
-        y: 298
-        width: 170
-        height: 34
+        y: 269
+        width: 412
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,35 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 718717660e801584eaa0c7e64b2017e3
-      internalID: 1181182809
+      spriteID: 58bbafe6983cde640bed2dc9743ff2ef
+      internalID: 1078757119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Money_Icon
-      rect:
-        serializedVersion: 2
-        x: 573
-        y: 301
-        width: 24
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87eb5186cad6903469a2b5395ff6dde1
-      internalID: 763828735
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NewUI_6
+      name: PlayerHP_Board
       rect:
         serializedVersion: 2
         x: 370
@@ -305,14 +326,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a275647849b709d449ac946887d9e68c
-      internalID: -190015526
+      spriteID: ce062e66a93cc60489e953cba1b23108
+      internalID: -880806108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue
+      name: Blue_Fiil
       rect:
         serializedVersion: 2
         x: 370
@@ -326,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 694f9b5a7f8681d4aacda24d359b5748
-      internalID: -1672487008
+      spriteID: ba4be0ed095deec45b6c830be28a0b2c
+      internalID: 2139076064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyHP_board
+      name: EnemyHP_Board
       rect:
         serializedVersion: 2
         x: 374
@@ -347,8 +368,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fe16350c2c490d4996b44fa362f68a7
-      internalID: 645597977
+      spriteID: db57d5519817fd24187095f0bff4d7f8
+      internalID: 437875430
       vertices: []
       indices: 
       edges: []
@@ -368,8 +389,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a07912c19a9b82408b00eadf860a89d
-      internalID: -1270325259
+      spriteID: 127ff97442be44d4a80574131f4669b0
+      internalID: 1076829698
       vertices: []
       indices: 
       edges: []
@@ -385,16 +406,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Blue: -1672487008
-      BossHP_Board: 1708272183
-      BossHP_Fill: 1493198973
-      EnemyHP_Fill: -1270325259
-      EnemyHP_board: 645597977
-      Head: -91403483
-      Head_Board: 2144656741
-      Money_Board: 1181182809
-      Money_Icon: 763828735
-      NewUI_6: -190015526
+      Blue_Fiil: 2139076064
+      BossHP_Board: -1346047911
+      BossHP_Fill: -136380476
+      EnemyHP_Board: 437875430
+      EnemyHP_Fill: 1076829698
+      Head: 1324593439
+      Head_Board: 1319132651
+      Money_Board: 1841066054
+      Money_Icon: -2000588423
+      PlayerHP_Board: -880806108
+      PlayerHP_Fill: 1078757119
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
