@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using MoreMountains.Tools;
+using TMPro;
 using UnityEngine.EventSystems;
 using Object = UnityEngine.Object;
 
@@ -31,12 +32,6 @@ namespace MoreMountains.CorgiEngine
 		/// the panels and bars used to display current weapon ammo
 		[Tooltip("the panels and bars used to display current weapon ammo")]
 		public AmmoDisplay[] AmmoDisplays;
-		/// 通关升级界面
-		[Tooltip("升级界面")] 
-		public GameObject LevelUpScreen;
-		/// 商店界面
-		[Tooltip("商店界面")] 
-		public GameObject ShopScreen;
 		/// the pause screen game object
 		[Tooltip("the pause screen game object")]
 		public GameObject PauseScreen;
@@ -58,6 +53,34 @@ namespace MoreMountains.CorgiEngine
 		/// the level display
 		[Tooltip("the level display")]
 		public Text LevelText;
+		
+		[Header("LevelUpTexts")]
+		/// 通关升级界面
+		[Tooltip("升级界面")] 
+		public GameObject LevelUpScreen;
+		[Tooltip("LU界面姓名")] 
+		public TextMeshProUGUI player_text;
+		[Tooltip("LU界面金币")] 
+		public TextMeshProUGUI money_text;
+		[Tooltip("LU界面幸运值")] 
+		public TextMeshProUGUI lucky_text;
+		[Tooltip("LU界面闪避cd值")] 
+		public TextMeshProUGUI cd_text;
+		[Tooltip("LU界面血条")] 
+		public Slider hp_bar;
+		[Tooltip("LU界面Skill Pic 2")] 
+		public Image skill_2;
+		[Tooltip("LU界面Skill Pic 3")] 
+		public Image skill_3;
+		[Tooltip("LU界面升级A")] 
+		public Button optionA;
+		[Tooltip("LU界面升级B")] 
+		public Button optionB;
+		
+		[Header("ShopTexts")]
+		/// 商店界面
+		[Tooltip("商店界面")] 
+		public GameObject ShopScreen;
 
 		[Header("Settings")]
 
