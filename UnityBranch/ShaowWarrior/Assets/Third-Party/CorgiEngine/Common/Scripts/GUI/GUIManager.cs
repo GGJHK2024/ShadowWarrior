@@ -31,6 +31,12 @@ namespace MoreMountains.CorgiEngine
 		/// the panels and bars used to display current weapon ammo
 		[Tooltip("the panels and bars used to display current weapon ammo")]
 		public AmmoDisplay[] AmmoDisplays;
+		/// 通关升级界面
+		[Tooltip("升级界面")] 
+		public GameObject LevelUpScreen;
+		/// 商店界面
+		[Tooltip("商店界面")] 
+		public GameObject ShopScreen;
 		/// the pause screen game object
 		[Tooltip("the pause screen game object")]
 		public GameObject PauseScreen;
@@ -197,6 +203,32 @@ namespace MoreMountains.CorgiEngine
 			if (PauseScreen!= null)
 			{ 
 				PauseScreen.SetActive(state);
+				EventSystem.current.sendNavigationEvents = state;
+			}
+		}
+		
+		/// <summary>
+		/// Sets the Level Up.
+		/// </summary>
+		/// <param name="state">If set to <c>true</c>, sets the pause.</param>
+		public virtual void SetLevelUp(bool state)
+		{
+			if (LevelUpScreen!= null)
+			{ 
+				LevelUpScreen.SetActive(state);
+				EventSystem.current.sendNavigationEvents = state;
+			}
+		}
+		
+		/// <summary>
+		/// Sets the Shop.
+		/// </summary>
+		/// <param name="state">If set to <c>true</c>, sets the pause.</param>
+		public virtual void SetShop(bool state)
+		{
+			if (ShopScreen!= null)
+			{ 
+				ShopScreen.SetActive(state);
 				EventSystem.current.sendNavigationEvents = state;
 			}
 		}
