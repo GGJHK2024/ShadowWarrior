@@ -15,6 +15,7 @@ namespace MoreMountains.CorgiEngine
 		public enum Modes { Layer, List }
 		
 		public Modes Mode = Modes.Layer;
+		public GameObject enemyContainer;
 
 		[Header("List Mode")]
 		/// a list of Health components on the targets. Once all these targets are dead, OnLastDeath will trigger
@@ -105,15 +106,16 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void ComputeKillThresholdBasedOnTargetLayerMask()
 		{
-			DeathThreshold = 0;
-			Health[] healths = FindObjectsOfType<Health>();
+			enemyContainer = GameObject.FindWithTag("EC");
+			DeathThreshold = enemyContainer.transform.childCount;
+			/*Health[] healths = FindObjectsOfType<Health>();
 			foreach (Health health in healths)
 			{
 				if (TargetLayerMask.MMContains(health.gameObject))
 				{
 					DeathThreshold++;
 				}
-			}
+			}*/
 		}
 		
 		/// <summary>

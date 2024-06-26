@@ -139,6 +139,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 114473069959786316, guid: d9a03ec1f93191f48af48c379887e585,
     type: 3}
   hp: 5
+  money: 0
   bulletTimeCanKillEnemyNumber: 3
   skillChargeTime: 0
   bulletTime: 0
@@ -1099,7 +1100,7 @@ GameObject:
   - component: {fileID: 93707260}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: EC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2066,6 +2067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mode: 0
+  enemyContainer: {fileID: 0}
   TargetsList: []
   TargetLayerMask:
     serializedVersion: 2

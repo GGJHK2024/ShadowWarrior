@@ -210,26 +210,44 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// Sets the Level Up.
 		/// </summary>
-		/// <param name="state">If set to <c>true</c>, sets the pause.</param>
-		public virtual void SetLevelUp(bool state)
+		public virtual void OpenLevelUp()
 		{
 			if (LevelUpScreen!= null)
 			{ 
-				LevelUpScreen.SetActive(state);
-				EventSystem.current.sendNavigationEvents = state;
+				LevelUpScreen.SetActive(true);
+			}
+		}
+		
+		/// <summary>
+		/// Sets the Level Up.
+		/// </summary>
+		public virtual void CloseLevelUp()
+		{
+			if (LevelUpScreen!= null)
+			{ 
+				LevelUpScreen.SetActive(false);
 			}
 		}
 		
 		/// <summary>
 		/// Sets the Shop.
 		/// </summary>
-		/// <param name="state">If set to <c>true</c>, sets the pause.</param>
-		public virtual void SetShop(bool state)
+		public virtual void OpenShop()
 		{
 			if (ShopScreen!= null)
 			{ 
-				ShopScreen.SetActive(state);
-				EventSystem.current.sendNavigationEvents = state;
+				ShopScreen.SetActive(true);
+			}
+		}
+		
+		/// <summary>
+		/// Sets the Shop.
+		/// </summary>
+		public virtual void CLoseShop()
+		{
+			if (ShopScreen!= null)
+			{ 
+				ShopScreen.SetActive(false);
 			}
 		}
 

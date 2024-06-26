@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyManager : MMSingleton<EnemyManager>,		
     MMEventListener<MMGameEvent>,
@@ -27,6 +28,14 @@ public class EnemyManager : MMSingleton<EnemyManager>,
         MMEventManager.AddListener<MMGameEvent>(this);
     }
 
+    private void Update()
+    {
+        if (KillsManager.Instance.RemainingDeaths == 0)
+        {
+            GUIManager.Instance.OpenLevelUp();
+        }
+    }
+
     public void BeKilled()
     {
         _enemyCount--;
@@ -48,7 +57,8 @@ public class EnemyManager : MMSingleton<EnemyManager>,
     public void OnMMEvent(MMGameEvent eventType)
     {
         switch (eventType.EventName) {
-            case GameEventType.Dead: {
+            case GameEventType.Dead:
+            {
                 KillsManager.Instance.ComputeKillThresholdBasedOnTargetLayerMask();
                 KillsManager.Instance.RefreshRemainingDeaths();
                 Reset();
