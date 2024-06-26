@@ -12,7 +12,7 @@ public class EnemyManager : MMSingleton<EnemyManager>,
 {
     public int enemyCount = KillsManager.Instance.DeathThreshold;
     private int _enemyCount;
-    
+
     /// <summary>
     /// Statics initialization to support enter play modes
     /// </summary>
@@ -26,14 +26,6 @@ public class EnemyManager : MMSingleton<EnemyManager>,
     {
         MMEventManager.AddListener<CorgiEngineEvent>(this);
         MMEventManager.AddListener<MMGameEvent>(this);
-    }
-
-    private void Update()
-    {
-        if (KillsManager.Instance.RemainingDeaths == 0)
-        {
-            GUIManager.Instance.OpenLevelUp();
-        }
     }
 
     public void BeKilled()

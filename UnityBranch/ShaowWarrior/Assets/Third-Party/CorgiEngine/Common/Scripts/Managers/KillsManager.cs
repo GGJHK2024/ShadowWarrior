@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 #if MM_TEXTMESHPRO
 using TMPro;
@@ -83,6 +85,14 @@ namespace MoreMountains.CorgiEngine
 				EnemyManager.Instance.Reset();
 			}
 			RefreshRemainingDeaths();
+		}
+		
+		/// <summary>
+		/// refresh remaining enemy count
+		/// </summary>
+		public void BeKilled()
+		{
+			EnemyManager.Instance.BeKilled();
 		}
 
 		/// <summary>

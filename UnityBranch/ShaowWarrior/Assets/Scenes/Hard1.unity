@@ -129,49 +129,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1098753434}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &38471223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 38471222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3260a453b5944e24ca26412f4eaf0946, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Mode: 0
-  enemyContainer: {fileID: 0}
-  TargetsList: []
-  TargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 8192
-  AutoSetKillThreshold: 1
-  DeathThreshold: 5
-  RemainingDeaths: 0
-  OnDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 38471224}
-        m_TargetAssemblyTypeName: EnemyManager, MoreMountains.CorgiEngine
-        m_MethodName: BeKilled
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnLastDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  TotalCounter: {fileID: 0}
-  RemainingCounter: {fileID: 0}
-  TotalCounter_TMP: {fileID: 0}
-  RemainingCounter_TMP: {fileID: 0}
 --- !u!114 &38471224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,6 +493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 213527045}
   - component: {fileID: 213527046}
+  - component: {fileID: 213527047}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -654,6 +612,49 @@ MonoBehaviour:
     UnloadMethod: 2
     AntiSpillSceneName: 
   SetPlayerAsFeedbackRangeCenter: 0
+--- !u!114 &213527047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213527044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3260a453b5944e24ca26412f4eaf0946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mode: 0
+  enemyContainer: {fileID: 0}
+  TargetsList: []
+  TargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 8192
+  AutoSetKillThreshold: 1
+  DeathThreshold: 5
+  RemainingDeaths: 0
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLastDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 469284790}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: OpenLevelUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  TotalCounter: {fileID: 0}
+  RemainingCounter: {fileID: 0}
+  TotalCounter_TMP: {fileID: 0}
+  RemainingCounter_TMP: {fileID: 0}
 --- !u!1001 &299097887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -901,6 +902,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &469284790 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11413996, guid: ace2d4bf56f98df4196ff81845a465d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 469284788}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d64723688ce860840bebf5facbf67709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &506901126
