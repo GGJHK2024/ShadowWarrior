@@ -31,6 +31,7 @@ public class EnemyManager : MMSingleton<EnemyManager>,
     public void BeKilled()
     {
         _enemyCount--;
+        PlayerManager.Instance.AddMoney(5);
         print("current reaming: " + _enemyCount);
     }
 
@@ -61,9 +62,12 @@ public class EnemyManager : MMSingleton<EnemyManager>,
     public void OnMMEvent(CorgiEngineEvent eventType)
     {
         switch (eventType.EventType) {
-            case CorgiEngineEventTypes.LevelStart: {
+            case CorgiEngineEventTypes.LevelStart:
+            {
+                PlayerManager.Instance.AddMoney(0);
                 KillsManager.Instance.ComputeKillThresholdBasedOnTargetLayerMask();
                 KillsManager.Instance.RefreshRemainingDeaths();
+                
                 Reset();
                 return;
             }

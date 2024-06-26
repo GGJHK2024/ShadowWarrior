@@ -29,6 +29,8 @@ namespace MoreMountains.CorgiEngine
 		public Image avater;
 		[Tooltip("头像遮罩")]
 		public Image avaterMusk;
+		[Tooltip("金币文本")] 
+		public TextMeshProUGUI money;
 		/// the panels and bars used to display current weapon ammo
 		[Tooltip("the panels and bars used to display current weapon ammo")]
 		public AmmoDisplay[] AmmoDisplays;
@@ -215,6 +217,15 @@ namespace MoreMountains.CorgiEngine
 					Buttons.gameObject.SetActive (false);
 				}
 			}
+		}
+
+		/// <summary>
+		/// 更新GUI金币文本
+		/// </summary>
+		/// <param name="i"></param>
+		public void UpdateMoneyText(int i)
+		{
+			money.text = i.ToString();
 		}
 
 		/// <summary>

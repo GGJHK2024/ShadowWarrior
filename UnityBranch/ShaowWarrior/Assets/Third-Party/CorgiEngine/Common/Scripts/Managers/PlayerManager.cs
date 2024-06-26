@@ -123,6 +123,7 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     public void AddMoney(int i)
     {
         money += i;
+        GUIManager.Instance.UpdateMoneyText(money);
     }
 
 }
