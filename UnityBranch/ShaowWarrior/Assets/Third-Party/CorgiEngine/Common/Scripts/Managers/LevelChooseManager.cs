@@ -24,6 +24,7 @@ namespace MoreMountains.CorgiEngine
         [SerializeField] public List<LevelStruct> levels = new List<LevelStruct>();
 
         public int curID;
+        public int stage;
         public List<int> nextLevel;
         public FinishLevel[] gates;
         // Start is called before the first frame update
@@ -32,14 +33,9 @@ namespace MoreMountains.CorgiEngine
             MMEventManager.AddListener<CorgiEngineEvent>(this);
             // 第一次打开游戏
             curID = 0;
+            stage = -1;
             InitLevel(curID);
             InitNextLevelGate();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
         }
 
         public void InitLevel(int id)
@@ -60,6 +56,7 @@ namespace MoreMountains.CorgiEngine
         public void GoToNextLevel(int i)
         {
             curID = levels[curID].childId[i];
+            stage++;
             print("curID in GOTONEXTLEVEL: " + curID);
         }
         

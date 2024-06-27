@@ -249,6 +249,7 @@ namespace MoreMountains.CorgiEngine
 			if (LevelUpScreen!= null)
 			{ 
 				LevelUpScreen.SetActive(true);
+				UpdateLUManuel();
 			}
 		}
 		
@@ -418,6 +419,18 @@ namespace MoreMountains.CorgiEngine
 			{ 
 				LevelText.text=name;
 			}
+		}
+
+		/// <summary>
+		/// 每次打开升级面板时更新数值
+		/// </summary>
+		public void UpdateLUManuel()
+		{
+			money_text.text = PlayerManager.Instance.money.ToString();
+			lucky_text.text = PlayerManager.Instance.lucky.ToString();
+			cd_text.text = player.GetComponent<CharacterDash>().DashCooldown.ToString();
+			hp_bar.value = PlayerManager.Instance.hp;
+			// 技能图标：可以用三元表达式判断替换
 		}
 
 		/// <summary>
