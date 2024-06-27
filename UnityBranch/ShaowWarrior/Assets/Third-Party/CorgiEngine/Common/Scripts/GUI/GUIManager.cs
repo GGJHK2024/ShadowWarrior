@@ -430,7 +430,39 @@ namespace MoreMountains.CorgiEngine
 			lucky_text.text = PlayerManager.Instance.lucky.ToString();
 			cd_text.text = player.GetComponent<CharacterDash>().DashCooldown.ToString();
 			hp_bar.value = PlayerManager.Instance.hp;
+			// buttons
+			optionA.onClick.RemoveAllListeners();
+			optionB.onClick.RemoveAllListeners();
+			optionA.onClick.AddListener(CloseLevelUp);
+			optionB.onClick.AddListener(CloseLevelUp);
 			// 技能图标：可以用三元表达式判断替换
+			switch (LevelChooseManager.Instance.stage)
+			{
+				case 1:
+					optionA.onClick.AddListener(()=>LU_AddXHP(1));
+					optionB.onClick.AddListener(LU_SkillUp);
+					break;
+				case 2:
+					optionA.onClick.AddListener(()=>LU_SubXDashCD(1));
+					optionB.onClick.AddListener(()=>LU_AddXHP(1));
+					break;
+				case 3:
+					optionA.onClick.AddListener(()=>LU_AddXHP(1));
+					optionB.onClick.AddListener(LU_OpenSpecialEvent);
+					break;
+				case 4:
+					// 大招-血魔流
+					// 大招-低血流
+					break;
+				case 5:
+					optionA.onClick.AddListener(LU_SkillUp);
+					optionB.onClick.AddListener(()=>LU_AddXHP(2));
+					break;
+				case 6:
+					optionA.onClick.AddListener(()=>LU_AddXMoney(5));
+					optionB.onClick.AddListener(LU_OpenSpecialEvent);
+					break;
+			}
 		}
 
 		/// <summary>
@@ -440,16 +472,6 @@ namespace MoreMountains.CorgiEngine
 		public void LU_AddXHP(int x)
 		{
 			PlayerManager.Instance.AddHP(x);
-		}
-
-		/// <summary>
-		/// Level Up 事件
-		/// 移速+x
-		/// </summary>
-		/// <param name="x"></param>
-		public void LU_AddXSpeed(int x)
-		{
-			player.GetComponent<CharacterHorizontalMovement>().WalkSpeed += x;
 		}
 
 		/// <summary>
@@ -473,7 +495,7 @@ namespace MoreMountains.CorgiEngine
 
 		/// <summary>
 		/// Level Up 事件
-		/// 货币+x
+		/// 货币+5 (暂时)
 		/// </summary>
 		public void LU_AddXMoney(int x)
 		{
