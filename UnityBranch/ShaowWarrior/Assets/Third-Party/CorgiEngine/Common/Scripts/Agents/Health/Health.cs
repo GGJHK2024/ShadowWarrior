@@ -1034,6 +1034,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void ResetHealthToMaxHealth()
 		{
+			print("reset?");
 			CurrentHealth = MaximumHealth;
 			UpdateHealthBar(false);
 			HealthChangeEvent.Trigger(this, CurrentHealth);

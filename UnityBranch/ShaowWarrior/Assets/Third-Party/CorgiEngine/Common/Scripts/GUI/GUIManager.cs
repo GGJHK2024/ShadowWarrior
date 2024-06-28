@@ -83,6 +83,10 @@ namespace MoreMountains.CorgiEngine
 		/// 商店界面
 		[Tooltip("商店界面")] 
 		public GameObject ShopScreen;
+		[Tooltip("技能升级图标，如果升满了这里替换成售罄")]
+		public Image SkillUpdate;
+		[Tooltip("大招图标，如果已经有了这里替换成售罄")]
+		public Image BigSkill;
 
 		[Header("Settings")]
 
@@ -94,6 +98,7 @@ namespace MoreMountains.CorgiEngine
 		protected float _initialArrowsAlpha;
 		protected float _initialButtonsAlpha;
 		protected Object[] sprites;	//all ui sliced sprites
+		protected Button[] buyingItems;	// 待确认的购买物
 		
 		private Character player {get; set;}
 		

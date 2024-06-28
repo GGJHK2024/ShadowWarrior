@@ -61,15 +61,17 @@ namespace MoreMountains.CorgiEngine
 			{
 				return;
 			}
-
+			
+			Character character = this.gameObject.GetComponentInParent<Character>(); 
 			switch (engineEvent.EventType)
 			{
 				case CorgiEngineEventTypes.LoadNextScene:
+					Debug.LogError("eee");
 					this.gameObject.SetActive(false);
 					break;
 				case CorgiEngineEventTypes.SpawnCharacterStarts:
 					this.gameObject.SetActive(true);
-					Character character = this.gameObject.GetComponentInParent<Character>(); 
+					character = this.gameObject.GetComponentInParent<Character>(); 
 					character.enabled = true;
 					character.ConditionState.ChangeState(CharacterStates.CharacterConditions.Normal);
 					character.MovementState.ChangeState(CharacterStates.MovementStates.Idle);
@@ -84,6 +86,7 @@ namespace MoreMountains.CorgiEngine
 				case CorgiEngineEventTypes.LevelStart:
 					if (_health != null)
 					{
+						character = this.gameObject.GetComponentInParent<Character>();
 						_health.StoreInitialPosition();    
 					}
 					break;

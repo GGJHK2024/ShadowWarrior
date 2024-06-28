@@ -117,7 +117,11 @@ namespace MoreMountains.CorgiEngine
 		public virtual void ComputeKillThresholdBasedOnTargetLayerMask()
 		{
 			enemyContainer = GameObject.FindWithTag("EC");
-			DeathThreshold = enemyContainer.transform.childCount;
+			if(enemyContainer)
+				DeathThreshold = enemyContainer.transform.childCount;
+			else
+				DeathThreshold = 0;
+			
 			/*Health[] healths = FindObjectsOfType<Health>();
 			foreach (Health health in healths)
 			{

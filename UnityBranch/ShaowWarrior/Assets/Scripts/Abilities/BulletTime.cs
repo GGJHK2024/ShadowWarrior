@@ -44,7 +44,7 @@ public class BulletTime : CharacterAbility,
     }
     protected override void HandleInput()
     {
-        if (!_playerManager.canUseSkill)
+        if (!_playerManager.canUseSkill || !_playerManager.hasBigSkill)
             return;
         bool useSkillInput = _inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonPressed 
                                 && _inputManager.SecondaryShootButton.State.CurrentState == MMInput.ButtonStates.ButtonPressed;

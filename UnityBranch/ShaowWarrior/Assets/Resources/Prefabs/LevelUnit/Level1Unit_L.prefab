@@ -620,7 +620,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     Initialized: 0
   FreezeTime: 0
-  FreezeCharacter: 1
+  FreezeCharacter: 0
   doorID: 0
 --- !u!1 &3246661051289654138
 GameObject:
@@ -1378,7 +1378,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     Initialized: 0
   FreezeTime: 0
-  FreezeCharacter: 1
+  FreezeCharacter: 0
   doorID: 0
 --- !u!1 &3246661052140889249
 GameObject:

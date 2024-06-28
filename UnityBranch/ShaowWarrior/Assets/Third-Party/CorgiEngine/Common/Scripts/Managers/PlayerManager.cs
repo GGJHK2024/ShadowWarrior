@@ -18,6 +18,9 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     public int hp;
     public int money = 0;
     public int lucky = 0;
+    public bool hasBigSkill;
+    public bool passiveSkill1;
+    public bool passiveSkill2;
 
     [Tooltip("击杀敌人上限")] 
     public int bulletTimeCanKillEnemyNumber;
@@ -61,7 +64,7 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
                 var health = player.GetComponent<Health>(); 
                 health.InitialHealth = hp;
                 health.MaximumHealth = hp;
-                health.SetHealth(hp, null);
+                health.SetHealth(health.CurrentHealth, null);
                 return;
             }
             case CorgiEngineEventTypes.LevelComplete: {
@@ -84,16 +87,26 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
 
     void Start()
     {
+        hasBigSkill = false;    // 初始无法使用双键大招
         MMEventManager.AddListener<CorgiEngineEvent>(this);
         MMEventManager.AddListener<MMGameEvent>(this);
 
     }
 
     /// <summary>
-    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// 允许使用主动大招
     /// </summary>
-    void Update()
+    public void EnableBigSkill()
     {
+        hasBigSkill = true;
+    }
+
+    /// <summary>
+    /// 禁止使用主动大招
+    /// </summary>
+    public void DisableBigSKill()
+    {
+        hasBigSkill = false;
     }
 
     public void UseSkill() {

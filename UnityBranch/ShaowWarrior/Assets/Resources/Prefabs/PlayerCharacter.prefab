@@ -4871,6 +4871,7 @@ GameObject:
   - component: {fileID: 114961038306698606}
   - component: {fileID: 114552395418788484}
   - component: {fileID: 114937525856734860}
+  - component: {fileID: 4186590560395536265}
   - component: {fileID: 114339136294938960}
   - component: {fileID: 114767941446374776}
   - component: {fileID: 114703903213212616}
@@ -5175,6 +5176,24 @@ MonoBehaviour:
   AllowFlipInTheAir: 1
   ActiveAfterDeath: 0
   StopWalkingWhenCollidingWithAWall: 0
+--- !u!114 &4186590560395536265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ed82f220055de419aad7e7e1832197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStopFeedbacks: {fileID: 0}
+  AbilityPermitted: 1
+  BlockingMovementStates: 
+  BlockingConditionStates: 
+  BlockingWeaponStates: 
 --- !u!114 &114339136294938960
 MonoBehaviour:
   m_ObjectHideFlags: 0

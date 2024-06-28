@@ -140,6 +140,10 @@ MonoBehaviour:
     type: 3}
   hp: 5
   money: 0
+  lucky: 0
+  hasBigSkill: 0
+  passiveSkill1: 0
+  passiveSkill2: 0
   bulletTimeCanKillEnemyNumber: 3
   skillChargeTime: 0
   bulletTime: 0
@@ -1207,6 +1211,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
+      propertyPath: FreezeCharacter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a8cc7c4510b02dc49a3dbc70772e2ddd, type: 3}
       propertyPath: OnStay.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -1969,8 +1977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88fcac034e6398d42ac254095d9b2d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefabs:
-  - {fileID: 114473069959786316, guid: d9a03ec1f93191f48af48c379887e585, type: 3}
+  PlayerPrefabs: []
   AutoAttributePlayerIDs: 1
   SceneCharacters: []
   DebugSpawn: {fileID: 0}
@@ -17887,5 +17894,6 @@ MonoBehaviour:
     id: 24
     childId: 
   curID: 0
+  stage: 0
   nextLevel: 
   gates: []
