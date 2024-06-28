@@ -626,9 +626,11 @@ namespace MoreMountains.CorgiEngine
 			{
 				case 1:
 					curWeapon.InitialWeapon = Resources.Load<MeleeWeapon>("Prefabs/MeleeWeapon_2");
+					curWeapon.Setup();
 					break;
 				case 2:
 					curWeapon.InitialWeapon = Resources.Load<MeleeWeapon>("Prefabs/MeleeWeapon_3");
+					curWeapon.Setup();
 					break;
 				case 3:
 					break;
