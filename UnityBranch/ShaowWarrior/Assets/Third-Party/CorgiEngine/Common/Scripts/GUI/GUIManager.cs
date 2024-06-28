@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using MoreMountains.Tools;
 using TMPro;
 using UnityEngine.EventSystems;
@@ -84,9 +86,13 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("商店界面")] 
 		public GameObject ShopScreen;
 		[Tooltip("技能升级图标，如果升满了这里替换成售罄")]
-		public Image SkillUpdate;
+		public Button SkillUpdate;
 		[Tooltip("大招图标，如果已经有了这里替换成售罄")]
-		public Image BigSkill;
+		public Button BigSkill;
+		[Tooltip("当前购物需要的金钱文本")]
+		public TextMeshProUGUI neededMoneyText;
+		[Tooltip("当前购物需要的金钱")]
+		private int neededMoney = 0;
 
 		[Header("Settings")]
 
@@ -98,7 +104,8 @@ namespace MoreMountains.CorgiEngine
 		protected float _initialArrowsAlpha;
 		protected float _initialButtonsAlpha;
 		protected Object[] sprites;	//all ui sliced sprites
-		protected Button[] buyingItems;	// 待确认的购买物
+		[SerializeField]
+		protected List<Button> buyingItems;	// 待确认的购买物
 		
 		private Character player {get; set;}
 		
@@ -251,6 +258,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void OpenLevelUp()
 		{
+			Time.timeScale = 0;
 			if (LevelUpScreen!= null)
 			{ 
 				LevelUpScreen.SetActive(true);
@@ -263,6 +271,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void CloseLevelUp()
 		{
+			Time.timeScale = 1.0f;
 			if (LevelUpScreen!= null)
 			{ 
 				LevelUpScreen.SetActive(false);
@@ -274,9 +283,65 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void OpenShop()
 		{
-			if (ShopScreen!= null)
+			Time.timeScale = 0;
+			UpdateNeedMoneyText(0);
+			if (ShopScreen != null)
 			{ 
 				ShopScreen.SetActive(true);
+				player = GameManager.Instance.PersistentCharacter;
+				string curName = player.GetComponent<CharacterHandleWeapon>().InitialWeapon.name;
+				int curStage = int.Parse(curName.Substring(curName.Length - 1, 1));
+				// 如果已经连招升级满了，则替换为售罄，按钮无法购买
+				if (curStage == 3)
+				{
+					// SkillUpdate.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>();	// 替换为售罄图标
+					SkillUpdate.enabled = false;
+				}
+				else
+				{
+					// SkillUpdate.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>();	// 替换为升级图标图标
+					SkillUpdate.enabled = true;
+				}
+				// 如果已经有大招了，则替换为售罄，按钮无法购买
+				if (PlayerManager.Instance.hasBigSkill)
+				{
+					// BigSkill.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>();	// 替换为售罄图标
+					BigSkill.enabled = false;
+				}
+				else
+				{
+					// BigSkill.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>();	// 替换为大招图标
+					BigSkill.enabled = true;
+				}
+			}
+		}
+
+		/// <summary>
+		/// 确认购物
+		/// 如果钱够则执行购买决策，否则播放无法购买的音效
+		/// </summary>
+		public void ConfirmBuying()
+		{
+			if (PlayerManager.Instance.money < neededMoney)
+			{
+				// 播放无法购买的音效
+				print("购买失败");
+			}
+			else
+			{
+				PlayerManager.Instance.money -= neededMoney;
+				foreach (var b in buyingItems)
+				{
+					Invoke(b.name,0.02f);
+					b.gameObject.GetComponent<Image>().material = null;
+				}
+				// 清空所需金币数，更新文本
+				buyingItems.Clear();
+				neededMoney = 0;
+				UpdateNeedMoneyText(neededMoney);
+				UpdateMoneyText(PlayerManager.Instance.money);
+				// 播放购买的音效
+				print("购买成功");
 			}
 		}
 		
@@ -285,10 +350,51 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void CLoseShop()
 		{
+			Time.timeScale = 1.0f;
 			if (ShopScreen!= null)
-			{ 
+			{
+				foreach (var b in buyingItems)
+				{
+					b.gameObject.GetComponent<Image>().material = null;	// 移除选择描边效果
+				}
+				buyingItems.Clear();
 				ShopScreen.SetActive(false);
 			}
+		}
+
+		/// <summary>
+		/// 商品选择函数（作用与按钮上）
+		/// </summary>
+		/// <param name="b"></param>
+		public void ShopItemFunc(Button b)
+		{
+			if (CheckButton(b))
+			{
+				b.gameObject.GetComponent<Image>().material = null;	// 移除选择描边效果
+				buyingItems.Remove(b);
+				neededMoney -= int.Parse(b.gameObject.transform.GetChild(transform.childCount - 1).GetComponent<TextMeshProUGUI>()
+					.text);
+				UpdateNeedMoneyText(neededMoney);
+			}
+			else
+			{
+				b.gameObject.GetComponent<Image>().material = Resources.Load<Material>("Materials/Custom_Outline");
+				buyingItems.Add(b);
+				neededMoney += int.Parse(b.gameObject.transform.GetChild(transform.childCount - 1).GetComponent<TextMeshProUGUI>()
+					.text);
+				UpdateNeedMoneyText(neededMoney);
+			}
+			print("money: " + neededMoney);
+		}
+
+		/// <summary>
+		/// 检查该商品是否已添加
+		/// </summary>
+		/// <param name="b"></param>
+		/// <returns></returns>
+		public bool CheckButton(Button b)
+		{
+			return buyingItems.Contains(b);
 		}
 
 		/// <summary>
@@ -508,13 +614,14 @@ namespace MoreMountains.CorgiEngine
 		}
 
 		/// <summary>
+		/// Level Up 事件 | 商店函数
 		/// 拿到Handle Weapon的武器名字，根据名字判断升级
 		/// </summary>
 		public void LU_SkillUp()
 		{
 			CharacterHandleWeapon curWeapon = player.GetComponent<CharacterHandleWeapon>();
 			string curName = curWeapon.InitialWeapon.name;
-			int curStage = int.Parse(curName.Substring(curName.Length - 1, curName.Length));
+			int curStage = int.Parse(curName.Substring(curName.Length - 1, 1));
 			switch (curStage)
 			{
 				case 1:
@@ -526,6 +633,42 @@ namespace MoreMountains.CorgiEngine
 				case 3:
 					break;
 			}
+		}
+
+		/// <summary>
+		/// 商店事件
+		/// 更新购物所需金币
+		/// </summary>
+		public void UpdateNeedMoneyText(int i)
+		{
+			neededMoneyText.text = i.ToString();
+		}
+
+		/// <summary>
+		/// 商店函数
+		/// 血包效果
+		/// </summary>
+		public void S_Add3HP()
+		{
+			PlayerManager.Instance.AddHP(3);
+		}
+
+		/// <summary>
+		/// 商店函数
+		/// 开启玩家的主动大招
+		/// </summary>
+		public void S_BigSkill()
+		{
+			PlayerManager.Instance.hasBigSkill = true;
+		}
+
+		/// <summary>
+		/// 商店函数
+		/// 增加5点幸运（待定
+		/// </summary>
+		public void S_Add1Lucky()
+		{
+			PlayerManager.Instance.AddLcuky(5);
 		}
 
 		/// <summary>

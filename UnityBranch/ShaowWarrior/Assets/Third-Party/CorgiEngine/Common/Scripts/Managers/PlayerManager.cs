@@ -140,4 +140,14 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
         GUIManager.Instance.UpdateMoneyText(money);
     }
 
+    /// <summary>
+    /// 增加 i 点幸运值
+    /// </summary>
+    /// <param name="i"></param>
+    public void AddLcuky(int i)
+    {
+        lucky += i;
+        // GUIManager.Instance. //好像目前没有表达幸运值的ui
+    }
+
 }
