@@ -514,6 +514,7 @@ namespace MoreMountains.CorgiEngine
 			else
 			{
 				// 攻击力+50
+				LU_AddAttack(50);
 			}
 			CloseSpecialEvent();
 		}
@@ -544,6 +545,7 @@ namespace MoreMountains.CorgiEngine
 		public void Good3BB()
 		{
 			// 攻击力+75
+			LU_AddAttack(75);
 			CloseSpecialEvent();
 		}
 		
@@ -604,6 +606,7 @@ namespace MoreMountains.CorgiEngine
 			float curhp = player.GetComponent<Health>().CurrentHealth;
 			player.GetComponent<Health>().GetHealth(curhp * 0.3f, gameObject);
 			// 降低25点攻击
+			LU_AddAttack(-25);
 			CloseSpecialEvent();
 		}
 
@@ -692,6 +695,7 @@ namespace MoreMountains.CorgiEngine
 		public void Normal2BB__()
 		{
 			// 攻击力+50
+			LU_AddAttack(50);
 			LU_AddXMoney(-50);	// -50 money
 			CloseSpecialEvent();
 		}
@@ -956,6 +960,32 @@ namespace MoreMountains.CorgiEngine
 					break;
 				case 3:
 					break;
+			}
+		}
+
+		/// <summary>
+		/// 增加攻击力
+		/// </summary>
+		public void LU_AddAttack(int x)
+		{
+			GameObject weapon = null;
+			for (int i = 0; i < player.gameObject.transform.childCount; i++)
+			{
+				if (player.gameObject.transform.GetChild(i).name.Contains("MeleeWeapon"))
+				{
+					weapon = player.gameObject.transform.GetChild(i).gameObject;
+					break;
+				}
+			}
+
+			if (weapon)
+			{
+				MeleeWeapon[] mw = weapon.GetComponents<MeleeWeapon>();
+				foreach (var a in mw)
+				{
+					a.MinDamageCaused += x;
+					a.MaxDamageCaused += x;
+				}
 			}
 		}
 
