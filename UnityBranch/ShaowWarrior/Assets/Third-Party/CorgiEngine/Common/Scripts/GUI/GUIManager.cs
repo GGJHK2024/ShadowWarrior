@@ -161,6 +161,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void Start()
 		{
+			player = GameManager.Instance.PersistentCharacter;
 			RefreshPoints();
 		}
 
@@ -647,6 +648,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public void Normal2BA_A()
 		{
+			player = GameManager.Instance.PersistentCharacter;
 			// -40%
 			float curhp = player.GetComponent<Health>().CurrentHealth;
 			player.GetComponent<Health>().GetHealth(-curhp * 0.4f, gameObject);
@@ -662,6 +664,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public void Normal2BA_B()
 		{
+			player = GameManager.Instance.PersistentCharacter;
 			float curhp = player.GetComponent<Health>().CurrentHealth;
 			player.GetComponent<Health>().GetHealth(curhp * 0.3f, gameObject);	// 回复当前的30%
 			CloseSpecialEvent();
@@ -674,6 +677,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public void Normal2BB_()
 		{
+			player = GameManager.Instance.PersistentCharacter;
 			float curhp = player.GetComponent<Health>().CurrentHealth;
 			player.GetComponent<Health>().GetHealth(-curhp * 0.3f, gameObject);	// 扣除当前的30%
 			LU_AddXMoney(150);	//+150 money
@@ -701,9 +705,16 @@ namespace MoreMountains.CorgiEngine
 			curPanel = Sp_Bad;
 		}
 
+		/// <summary>
+		/// 坏事件
+		/// 结局
+		/// </summary>
 		public void BadBA()
 		{
-			//
+			player = GameManager.Instance.PersistentCharacter;
+			float curhp = player.GetComponent<Health>().CurrentHealth;
+			player.GetComponent<Health>().GetHealth(-curhp * 0.8f, gameObject);	// 扣除当前的80%
+			// 攻击-25
 			CloseSpecialEvent();
 		}
 
@@ -912,7 +923,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public void LU_OpenSpecialEvent()
 		{
-			//
+			OpenSpecialEvent();
 		}
 
 		/// <summary>
@@ -921,7 +932,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public void LU_AddXMoney(int x)
 		{
-			player.GetComponent<PlayerManager>().AddMoney(x);
+			PlayerManager.Instance.AddMoney(x);
 		}
 
 		/// <summary>
