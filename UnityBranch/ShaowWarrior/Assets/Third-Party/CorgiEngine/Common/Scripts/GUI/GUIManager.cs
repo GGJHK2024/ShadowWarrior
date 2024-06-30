@@ -8,6 +8,7 @@ using MoreMountains.Tools;
 using TMPro;
 using UnityEngine.EventSystems;
 using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 namespace MoreMountains.CorgiEngine
 {	
@@ -93,6 +94,20 @@ namespace MoreMountains.CorgiEngine
 		public TextMeshProUGUI neededMoneyText;
 		[Tooltip("当前购物需要的金钱")]
 		private int neededMoney = 0;
+		
+		[Header("SpecialEventTexts")]
+		/// 奇遇界面
+		[Tooltip("奇遇界面")] 
+		public GameObject SepcialEventScreen;
+		[Tooltip("奇遇子事件界面")] 
+		public GameObject Sp_Good1;
+		public GameObject Sp_Good2;
+		public GameObject Sp_Good3;
+		public GameObject Sp_Normal1;
+		public GameObject Sp_Normal2;
+		public GameObject Sp_Bad;
+		private GameObject curPanel;
+		private GameObject curSubPanel;
 
 		[Header("Settings")]
 
@@ -146,6 +161,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void Start()
 		{
+			player = GameManager.Instance.PersistentCharacter;
 			RefreshPoints();
 		}
 
@@ -363,6 +379,39 @@ namespace MoreMountains.CorgiEngine
 		}
 
 		/// <summary>
+		/// 打开奇遇界面
+		/// </summary>
+		public virtual void OpenSpecialEvent()
+		{
+			Time.timeScale = 0;
+			if (SepcialEventScreen != null)
+			{ 
+				SepcialEventScreen.SetActive(true);
+				// roll奇遇事件
+				RollSpecialEvent();
+			}
+		}
+
+		/// <summary>
+		/// 退出奇遇
+		/// </summary>
+		public virtual void CloseSpecialEvent()
+		{
+			Time.timeScale = 1;
+			if (SepcialEventScreen != null)
+			{ 
+				if(curSubPanel)
+				{
+					curSubPanel.SetActive(false);
+					curPanel.transform.GetChild(0).gameObject.SetActive(true);
+					curSubPanel = null;
+				}
+				curPanel.SetActive(false);
+				SepcialEventScreen.SetActive(false);
+			}
+		}
+
+		/// <summary>
 		/// 商品选择函数（作用与按钮上）
 		/// </summary>
 		/// <param name="b"></param>
@@ -392,9 +441,281 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		/// <param name="b"></param>
 		/// <returns></returns>
-		public bool CheckButton(Button b)
+		private bool CheckButton(Button b)
 		{
 			return buyingItems.Contains(b);
+		}
+
+		/// <summary>
+		/// 根据幸运值roll特殊事件
+		/// </summary>
+		public void RollSpecialEvent()
+		{
+			float rd = Random.Range(0.0f, 1.0f);
+			float curLucky = PlayerManager.Instance.lucky / 100.0f;
+			if (rd < curLucky)
+			{
+				// 好事件中roll一个
+				print("good event");
+				RollGood();
+			}
+			else
+			{
+				float nb_rd = Random.Range(0.0f, 1.0f);
+				if (nb_rd < 0.667f)
+				{
+					// 一般事件中roll一个
+					print("normal event");
+					RollNormal();
+				}
+				else
+				{
+					// 坏事件
+					print("bad event");
+					RollBad();
+				}
+			}
+		}
+
+		/// <summary>
+		/// roll 好事件
+		/// </summary>
+		private void RollGood()
+		{
+			float rd = Random.Range(0.0f, 1.0f);
+			if (rd <= 0.3333f)
+			{
+				Sp_Good1.SetActive(true);
+				curPanel = Sp_Good1;
+			}else if (rd <= 0.6667f)
+			{
+				Sp_Good2.SetActive(true);
+				curPanel = Sp_Good2;
+			}
+			else
+			{
+				Sp_Good3.SetActive(true);
+				curPanel = Sp_Good3;
+			}
+		}
+
+		/// <summary>
+		/// 顶级offer
+		/// </summary>
+		public void Good1B()
+		{
+			CharacterHandleWeapon curWeapon = player.GetComponent<CharacterHandleWeapon>();
+			string curName = curWeapon.InitialWeapon.name;
+			int curStage = int.Parse(curName.Substring(curName.Length - 1, 1));
+			if (curStage < 3)	// 未升满
+			{
+				LU_SkillUp();
+			}
+			else
+			{
+				// 攻击力+50
+			}
+			CloseSpecialEvent();
+		}
+		
+		/// <summary>
+		/// 升职加薪
+		/// </summary>
+		public void Good2B()
+		{
+			LU_AddXMoney(100);
+			CloseSpecialEvent();
+		}
+		
+		/// <summary>
+		/// 天降馅饼
+		/// A选项
+		/// </summary>
+		public void Good3BA()
+		{
+			LU_SubXDashCD(player.GetComponent<CharacterDash>().DashCooldown);	// 闪避cd为0
+			CloseSpecialEvent();
+		}
+		
+		/// <summary>
+		/// 天降馅饼
+		/// B选项
+		/// </summary>
+		public void Good3BB()
+		{
+			// 攻击力+75
+			CloseSpecialEvent();
+		}
+		
+		/// <summary>
+		/// 天降馅饼
+		/// C选项
+		/// </summary>
+		public void Good3BC()
+		{
+			// 最大+3
+			LU_AddXHP(3);
+			// 回满血量
+			player.GetComponent<Health>().GetHealth(PlayerManager.Instance.hp, gameObject);
+			CloseSpecialEvent();
+		}
+
+		/// <summary>
+		/// roll 中等事件
+		/// </summary>
+		private void RollNormal()
+		{
+			float rd = Random.Range(0.0f, 1.0f);
+			if (rd <= 0.5f)
+			{
+				Sp_Normal1.SetActive(true);
+				curPanel = Sp_Normal1;
+				curSubPanel = Sp_Normal1.transform.GetChild(0).gameObject;
+				curSubPanel.SetActive(true);
+			}
+			else
+			{
+				Sp_Normal2.SetActive(true);
+				curPanel = Sp_Normal2;
+				curSubPanel = Sp_Normal2.transform.GetChild(0).gameObject;
+				curSubPanel.SetActive(true);
+			}
+		}
+
+		/// <summary>
+		/// offer选择？
+		/// A公司（B公司通用）
+		/// 是否跳槽
+		/// 选项A：留下
+		/// </summary>
+		public void Normal1BA(GameObject sub)
+		{
+			curSubPanel = sub;
+			sub.SetActive(true);
+			sub.transform.parent.GetChild(0).gameObject.SetActive(false);
+		}
+
+		/// <summary>
+		/// offer选择
+		/// A公司结局
+		/// </summary>
+		public void Normal1BAB()
+		{
+			float curhp = player.GetComponent<Health>().CurrentHealth;
+			player.GetComponent<Health>().GetHealth(curhp * 0.3f, gameObject);
+			// 降低25点攻击
+			CloseSpecialEvent();
+		}
+
+		/// <summary>
+		/// offer选择
+		/// B公司结局
+		/// </summary>
+		public void Normal1BBB()
+		{
+			float curhp = player.GetComponent<Health>().CurrentHealth;
+			LU_AddXMoney(150);	// +150金币
+			player.GetComponent<Health>().GetHealth(-curhp * 0.5f, gameObject);	// -50%当前血量
+			CloseSpecialEvent();
+		}
+
+		/// <summary>
+		/// 是否跳槽
+		/// 选项B：离开
+		/// </summary>
+		public void Normal2BB(GameObject myself)
+		{
+			Transform father = myself.transform.parent;
+			// 随机roll一个可能的
+			float rd = Random.Range(0.0f, 1.0f);
+			if (rd <= 0.5f)
+			{
+				curSubPanel = father.GetChild(2).gameObject;
+				curSubPanel.SetActive(true);
+			}
+			else
+			{
+				curSubPanel = father.GetChild(3).gameObject;
+				curSubPanel.SetActive(true);
+			}
+			father.GetChild(0).gameObject.SetActive(false);	// 关闭自己
+		}
+
+		/// <summary>
+		/// 是否跳槽
+		/// 选项A：留下
+		/// 的子A：继续留下
+		/// </summary>
+		public void Normal2BA_A()
+		{
+			player = GameManager.Instance.PersistentCharacter;
+			// -40%
+			float curhp = player.GetComponent<Health>().CurrentHealth;
+			player.GetComponent<Health>().GetHealth(-curhp * 0.4f, gameObject);
+			// cd-1
+			LU_SubXDashCD(1);
+			CloseSpecialEvent();
+		}
+
+		/// <summary>
+		/// 是否跳槽
+		/// 选项A：留下
+		/// 的子B：离开
+		/// </summary>
+		public void Normal2BA_B()
+		{
+			player = GameManager.Instance.PersistentCharacter;
+			float curhp = player.GetComponent<Health>().CurrentHealth;
+			player.GetComponent<Health>().GetHealth(curhp * 0.3f, gameObject);	// 回复当前的30%
+			CloseSpecialEvent();
+		}
+
+		/// <summary>
+		/// 是否跳槽
+		/// 选项B：离开
+		/// 结局1
+		/// </summary>
+		public void Normal2BB_()
+		{
+			player = GameManager.Instance.PersistentCharacter;
+			float curhp = player.GetComponent<Health>().CurrentHealth;
+			player.GetComponent<Health>().GetHealth(-curhp * 0.3f, gameObject);	// 扣除当前的30%
+			LU_AddXMoney(150);	//+150 money
+			CloseSpecialEvent();
+		}
+
+		/// <summary>
+		/// 是否跳槽
+		/// 选项B：离开
+		/// 结局2
+		/// </summary>
+		public void Normal2BB__()
+		{
+			// 攻击力+50
+			LU_AddXMoney(-50);	// -50 money
+			CloseSpecialEvent();
+		}
+
+		/// <summary>
+		/// roll 坏事件
+		/// </summary>
+		private void RollBad()
+		{
+			Sp_Bad.SetActive(true);
+			curPanel = Sp_Bad;
+		}
+
+		/// <summary>
+		/// 坏事件
+		/// 结局
+		/// </summary>
+		public void BadBA()
+		{
+			player = GameManager.Instance.PersistentCharacter;
+			float curhp = player.GetComponent<Health>().CurrentHealth;
+			player.GetComponent<Health>().GetHealth(-curhp * 0.8f, gameObject);	// 扣除当前的80%
+			// 攻击-25
+			CloseSpecialEvent();
 		}
 
 		/// <summary>
@@ -526,7 +847,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void SetLevelName(string name)
 		{
-			if (LevelText!= null)
+			if (LevelText != null)
 			{ 
 				LevelText.text=name;
 			}
@@ -590,9 +911,10 @@ namespace MoreMountains.CorgiEngine
 		/// 闪避cd-x
 		/// </summary>
 		/// <param name="x"></param>
-		public void LU_SubXDashCD(int x)
+		public void LU_SubXDashCD(float x)
 		{
-			player.GetComponent<CharacterDash>().DashCooldown -= x;
+			player.GetComponent<CharacterDash>().DashCooldown = (player.GetComponent<CharacterDash>().DashCooldown - x) >= 0 ? 
+				player.GetComponent<CharacterDash>().DashCooldown - x : player.GetComponent<CharacterDash>().DashCooldown;
 		}
 
 		/// <summary>
@@ -601,7 +923,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public void LU_OpenSpecialEvent()
 		{
-			//
+			OpenSpecialEvent();
 		}
 
 		/// <summary>
@@ -610,7 +932,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public void LU_AddXMoney(int x)
 		{
-			player.GetComponent<PlayerManager>().AddMoney(x);
+			PlayerManager.Instance.AddMoney(x);
 		}
 
 		/// <summary>
@@ -652,7 +974,8 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public void S_Add3HP()
 		{
-			PlayerManager.Instance.AddHP(3);
+			player.GetComponent<Health>().GetHealth(3, gameObject);
+			// PlayerManager.Instance.AddHP(3);
 		}
 
 		/// <summary>

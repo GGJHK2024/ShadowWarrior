@@ -17,7 +17,7 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
 
     public int hp;
     public int money = 0;
-    public int lucky = 0;
+    public int lucky = 50;
     public bool hasBigSkill;
     public bool passiveSkill1;
     public bool passiveSkill2;

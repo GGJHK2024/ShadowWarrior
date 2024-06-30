@@ -315,6 +315,13 @@ MonoBehaviour:
   SkillUpdate: {fileID: 2046884338557341938}
   BigSkill: {fileID: 118675485079647621}
   neededMoneyText: {fileID: 3398040400056032265}
+  SepcialEventScreen: {fileID: 5688190638823520806}
+  Sp_Good1: {fileID: 3891582078430310307}
+  Sp_Good2: {fileID: 1513969819935736677}
+  Sp_Good3: {fileID: 1126775009067957767}
+  Sp_Normal1: {fileID: 5903074990426722344}
+  Sp_Normal2: {fileID: 4162493124403426366}
+  Sp_Bad: {fileID: 3596819861621116222}
   PointsPattern: 000000
   buyingItems: []
 --- !u!114 &11469452
@@ -5664,7 +5671,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7564663277468327794}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: Normal2BA_A
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &220200313537186477
 GameObject:
   m_ObjectHideFlags: 0
@@ -6444,7 +6463,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1804349158985849949}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: Good1B
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1126775009067957767
 GameObject:
   m_ObjectHideFlags: 0
@@ -7353,7 +7384,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6608392827573587014}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: Normal1BA
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3027955741162018502}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2008878319044842005
 GameObject:
   m_ObjectHideFlags: 0
@@ -7475,7 +7518,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 71659047673105626}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: Normal1BAB
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2119004594305847904
 GameObject:
   m_ObjectHideFlags: 0
@@ -7597,7 +7652,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1880790131584674232}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: Normal1BA
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 127348853499596486}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2237758618821128658
 GameObject:
   m_ObjectHideFlags: 0
@@ -7855,7 +7922,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8530436738154877191}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: Good3BA
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2457577762149065566
 GameObject:
   m_ObjectHideFlags: 0
@@ -8113,7 +8192,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1469334986217206125}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: Good3BC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2496147623932614875
 GameObject:
   m_ObjectHideFlags: 0
@@ -8693,7 +8784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 414.0003, y: -76.000015}
+  m_AnchoredPosition: {x: 414.0003, y: -76.00003}
   m_SizeDelta: {x: 605.21, y: 63.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6658861258933810832
@@ -9004,7 +9095,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 414.0003, y: -76.000015}
+  m_AnchoredPosition: {x: 414.0003, y: -76.00003}
   m_SizeDelta: {x: 605.21, y: 63.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8055006155378066064
@@ -9573,7 +9664,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5474693031990256692}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: Good3BB
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3027955741162018502
 GameObject:
   m_ObjectHideFlags: 0
@@ -9724,7 +9827,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 414.0003, y: -76.000015}
+  m_AnchoredPosition: {x: 414.0003, y: -76.00003}
   m_SizeDelta: {x: 605.21, y: 63.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7348607047478401535
@@ -9835,7 +9938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7521355189699288539}
   m_Layer: 5
-  m_Name: Sp_Bad1
+  m_Name: Sp_Bad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10225,7 +10328,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 414.0003, y: -76.000015}
+  m_AnchoredPosition: {x: 414.0003, y: -76.00003}
   m_SizeDelta: {x: 605.21, y: 63.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1194133060925095491
@@ -11630,7 +11733,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1179737740001590065}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: Good2B
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5082039060054260381
 GameObject:
   m_ObjectHideFlags: 0
@@ -11828,7 +11943,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2311776003408545282}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: BadBA
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5208716590450593815
 GameObject:
   m_ObjectHideFlags: 0
@@ -12199,7 +12326,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 414.0003, y: -76.000015}
+  m_AnchoredPosition: {x: 414.0003, y: -76.00003}
   m_SizeDelta: {x: 605.21, y: 63.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4119773060788111321
@@ -12471,7 +12598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 414.0003, y: -76.000015}
+  m_AnchoredPosition: {x: 414.0003, y: -76.00003}
   m_SizeDelta: {x: 605.21, y: 63.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5303480144903831455
@@ -12731,7 +12858,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8741820697299953850}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: Normal2BB
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8456474950325720632}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5712938385942717088
 GameObject:
   m_ObjectHideFlags: 0
@@ -12853,7 +12992,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3227116591483908213}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: CloseSpecialEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5714384200703145007
 GameObject:
   m_ObjectHideFlags: 0
@@ -13621,7 +13772,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 414.0003, y: -76.000015}
+  m_AnchoredPosition: {x: 414.0003, y: -76.00003}
   m_SizeDelta: {x: 605.21, y: 63.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2793249575602308968
@@ -13979,7 +14130,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3250754337994229654}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: Normal2BB_
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6443695039322807588
 GameObject:
   m_ObjectHideFlags: 0
@@ -14290,7 +14453,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 414.0003, y: -76.000015}
+  m_AnchoredPosition: {x: 414.0003, y: -76.00003}
   m_SizeDelta: {x: 605.21, y: 63.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4156021257962684439
@@ -15374,7 +15537,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7944926374788072530}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: Normal1BBB
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7442410362742493687
 GameObject:
   m_ObjectHideFlags: 0
@@ -17026,7 +17201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 213312398054218235}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: Normal2BB__
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8086194094140442810
 GameObject:
   m_ObjectHideFlags: 0
@@ -17188,7 +17375,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7041140271767739485}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: Normal2BA_B
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8227169328325435472
 GameObject:
   m_ObjectHideFlags: 0
@@ -17866,7 +18065,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4795501901394746882}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11413996}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
+        m_MethodName: Normal1BA
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8086194094140442810}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9073885912463762582
 GameObject:
   m_ObjectHideFlags: 0

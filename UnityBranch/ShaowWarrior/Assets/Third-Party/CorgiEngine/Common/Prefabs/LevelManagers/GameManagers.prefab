@@ -90,6 +90,11 @@ MonoBehaviour:
   playerPrefab: {fileID: 114473069959786316, guid: d9a03ec1f93191f48af48c379887e585,
     type: 3}
   hp: 3
+  money: 0
+  lucky: 50
+  hasBigSkill: 0
+  passiveSkill1: 0
+  passiveSkill2: 0
   bulletTimeCanKillEnemyNumber: 0
   skillChargeTime: 3
   bulletTime: 3
@@ -110,7 +115,11 @@ MonoBehaviour:
   levels:
   - name: CG
     id: 0
-    parentId: 
+    childId: 
   - name: CG
     id: 0
-    parentId: 
+    childId: 
+  curID: 0
+  stage: 0
+  nextLevel: 
+  gates: []
