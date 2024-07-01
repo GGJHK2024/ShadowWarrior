@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4576885046594878}
   - component: {fileID: 114246937138071502}
   m_Layer: 0
-  m_Name: MeleeWeapon_Enemy_Inteviewer
+  m_Name: MeleeWeapon_Enemy_Boom
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -158,9 +158,9 @@ MonoBehaviour:
     RecoilFeedback: {fileID: 0}
   weaponLable: 
   MeleeDamageAreaMode: 0
-  DamageAreaShape: 0
-  AreaOffset: {x: 1.422341, y: -0.166632}
-  AreaSize: {x: 3.999586, y: 1.666735}
+  DamageAreaShape: 1
+  AreaOffset: {x: 0, y: 0}
+  AreaSize: {x: 5, y: 5}
   ExistingDamageArea: {fileID: 0}
   InitialDelay: 0
   ActiveDuration: 0.2
@@ -169,8 +169,8 @@ MonoBehaviour:
     m_Bits: 768
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 25
-  MaxDamageCaused: 25
+  MinDamageCaused: 40
+  MaxDamageCaused: 40
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
