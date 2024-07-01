@@ -737,7 +737,7 @@ MonoBehaviour:
     - rid: 1
       type: {class: MMF_CameraShake, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
-        Active: 1
+        Active: 0
         UniqueID: 1106317365
         Label: Camera Shake
         ChannelMode: 0
@@ -1566,7 +1566,7 @@ MonoBehaviour:
     - rid: 1
       type: {class: MMF_CameraShake, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
-        Active: 1
+        Active: 0
         UniqueID: 1618692458
         Label: Camera Shake
         ChannelMode: 0
@@ -2395,7 +2395,7 @@ MonoBehaviour:
     - rid: 1
       type: {class: MMF_CameraShake, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
-        Active: 1
+        Active: 0
         UniqueID: -1473033939
         Label: Camera Shake
         ChannelMode: 0
