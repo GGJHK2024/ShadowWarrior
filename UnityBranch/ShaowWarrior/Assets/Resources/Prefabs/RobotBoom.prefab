@@ -808,8 +808,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: "\u81EA\u7206\u65F6\u95F4"
-  AfterTimeMin: 0.5
-  AfterTimeMax: 0.5
+  AfterTimeMin: 0.8
+  AfterTimeMax: 0.8
 --- !u!1 &1906052747890022
 GameObject:
   m_ObjectHideFlags: 0
@@ -42467,7 +42467,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -422294709, guid: feb2ce5e12f07f14cbd9b8e4d569741c, type: 3}
+  m_Sprite: {fileID: 1024462396, guid: ef306192785dd48418f6fd6f5386e67d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -42488,7 +42488,7 @@ Animator:
   m_GameObject: {fileID: 3908463102249812690}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bd8c5a0d9d623a740a7e3bb81bffec76, type: 2}
+  m_Controller: {fileID: 9100000, guid: 932cd5a55e60ba34ebf9af09af9e7308, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
