@@ -421,7 +421,7 @@ namespace MoreMountains.CorgiEngine
 			{
 				b.gameObject.GetComponent<Image>().material = null;	// 移除选择描边效果
 				buyingItems.Remove(b);
-				neededMoney -= int.Parse(b.gameObject.transform.GetChild(transform.childCount - 1).GetComponent<TextMeshProUGUI>()
+				neededMoney -= int.Parse(b.gameObject.transform.GetChild(transform.childCount).GetComponent<TextMeshProUGUI>()
 					.text);
 				UpdateNeedMoneyText(neededMoney);
 			}
@@ -429,7 +429,7 @@ namespace MoreMountains.CorgiEngine
 			{
 				b.gameObject.GetComponent<Image>().material = Resources.Load<Material>("Materials/Custom_Outline");
 				buyingItems.Add(b);
-				neededMoney += int.Parse(b.gameObject.transform.GetChild(transform.childCount - 1).GetComponent<TextMeshProUGUI>()
+				neededMoney += int.Parse(b.gameObject.transform.GetChild(transform.childCount).GetComponent<TextMeshProUGUI>()
 					.text);
 				UpdateNeedMoneyText(neededMoney);
 			}
