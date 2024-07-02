@@ -77,6 +77,8 @@ namespace MoreMountains.CorgiEngine
                     break;
                 }
                 g.LevelName = levels[levels[curID].childId[cn - 1]].name;
+                g.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite =
+                    Resources.Load<Sprite>("DoorIcons/" + g.LevelName);
                 cn--;
             }
         }
