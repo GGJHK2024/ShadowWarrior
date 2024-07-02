@@ -16,6 +16,8 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     public Character playerPrefab;
 
     public int hp;
+    public int attack;
+    public int cd;
     public int money = 0;
     public int lucky = 50;
     public bool hasBigSkill;
@@ -61,10 +63,32 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     {
         switch (eventType.EventType) {
             case CorgiEngineEventTypes.LevelStart: {
+                // set health
                 var health = player.GetComponent<Health>(); 
                 health.InitialHealth = hp;
                 health.MaximumHealth = hp;
                 health.SetHealth(health.CurrentHealth, null);
+                // set attack
+                GameObject weapon = null;
+                for (int i = 0; i < player.gameObject.transform.childCount; i++)
+                {
+                    if (player.gameObject.transform.GetChild(i).name.Contains("MeleeWeapon"))
+                    {
+                        weapon = player.gameObject.transform.GetChild(i).gameObject;
+                        break;
+                    }
+                }
+                if (weapon)
+                {
+                    MeleeWeapon[] mw = weapon.GetComponents<MeleeWeapon>();
+                    foreach (var a in mw)
+                    {
+                        a.MinDamageCaused = attack;
+                        a.MaxDamageCaused = attack;
+                    }
+                }
+                // set cd
+                player.GetComponent<CharacterDash>().DashCooldown = cd;
                 return;
             }
             case CorgiEngineEventTypes.LevelComplete: {
@@ -148,6 +172,21 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     {
         lucky += i;
         // GUIManager.Instance. //好像目前没有表达幸运值的ui
+    }
+
+    /// <summary>
+    /// 重置所有玩家属性（这里没有连招
+    /// </summary>
+    public void ResetPlayerParams()
+    {
+        hp = 5;
+        attack = 25;
+        cd = 5;
+        money = 0;
+        lucky = 50;
+        DisableBigSKill();
+        passiveSkill1 = false;
+        passiveSkill2 = false;
     }
 
 }

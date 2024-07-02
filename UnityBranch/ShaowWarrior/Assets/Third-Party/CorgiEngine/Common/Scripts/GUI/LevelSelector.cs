@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using MoreMountains.Tools;
@@ -19,7 +20,13 @@ namespace MoreMountains.CorgiEngine
 		/// whether or not changing level should trigger a save event
 		[Tooltip("whether or not changing level should trigger a save event")]
 		public bool Save = true;
+		
+		private Character player {get; set;}
 
+		private void Start()
+		{
+			player = GameManager.Instance.PersistentCharacter;
+		}
 
 		/// <summary>
 		/// Loads the level specified in the inspector
@@ -27,6 +34,11 @@ namespace MoreMountains.CorgiEngine
 		public virtual void GoToLevel()
 		{
 			LevelManager.Instance.GotoLevel(LevelName, Fade, Save);
+			// 由于目前这个函数仅用于不保存回到标题的功能，因此需要重置角色和关卡进度。
+			CharacterHandleWeapon curWeapon = player.GetComponent<CharacterHandleWeapon>();
+			curWeapon.InitialWeapon = Resources.Load<MeleeWeapon>("Prefabs/MeleeWeapon_1");
+			PlayerManager.Instance.ResetPlayerParams();
+
 		}
 
 		/// <summary>

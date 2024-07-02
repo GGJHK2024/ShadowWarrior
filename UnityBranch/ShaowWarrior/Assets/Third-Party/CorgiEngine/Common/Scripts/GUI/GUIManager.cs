@@ -1022,8 +1022,8 @@ namespace MoreMountains.CorgiEngine
 				MeleeWeapon[] mw = weapon.GetComponents<MeleeWeapon>();
 				foreach (var a in mw)
 				{
-					a.MinDamageCaused += x;
-					a.MaxDamageCaused += x;
+					a.MinDamageCaused = (a.MinDamageCaused + x > 25) ? a.MinDamageCaused + x : 25;
+					a.MaxDamageCaused = (a.MaxDamageCaused + x > 25) ? a.MaxDamageCaused + x : 25;
 				}
 			}
 		}
