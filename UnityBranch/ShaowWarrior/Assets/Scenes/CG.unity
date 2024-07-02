@@ -139,6 +139,8 @@ MonoBehaviour:
   playerPrefab: {fileID: 114473069959786316, guid: d9a03ec1f93191f48af48c379887e585,
     type: 3}
   hp: 5
+  attack: 0
+  cd: 0
   money: 0
   lucky: 0
   hasBigSkill: 0
@@ -586,7 +588,7 @@ GameObject:
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &350144987
 Transform:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
@@ -82,7 +83,16 @@ namespace MoreMountains.CorgiEngine
                 cn--;
             }
         }
-        
+
+        /// <summary>
+        /// 重置关卡进度
+        /// </summary>
+        public void ResetLevelProgress()
+        {
+            curID = 0;
+            stage = -1;
+        }
+
         public void OnMMEvent(CorgiEngineEvent eventType)
         {
             switch (eventType.EventType) {
