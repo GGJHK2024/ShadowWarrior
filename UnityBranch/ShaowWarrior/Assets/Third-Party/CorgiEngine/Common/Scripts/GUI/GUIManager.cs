@@ -268,6 +268,31 @@ namespace MoreMountains.CorgiEngine
 				EventSystem.current.sendNavigationEvents = state;
 			}
 		}
+
+		/// <summary>
+		/// 打开简历界面
+		/// </summary>
+		public virtual void OpenPause()
+		{
+			Time.timeScale = 0;
+			if (PauseScreen != null)
+			{ 
+				PauseScreen.SetActive(true);
+				UpdateLUManuel();
+			}
+		}
+
+		/// <summary>
+		/// 关闭简历界面
+		/// </summary>
+		public virtual void ClosePause()
+		{
+			Time.timeScale = 1.0f;
+			if (PauseScreen != null)
+			{ 
+				PauseScreen.SetActive(false);
+			}
+		}
 		
 		/// <summary>
 		/// Sets the Level Up.
