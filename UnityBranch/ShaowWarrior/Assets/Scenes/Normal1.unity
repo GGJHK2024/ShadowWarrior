@@ -1428,6 +1428,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1265118845}
     m_Modifications:
+    - target: {fileID: 1523801655358045801, guid: a934170f244c8a441a3b414cdf1f70ef,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.46
+      objectReference: {fileID: 0}
     - target: {fileID: 3246661050329645229, guid: a934170f244c8a441a3b414cdf1f70ef,
         type: 3}
       propertyPath: m_RootOrder
@@ -1492,6 +1497,11 @@ PrefabInstance:
         type: 3}
       propertyPath: LevelName
       value: Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246661051285006081, guid: a934170f244c8a441a3b414cdf1f70ef,
+        type: 3}
+      propertyPath: AnimationTriggerParameterName
+      value: open
       objectReference: {fileID: 0}
     - target: {fileID: 3246661051285006081, guid: a934170f244c8a441a3b414cdf1f70ef,
         type: 3}
@@ -1573,10 +1583,21 @@ PrefabInstance:
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3246661051285006082, guid: a934170f244c8a441a3b414cdf1f70ef,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -189574767, guid: 1f2fe2e0655f7554796b05eed4416538,
+        type: 3}
     - target: {fileID: 3246661051928326371, guid: a934170f244c8a441a3b414cdf1f70ef,
         type: 3}
       propertyPath: LevelName
       value: Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246661051928326371, guid: a934170f244c8a441a3b414cdf1f70ef,
+        type: 3}
+      propertyPath: AnimationTriggerParameterName
+      value: open
       objectReference: {fileID: 0}
     - target: {fileID: 3246661051928326371, guid: a934170f244c8a441a3b414cdf1f70ef,
         type: 3}
@@ -1697,7 +1718,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1079959356}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1079959360}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4c822b1b53284c0cbf5df2450a0c59c, type: 3}
@@ -1715,6 +1736,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c822b1b53284c0cbf5df2450a0c59c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1079959360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3246661051285006140, guid: a934170f244c8a441a3b414cdf1f70ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 1079959356}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1079959361
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079959360}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e4c36bfbc7838814ba66c5b84a0fa22a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1231817475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2338,7 +2386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1951000166
 Transform:
   m_ObjectHideFlags: 0
