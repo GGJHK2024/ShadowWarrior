@@ -279,6 +279,8 @@ namespace MoreMountains.CorgiEngine
 			{ 
 				PauseScreen.SetActive(true);
 				UpdateLUManuel();
+				// 隐藏LU界面的按钮
+				ShowLUButton(false);
 			}
 		}
 
@@ -304,6 +306,8 @@ namespace MoreMountains.CorgiEngine
 			{ 
 				LevelUpScreen.SetActive(true);
 				UpdateLUManuel();
+				// 显示LU界面的按钮
+				ShowLUButton(true);
 			}
 		}
 		
@@ -317,6 +321,16 @@ namespace MoreMountains.CorgiEngine
 			{ 
 				LevelUpScreen.SetActive(false);
 			}
+		}
+
+		/// <summary>
+		/// 设置LU界面按钮显隐状态
+		/// </summary>
+		/// <param name="state"></param>
+		public void ShowLUButton(bool state)
+		{
+			optionA.gameObject.SetActive(state);
+			optionB.gameObject.SetActive(state);
 		}
 		
 		/// <summary>
