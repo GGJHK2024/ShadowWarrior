@@ -66,7 +66,6 @@ namespace MoreMountains.CorgiEngine
 			switch (engineEvent.EventType)
 			{
 				case CorgiEngineEventTypes.LoadNextScene:
-					Debug.LogError("eee");
 					this.gameObject.SetActive(false);
 					break;
 				case CorgiEngineEventTypes.SpawnCharacterStarts:

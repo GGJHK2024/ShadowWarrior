@@ -71,7 +71,14 @@ namespace MoreMountains.CorgiEngine
             foreach(var g in gates)
             {
                 print("cur id: " + curID);
+                if (cn == 0)
+                {
+                    g.gameObject.SetActive(false);  // 最后只有一个门的情况，我们只保留一扇门而隐藏另一扇
+                    break;
+                }
                 g.LevelName = levels[levels[curID].childId[cn - 1]].name;
+                g.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite =
+                    Resources.Load<Sprite>("DoorIcons/" + g.LevelName);
                 cn--;
             }
         }

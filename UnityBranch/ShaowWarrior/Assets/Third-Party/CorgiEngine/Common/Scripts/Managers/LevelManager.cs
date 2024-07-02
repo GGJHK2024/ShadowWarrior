@@ -276,6 +276,16 @@ namespace MoreMountains.CorgiEngine
 				MMSetFeedbackRangeCenterEvent.Trigger(Players[0].transform);
 			}
 			
+			// CG和其他需要冻结角色的场景
+			if (SceneManager.GetActiveScene().name.Contains("CG"))
+			{
+				FreezeCharacters();
+			}
+			else
+			{
+				UnFreezeCharacters();
+			}
+			
 			MMCameraEvent.Trigger(MMCameraEventTypes.SetConfiner, null, BoundsCollider, BoundsCollider2D);
 			MMCameraEvent.Trigger(MMCameraEventTypes.SetTargetCharacter, Players[0]);
 			MMCameraEvent.Trigger(MMCameraEventTypes.StartFollowing);
