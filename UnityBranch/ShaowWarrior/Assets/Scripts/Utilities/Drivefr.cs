@@ -10,12 +10,19 @@ public class Drivefr : MonoBehaviour
     void Start()
     {
         // LevelChooseManager.Instance.GoToNextLevel(0);
-        gtnl.GetComponent<FinishLevel>().GoToNextLevel();
+        StartCoroutine(waitForCg());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    IEnumerator waitForCg()
+    {
+        yield return new WaitForSeconds(25.0f);
+        gtnl.GetComponent<FinishLevel>().GoToNextLevel();
+        yield return null;
     }
 }

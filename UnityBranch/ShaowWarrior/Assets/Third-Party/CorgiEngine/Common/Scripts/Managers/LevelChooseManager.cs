@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace MoreMountains.CorgiEngine
 {
@@ -66,6 +67,8 @@ namespace MoreMountains.CorgiEngine
         /// </summary>
         public void InitNextLevelGate()
         {
+            if(SceneManager.GetActiveScene().name.Contains("Driver"))   return;
+            if (SceneManager.GetActiveScene().name.Contains("Tuto")) curID = 1;
             print("---init next level---");
             gates= FindObjectsOfType(typeof(FinishLevel)) as FinishLevel[];
             int cn = levels[curID].childId.Length;
