@@ -205,7 +205,7 @@ MonoBehaviour:
   RotateModelOnDirectionChange: 0
   ModelRotationValue: {x: 0, y: 180, z: 0}
   ModelRotationSpeed: 0
-  CharacterHealth: {fileID: 0}
+  CharacterHealth: {fileID: 114961038306698606}
   SendStateChangeEvents: 1
   SendStateUpdateEvents: 1
   AirborneDistance: 0.5

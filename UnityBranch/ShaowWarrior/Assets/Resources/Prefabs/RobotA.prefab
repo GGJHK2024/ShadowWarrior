@@ -732,7 +732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterType: 1
   PlayerID: 
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 137690721844656747}
   normalMat: {fileID: 2100000, guid: 62e6460cdd3fa1e4196e54a57b629913, type: 2}
   outlineMat: {fileID: 2100000, guid: 19a7437c266059d45a79d1f59064d221, type: 2}
   InitialFacingDirection: 0
@@ -750,7 +750,7 @@ MonoBehaviour:
   RotateModelOnDirectionChange: 0
   ModelRotationValue: {x: 0, y: 180, z: 0}
   ModelRotationSpeed: 0
-  CharacterHealth: {fileID: 0}
+  CharacterHealth: {fileID: 6860181345996994890}
   SendStateChangeEvents: 0
   SendStateUpdateEvents: 0
   AirborneDistance: 0.5

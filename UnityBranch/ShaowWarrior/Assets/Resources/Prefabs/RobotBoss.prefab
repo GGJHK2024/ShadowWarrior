@@ -170,7 +170,7 @@ MonoBehaviour:
   outlineMat: {fileID: 2100000, guid: 19a7437c266059d45a79d1f59064d221, type: 2}
   InitialFacingDirection: 0
   DirectionOnSpawn: 0
-  CharacterAnimator: {fileID: 0}
+  CharacterAnimator: {fileID: 480129201002891560}
   UseDefaultMecanim: 1
   PerformAnimatorSanityChecks: 1
   DisableAnimatorLogs: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
   RotateModelOnDirectionChange: 0
   ModelRotationValue: {x: 0, y: 180, z: 0}
   ModelRotationSpeed: 0
-  CharacterHealth: {fileID: 0}
+  CharacterHealth: {fileID: 114961038306698606}
   SendStateChangeEvents: 1
   SendStateUpdateEvents: 1
   AirborneDistance: 0.5

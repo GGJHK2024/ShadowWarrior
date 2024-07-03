@@ -106,7 +106,7 @@ MonoBehaviour:
   RotateModelOnDirectionChange: 0
   ModelRotationValue: {x: 0, y: 180, z: 0}
   ModelRotationSpeed: 0
-  CharacterHealth: {fileID: 0}
+  CharacterHealth: {fileID: 114961038306698606}
   SendStateChangeEvents: 1
   SendStateUpdateEvents: 1
   AirborneDistance: 0.5
@@ -125,7 +125,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01521492, y: 0.19221318}
+  m_Offset: {x: -0.08433151, y: 1.3902493}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -136,7 +136,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.423748, y: 1.8629038}
+  m_Size: {x: 1.2855148, y: 2.0702562}
   m_EdgeRadius: 0
 --- !u!114 &114993703828558004
 MonoBehaviour:
@@ -42598,7 +42598,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3908463102249812690}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.13999939, y: 0.308, z: 0}
+  m_LocalPosition: {x: -0.13999939, y: 1.36, z: 0}
   m_LocalScale: {x: 1.8999999, y: 1.8999999, z: 1.8999999}
   m_ConstrainProportionsScale: 0
   m_Children:
