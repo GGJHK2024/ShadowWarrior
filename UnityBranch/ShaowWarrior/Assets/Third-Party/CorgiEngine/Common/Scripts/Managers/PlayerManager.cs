@@ -71,8 +71,8 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
             case CorgiEngineEventTypes.LevelStart: {
                 // set health
                 var health = player.GetComponent<Health>(); 
-                health.InitialHealth = hp * 25;
-                health.MaximumHealth = hp * 25;
+                health.InitialHealth = hp * 20;
+                health.MaximumHealth = hp * 20;
                 health.SetHealth(health.CurrentHealth, null);
                 // set attack
                 GameObject weapon = null;
