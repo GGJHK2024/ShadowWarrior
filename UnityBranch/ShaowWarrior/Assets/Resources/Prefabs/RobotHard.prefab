@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 167059064127891269}
   - component: {fileID: 7048689645299194107}
   - component: {fileID: 666697662012381398}
+  - component: {fileID: 5389415028884639084}
   m_Layer: 13
   m_Name: RobotHard
   m_TagString: Player
@@ -601,12 +602,6 @@ MonoBehaviour:
       - {fileID: 7126097633941721371}
     Transitions:
       array:
-      - Decision: {fileID: 824525932}
-        TrueState: 
-        FalseState: Idle
-      - Decision: {fileID: 824525950}
-        TrueState: 
-        FalseState: Idle
       - Decision: {fileID: 5893394884078251563}
         TrueState: ShowMark
         FalseState: 
@@ -617,12 +612,6 @@ MonoBehaviour:
       - {fileID: 2005204315842673551}
     Transitions:
       array:
-      - Decision: {fileID: 824525950}
-        TrueState: 
-        FalseState: Idle
-      - Decision: {fileID: 824525932}
-        TrueState: 
-        FalseState: Idle
       - Decision: {fileID: 119847008708912785}
         TrueState: Attack
         FalseState: 
@@ -630,18 +619,14 @@ MonoBehaviour:
     Actions:
       array:
       - {fileID: 7126097633941721371}
-      - {fileID: 1772864488767088690}
-      - {fileID: 8010756260577516807}
+      - {fileID: 5389415028884639084}
     Transitions:
       array:
       - Decision: {fileID: 824525950}
         TrueState: 
         FalseState: Idle
       - Decision: {fileID: 3374749970672222704}
-        TrueState: ShowMark
-        FalseState: 
-      - Decision: {fileID: 824525932}
-        TrueState: Attack
+        TrueState: Pre-Attack
         FalseState: 
   TimeInThisState: 0
   Target: {fileID: 0}
@@ -759,8 +744,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
-  Radius: 2.4
-  DetectionOriginOffset: {x: 3.88, y: 0, z: 0}
+  Radius: 4.5
+  DetectionOriginOffset: {x: 8.95, y: 0.94, z: 0}
   TargetLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -792,8 +777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: "\u9884\u8B66\u65F6\u95F4"
-  AfterTimeMin: 0.4
-  AfterTimeMax: 0.4
+  AfterTimeMin: 1
+  AfterTimeMax: 1
 --- !u!114 &2005204315842673551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,8 +807,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: "\u5B9E\u9645\u9020\u6210\u4F24\u5BB3\u7684\u653B\u51FB\u52A8\u753B\u65F6\u957F"
-  AfterTimeMin: 0.5
-  AfterTimeMax: 0.5
+  AfterTimeMin: 5
+  AfterTimeMax: 10
 --- !u!114 &8117333926711839525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1075,6 +1060,21 @@ MonoBehaviour:
   HitNonDamageableFeedback: {fileID: 0}
   FreezeFramesOnHitDuration: 0
   Owner: {fileID: 0}
+--- !u!114 &5389415028884639084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fce3bcf6da4a2d46a0a02c021b5bb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
+  Label: 
+  MinimumDistance: -2
 --- !u!1 &1906052747890022
 GameObject:
   m_ObjectHideFlags: 0
