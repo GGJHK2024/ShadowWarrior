@@ -926,8 +926,8 @@ MonoBehaviour:
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
-  InitialHealth: 150
-  MaximumHealth: 150
+  InitialHealth: 100
+  MaximumHealth: 100
   Invulnerable: 0
   ImmuneToDamage: 0
   DamageFeedbacks: {fileID: 119138060464618085}
@@ -993,7 +993,7 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  WalkSpeed: 6
+  WalkSpeed: 8
   ResetHorizontalSpeedBtn: 0
   MovementSpeedMultiplier: 1
   AbilityMovementSpeedMultiplier: 1

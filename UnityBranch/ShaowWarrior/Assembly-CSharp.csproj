@@ -71,9 +71,9 @@
     <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_Button.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Sprite_SheetExporter(Beta)\Script\SPUM_Exporter.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Recorder.cs" />
+    <Compile Include="Assets\Scripts\Utilities\Drivefr.cs" />
     <Compile Include="Assets\Third-Party\SPUM\SoonsoonData\SoonsoonData.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Gif\LzwEncoder.cs" />
-    <Compile Include="Assets\Scripts\Utilities\Drivefr.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Shaders\GreyScale.shader" />
