@@ -1110,7 +1110,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public void S_Add3HP()
 		{
-			player.GetComponent<Health>().GetHealth(3, gameObject);
+			player.GetComponent<Health>().GetHealth(3 * 25, gameObject);
 			// PlayerManager.Instance.AddHP(3);
 		}
 
