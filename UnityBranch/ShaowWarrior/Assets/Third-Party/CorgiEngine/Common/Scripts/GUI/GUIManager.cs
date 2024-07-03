@@ -305,9 +305,9 @@ namespace MoreMountains.CorgiEngine
 			if (LevelUpScreen!= null)
 			{ 
 				LevelUpScreen.SetActive(true);
-				UpdateLUManuel();
 				// 显示LU界面的按钮
 				ShowLUButton(true);
+				UpdateLUManuel();
 			}
 		}
 		
@@ -349,23 +349,23 @@ namespace MoreMountains.CorgiEngine
 				// 如果已经连招升级满了，则替换为售罄，按钮无法购买
 				if (curStage == 3)
 				{
-					// SkillUpdate.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>();	// 替换为售罄图标
+					SkillUpdate.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
 					SkillUpdate.enabled = false;
 				}
 				else
 				{
-					// SkillUpdate.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>();	// 替换为升级图标图标
+					SkillUpdate.gameObject.GetComponent<Image>().color = new Color(1,1,1,1);
 					SkillUpdate.enabled = true;
 				}
 				// 如果已经有大招了，则替换为售罄，按钮无法购买
-				if (PlayerManager.Instance.hasBigSkill)
+				if (PlayerManager.Instance.hasBigSkill == true)
 				{
-					// BigSkill.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>();	// 替换为售罄图标
+					BigSkill.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
 					BigSkill.enabled = false;
 				}
 				else
 				{
-					// BigSkill.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>();	// 替换为大招图标
+					BigSkill.gameObject.GetComponent<Image>().color = new Color(1,1,1,1);	
 					BigSkill.enabled = true;
 				}
 			}
@@ -1067,6 +1067,9 @@ namespace MoreMountains.CorgiEngine
 				case 3:
 					break;
 			}
+			// 如果在商店
+			SkillUpdate.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
+			SkillUpdate.enabled = false;
 		}
 
 		/// <summary>
@@ -1121,6 +1124,9 @@ namespace MoreMountains.CorgiEngine
 		public void S_BigSkill()
 		{
 			PlayerManager.Instance.hasBigSkill = true;
+			// 如果已经有大招了，则替换为售罄，按钮无法购买
+			BigSkill.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
+			BigSkill.enabled = false;
 		}
 
 		/// <summary>

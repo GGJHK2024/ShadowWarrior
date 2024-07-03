@@ -68,7 +68,11 @@ namespace MoreMountains.CorgiEngine
         public void InitNextLevelGate()
         {
             if(SceneManager.GetActiveScene().name.Contains("Driver"))   return;
-            if (SceneManager.GetActiveScene().name.Contains("Tuto")) curID = 1;
+            if (SceneManager.GetActiveScene().name.Contains("Tuto"))
+            {
+                curID = 1;
+                stage = 0;
+            }
             print("---init next level---");
             gates= FindObjectsOfType(typeof(FinishLevel)) as FinishLevel[];
             int cn = levels[curID].childId.Length;

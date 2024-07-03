@@ -73,7 +73,7 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
                 var health = player.GetComponent<Health>(); 
                 health.InitialHealth = hp * 20;
                 health.MaximumHealth = hp * 20;
-                health.SetHealth(health.CurrentHealth, null);
+                // health.SetHealth(health.CurrentHealth, null);
                 // set attack
                 GameObject weapon = null;
                 for (int i = 0; i < player.gameObject.transform.childCount; i++)
@@ -113,11 +113,14 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     {
         base.Awake();
         player = GameManager.Instance.PersistentCharacter = (Character)Instantiate(playerPrefab);
+        
     }
 
     void Start()
     {
-        hasBigSkill = false;    // 初始无法使用双键大招
+        // hasBigSkill = false;    // 初始无法使用双键大招
+        var health = player.GetComponent<Health>(); 
+        health.SetHealth(health.InitialHealth, null);
         MMEventManager.AddListener<CorgiEngineEvent>(this);
         MMEventManager.AddListener<MMGameEvent>(this);
 
