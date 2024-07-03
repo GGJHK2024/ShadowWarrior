@@ -910,30 +910,96 @@ namespace MoreMountains.CorgiEngine
 			optionB.onClick.RemoveAllListeners();
 			optionA.onClick.AddListener(CloseLevelUp);
 			optionB.onClick.AddListener(CloseLevelUp);
+			Sprite[] btsA;
+			Sprite[] btsB;
+			SpriteState ssA = new SpriteState();
+			SpriteState ssB = new SpriteState();
+			TextMeshProUGUI bttA = optionA.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+			TextMeshProUGUI bttB = optionB.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 			// 技能图标：可以用三元表达式判断替换
 			switch (LevelChooseManager.Instance.stage)
 			{
 				case 1:
+					btsA = Resources.LoadAll<Sprite>("LU/血量加1");
+					btsB = Resources.LoadAll<Sprite>("LU/攻击加");
+					optionA.gameObject.GetComponent<Image>().sprite = btsA[0];
+					optionB.gameObject.GetComponent<Image>().sprite = btsB[0];
+					ssA.highlightedSprite = btsA[1];
+					ssB.highlightedSprite = btsB[1];
+					optionA.spriteState = ssA;
+					optionB.spriteState = ssB;
+					bttA.text = "提升1格血条";
+					bttB.text = "攻击升级";
 					optionA.onClick.AddListener(()=>LU_AddXHP(1));
 					optionB.onClick.AddListener(LU_SkillUp);
 					break;
 				case 2:
+					btsB = Resources.LoadAll<Sprite>("LU/血量加1");
+					btsA = Resources.LoadAll<Sprite>("LU/闪避");
+					optionA.gameObject.GetComponent<Image>().sprite = btsA[0];
+					optionB.gameObject.GetComponent<Image>().sprite = btsB[0];
+					ssA.highlightedSprite = btsA[1];
+					ssB.highlightedSprite = btsB[1];
+					optionA.spriteState = ssA;
+					optionB.spriteState = ssB;
+					bttA.text = "闪避CD减少1S";
+					bttB.text = "提升1格血条";
 					optionA.onClick.AddListener(()=>LU_SubXDashCD(1));
 					optionB.onClick.AddListener(()=>LU_AddXHP(1));
 					break;
 				case 3:
+					btsA = Resources.LoadAll<Sprite>("LU/血量加1");
+					btsB = Resources.LoadAll<Sprite>("LU/奇遇");
+					optionA.gameObject.GetComponent<Image>().sprite = btsA[0];
+					optionB.gameObject.GetComponent<Image>().sprite = btsB[0];
+					ssA.highlightedSprite = btsA[1];
+					ssB.highlightedSprite = btsB[1];
+					optionA.spriteState = ssA;
+					optionB.spriteState = ssB;
+					bttA.text = "提升1格血条";
+					bttB.text = "获得一次额外奇遇机会";
 					optionA.onClick.AddListener(()=>LU_AddXHP(1));
 					optionB.onClick.AddListener(LU_OpenSpecialEvent);
 					break;
 				case 4:
+					btsA = Resources.LoadAll<Sprite>("LU/吸血");
+					btsB = Resources.LoadAll<Sprite>("LU/渴血");
+					optionA.gameObject.GetComponent<Image>().sprite = btsA[0];
+					optionB.gameObject.GetComponent<Image>().sprite = btsB[0];
+					ssA.highlightedSprite = btsA[1];
+					ssB.highlightedSprite = btsB[1];
+					optionA.spriteState = ssA;
+					optionB.spriteState = ssB;
+					bttA.text = "【大招】血魔流-吸干你的血。击杀敌人触发吸血技能。击杀成功恢复X%血量，累计杀害敌人血量达N，触发S秒无敌状态。";
+					bttB.text = "【大招】低血流-打不倒的小强。当血量低于X%时，闪避无CD且主动攻击伤害翻倍。累计杀害敌人血量达N，S秒主动攻击一击毙命。";
 					// 大招-血魔流
 					// 大招-低血流
 					break;
 				case 5:
+					btsA = Resources.LoadAll<Sprite>("LU/攻击加");
+					btsB = Resources.LoadAll<Sprite>("LU/血量加2");
+					optionA.gameObject.GetComponent<Image>().sprite = btsA[0];
+					optionB.gameObject.GetComponent<Image>().sprite = btsB[0];
+					ssA.highlightedSprite = btsA[1];
+					ssB.highlightedSprite = btsB[1];
+					optionA.spriteState = ssA;
+					optionB.spriteState = ssB;
+					bttA.text = "攻击升级";
+					bttB.text = "提升2格血条";
 					optionA.onClick.AddListener(LU_SkillUp);
 					optionB.onClick.AddListener(()=>LU_AddXHP(2));
 					break;
 				case 6:
+					btsA = Resources.LoadAll<Sprite>("LU/加货币");
+					btsB = Resources.LoadAll<Sprite>("LU/奇遇");
+					optionA.gameObject.GetComponent<Image>().sprite = btsA[0];
+					optionB.gameObject.GetComponent<Image>().sprite = btsB[0];
+					ssA.highlightedSprite = btsA[1];
+					ssB.highlightedSprite = btsB[1];
+					optionA.spriteState = ssA;
+					optionB.spriteState = ssB;
+					bttA.text = "发财了，获得5货币";
+					bttB.text = "获得一次额外奇遇机会";
 					optionA.onClick.AddListener(()=>LU_AddXMoney(5));
 					optionB.onClick.AddListener(LU_OpenSpecialEvent);
 					break;
@@ -987,6 +1053,7 @@ namespace MoreMountains.CorgiEngine
 			CharacterHandleWeapon curWeapon = player.GetComponent<CharacterHandleWeapon>();
 			string curName = curWeapon.InitialWeapon.name;
 			int curStage = int.Parse(curName.Substring(curName.Length - 1, 1));
+			PlayerManager.Instance.attack += 25;
 			switch (curStage)
 			{
 				case 1:
