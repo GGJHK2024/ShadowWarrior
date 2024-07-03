@@ -180,6 +180,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1951000166}
     m_Modifications:
+    - target: {fileID: 6818802770552507356, guid: 561595cf0a8a6af4f9ffbc360f96765a,
+        type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1663959296}
     - target: {fileID: 6818980704704118918, guid: 561595cf0a8a6af4f9ffbc360f96765a,
         type: 3}
       propertyPath: MaxDamageCaused
@@ -324,6 +329,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212090616360300713, guid: 561595cf0a8a6af4f9ffbc360f96765a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 561595cf0a8a6af4f9ffbc360f96765a, type: 3}
@@ -787,6 +797,11 @@ PrefabInstance:
       propertyPath: States.Array.data[0].Transitions.array.Array.data[0].FalseState
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7048689645299194107, guid: 4e4b1328474fc154491f2fc56ecdc931,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4b1328474fc154491f2fc56ecdc931, type: 3}
 --- !u!1 &506901126
@@ -1052,6 +1067,116 @@ PrefabInstance:
         type: 3}
       propertyPath: Label
       value: "\u9884\u8B66\u65F6\u95F4\uFF08\u663E\u793A\u611F\u53F9\u53F7\uFF09"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: BackgroundColor.ctime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: BackgroundColor.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: BackgroundColor.key0.b
+      value: 0.2754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: BackgroundColor.key0.g
+      value: 0.2754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: BackgroundColor.key0.r
+      value: 0.2754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: BackgroundColor.key1.b
+      value: 0.2754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: BackgroundColor.key1.g
+      value: 0.2754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: BackgroundColor.key1.r
+      value: 0.2754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: BackgroundColor.key2.r
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: BackgroundColor.m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: ForegroundColor.ctime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: ForegroundColor.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: ForegroundColor.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: ForegroundColor.key1.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: ForegroundColor.key1.r
+      value: 0.8584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: ForegroundColor.key2.b
+      value: 0.20914915
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: ForegroundColor.key2.g
+      value: 0.9433962
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: ForegroundColor.key2.r
+      value: 0.6722562
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: ForegroundColor.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: BackgroundColor.m_NumColorKeys
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415451982424550728, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: ForegroundColor.m_NumColorKeys
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5893394884078251563, guid: 25a3e1a5eb389174495c5670ce676eff,
         type: 3}
@@ -2168,6 +2293,12 @@ MonoBehaviour:
   TargetController: {fileID: 0}
   StartFollowingBtn: 0
   StopFollowingBtn: 0
+--- !u!212 &1663959296 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 137690721844656747, guid: 561595cf0a8a6af4f9ffbc360f96765a,
+    type: 3}
+  m_PrefabInstance: {fileID: 112614254}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1879153510 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11413996, guid: ace2d4bf56f98df4196ff81845a465d7,

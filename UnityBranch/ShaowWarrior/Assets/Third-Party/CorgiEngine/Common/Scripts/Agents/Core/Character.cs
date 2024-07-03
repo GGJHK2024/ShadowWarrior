@@ -442,7 +442,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void OutlineCharacter()
 		{
-			_spriteRenderer.material = outlineMat;
+			spriteRenderer.material = outlineMat;
 		}
 
 		/// <summary>
@@ -450,7 +450,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void CancelOutlineCharacter()
 		{
-			_spriteRenderer.material = normalMat;
+			spriteRenderer.material = normalMat;
 		}
         
 		/// <summary>
