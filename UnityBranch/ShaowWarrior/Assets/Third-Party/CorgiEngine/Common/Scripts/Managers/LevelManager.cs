@@ -647,10 +647,10 @@ namespace MoreMountains.CorgiEngine
 						Cleanup();
 						
 						CorgiEngineEvent.Trigger(CorgiEngineEventTypes.GameOver);
-						if ((GameManager.Instance.GameOverScene != null) && (GameManager.Instance.GameOverScene != ""))
+						/*if ((GameManager.Instance.GameOverScene != null) && (GameManager.Instance.GameOverScene != ""))
 						{
-							LoadScene (GameManager.Instance.GameOverScene);
-						}
+							// LoadScene (GameManager.Instance.GameOverScene);
+						}*/
 					}
 				}
 
@@ -671,10 +671,10 @@ namespace MoreMountains.CorgiEngine
 			{
 				GameManager.Instance.ResetLives();
 			}
-			if (GameManager.Instance.ResetPersistentCharacterOnGameOver)
+			/*if (GameManager.Instance.ResetPersistentCharacterOnGameOver)
 			{
 				GameManager.Instance.DestroyPersistentCharacter();
-			}
+			}*/
 			if (GameManager.Instance.ResetStoredCharacterOnGameOver)
 			{
 				GameManager.Instance.ClearStoredCharacter();

@@ -442,7 +442,8 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void OutlineCharacter()
 		{
-			spriteRenderer.material = outlineMat;
+			if(spriteRenderer != null)
+				spriteRenderer.material = outlineMat;
 		}
 
 		/// <summary>
@@ -450,7 +451,8 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void CancelOutlineCharacter()
 		{
-			spriteRenderer.material = normalMat;
+			if(spriteRenderer != null)
+				spriteRenderer.material = normalMat;
 		}
         
 		/// <summary>
@@ -1149,14 +1151,7 @@ namespace MoreMountains.CorgiEngine
 					}
 					if (CharacterType == CharacterTypes.AI)
 					{
-						// 迁移至conditionState为Dead的判断
-						/*CancelOutlineCharacter();
-						if (this.gameObject.name.Contains("Boss"))
-						{
-							print("boss killer!");
-							LevelSelector ls = new LevelSelector();
-							ls.GoToLevel("CG");
-						}*/
+						CancelOutlineCharacter();
 					}
 					return;
 				}

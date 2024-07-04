@@ -103,7 +103,28 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
             case CorgiEngineEventTypes.LevelEnd: {
                 return;
             }
+            case CorgiEngineEventTypes.GameOver:
+            {
+                print("reset in PM");
+                GoToLevel();
+                break;
+            }
         }
+    }
+    
+    /// <summary>
+    /// Loads the level specified in the inspector
+    /// </summary>
+    public virtual void GoToLevel()
+    {
+        // 由于目前这个函数仅用于不保存回到标题的功能，因此需要重置角色和关卡进度。
+        CharacterHandleWeapon curWeapon = player.GetComponent<CharacterHandleWeapon>();
+        curWeapon.InitialWeapon = Resources.Load<MeleeWeapon>("Prefabs/MeleeWeapon_1");
+        curWeapon.Setup();
+        ResetPlayerParams();
+        // 关卡进度
+        LevelChooseManager.Instance.ResetLevelProgress();
+        LevelManager.Instance.GotoLevel("CG");
     }
 
     /// <summary>

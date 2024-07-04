@@ -557,8 +557,8 @@ namespace MoreMountains.CorgiEngine
 				if (CurrentHealth <= 0)
 				{
 					CurrentHealth = 0;
+					// _character.CancelOutlineCharacter();
 					Kill();
-					_character.CancelOutlineCharacter();
 					if (gameObject.name.Contains("Boss"))
 					{
 						// print("boss killer!");

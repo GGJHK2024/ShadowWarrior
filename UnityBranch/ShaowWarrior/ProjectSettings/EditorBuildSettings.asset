@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/0_Driver.unity
+    guid: dabfd558706b372498b0f1ab3ee0883e
+  - enabled: 1
     path: Assets/Scenes/CG.unity
     guid: 93c93531a84d85544af73d332fe37a6a
   - enabled: 1
@@ -20,66 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Third-Party/CorgiEngine/ThirdParty/MoreMountains/MMTools/Tools/MMSceneLoading/LoadingScreens/MMAdditiveLoadingScreen.unity
     guid: d89b77a7a68c1844280c6ff2e49f95b8
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalSpawners.unity
-    guid: 4c2aaf8a2f44b4dd8bcabba19d475c87
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/FeaturesKeys.unity
-    guid: 654cb02afee826c4e8c21a77155e84e3
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalOneWayLevelHorizontal.unity
-    guid: 5e74e8fd6deb84749a4fc4e4b8d7ea09
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalOneWayLevelVertical.unity
-    guid: c8d1ba4ad1f68a5449b10a0921eabb7a
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalOneWayLevelAutoScrolling.unity
-    guid: cec1726c18982b84b8cf78b0b33025c7
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalSlopes.unity
-    guid: 5a37564541f3b554d83f69844d59b915
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/FeaturesPlatformsGravityFlipped.unity
-    guid: 0ed1a168af3dfbd4d84d743d54fb49e8
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/Minimal4Players.unity
-    guid: 473ff282eb94d494290a75136e630771
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalMovingPlatforms.unity
-    guid: e9f05a74451393a45820631bf8eb2ed1
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalPixelPerfect.unity
-    guid: 222134e89397758428b4027f33abba30
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalFallDamage.unity
-    guid: 5981ecd2cdc50c142817e7aa485be511
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalPerf.unity
-    guid: 1e8feb8b31979f24693c2f9874367517
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalDynamicGravity.unity
-    guid: 24e8717724dfca541a7746982e12ab23
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalRooms1.unity
-    guid: 8c65f7d9dde72e74d93288177dad2006
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalRooms2.unity
-    guid: c982ea55a70c24044a9b4226f6446108
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalCharacterSwap.unity
-    guid: 71edfb2fd45021646941033d28e781fb
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalCharacterSwitch.unity
-    guid: e88faf07b1c65904c9a50ac65f300878
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalModelSwitch.unity
-    guid: d7b557f6a71b64946a3fe442e825d5fb
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalStairs.unity
-    guid: 9494d759434f80b4381b1da2a0fa14a0
-  - enabled: 0
-    path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalDamageTypes.unity
-    guid: dac9321fe171d794f9b3f600a6a9e725
   - enabled: 0
     path: Assets/Third-Party/CorgiEngine/Demos/Minimal/MinimalAutoMovement.unity
     guid: 00bc6681f52186e429e065009169f47d
@@ -161,7 +104,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Opening.unity
     guid: 42525e9f6336f31409436093ab1e5916
-  - enabled: 1
-    path: Assets/Scenes/0_Driver.unity
-    guid: dabfd558706b372498b0f1ab3ee0883e
   m_configObjects: {}

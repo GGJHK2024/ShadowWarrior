@@ -4925,9 +4925,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterType: 0
   PlayerID: Player1
-  spriteRenderer: {fileID: 0}
-  normalMat: {fileID: 0}
-  outlineMat: {fileID: 0}
+  spriteRenderer: {fileID: 3850795437435729055}
+  normalMat: {fileID: 2100000, guid: 62e6460cdd3fa1e4196e54a57b629913, type: 2}
+  outlineMat: {fileID: 2100000, guid: 19a7437c266059d45a79d1f59064d221, type: 2}
   InitialFacingDirection: 0
   DirectionOnSpawn: 1
   CharacterAnimator: {fileID: 3850795437435729054}
@@ -99965,6 +99965,12 @@ Transform:
 --- !u!95 &3850795437435729054 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4201729181369283247, guid: 41c508cc0f12fab47a15ccb51234348e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1098680815860418097}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &3850795437435729055 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4201729181369283246, guid: 41c508cc0f12fab47a15ccb51234348e,
     type: 3}
   m_PrefabInstance: {fileID: 1098680815860418097}
   m_PrefabAsset: {fileID: 0}
