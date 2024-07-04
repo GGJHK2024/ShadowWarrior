@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
+using UnityEngine.UI;
 
 namespace MoreMountains.CorgiEngine
 {
@@ -556,7 +557,14 @@ namespace MoreMountains.CorgiEngine
 				if (CurrentHealth <= 0)
 				{
 					CurrentHealth = 0;
+					// _character.CancelOutlineCharacter();
 					Kill();
+					if (gameObject.name.Contains("Boss"))
+					{
+						// print("boss killer!");
+						LevelSelector ls = gameObject.GetComponent<LevelSelector>();
+						ls.GoToLevel();
+					}
 				}
 			}
 		}
@@ -585,7 +593,6 @@ namespace MoreMountains.CorgiEngine
 				}
 			}
 			SetHealth(0f, _thisObject);
-            
 			// we prevent further damage
 			DamageDisabled();
 
@@ -1033,6 +1040,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void ResetHealthToMaxHealth()
 		{
+			print("reset?");
 			CurrentHealth = MaximumHealth;
 			UpdateHealthBar(false);
 			HealthChangeEvent.Trigger(this, CurrentHealth);
@@ -1056,6 +1064,7 @@ namespace MoreMountains.CorgiEngine
 					if (GUIManager.HasInstance)
 					{
 						GUIManager.Instance.UpdateHealthBar(CurrentHealth, 0f, MaximumHealth, _character.PlayerID);
+						GUIManager.Instance.SetAvaterMusk(CurrentHealth / MaximumHealth - 1);
 					}
 				}
 			}

@@ -4922,6 +4922,8 @@ MonoBehaviour:
   WeaponOnHitDamageableFeedback: {fileID: 0}
   WeaponOnHitNonDamageableFeedback: {fileID: 0}
   WeaponOnKillFeedback: {fileID: 0}
+  WeaponOnBounceSuccessNear: {fileID: 0}
+  WeaponOnBounceSuccessFar: {fileID: 0}
   ApplyRecoilOnUse: 0
   RecoilOnUseProperties:
     RecoilForceGrounded: 10
@@ -10168,7 +10170,7 @@ MonoBehaviour:
     - rid: 2
       type: {class: MMF_CameraShake, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
-        Active: 1
+        Active: 0
         UniqueID: 2146727442
         Label: Camera Shake
         ChannelMode: 0

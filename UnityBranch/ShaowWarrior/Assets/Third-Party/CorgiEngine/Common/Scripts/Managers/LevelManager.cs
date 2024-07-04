@@ -276,6 +276,16 @@ namespace MoreMountains.CorgiEngine
 				MMSetFeedbackRangeCenterEvent.Trigger(Players[0].transform);
 			}
 			
+			// CG和其他需要冻结角色的场景
+			if (SceneManager.GetActiveScene().name.Contains("CG"))
+			{
+				FreezeCharacters();
+			}
+			else
+			{
+				UnFreezeCharacters();
+			}
+			
 			MMCameraEvent.Trigger(MMCameraEventTypes.SetConfiner, null, BoundsCollider, BoundsCollider2D);
 			MMCameraEvent.Trigger(MMCameraEventTypes.SetTargetCharacter, Players[0]);
 			MMCameraEvent.Trigger(MMCameraEventTypes.StartFollowing);
@@ -637,10 +647,10 @@ namespace MoreMountains.CorgiEngine
 						Cleanup();
 						
 						CorgiEngineEvent.Trigger(CorgiEngineEventTypes.GameOver);
-						if ((GameManager.Instance.GameOverScene != null) && (GameManager.Instance.GameOverScene != ""))
+						/*if ((GameManager.Instance.GameOverScene != null) && (GameManager.Instance.GameOverScene != ""))
 						{
-							LoadScene (GameManager.Instance.GameOverScene);
-						}
+							// LoadScene (GameManager.Instance.GameOverScene);
+						}*/
 					}
 				}
 
@@ -661,10 +671,10 @@ namespace MoreMountains.CorgiEngine
 			{
 				GameManager.Instance.ResetLives();
 			}
-			if (GameManager.Instance.ResetPersistentCharacterOnGameOver)
+			/*if (GameManager.Instance.ResetPersistentCharacterOnGameOver)
 			{
 				GameManager.Instance.DestroyPersistentCharacter();
-			}
+			}*/
 			if (GameManager.Instance.ResetStoredCharacterOnGameOver)
 			{
 				GameManager.Instance.ClearStoredCharacter();
@@ -685,6 +695,7 @@ namespace MoreMountains.CorgiEngine
 			
 			if (CurrentCheckPoint != null)
 			{
+				GUIManager.Instance.SwitchAvater(1);
 				CurrentCheckPoint.SpawnPlayer(Players[0]);
 			}
             
@@ -799,6 +810,15 @@ namespace MoreMountains.CorgiEngine
 				this.transform.position = LevelBounds.center;
 				_collider.size = LevelBounds.extents * 2f;
 			}
+		}
+
+		/// <summary>
+		/// GM在场景中无法赋值导致的
+		/// </summary>
+		/// <param name="i"></param>
+		public void GoToNextLevel(int i)
+		{
+			LevelChooseManager.Instance.GoToNextLevel(i);
 		}
 
 		/// <summary>

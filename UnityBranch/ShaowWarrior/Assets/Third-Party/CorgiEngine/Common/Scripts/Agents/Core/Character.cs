@@ -442,7 +442,8 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void OutlineCharacter()
 		{
-			_spriteRenderer.material = outlineMat;
+			if(spriteRenderer != null)
+				spriteRenderer.material = outlineMat;
 		}
 
 		/// <summary>
@@ -450,7 +451,8 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void CancelOutlineCharacter()
 		{
-			_spriteRenderer.material = normalMat;
+			if(spriteRenderer != null)
+				spriteRenderer.material = normalMat;
 		}
         
 		/// <summary>
@@ -667,7 +669,7 @@ namespace MoreMountains.CorgiEngine
 				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _groundedAnimationParameter, _controller.State.IsGrounded, _animatorParameters, PerformAnimatorSanityChecks);
 				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _fallingAnimationParameter, MovementState.CurrentState == CharacterStates.MovementStates.Falling, _animatorParameters, PerformAnimatorSanityChecks);
 				// MMAnimatorExtensions.UpdateAnimatorBool(_animator, _airborneSpeedAnimationParameter, Airborne, _animatorParameters, PerformAnimatorSanityChecks);
-				// MMAnimatorExtensions.UpdateAnimatorBool(_animator, _aliveAnimationParameter, (ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead),_animatorParameters, PerformAnimatorSanityChecks);
+				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _aliveAnimationParameter, (ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead),_animatorParameters, PerformAnimatorSanityChecks);
 				// MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _xSpeedAnimationParameter, _controller.Speed.x, _animatorParameters, PerformAnimatorSanityChecks);
 				MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _ySpeedAnimationParameter, _controller.Speed.y, _animatorParameters, PerformAnimatorSanityChecks);
 				MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _xSpeedAbsoluteAnimationParameter, Mathf.Abs(_controller.Speed.x), _animatorParameters, PerformAnimatorSanityChecks);
@@ -714,7 +716,7 @@ namespace MoreMountains.CorgiEngine
 				{
 					if (CharacterHealth.GravityOffOnDeath)
 					{
-						_controller.GravityActive(false);
+						// _controller.GravityActive(false);
 					}
 					if (CharacterHealth.ApplyDeathForce && (CharacterHealth.DeathForce.x == 0f))
 					{
@@ -732,7 +734,7 @@ namespace MoreMountains.CorgiEngine
 			// if the character is frozen, we prevent it from moving
 			if (ConditionState.CurrentState == CharacterStates.CharacterConditions.Frozen)
 			{
-				_controller.GravityActive(false);
+				// _controller.GravityActive(false);
 				_controller.SetForce(Vector2.zero);			
 			}
 		}
@@ -742,7 +744,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void Freeze()
 		{
-			_controller.GravityActive(false);
+			// _controller.GravityActive(false);
 			_controller.SetForce(Vector2.zero);
 			if (_animator != null)
 				_animator.speed = 0;
@@ -780,7 +782,7 @@ namespace MoreMountains.CorgiEngine
 		{
 			if (_animator != null)
 				_animator.speed = 1;
-			_controller.GravityActive(true);
+			// _controller.GravityActive(true);
 			ConditionState.ChangeState(_conditionStateBeforeFreeze);
 		}	    
 		
@@ -1021,10 +1023,10 @@ namespace MoreMountains.CorgiEngine
 			}
 			this.ConditionState.ChangeState(newCondition);
 			if (resetControllerForces) { _controller?.SetForce(Vector2.zero); }
-			if (disableGravity && (_controller != null)) { _controller.GravityActive(false); }
+			// if (disableGravity && (_controller != null)) { _controller.GravityActive(false); }
 			yield return MMCoroutine.WaitFor(duration);
 			this.ConditionState.ChangeState(_lastState);
-			if (disableGravity && (_controller != null)) { _controller.GravityActive(true); }
+			// if (disableGravity && (_controller != null)) { _controller.GravityActive(true); }
 		}
 
 		/// <summary>
@@ -1144,6 +1146,8 @@ namespace MoreMountains.CorgiEngine
 					if (CharacterType == CharacterTypes.Player)
 					{
 						UnlockAbility();
+						// GUI切换头像为死亡
+						GUIManager.Instance.SwitchAvater(2);
 					}
 					if (CharacterType == CharacterTypes.AI)
 					{

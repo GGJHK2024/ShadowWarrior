@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyManager : MMSingleton<EnemyManager>,		
     MMEventListener<MMGameEvent>,
     MMEventListener<CorgiEngineEvent>
 {
-    public int enemyCount = 0;
+    public int enemyCount = KillsManager.Instance.DeathThreshold;
     private int _enemyCount;
-    
+
     /// <summary>
     /// Statics initialization to support enter play modes
     /// </summary>
@@ -23,7 +24,6 @@ public class EnemyManager : MMSingleton<EnemyManager>,
 
     private void Start()
     {
-        Reset();
         MMEventManager.AddListener<CorgiEngineEvent>(this);
         MMEventManager.AddListener<MMGameEvent>(this);
     }
@@ -31,6 +31,7 @@ public class EnemyManager : MMSingleton<EnemyManager>,
     public void BeKilled()
     {
         _enemyCount--;
+        PlayerManager.Instance.AddMoney(5);
         print("current reaming: " + _enemyCount);
     }
 
@@ -42,13 +43,17 @@ public class EnemyManager : MMSingleton<EnemyManager>,
     public void Reset()
     {
         print("重置");
+        enemyCount = KillsManager.Instance.DeathThreshold;
         _enemyCount = enemyCount;
     }
     
     public void OnMMEvent(MMGameEvent eventType)
     {
         switch (eventType.EventName) {
-            case GameEventType.Dead: {
+            case GameEventType.Dead:
+            {
+                KillsManager.Instance.ComputeKillThresholdBasedOnTargetLayerMask();
+                KillsManager.Instance.RefreshRemainingDeaths();
                 Reset();
                 return;
             }
@@ -57,7 +62,12 @@ public class EnemyManager : MMSingleton<EnemyManager>,
     public void OnMMEvent(CorgiEngineEvent eventType)
     {
         switch (eventType.EventType) {
-            case CorgiEngineEventTypes.LevelStart: {
+            case CorgiEngineEventTypes.LevelStart:
+            {
+                PlayerManager.Instance.AddMoney(0);
+                KillsManager.Instance.ComputeKillThresholdBasedOnTargetLayerMask();
+                KillsManager.Instance.RefreshRemainingDeaths();
+                
                 Reset();
                 return;
             }

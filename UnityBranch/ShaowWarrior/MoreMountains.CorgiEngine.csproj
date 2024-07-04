@@ -58,6 +58,7 @@
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\Damage\Stompable.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIActionSetLastKnownPositionAsTarget.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Environment\MovingPlatform.cs" />
+    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Managers\LevelChooseManager.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Environment\CharacterDetector.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Environment\AutoMovementControlZone.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Demos\RetroAdventure\Scripts\RetroNextLevel.cs" />
@@ -178,6 +179,7 @@
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\GUI\HipsterGUI.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\Weapons\WeaponLaserSight.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterRun.cs" />
+    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Managers\PlayerManager.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Environment\ProximityMine.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIDecisionGrounded.cs" />
     <Compile Include="Assets\Third-Party\CorgiEngine\Common\Scripts\Agents\Damage\KillPlayerOnTouch.cs" />
@@ -581,12 +583,6 @@
     <Reference Include="UnityEditor.UWP.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.34f1\Editor\Data\PlaybackEngines\MetroSupport\UnityEditor.UWP.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Plastic.Newtonsoft.Json">
-      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Plastic.Antlr3.Runtime">
-      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.visualscripting@1.9.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
@@ -595,12 +591,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.IonicZip">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.visualscripting@1.9.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
-    </Reference>
-    <Reference Include="unityplastic">
-      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
-    </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.visualscripting@1.9.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using MoreMountains.Tools;
 
@@ -44,6 +45,8 @@ namespace MoreMountains.CorgiEngine
 			options.MmSoundManagerTrack = MMSoundManager.MMSoundManagerTracks.Music;
             
 			MMSoundManagerSoundPlayEvent.Trigger(SoundClip, options);
+			// MMSoundManager.Instance.PlaySound(SoundClip, options);
 		}
+		
 	}
 }

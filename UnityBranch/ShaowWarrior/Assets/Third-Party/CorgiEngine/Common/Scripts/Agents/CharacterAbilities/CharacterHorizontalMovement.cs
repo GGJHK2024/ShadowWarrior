@@ -75,14 +75,6 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("whether or not this ability should keep taking care of horizontal movement after death")]
 		public bool ActiveAfterDeath = false;
 
-		[Header("Touching the Ground")]
-		/// the MMFeedbacks to play when the character hits the ground
-		[Tooltip("the MMFeedbacks to play when the character hits the ground")]
-		public MMFeedbacks TouchTheGroundFeedback;
-		/// the duration (in seconds) during which the character has to be airborne before a feedback can be played when touching the ground
-		[Tooltip("the duration (in seconds) during which the character has to be airborne before a feedback can be played when touching the ground")]
-		public float MinimumAirTimeBeforeFeedback = 0.2f;
-
 		[Header("Walls")]
 		/// Whether or not the state should be reset to Idle when colliding laterally with a wall
 		[Tooltip("Whether or not the state should be reset to Idle when colliding laterally with a wall")]
@@ -92,10 +84,11 @@ namespace MoreMountains.CorgiEngine
 		public float ContextSpeedMultiplier => ContextSpeedStack.Count > 0 ? ContextSpeedStack.Peek() : 1;
                 
 		protected float _horizontalMovement;
-		protected float _lastGroundedHorizontalMovement;
+		protected float _verticalMovement;
 		protected float _horizontalMovementForce;
+		protected float _verticalMovementForce;
 		protected float _normalizedHorizontalSpeed;
-		protected float _lastTimeGrounded = 0f;
+		protected float _normalizedVerticalSpeed;
 		protected float _initialMovementSpeedMultiplier;
 
 		// animation parameters
@@ -125,7 +118,6 @@ namespace MoreMountains.CorgiEngine
 		public override void ProcessAbility()
 		{
 			base.ProcessAbility();
-
 			HandleHorizontalMovement();
 			DetectWalls(true);
 		}
@@ -142,22 +134,7 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			_horizontalMovement = _horizontalInput;
-
-			if ((AirControl < 1f) 
-			    && !_controller.State.IsGrounded
-			    && (_character.MovementState.CurrentState != CharacterStates.MovementStates.WallClinging))
-			{
-				_horizontalMovement = Mathf.Lerp(_lastGroundedHorizontalMovement, _horizontalInput, AirControl);
-			}
-		}
-
-		/// <summary>
-		/// When using low (or null) air control, this method lets you externally set the direction air control should consider as the base value
-		/// </summary>
-		/// <param name="newInputValue"></param>
-		public virtual void SetAirControlDirection(float newInputValue)
-		{
-			_lastGroundedHorizontalMovement = newInputValue;
+			_verticalMovement = _verticalInput;
 		}
 
 		/// <summary>
@@ -168,12 +145,20 @@ namespace MoreMountains.CorgiEngine
 		{
 			_horizontalMovement = value;
 		}
+		public virtual void SetVerticalMove(float value)
+		{
+			_verticalMovement = value;
+		}
 
 		/// <summary>
 		/// Called at Update(), handles horizontal movement
 		/// </summary>
 		protected virtual void HandleHorizontalMovement()
-		{	
+		{
+			if ((_movement.CurrentState == CharacterStates.MovementStates.Walking) && !_startFeedbackIsPlaying)
+			{
+				PlayAbilityStartFeedbacks();
+			}
 			// if we're not walking anymore, we stop our walking sound
 			if ((_movement.CurrentState != CharacterStates.MovementStates.Walking) && _startFeedbackIsPlaying)
 			{
@@ -191,20 +176,12 @@ namespace MoreMountains.CorgiEngine
 				}
 			}
 
-			// check if we just got grounded
-			CheckJustGotGrounded();
-			StoreLastTimeGrounded();
-
 			bool canFlip = true;
 
 			if (MovementForbidden)
 			{
 				_horizontalMovement = _character.Airborne ? _controller.Speed.x * Time.deltaTime : 0f;
-				canFlip = false;
-			}
-
-			if (!_controller.State.IsGrounded && !AllowFlipInTheAir)
-			{
+				_verticalMovement = _character.Airborne ? _controller.Speed.y * Time.deltaTime : 0f;
 				canFlip = false;
 			}
 
@@ -230,6 +207,28 @@ namespace MoreMountains.CorgiEngine
 			{
 				_normalizedHorizontalSpeed = 0;
 			}
+			// If the value of the vertical axis is positive, the character must face right.
+			if (_verticalMovement > InputThreshold)
+			{
+				_normalizedVerticalSpeed = _verticalMovement;
+				/*if (!_character.IsFacingRight && canFlip && FlipCharacterToFaceDirection)
+				{
+					_character.Flip();
+				}	*/				
+			}		
+			// If it's negative, then we're facing left
+			else if (_verticalMovement < -InputThreshold)
+			{
+				_normalizedVerticalSpeed = _verticalMovement;
+				/*if (_character.IsFacingRight && canFlip && FlipCharacterToFaceDirection)
+				{
+					_character.Flip();
+				}*/					
+			}
+			else
+			{
+				_normalizedVerticalSpeed = 0;
+			}
 
 			/// if we're dashing, we stop there
 			if (_movement.CurrentState == CharacterStates.MovementStates.Dashing)
@@ -238,12 +237,11 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			// if we're grounded and moving, and currently Idle, Dangling or Falling, we become Walking
-			if ( (_controller.State.IsGrounded)
-			     && (_normalizedHorizontalSpeed != 0)
-			     && ( (_movement.CurrentState == CharacterStates.MovementStates.Idle)
-			          || (_movement.CurrentState == CharacterStates.MovementStates.Dangling)
-			          || (_movement.CurrentState == CharacterStates.MovementStates.Falling)))
-			{				
+			if ( (_normalizedHorizontalSpeed != 0 || _normalizedVerticalSpeed != 0) && 
+			     ( _movement.CurrentState == CharacterStates.MovementStates.Idle 
+			       || _movement.CurrentState == CharacterStates.MovementStates.Dangling 
+			       || _movement.CurrentState == CharacterStates.MovementStates.Falling))
+			{
 				_movement.ChangeState(CharacterStates.MovementStates.Walking);
 				
 				if (!DetectWalls(false))
@@ -253,29 +251,18 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			// if we're grounded, jumping but not moving up, we become idle
-			if ((_controller.State.IsGrounded)
-			    && (_movement.CurrentState == CharacterStates.MovementStates.Jumping)
-			    && (_controller.TimeAirborne >= _character.AirborneMinimumTime))
+			if (_movement.CurrentState == CharacterStates.MovementStates.Jumping
+			    && _controller.TimeAirborne >= _character.AirborneMinimumTime)
 			{
 				_movement.ChangeState(CharacterStates.MovementStates.Idle);
 			}
 
 			// if we're walking and not moving anymore, we go back to the Idle state
-			if ((_movement.CurrentState == CharacterStates.MovementStates.Walking) 
-			    && (_normalizedHorizontalSpeed == 0))
+			if (_movement.CurrentState == CharacterStates.MovementStates.Walking
+			    && _normalizedHorizontalSpeed == 0 && _normalizedVerticalSpeed == 0)
 			{
 				_movement.ChangeState(CharacterStates.MovementStates.Idle);
 				PlayAbilityStopFeedbacks();
-			}
-
-			// if the character is not grounded, but currently idle or walking, we change its state to Falling
-			if (!_controller.State.IsGrounded
-			    && (
-				    (_movement.CurrentState == CharacterStates.MovementStates.Walking)
-				    || (_movement.CurrentState == CharacterStates.MovementStates.Idle)
-			    ))
-			{
-				_movement.ChangeState(CharacterStates.MovementStates.Falling);
 			}
 
 			// we apply instant acceleration if needed
@@ -283,51 +270,48 @@ namespace MoreMountains.CorgiEngine
 			{
 				if (_normalizedHorizontalSpeed > 0f) { _normalizedHorizontalSpeed = 1f; }
 				if (_normalizedHorizontalSpeed < 0f) { _normalizedHorizontalSpeed = -1f; }
+				if (_normalizedVerticalSpeed > 0f) { _normalizedVerticalSpeed = 1f; }
+				if (_normalizedVerticalSpeed < 0f) { _normalizedVerticalSpeed = -1f; }
 			}
 
-			// we pass the horizontal force that needs to be applied to the controller.
-			float groundAcceleration = _controller.Parameters.SpeedAccelerationOnGround;
+
 			float airAcceleration = _controller.Parameters.SpeedAccelerationInAir;
-			
-			if (_controller.Parameters.UseSeparateDecelerationOnGround && (Mathf.Abs(_horizontalMovement) < InputThreshold))
-			{
-				groundAcceleration = _controller.Parameters.SpeedDecelerationOnGround;
-			}
-			if (_controller.Parameters.UseSeparateDecelerationInAir && (Mathf.Abs(_horizontalMovement) < InputThreshold))
+			if (_controller.Parameters.UseSeparateDecelerationInAir && (Mathf.Abs(_horizontalMovement) < InputThreshold) && (Mathf.Abs(_verticalMovement) < InputThreshold))
 			{
 				airAcceleration = _controller.Parameters.SpeedDecelerationInAir;
 			}
 			
-			float movementFactor = _controller.State.IsGrounded ? groundAcceleration : airAcceleration;
-			float movementSpeed = _normalizedHorizontalSpeed * MovementSpeed * _controller.Parameters.SpeedFactor * MovementSpeedMultiplier * ContextSpeedMultiplier * AbilityMovementSpeedMultiplier * StateSpeedMultiplier * PushSpeedMultiplier;
+			float movementFactor = airAcceleration;
+			float horizontalMovementSpeed = _normalizedHorizontalSpeed * MovementSpeed * _controller.Parameters.SpeedFactor * MovementSpeedMultiplier * ContextSpeedMultiplier * AbilityMovementSpeedMultiplier * StateSpeedMultiplier * PushSpeedMultiplier;
+			float verticalMovementSpeed = _normalizedVerticalSpeed * MovementSpeed * _controller.Parameters.SpeedFactor * MovementSpeedMultiplier * ContextSpeedMultiplier * AbilityMovementSpeedMultiplier * StateSpeedMultiplier * PushSpeedMultiplier;
                         
 			if (InstantAcceleration && (_movement.CurrentState != CharacterStates.MovementStates.WallJumping))
 			{
 				// if we are in instant acceleration mode, we just apply our movement speed
-				_horizontalMovementForce = movementSpeed;
+				_horizontalMovementForce = horizontalMovementSpeed;
+				_verticalMovementForce = verticalMovementSpeed;
 
 				// and any external forces that may be active right now
 				if (Mathf.Abs(_controller.ExternalForce.x) > 0)
 				{
 					_horizontalMovementForce += _controller.ExternalForce.x;
+					_verticalMovementForce += _controller.ExternalForce.y;
 				}                
 			}
 			else
 			{
 				// if we are not in instant acceleration mode, we lerp towards our movement speed
-				_horizontalMovementForce = Mathf.Lerp(_controller.Speed.x, movementSpeed, Time.deltaTime * movementFactor);
+				_horizontalMovementForce = Mathf.Lerp(_controller.Speed.x, horizontalMovementSpeed, Time.deltaTime * movementFactor);
+				_verticalMovementForce = Mathf.Lerp(_controller.Speed.y, verticalMovementSpeed, Time.deltaTime * movementFactor);
 			}			
 						
 			// we handle friction
 			_horizontalMovementForce = HandleFriction(_horizontalMovementForce);
+			_verticalMovementForce = HandleFriction(_verticalMovementForce);
 
 			// we set our newly computed speed to the controller
 			_controller.SetHorizontalForce(_horizontalMovementForce);
-
-			if (_controller.State.IsGrounded)
-			{
-				_lastGroundedHorizontalMovement = _horizontalMovement;
-			}            
+			_controller.SetVerticalForce(_verticalMovementForce);
 		}
 
 		/// <summary>
@@ -352,59 +336,6 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			return false;
-		}
-
-		/// <summary>
-		/// Every frame, checks if we just hit the ground, and if yes, changes the state and triggers a particle effect
-		/// </summary>
-		protected virtual void CheckJustGotGrounded()
-		{
-			// if the character just got grounded
-			if (_movement.CurrentState == CharacterStates.MovementStates.Dashing)
-			{
-				return;
-			}
-
-            
-			if (_controller.State.JustGotGrounded)
-			{
-				if ((_movement.CurrentState != CharacterStates.MovementStates.Jumping)
-				    && (_movement.CurrentState != CharacterStates.MovementStates.Rolling)
-				    && (_movement.CurrentState != CharacterStates.MovementStates.Dashing))
-				{
-					if (_controller.State.ColliderResized)
-					{
-						_movement.ChangeState(CharacterStates.MovementStates.Crouching);
-					}
-					else
-					{
-						_movement.ChangeState(CharacterStates.MovementStates.Idle);
-					}	
-				}
-
-				_controller.SlowFall (0f);
-				if (Time.time - _lastTimeGrounded > MinimumAirTimeBeforeFeedback)
-				{
-					TouchTheGroundFeedback?.PlayFeedbacks();
-				}
-                
-			}
-		}
-
-		/// <summary>
-		/// Computes and stores the last time we were grounded
-		/// </summary>
-		protected virtual void StoreLastTimeGrounded()
-		{
-			if ((_controller.State.IsGrounded) 
-			    || (_character.MovementState.CurrentState == CharacterStates.MovementStates.LadderClimbing)
-			    || (_character.MovementState.CurrentState == CharacterStates.MovementStates.LedgeClimbing)
-			    || (_character.MovementState.CurrentState == CharacterStates.MovementStates.LedgeHanging)
-			    || (_character.MovementState.CurrentState == CharacterStates.MovementStates.Gripping)
-			    || (_character.MovementState.CurrentState == CharacterStates.MovementStates.SwimmingIdle))
-			{
-				_lastTimeGrounded = Time.time;
-			}
 		}
 
 		/// <summary>
@@ -501,7 +432,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public override void UpdateAnimator()
 		{
-			MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _speedAnimationParameter, Mathf.Abs(_normalizedHorizontalSpeed), _character._animatorParameters, _character.PerformAnimatorSanityChecks);
+			MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _speedAnimationParameter, Mathf.Max(Mathf.Abs(_normalizedHorizontalSpeed),Mathf.Abs(_normalizedVerticalSpeed)), _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 			MMAnimatorExtensions.UpdateAnimatorBool(_animator, _walkingAnimationParameter, (_movement.CurrentState == CharacterStates.MovementStates.Walking), _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 			MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _relativeSpeedAnimationParameter, _character.IsFacingRight ? _controller.Speed.x : -_controller.Speed.x, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 		}
