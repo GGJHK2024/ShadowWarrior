@@ -94,6 +94,8 @@ namespace MoreMountains.CorgiEngine
 		public TextMeshProUGUI neededMoneyText;
 		[Tooltip("当前购物需要的金钱")]
 		private int neededMoney = 0;
+		[Tooltip("检查当前是否已经购买过技能升级")]
+		private bool boughtSKillUp = false;
 		
 		[Header("SpecialEventTexts")]
 		/// 奇遇界面
@@ -347,7 +349,7 @@ namespace MoreMountains.CorgiEngine
 				string curName = player.GetComponent<CharacterHandleWeapon>().InitialWeapon.name;
 				int curStage = int.Parse(curName.Substring(curName.Length - 1, 1));
 				// 如果已经连招升级满了，则替换为售罄，按钮无法购买
-				if (curStage == 3)
+				if (curStage == 3 || boughtSKillUp)
 				{
 					SkillUpdate.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
 					SkillUpdate.enabled = false;
@@ -387,6 +389,19 @@ namespace MoreMountains.CorgiEngine
 				PlayerManager.Instance.money -= neededMoney;
 				foreach (var b in buyingItems)
 				{
+					if (b.name == "LU_SkillUp")
+					{
+						boughtSKillUp = true;
+						SkillUpdate.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
+						SkillUpdate.enabled = false;
+					}
+
+					if (b.name == "S_BigSkill")
+					{
+						// 已经购买大招了，则替换为售罄，按钮无法购买
+						BigSkill.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
+						BigSkill.enabled = false;
+					}
 					Invoke(b.name,0.02f);
 					b.gameObject.GetComponent<Image>().material = null;
 				}
@@ -1067,9 +1082,6 @@ namespace MoreMountains.CorgiEngine
 				case 3:
 					break;
 			}
-			// 如果在商店
-			SkillUpdate.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
-			SkillUpdate.enabled = false;
 		}
 
 		/// <summary>
@@ -1124,9 +1136,6 @@ namespace MoreMountains.CorgiEngine
 		public void S_BigSkill()
 		{
 			PlayerManager.Instance.hasBigSkill = true;
-			// 如果已经有大招了，则替换为售罄，按钮无法购买
-			BigSkill.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
-			BigSkill.enabled = false;
 		}
 
 		/// <summary>
