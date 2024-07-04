@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 8117333926711839525}
   - component: {fileID: 167059064127891269}
   - component: {fileID: 7048689645299194107}
+  - component: {fileID: 215356222859256989}
   m_Layer: 13
   m_Name: RobotBoss
   m_TagString: Player
@@ -1034,6 +1035,21 @@ MonoBehaviour:
   TestMaxHealth: 100
   TestCurrentHealth: 25
   TestUpdateHealthButton: 0
+--- !u!114 &215356222859256989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d042072253d11428147ba0d074fa39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelName: CG
+  Fade: 1
+  Save: 1
 --- !u!1 &1906052747890022
 GameObject:
   m_ObjectHideFlags: 0

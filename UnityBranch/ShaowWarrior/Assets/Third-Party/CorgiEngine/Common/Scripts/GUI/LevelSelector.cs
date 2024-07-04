@@ -36,6 +36,7 @@ namespace MoreMountains.CorgiEngine
 			// 由于目前这个函数仅用于不保存回到标题的功能，因此需要重置角色和关卡进度。
 			CharacterHandleWeapon curWeapon = player.GetComponent<CharacterHandleWeapon>();
 			curWeapon.InitialWeapon = Resources.Load<MeleeWeapon>("Prefabs/MeleeWeapon_1");
+			curWeapon.Setup();
 			PlayerManager.Instance.ResetPlayerParams();
 			// 关卡进度
 			LevelChooseManager.Instance.ResetLevelProgress();

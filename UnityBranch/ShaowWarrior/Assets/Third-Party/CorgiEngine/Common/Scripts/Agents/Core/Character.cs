@@ -667,7 +667,7 @@ namespace MoreMountains.CorgiEngine
 				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _groundedAnimationParameter, _controller.State.IsGrounded, _animatorParameters, PerformAnimatorSanityChecks);
 				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _fallingAnimationParameter, MovementState.CurrentState == CharacterStates.MovementStates.Falling, _animatorParameters, PerformAnimatorSanityChecks);
 				// MMAnimatorExtensions.UpdateAnimatorBool(_animator, _airborneSpeedAnimationParameter, Airborne, _animatorParameters, PerformAnimatorSanityChecks);
-				// MMAnimatorExtensions.UpdateAnimatorBool(_animator, _aliveAnimationParameter, (ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead),_animatorParameters, PerformAnimatorSanityChecks);
+				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _aliveAnimationParameter, (ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead),_animatorParameters, PerformAnimatorSanityChecks);
 				// MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _xSpeedAnimationParameter, _controller.Speed.x, _animatorParameters, PerformAnimatorSanityChecks);
 				MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _ySpeedAnimationParameter, _controller.Speed.y, _animatorParameters, PerformAnimatorSanityChecks);
 				MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _xSpeedAbsoluteAnimationParameter, Mathf.Abs(_controller.Speed.x), _animatorParameters, PerformAnimatorSanityChecks);
@@ -1149,7 +1149,14 @@ namespace MoreMountains.CorgiEngine
 					}
 					if (CharacterType == CharacterTypes.AI)
 					{
-						CancelOutlineCharacter();
+						// 迁移至conditionState为Dead的判断
+						/*CancelOutlineCharacter();
+						if (this.gameObject.name.Contains("Boss"))
+						{
+							print("boss killer!");
+							LevelSelector ls = new LevelSelector();
+							ls.GoToLevel("CG");
+						}*/
 					}
 					return;
 				}
