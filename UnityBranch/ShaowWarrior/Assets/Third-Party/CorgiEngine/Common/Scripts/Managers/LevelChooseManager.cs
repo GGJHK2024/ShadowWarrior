@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace MoreMountains.CorgiEngine
 {
@@ -65,6 +67,12 @@ namespace MoreMountains.CorgiEngine
         /// </summary>
         public void InitNextLevelGate()
         {
+            if(SceneManager.GetActiveScene().name.Contains("Driver"))   return;
+            if (SceneManager.GetActiveScene().name.Contains("Tuto"))
+            {
+                curID = 1;
+                stage = 0;
+            }
             print("---init next level---");
             gates= FindObjectsOfType(typeof(FinishLevel)) as FinishLevel[];
             int cn = levels[curID].childId.Length;
@@ -82,7 +90,16 @@ namespace MoreMountains.CorgiEngine
                 cn--;
             }
         }
-        
+
+        /// <summary>
+        /// 重置关卡进度
+        /// </summary>
+        public void ResetLevelProgress()
+        {
+            curID = 0;
+            stage = -1;
+        }
+
         public void OnMMEvent(CorgiEngineEvent eventType)
         {
             switch (eventType.EventType) {

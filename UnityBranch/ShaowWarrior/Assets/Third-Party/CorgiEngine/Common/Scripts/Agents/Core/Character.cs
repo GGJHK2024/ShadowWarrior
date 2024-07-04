@@ -442,7 +442,8 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void OutlineCharacter()
 		{
-			_spriteRenderer.material = outlineMat;
+			if(spriteRenderer != null)
+				spriteRenderer.material = outlineMat;
 		}
 
 		/// <summary>
@@ -450,7 +451,8 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void CancelOutlineCharacter()
 		{
-			_spriteRenderer.material = normalMat;
+			if(spriteRenderer != null)
+				spriteRenderer.material = normalMat;
 		}
         
 		/// <summary>
@@ -667,7 +669,7 @@ namespace MoreMountains.CorgiEngine
 				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _groundedAnimationParameter, _controller.State.IsGrounded, _animatorParameters, PerformAnimatorSanityChecks);
 				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _fallingAnimationParameter, MovementState.CurrentState == CharacterStates.MovementStates.Falling, _animatorParameters, PerformAnimatorSanityChecks);
 				// MMAnimatorExtensions.UpdateAnimatorBool(_animator, _airborneSpeedAnimationParameter, Airborne, _animatorParameters, PerformAnimatorSanityChecks);
-				// MMAnimatorExtensions.UpdateAnimatorBool(_animator, _aliveAnimationParameter, (ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead),_animatorParameters, PerformAnimatorSanityChecks);
+				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _aliveAnimationParameter, (ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead),_animatorParameters, PerformAnimatorSanityChecks);
 				// MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _xSpeedAnimationParameter, _controller.Speed.x, _animatorParameters, PerformAnimatorSanityChecks);
 				MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _ySpeedAnimationParameter, _controller.Speed.y, _animatorParameters, PerformAnimatorSanityChecks);
 				MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _xSpeedAbsoluteAnimationParameter, Mathf.Abs(_controller.Speed.x), _animatorParameters, PerformAnimatorSanityChecks);

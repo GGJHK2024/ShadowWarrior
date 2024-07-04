@@ -4887,7 +4887,6 @@ GameObject:
   - component: {fileID: 6188829867604265156}
   - component: {fileID: 6036360106904762168}
   - component: {fileID: 6148686223741653918}
-  - component: {fileID: 7885512022606769472}
   m_Layer: 9
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -4926,9 +4925,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterType: 0
   PlayerID: Player1
-  spriteRenderer: {fileID: 0}
-  normalMat: {fileID: 0}
-  outlineMat: {fileID: 0}
+  spriteRenderer: {fileID: 3850795437435729055}
+  normalMat: {fileID: 2100000, guid: 62e6460cdd3fa1e4196e54a57b629913, type: 2}
+  outlineMat: {fileID: 2100000, guid: 19a7437c266059d45a79d1f59064d221, type: 2}
   InitialFacingDirection: 0
   DirectionOnSpawn: 1
   CharacterAnimator: {fileID: 3850795437435729054}
@@ -5099,8 +5098,8 @@ MonoBehaviour:
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
-  InitialHealth: 5
-  MaximumHealth: 5
+  InitialHealth: 100
+  MaximumHealth: 100
   Invulnerable: 0
   ImmuneToDamage: 0
   DamageFeedbacks: {fileID: 5012707982616224640}
@@ -5580,28 +5579,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7885512022606769472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d57e5bf390ae15d458993fe3175f3960, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  topPos: -11.3
-  groundPos: -3.9
-  topScale: 1.3
-  downScale: 2
 --- !u!1 &1693914667617252
 GameObject:
   m_ObjectHideFlags: 0
@@ -99988,6 +99965,12 @@ Transform:
 --- !u!95 &3850795437435729054 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4201729181369283247, guid: 41c508cc0f12fab47a15ccb51234348e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1098680815860418097}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &3850795437435729055 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4201729181369283246, guid: 41c508cc0f12fab47a15ccb51234348e,
     type: 3}
   m_PrefabInstance: {fileID: 1098680815860418097}
   m_PrefabAsset: {fileID: 0}

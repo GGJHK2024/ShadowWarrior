@@ -94,6 +94,8 @@ namespace MoreMountains.CorgiEngine
 		public TextMeshProUGUI neededMoneyText;
 		[Tooltip("当前购物需要的金钱")]
 		private int neededMoney = 0;
+		[Tooltip("检查当前是否已经购买过技能升级")]
+		private bool boughtSKillUp = false;
 		
 		[Header("SpecialEventTexts")]
 		/// 奇遇界面
@@ -268,6 +270,33 @@ namespace MoreMountains.CorgiEngine
 				EventSystem.current.sendNavigationEvents = state;
 			}
 		}
+
+		/// <summary>
+		/// 打开简历界面
+		/// </summary>
+		public virtual void OpenPause()
+		{
+			Time.timeScale = 0;
+			if (PauseScreen != null)
+			{ 
+				PauseScreen.SetActive(true);
+				UpdateLUManuel();
+				// 隐藏LU界面的按钮
+				ShowLUButton(false);
+			}
+		}
+
+		/// <summary>
+		/// 关闭简历界面
+		/// </summary>
+		public virtual void ClosePause()
+		{
+			Time.timeScale = 1.0f;
+			if (PauseScreen != null)
+			{ 
+				PauseScreen.SetActive(false);
+			}
+		}
 		
 		/// <summary>
 		/// Sets the Level Up.
@@ -278,6 +307,8 @@ namespace MoreMountains.CorgiEngine
 			if (LevelUpScreen!= null)
 			{ 
 				LevelUpScreen.SetActive(true);
+				// 显示LU界面的按钮
+				ShowLUButton(true);
 				UpdateLUManuel();
 			}
 		}
@@ -292,6 +323,16 @@ namespace MoreMountains.CorgiEngine
 			{ 
 				LevelUpScreen.SetActive(false);
 			}
+		}
+
+		/// <summary>
+		/// 设置LU界面按钮显隐状态
+		/// </summary>
+		/// <param name="state"></param>
+		public void ShowLUButton(bool state)
+		{
+			optionA.gameObject.SetActive(state);
+			optionB.gameObject.SetActive(state);
 		}
 		
 		/// <summary>
@@ -308,25 +349,25 @@ namespace MoreMountains.CorgiEngine
 				string curName = player.GetComponent<CharacterHandleWeapon>().InitialWeapon.name;
 				int curStage = int.Parse(curName.Substring(curName.Length - 1, 1));
 				// 如果已经连招升级满了，则替换为售罄，按钮无法购买
-				if (curStage == 3)
+				if (curStage == 3 || boughtSKillUp)
 				{
-					// SkillUpdate.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>();	// 替换为售罄图标
+					SkillUpdate.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
 					SkillUpdate.enabled = false;
 				}
 				else
 				{
-					// SkillUpdate.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>();	// 替换为升级图标图标
+					SkillUpdate.gameObject.GetComponent<Image>().color = new Color(1,1,1,1);
 					SkillUpdate.enabled = true;
 				}
 				// 如果已经有大招了，则替换为售罄，按钮无法购买
-				if (PlayerManager.Instance.hasBigSkill)
+				if (PlayerManager.Instance.hasBigSkill == true)
 				{
-					// BigSkill.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>();	// 替换为售罄图标
+					BigSkill.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
 					BigSkill.enabled = false;
 				}
 				else
 				{
-					// BigSkill.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>();	// 替换为大招图标
+					BigSkill.gameObject.GetComponent<Image>().color = new Color(1,1,1,1);	
 					BigSkill.enabled = true;
 				}
 			}
@@ -348,6 +389,19 @@ namespace MoreMountains.CorgiEngine
 				PlayerManager.Instance.money -= neededMoney;
 				foreach (var b in buyingItems)
 				{
+					if (b.name == "LU_SkillUp")
+					{
+						boughtSKillUp = true;
+						SkillUpdate.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
+						SkillUpdate.enabled = false;
+					}
+
+					if (b.name == "S_BigSkill")
+					{
+						// 已经购买大招了，则替换为售罄，按钮无法购买
+						BigSkill.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
+						BigSkill.enabled = false;
+					}
 					Invoke(b.name,0.02f);
 					b.gameObject.GetComponent<Image>().material = null;
 				}
@@ -871,30 +925,96 @@ namespace MoreMountains.CorgiEngine
 			optionB.onClick.RemoveAllListeners();
 			optionA.onClick.AddListener(CloseLevelUp);
 			optionB.onClick.AddListener(CloseLevelUp);
+			Sprite[] btsA;
+			Sprite[] btsB;
+			SpriteState ssA = new SpriteState();
+			SpriteState ssB = new SpriteState();
+			TextMeshProUGUI bttA = optionA.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+			TextMeshProUGUI bttB = optionB.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 			// 技能图标：可以用三元表达式判断替换
 			switch (LevelChooseManager.Instance.stage)
 			{
 				case 1:
+					btsA = Resources.LoadAll<Sprite>("LU/血量加1");
+					btsB = Resources.LoadAll<Sprite>("LU/攻击加");
+					optionA.gameObject.GetComponent<Image>().sprite = btsA[0];
+					optionB.gameObject.GetComponent<Image>().sprite = btsB[0];
+					ssA.highlightedSprite = btsA[1];
+					ssB.highlightedSprite = btsB[1];
+					optionA.spriteState = ssA;
+					optionB.spriteState = ssB;
+					bttA.text = "提升1格血条";
+					bttB.text = "攻击升级";
 					optionA.onClick.AddListener(()=>LU_AddXHP(1));
 					optionB.onClick.AddListener(LU_SkillUp);
 					break;
 				case 2:
+					btsB = Resources.LoadAll<Sprite>("LU/血量加1");
+					btsA = Resources.LoadAll<Sprite>("LU/闪避");
+					optionA.gameObject.GetComponent<Image>().sprite = btsA[0];
+					optionB.gameObject.GetComponent<Image>().sprite = btsB[0];
+					ssA.highlightedSprite = btsA[1];
+					ssB.highlightedSprite = btsB[1];
+					optionA.spriteState = ssA;
+					optionB.spriteState = ssB;
+					bttA.text = "闪避CD减少1S";
+					bttB.text = "提升1格血条";
 					optionA.onClick.AddListener(()=>LU_SubXDashCD(1));
 					optionB.onClick.AddListener(()=>LU_AddXHP(1));
 					break;
 				case 3:
+					btsA = Resources.LoadAll<Sprite>("LU/血量加1");
+					btsB = Resources.LoadAll<Sprite>("LU/奇遇");
+					optionA.gameObject.GetComponent<Image>().sprite = btsA[0];
+					optionB.gameObject.GetComponent<Image>().sprite = btsB[0];
+					ssA.highlightedSprite = btsA[1];
+					ssB.highlightedSprite = btsB[1];
+					optionA.spriteState = ssA;
+					optionB.spriteState = ssB;
+					bttA.text = "提升1格血条";
+					bttB.text = "获得一次额外奇遇机会";
 					optionA.onClick.AddListener(()=>LU_AddXHP(1));
 					optionB.onClick.AddListener(LU_OpenSpecialEvent);
 					break;
 				case 4:
+					btsA = Resources.LoadAll<Sprite>("LU/吸血");
+					btsB = Resources.LoadAll<Sprite>("LU/渴血");
+					optionA.gameObject.GetComponent<Image>().sprite = btsA[0];
+					optionB.gameObject.GetComponent<Image>().sprite = btsB[0];
+					ssA.highlightedSprite = btsA[1];
+					ssB.highlightedSprite = btsB[1];
+					optionA.spriteState = ssA;
+					optionB.spriteState = ssB;
+					bttA.text = "【大招】血魔流-吸干你的血。击杀敌人触发吸血技能。击杀成功恢复X%血量，累计杀害敌人血量达N，触发S秒无敌状态。";
+					bttB.text = "【大招】低血流-打不倒的小强。当血量低于X%时，闪避无CD且主动攻击伤害翻倍。累计杀害敌人血量达N，S秒主动攻击一击毙命。";
 					// 大招-血魔流
 					// 大招-低血流
 					break;
 				case 5:
+					btsA = Resources.LoadAll<Sprite>("LU/攻击加");
+					btsB = Resources.LoadAll<Sprite>("LU/血量加2");
+					optionA.gameObject.GetComponent<Image>().sprite = btsA[0];
+					optionB.gameObject.GetComponent<Image>().sprite = btsB[0];
+					ssA.highlightedSprite = btsA[1];
+					ssB.highlightedSprite = btsB[1];
+					optionA.spriteState = ssA;
+					optionB.spriteState = ssB;
+					bttA.text = "攻击升级";
+					bttB.text = "提升2格血条";
 					optionA.onClick.AddListener(LU_SkillUp);
 					optionB.onClick.AddListener(()=>LU_AddXHP(2));
 					break;
 				case 6:
+					btsA = Resources.LoadAll<Sprite>("LU/加货币");
+					btsB = Resources.LoadAll<Sprite>("LU/奇遇");
+					optionA.gameObject.GetComponent<Image>().sprite = btsA[0];
+					optionB.gameObject.GetComponent<Image>().sprite = btsB[0];
+					ssA.highlightedSprite = btsA[1];
+					ssB.highlightedSprite = btsB[1];
+					optionA.spriteState = ssA;
+					optionB.spriteState = ssB;
+					bttA.text = "发财了，获得5货币";
+					bttB.text = "获得一次额外奇遇机会";
 					optionA.onClick.AddListener(()=>LU_AddXMoney(5));
 					optionB.onClick.AddListener(LU_OpenSpecialEvent);
 					break;
@@ -948,6 +1068,7 @@ namespace MoreMountains.CorgiEngine
 			CharacterHandleWeapon curWeapon = player.GetComponent<CharacterHandleWeapon>();
 			string curName = curWeapon.InitialWeapon.name;
 			int curStage = int.Parse(curName.Substring(curName.Length - 1, 1));
+			PlayerManager.Instance.attack += 25;
 			switch (curStage)
 			{
 				case 1:
@@ -983,8 +1104,8 @@ namespace MoreMountains.CorgiEngine
 				MeleeWeapon[] mw = weapon.GetComponents<MeleeWeapon>();
 				foreach (var a in mw)
 				{
-					a.MinDamageCaused += x;
-					a.MaxDamageCaused += x;
+					a.MinDamageCaused = (a.MinDamageCaused + x > 25) ? a.MinDamageCaused + x : 25;
+					a.MaxDamageCaused = (a.MaxDamageCaused + x > 25) ? a.MaxDamageCaused + x : 25;
 				}
 			}
 		}
@@ -1004,7 +1125,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public void S_Add3HP()
 		{
-			player.GetComponent<Health>().GetHealth(3, gameObject);
+			player.GetComponent<Health>().GetHealth(3 * 20, gameObject);
 			// PlayerManager.Instance.AddHP(3);
 		}
 

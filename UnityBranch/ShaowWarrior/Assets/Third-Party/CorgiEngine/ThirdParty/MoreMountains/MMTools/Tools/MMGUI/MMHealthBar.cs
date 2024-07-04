@@ -489,7 +489,7 @@ namespace MoreMountains.Tools
 			{
 				_progressBar.UpdateBar(currentHealth, minHealth, maxHealth)	;
                 
-				if (HideBarAtZero && _progressBar.BarTarget <= 0)
+				if (HideBarAtZero && _progressBar.BarTarget <= 0 && currentHealth > 0)
 				{
 					StartCoroutine(FinalHideBar());
 				}

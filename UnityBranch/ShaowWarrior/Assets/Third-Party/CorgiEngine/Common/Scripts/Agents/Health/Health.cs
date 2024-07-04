@@ -557,7 +557,14 @@ namespace MoreMountains.CorgiEngine
 				if (CurrentHealth <= 0)
 				{
 					CurrentHealth = 0;
+					// _character.CancelOutlineCharacter();
 					Kill();
+					if (gameObject.name.Contains("Boss"))
+					{
+						// print("boss killer!");
+						LevelSelector ls = gameObject.GetComponent<LevelSelector>();
+						ls.GoToLevel();
+					}
 				}
 			}
 		}
@@ -586,7 +593,6 @@ namespace MoreMountains.CorgiEngine
 				}
 			}
 			SetHealth(0f, _thisObject);
-            
 			// we prevent further damage
 			DamageDisabled();
 
