@@ -795,12 +795,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114238553675504360, guid: 4e4b1328474fc154491f2fc56ecdc931,
-        type: 3}
-      propertyPath: InitialWeapon
-      value: 
-      objectReference: {fileID: 114066937058401760, guid: 4daa37b21e704e54b81821791998cb7f,
-        type: 3}
     - target: {fileID: 1772864488767088690, guid: 4e4b1328474fc154491f2fc56ecdc931,
         type: 3}
       propertyPath: isMeleeWeapon
@@ -1192,12 +1186,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114238553675504360, guid: 4e4b1328474fc154491f2fc56ecdc931,
-        type: 3}
-      propertyPath: InitialWeapon
-      value: 
-      objectReference: {fileID: 114066937058401760, guid: 4daa37b21e704e54b81821791998cb7f,
-        type: 3}
     - target: {fileID: 1772864488767088690, guid: 4e4b1328474fc154491f2fc56ecdc931,
         type: 3}
       propertyPath: isMeleeWeapon
@@ -1728,12 +1716,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114238553675504360, guid: 4e4b1328474fc154491f2fc56ecdc931,
-        type: 3}
-      propertyPath: InitialWeapon
-      value: 
-      objectReference: {fileID: 114066937058401760, guid: 4daa37b21e704e54b81821791998cb7f,
-        type: 3}
     - target: {fileID: 1772864488767088690, guid: 4e4b1328474fc154491f2fc56ecdc931,
         type: 3}
       propertyPath: isMeleeWeapon
@@ -2701,12 +2683,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114238553675504360, guid: 4e4b1328474fc154491f2fc56ecdc931,
-        type: 3}
-      propertyPath: InitialWeapon
-      value: 
-      objectReference: {fileID: 114066937058401760, guid: 4daa37b21e704e54b81821791998cb7f,
-        type: 3}
     - target: {fileID: 1772864488767088690, guid: 4e4b1328474fc154491f2fc56ecdc931,
         type: 3}
       propertyPath: isMeleeWeapon

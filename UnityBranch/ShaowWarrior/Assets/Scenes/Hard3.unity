@@ -730,12 +730,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114238553675504360, guid: 4e4b1328474fc154491f2fc56ecdc931,
-        type: 3}
-      propertyPath: InitialWeapon
-      value: 
-      objectReference: {fileID: 114066937058401760, guid: 4daa37b21e704e54b81821791998cb7f,
-        type: 3}
     - target: {fileID: 1772864488767088690, guid: 4e4b1328474fc154491f2fc56ecdc931,
         type: 3}
       propertyPath: isMeleeWeapon
@@ -865,12 +859,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114238553675504360, guid: 4e4b1328474fc154491f2fc56ecdc931,
-        type: 3}
-      propertyPath: InitialWeapon
-      value: 
-      objectReference: {fileID: 114066937058401760, guid: 4daa37b21e704e54b81821791998cb7f,
-        type: 3}
     - target: {fileID: 1772864488767088690, guid: 4e4b1328474fc154491f2fc56ecdc931,
         type: 3}
       propertyPath: isMeleeWeapon
@@ -1193,12 +1181,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114238553675504360, guid: 4e4b1328474fc154491f2fc56ecdc931,
-        type: 3}
-      propertyPath: InitialWeapon
-      value: 
-      objectReference: {fileID: 114066937058401760, guid: 4daa37b21e704e54b81821791998cb7f,
-        type: 3}
     - target: {fileID: 1772864488767088690, guid: 4e4b1328474fc154491f2fc56ecdc931,
         type: 3}
       propertyPath: isMeleeWeapon
@@ -1378,7 +1360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 4deb2f3b8dbb9b54d98b9f3086deed41, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 4deb2f3b8dbb9b54d98b9f3086deed41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1563,12 +1545,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114238553675504360, guid: 4e4b1328474fc154491f2fc56ecdc931,
-        type: 3}
-      propertyPath: InitialWeapon
-      value: 
-      objectReference: {fileID: 114066937058401760, guid: 4daa37b21e704e54b81821791998cb7f,
-        type: 3}
     - target: {fileID: 1772864488767088690, guid: 4e4b1328474fc154491f2fc56ecdc931,
         type: 3}
       propertyPath: isMeleeWeapon
@@ -1800,7 +1776,7 @@ PrefabInstance:
     - target: {fileID: 6860181345986056332, guid: 561595cf0a8a6af4f9ffbc360f96765a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6860181345986056332, guid: 561595cf0a8a6af4f9ffbc360f96765a,
         type: 3}
@@ -2002,7 +1978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 25a3e1a5eb389174495c5670ce676eff, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 25a3e1a5eb389174495c5670ce676eff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2318,7 +2294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 4deb2f3b8dbb9b54d98b9f3086deed41, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 4deb2f3b8dbb9b54d98b9f3086deed41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2646,12 +2622,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114238553675504360, guid: 4e4b1328474fc154491f2fc56ecdc931,
-        type: 3}
-      propertyPath: InitialWeapon
-      value: 
-      objectReference: {fileID: 114066937058401760, guid: 4daa37b21e704e54b81821791998cb7f,
-        type: 3}
     - target: {fileID: 1772864488767088690, guid: 4e4b1328474fc154491f2fc56ecdc931,
         type: 3}
       propertyPath: isMeleeWeapon
@@ -2814,7 +2784,7 @@ PrefabInstance:
     - target: {fileID: 6860181345986056332, guid: 561595cf0a8a6af4f9ffbc360f96765a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6860181345986056332, guid: 561595cf0a8a6af4f9ffbc360f96765a,
         type: 3}
@@ -3172,7 +3142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 4deb2f3b8dbb9b54d98b9f3086deed41, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 4deb2f3b8dbb9b54d98b9f3086deed41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3664,7 +3634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 25a3e1a5eb389174495c5670ce676eff, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 25a3e1a5eb389174495c5670ce676eff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3833,12 +3803,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114238553675504360, guid: 4e4b1328474fc154491f2fc56ecdc931,
-        type: 3}
-      propertyPath: InitialWeapon
-      value: 
-      objectReference: {fileID: 114066937058401760, guid: 4daa37b21e704e54b81821791998cb7f,
-        type: 3}
     - target: {fileID: 1772864488767088690, guid: 4e4b1328474fc154491f2fc56ecdc931,
         type: 3}
       propertyPath: isMeleeWeapon
@@ -3996,7 +3960,7 @@ PrefabInstance:
     - target: {fileID: 6860181345986056332, guid: 561595cf0a8a6af4f9ffbc360f96765a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6860181345986056332, guid: 561595cf0a8a6af4f9ffbc360f96765a,
         type: 3}
