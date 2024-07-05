@@ -58,6 +58,7 @@
     <Compile Include="Assets\Third-Party\SPUM\Sample\Script\PlayerMgr.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Worker.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Ect\ColorSelect.cs" />
+    <Compile Include="Assets\Scripts\Utilities\SubmitName.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Sprite_Editor(Beta)\Script\SpriteSync.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Ect\SpritePos.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_SpriteList.cs" />
@@ -74,7 +75,6 @@
     <Compile Include="Assets\Scripts\Utilities\Drivefr.cs" />
     <Compile Include="Assets\Third-Party\SPUM\SoonsoonData\SoonsoonData.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Gif\LzwEncoder.cs" />
-    <Compile Include="Assets\Scripts\Utilities\SubmitName.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Shaders\GreyScale.shader" />

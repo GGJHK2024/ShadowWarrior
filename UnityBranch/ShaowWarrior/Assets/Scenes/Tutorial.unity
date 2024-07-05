@@ -1713,7 +1713,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 390989619}
         m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.FinishLevel, MoreMountains.CorgiEngine
-        m_MethodName: GoToNextLevel
+        m_MethodName: TestGTNL
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

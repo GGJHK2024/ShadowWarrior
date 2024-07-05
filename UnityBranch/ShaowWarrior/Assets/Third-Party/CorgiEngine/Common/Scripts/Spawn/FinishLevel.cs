@@ -136,5 +136,12 @@ namespace MoreMountains.CorgiEngine
 				MMSceneLoadingManager.LoadScene(LevelName);
 			}
 		}
+
+		public void TestGTNL()
+		{
+			LevelChooseManager.Instance.GoToNextLevel(0);
+			StartCoroutine(GoToNextLevelCoroutine());
+			ActivateZone ();
+		}
 	}
 }
