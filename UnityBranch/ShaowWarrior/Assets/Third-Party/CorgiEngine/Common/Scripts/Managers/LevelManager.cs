@@ -277,7 +277,7 @@ namespace MoreMountains.CorgiEngine
 			}
 			
 			// CG和其他需要冻结角色的场景
-			if (SceneManager.GetActiveScene().name.Contains("CG"))
+			if (SceneManager.GetActiveScene().name.Contains("CG") || SceneManager.GetActiveScene().name.Contains("Tuto"))
 			{
 				FreezeCharacters();
 			}

@@ -14,7 +14,7 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
         MMEventListener<CorgiEngineEvent>
 {
     public Character playerPrefab;
-
+    public string playerName = "哈哈";
     public int hp = 5;
     public int attack = 25;
     public int cd = 5;
@@ -173,6 +173,15 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
 
     public void Stun(float time) {
         player.FindAbility<CharacterStun>().StunFor(time);
+    }
+
+    /// <summary>
+    /// 玩家设置名字
+    /// </summary>
+    /// <param name="n"></param>
+    public void SetName(string n)
+    {
+        playerName = n;
     }
 
     /// <summary>

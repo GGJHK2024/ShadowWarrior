@@ -65,6 +65,8 @@ namespace MoreMountains.CorgiEngine
 		public GameObject LevelUpScreen;
 		[Tooltip("LU界面姓名")] 
 		public TextMeshProUGUI player_text;
+		[Tooltip("LU界面攻击力")]
+		public TextMeshProUGUI attack_text;
 		[Tooltip("LU界面金币")] 
 		public TextMeshProUGUI money_text;
 		[Tooltip("LU界面幸运值")] 
@@ -899,7 +901,7 @@ namespace MoreMountains.CorgiEngine
 				}    
 			}
 		}
-		
+
 		/// <summary>
 		/// Sets the level name in the HUD
 		/// </summary>
@@ -918,6 +920,8 @@ namespace MoreMountains.CorgiEngine
 		{
 			money_text.text = PlayerManager.Instance.money.ToString();
 			lucky_text.text = PlayerManager.Instance.lucky.ToString();
+			attack_text.text = PlayerManager.Instance.attack.ToString();
+			player_text.text = PlayerManager.Instance.playerName;
 			cd_text.text = player.GetComponent<CharacterDash>().DashCooldown.ToString();
 			hp_bar.value = PlayerManager.Instance.hp;
 			// buttons

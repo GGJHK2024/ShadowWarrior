@@ -303,6 +303,7 @@ MonoBehaviour:
   LevelText: {fileID: 11400034}
   LevelUpScreen: {fileID: 4286113024093664332}
   player_text: {fileID: 8770338264740961172}
+  attack_text: {fileID: 1481807555426906432}
   money_text: {fileID: 4331341040244895844}
   lucky_text: {fileID: 592461584915274548}
   cd_text: {fileID: 5510386422134203493}
@@ -3764,7 +3765,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8261aa344a446cc4d8fed11f893904eb, type: 3}
+    m_Font: {fileID: 12800000, guid: 705683510180c1047a191c391df41411, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -4086,7 +4087,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8261aa344a446cc4d8fed11f893904eb, type: 3}
+    m_Font: {fileID: 12800000, guid: 705683510180c1047a191c391df41411, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
