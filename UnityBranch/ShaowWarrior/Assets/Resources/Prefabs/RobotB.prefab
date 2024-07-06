@@ -1051,7 +1051,7 @@ MonoBehaviour:
   AlwaysVisible: 1
   DisplayDurationOnHit: 1
   HideBarAtZero: 1
-  HideBarAtZeroDelay: 0
+  HideBarAtZeroDelay: 0.1
   TestMinHealth: 0
   TestMaxHealth: 100
   TestCurrentHealth: 25

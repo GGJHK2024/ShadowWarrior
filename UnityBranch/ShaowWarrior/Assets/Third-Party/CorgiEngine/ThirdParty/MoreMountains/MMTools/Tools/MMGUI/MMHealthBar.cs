@@ -415,6 +415,7 @@ namespace MoreMountains.Tools
 		/// <returns>The hide bar.</returns>
 		protected virtual IEnumerator FinalHideBar()
 		{
+			print(" hide bar! ");
 			_finalHideStarted = true;
 			if (InstantiatedOnDeath != null)
 			{
@@ -488,6 +489,10 @@ namespace MoreMountains.Tools
 			if (_progressBar != null)
 			{
 				_progressBar.UpdateBar(currentHealth, minHealth, maxHealth)	;
+				if (currentHealth == 0)
+				{
+					StartCoroutine(FinalHideBar());
+				}
                 
 				if (HideBarAtZero && _progressBar.BarTarget <= 0 && currentHealth > 0)
 				{
