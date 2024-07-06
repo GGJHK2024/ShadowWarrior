@@ -103,6 +103,7 @@ namespace MoreMountains.CorgiEngine
 		/// 奇遇界面
 		[Tooltip("奇遇界面")] 
 		public GameObject SepcialEventScreen;
+		public bool hadSpecialEvent = false;
 		[Tooltip("奇遇子事件界面")] 
 		public GameObject Sp_Good1;
 		public GameObject Sp_Good2;
@@ -459,12 +460,13 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void OpenSpecialEvent()
 		{
-			Time.timeScale = 0;
-			if (SepcialEventScreen != null)
+			if (SepcialEventScreen != null && !hadSpecialEvent)
 			{ 
+				Time.timeScale = 0;
 				SepcialEventScreen.SetActive(true);
 				// roll奇遇事件
 				RollSpecialEvent();
+				hadSpecialEvent = true;
 			}
 		}
 
