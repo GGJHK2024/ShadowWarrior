@@ -299,7 +299,7 @@ MonoBehaviour:
   GravityOffOnDeath: 0
   PointsWhenDestroyed: 0
   RespawnAtInitialLocation: 0
-  ApplyDeathForce: 1
+  ApplyDeathForce: 0
   DeathForce: {x: 0, y: 10}
   ResetForcesOnDeath: 0
   ResetColorOnRevive: 1
@@ -808,8 +808,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: "\u81EA\u7206\u65F6\u95F4"
-  AfterTimeMin: 0.8
-  AfterTimeMax: 0.8
+  AfterTimeMin: 0.4
+  AfterTimeMax: 0.4
 --- !u!114 &4415451982424550728
 MonoBehaviour:
   m_ObjectHideFlags: 0

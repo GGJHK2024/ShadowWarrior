@@ -30,6 +30,12 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     /// </summary>
     public bool passiveSkill2 = false;
 
+    /// <summary>
+    /// 统计击杀敌人的血量
+    /// </summary>
+    [SerializeField]
+    private int enemyBlood = 0;
+
     [Tooltip("击杀敌人上限")] 
     public int bulletTimeCanKillEnemyNumber;
     [Tooltip("技能蓄力时间长度")]
@@ -105,7 +111,6 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
             }
             case CorgiEngineEventTypes.GameOver:
             {
-                print("reset in PM");
                 GoToLevel();
                 break;
             }
