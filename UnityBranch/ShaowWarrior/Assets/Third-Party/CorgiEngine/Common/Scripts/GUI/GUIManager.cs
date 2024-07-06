@@ -1011,8 +1011,8 @@ namespace MoreMountains.CorgiEngine
 					ssB.highlightedSprite = btsB[1];
 					optionA.spriteState = ssA;
 					optionB.spriteState = ssB;
-					bttA.text = "【大招】血魔流-吸干你的血。击杀敌人触发吸血技能。击杀成功恢复X%血量，累计杀害敌人血量达N，触发S秒无敌状态。";
-					bttB.text = "【大招】低血流-打不倒的小强。当血量低于X%时，闪避无CD且主动攻击伤害翻倍。累计杀害敌人血量达N，S秒主动攻击一击毙命。";
+					bttA.text = "【大招】血魔流-吸干你的血。击杀敌人触发吸血技能。击杀成功恢复2%血量，累计杀害敌人血量达2000，触发10秒无敌状态。";
+					bttB.text = "【大招】低血流-打不倒的小强。当血量低于10%时，闪避无CD且主动攻击伤害翻倍。累计杀害敌人血量达2000，15秒主动攻击一击毙命。";
 					// 大招-血魔流
 					// 大招-低血流
 					break;
