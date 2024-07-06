@@ -393,7 +393,7 @@ MonoBehaviour:
   ImmuneToKnockbackIfZeroDamage: 0
   DeathFeedbacks: {fileID: 1184230161862175916}
   DestroyOnDeath: 1
-  DelayBeforeDestruction: 1
+  DelayBeforeDestruction: 0.9
   CollisionsOffOnDeath: 1
   GravityOffOnDeath: 0
   PointsWhenDestroyed: 0
