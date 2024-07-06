@@ -139,7 +139,6 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     {
         base.Awake();
         player = GameManager.Instance.PersistentCharacter = (Character)Instantiate(playerPrefab);
-        
     }
 
     void Start()

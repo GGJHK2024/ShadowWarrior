@@ -84,6 +84,7 @@
     <Compile Include="Assets\SimpleLocalization\Scripts\Sheet.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Gif\LzwEncoder.cs" />
     <Compile Include="Assets\SimpleLocalization\Scripts\LocalizedTMP.cs" />
+    <Compile Include="Assets\Scripts\Components\LanguageMgr.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Shaders\GreyScale.shader" />

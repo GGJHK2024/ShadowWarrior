@@ -115,3 +115,5 @@ SpecialEvent.Sp_Bad_button,,扣除当前血量80%，攻击力降低25点。
 Pause.BackGame,Back To Game,返回游戏
 Pause.SaveAndExit,Save And Exit (Not functional yet.),保存并退出（饼）
 Pause.BackToCg,Return To Title,回到标题
+Tutorial.AskName,Type your name: ,输入你的名字：
+Tutorial.Confirm,OK,确认

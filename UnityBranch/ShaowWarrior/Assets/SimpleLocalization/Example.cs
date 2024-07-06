@@ -3,8 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Assets.SimpleLocalization.Scripts;
 
-namespace Assets.SimpleLocalization
-{
 	/// <summary>
 	/// Asset usage example.
 	/// </summary>
@@ -55,4 +53,3 @@ namespace Assets.SimpleLocalization
 			Application.OpenURL("https://www.assetstore.unity3d.com/#!/content/120113");
 		}
 	}
-}
