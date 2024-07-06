@@ -1934,7 +1934,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11413996}
         m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GUIManager, MoreMountains.CorgiEngine
-        m_MethodName: OpenLevelUp
+        m_MethodName: OpenCV
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

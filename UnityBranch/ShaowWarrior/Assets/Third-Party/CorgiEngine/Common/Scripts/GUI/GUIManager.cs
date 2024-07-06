@@ -301,9 +301,9 @@ namespace MoreMountains.CorgiEngine
 		}
 		
 		/// <summary>
-		/// Sets the Level Up.
+		/// Open 简历页面
 		/// </summary>
-		public virtual void OpenLevelUp()
+		public virtual void OpenCV()
 		{
 			Time.timeScale = 0;
 			if (LevelUpScreen!= null)
@@ -313,6 +313,26 @@ namespace MoreMountains.CorgiEngine
 				ShowLUButton(true);
 				UpdateLUManuel();
 			}
+		}
+		
+		/// <summary>
+		/// Sets the Level Up.
+		/// </summary>
+		public virtual void OpenLevelUp()
+		{
+			if (LevelUpScreen!= null)
+			{ 
+				Invoke("InvokOpenLU", 1.5f);
+			}
+		}
+
+		public void InvokOpenLU()
+		{
+			Time.timeScale = 0;
+			LevelUpScreen.SetActive(true);
+			// 显示LU界面的按钮
+			ShowLUButton(true);
+			UpdateLUManuel();
 		}
 		
 		/// <summary>

@@ -466,12 +466,12 @@ PrefabInstance:
     - target: {fileID: 114961038306698606, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
         type: 3}
       propertyPath: InitialHealth
-      value: 3000
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114961038306698606, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
         type: 3}
       propertyPath: MaximumHealth
-      value: 3000
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d7d6c75e24fdfd4480ff08d72cb381d, type: 3}
@@ -6854,7 +6854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitializationTime: 0
-  SoundClip: {fileID: 8300000, guid: 2a332839cbb865643b026eeb4dcba1f3, type: 3}
+  SoundClip: {fileID: 8300000, guid: e232def80a6f9b645993c7c0fc1536c4, type: 3}
   Loop: 1
   ID: 255
 --- !u!4 &1385369466
