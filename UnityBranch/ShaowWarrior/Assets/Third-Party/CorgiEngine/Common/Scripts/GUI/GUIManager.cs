@@ -374,23 +374,23 @@ namespace MoreMountains.CorgiEngine
 				// 如果已经连招升级满了，则替换为售罄，按钮无法购买
 				if (curStage == 3 || boughtSKillUp)
 				{
-					SkillUpdate.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
+					SkillUpdate.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Shop/soldout");	// 售罄
 					SkillUpdate.enabled = false;
 				}
 				else
 				{
-					SkillUpdate.gameObject.GetComponent<Image>().color = new Color(1,1,1,1);
+					SkillUpdate.gameObject.GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Shop/售货机ui")[4];
 					SkillUpdate.enabled = true;
 				}
 				// 如果已经有大招了，则替换为售罄，按钮无法购买
 				if (PlayerManager.Instance.hasBigSkill == true)
 				{
-					BigSkill.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
+					BigSkill.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Shop/soldout");	// 售罄
 					BigSkill.enabled = false;
 				}
 				else
 				{
-					BigSkill.gameObject.GetComponent<Image>().color = new Color(1,1,1,1);	
+					BigSkill.gameObject.GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Shop/售货机ui")[3];
 					BigSkill.enabled = true;
 				}
 			}
@@ -415,14 +415,14 @@ namespace MoreMountains.CorgiEngine
 					if (b.name == "LU_SkillUp")
 					{
 						boughtSKillUp = true;
-						SkillUpdate.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
+						SkillUpdate.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Shop/soldout");	// 售罄
 						SkillUpdate.enabled = false;
 					}
 
 					if (b.name == "S_BigSkill")
 					{
 						// 已经购买大招了，则替换为售罄，按钮无法购买
-						BigSkill.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);	// 售罄
+						BigSkill.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Shop/soldout");	// 售罄
 						BigSkill.enabled = false;
 					}
 					Invoke(b.name,0.02f);

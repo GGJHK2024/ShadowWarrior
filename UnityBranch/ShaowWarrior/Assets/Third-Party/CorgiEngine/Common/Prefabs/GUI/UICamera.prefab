@@ -317,6 +317,7 @@ MonoBehaviour:
   BigSkill: {fileID: 118675485079647621}
   neededMoneyText: {fileID: 3398040400056032265}
   SepcialEventScreen: {fileID: 5688190638823520806}
+  hadSpecialEvent: 0
   Sp_Good1: {fileID: 3891582078430310307}
   Sp_Good2: {fileID: 1513969819935736677}
   Sp_Good3: {fileID: 1126775009067957767}
