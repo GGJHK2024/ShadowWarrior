@@ -43,18 +43,23 @@
   <ItemGroup>
     <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\MinAttribute.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_EyeSet.cs" />
+    <Compile Include="Assets\SimpleLocalization\Example.cs" />
     <Compile Include="Assets\Scripts\Abilities\Perspective.cs" />
+    <Compile Include="Assets\SimpleLocalization\Scripts\LocalizedDropdown.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_AnimationController.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Gif\NeuQuant.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Gif\GifFrame.cs" />
+    <Compile Include="Assets\SimpleLocalization\Scripts\Constants.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\ReflectionUtils.cs" />
     <Compile Include="Assets\Scripts\Abilities\BulletTime.cs" />
+    <Compile Include="Assets\SimpleLocalization\Scripts\LocalizationSync.cs" />
     <Compile Include="Assets\Scripts\Utilities\ShopInteract.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Sprite_Editor(Beta)\Script\SpriteSyncManager.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Gif\GifEncoder.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_PreviewItem.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_Prefabs.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_Manager.cs" />
+    <Compile Include="Assets\SimpleLocalization\Scripts\LocalizationSettings.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Sample\Script\PlayerMgr.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Worker.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Ect\ColorSelect.cs" />
@@ -63,6 +68,8 @@
     <Compile Include="Assets\Third-Party\SPUM\Script\Ect\SpritePos.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_SpriteList.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_PackageButton.cs" />
+    <Compile Include="Assets\SimpleLocalization\Scripts\LocalizationManager.cs" />
+    <Compile Include="Assets\SimpleLocalization\Scripts\LocalizedText.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Sample\Script\PlayerObj.cs" />
     <Compile Include="Assets\Scripts\Utilities\SepcialInteract.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Sprite_Editor(Beta)\Script\SpriteEyeSync.cs" />
@@ -74,7 +81,9 @@
     <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Recorder.cs" />
     <Compile Include="Assets\Scripts\Utilities\Drivefr.cs" />
     <Compile Include="Assets\Third-Party\SPUM\SoonsoonData\SoonsoonData.cs" />
+    <Compile Include="Assets\SimpleLocalization\Scripts\Sheet.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Gif\LzwEncoder.cs" />
+    <Compile Include="Assets\SimpleLocalization\Scripts\LocalizedTMP.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Shaders\GreyScale.shader" />
@@ -97,6 +106,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Third-Party\SPUM\ReadMe - 1.6.6.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\SimpleLocalization\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\license.txt" />
     <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Shaders\HorizontalGradient.shader" />
@@ -356,6 +366,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.visualscripting@1.9.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.34f1\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -782,6 +795,9 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.EditorCoroutines.Editor">
+      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
