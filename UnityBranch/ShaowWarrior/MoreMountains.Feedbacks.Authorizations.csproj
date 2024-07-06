@@ -41,8 +41,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Authorizations\MMFeedbacksAuthorizations.cs" />
-    <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Authorizations\MoreMountains.Feedbacks.Authorizations.asmdef" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Authorizations\MMFeedbacksAuthorizations.cs" />
+    <None Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Authorizations\MoreMountains.Feedbacks.Authorizations.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.34f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

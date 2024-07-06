@@ -41,22 +41,22 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Shakers\MMWiggleEditor.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMF_PlayerEditor.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMFeedbacksColors.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMF_PlayerStyling.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMF_PlayerConfiguration.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Sequencing\MMSequencerEditor.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMF_PlayerCopy.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Sequencing\MMInputSequenceRecorderEditor.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMFeedbacksConfiguration.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\FeedbackListOutputter\FeedbackListOutputer.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMFeedbackStyling.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\AttributeDrawers.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMF_FeedbackInspector.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Legacy\MMFeedbacksEditor.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMF_FeedbackInspectorStyle.cs" />
-    <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\MoreMountains.Feedbacks.Editor.asmdef" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Shakers\MMWiggleEditor.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMF_PlayerEditor.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMFeedbacksColors.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMF_PlayerStyling.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMF_PlayerConfiguration.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Sequencing\MMSequencerEditor.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMF_PlayerCopy.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Sequencing\MMInputSequenceRecorderEditor.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMFeedbacksConfiguration.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\FeedbackListOutputter\FeedbackListOutputer.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMFeedbackStyling.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\AttributeDrawers.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMF_FeedbackInspector.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Legacy\MMFeedbacksEditor.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\Core\MMF_FeedbackInspectorStyle.cs" />
+    <None Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\Editor\MoreMountains.Feedbacks.Editor.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.34f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

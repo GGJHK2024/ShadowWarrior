@@ -41,63 +41,20 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\MinAttribute.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_EyeSet.cs" />
-    <Compile Include="Assets\SimpleLocalization\Example.cs" />
     <Compile Include="Assets\Scripts\Abilities\Perspective.cs" />
-    <Compile Include="Assets\SimpleLocalization\Scripts\LocalizedDropdown.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_AnimationController.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Gif\NeuQuant.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Gif\GifFrame.cs" />
-    <Compile Include="Assets\SimpleLocalization\Scripts\Constants.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\ReflectionUtils.cs" />
     <Compile Include="Assets\Scripts\Abilities\BulletTime.cs" />
-    <Compile Include="Assets\SimpleLocalization\Scripts\LocalizationSync.cs" />
     <Compile Include="Assets\Scripts\Utilities\ShopInteract.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Sprite_Editor(Beta)\Script\SpriteSyncManager.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Gif\GifEncoder.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_PreviewItem.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_Prefabs.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_Manager.cs" />
-    <Compile Include="Assets\SimpleLocalization\Scripts\LocalizationSettings.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Sample\Script\PlayerMgr.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Worker.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\Ect\ColorSelect.cs" />
     <Compile Include="Assets\Scripts\Utilities\SubmitName.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Sprite_Editor(Beta)\Script\SpriteSync.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\Ect\SpritePos.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_SpriteList.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_PackageButton.cs" />
-    <Compile Include="Assets\SimpleLocalization\Scripts\LocalizationManager.cs" />
-    <Compile Include="Assets\SimpleLocalization\Scripts\LocalizedText.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Sample\Script\PlayerObj.cs" />
-    <Compile Include="Assets\Scripts\Utilities\SepcialInteract.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Sprite_Editor(Beta)\Script\SpriteEyeSync.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_SpriteButtonST.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Sprite_Editor(Beta)\Script\SPUM_SpriteEditManager.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_HorseSpriteList.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\SPUM_Button.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Sprite_SheetExporter(Beta)\Script\SPUM_Exporter.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Recorder.cs" />
-    <Compile Include="Assets\Scripts\Utilities\Drivefr.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\SoonsoonData\SoonsoonData.cs" />
-    <Compile Include="Assets\SimpleLocalization\Scripts\Sheet.cs" />
-    <Compile Include="Assets\Third-Party\SPUM\Script\Plugin\Moments Recorder\Scripts\Gif\LzwEncoder.cs" />
-    <Compile Include="Assets\SimpleLocalization\Scripts\LocalizedTMP.cs" />
     <Compile Include="Assets\Scripts\Components\LanguageMgr.cs" />
+    <Compile Include="Assets\Scripts\Utilities\SepcialInteract.cs" />
+    <Compile Include="Assets\Scripts\Utilities\Drivefr.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Shaders\GreyScale.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Shaders\VerticalGradient.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Art\Shaders\Outline.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\readme.txt" />
-    <None Include="Assets\Third-Party\CorgiEngine\readme.txt" />
-    <None Include="Assets\Third-Party\CorgiEngine\license.txt" />
-    <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Styles\Mini\Fonts\Lato\OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -105,15 +62,10 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\Third-Party\SPUM\ReadMe - 1.6.6.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\SimpleLocalization\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\license.txt" />
-    <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Shaders\HorizontalGradient.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\Third-Party\CorgiEngine\IMPORTANT-HOW-TO-INSTALL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
@@ -940,21 +892,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="MoreMountains.Tools.Editor.csproj">
-      <Project>{d5b0966b-e42c-36b1-ba9a-9b193f300eb6}</Project>
-      <Name>MoreMountains.Tools.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.URP.csproj">
-      <Project>{d080b5c7-64cc-ff29-888b-c6d031880547}</Project>
-      <Name>MoreMountains.Feedbacks.URP</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.PostProcessing.csproj">
-      <Project>{fd162c50-cc2c-d590-5861-7dfdde4e57c8}</Project>
-      <Name>MoreMountains.Feedbacks.PostProcessing</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.NiceVibrations.csproj">
-      <Project>{f424d6a8-410f-bc4e-0688-09739db00887}</Project>
-      <Name>MoreMountains.Feedbacks.NiceVibrations</Name>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{488f3550-0698-93d0-eff7-ba46fc366638}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="MoreMountains.Feedbacks.Editor.csproj">
       <Project>{1f53b246-03cc-ec99-9b52-6fc3e93a7417}</Project>
@@ -964,53 +904,69 @@
       <Project>{d66047c7-3592-4cea-9135-0af64c0d192d}</Project>
       <Name>MoreMountains.Feedbacks.TextMeshPro</Name>
     </ProjectReference>
-    <ProjectReference Include="MoreMountains.InventoryEngine.csproj">
-      <Project>{4c188787-77b6-28d6-f1b6-47747a80bf2c}</Project>
-      <Name>MoreMountains.InventoryEngine</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.CorgiEngine.Editor.csproj">
-      <Project>{58807224-1aae-7f25-fe68-cb118b2e9233}</Project>
-      <Name>MoreMountains.CorgiEngine.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.Cinemachine.csproj">
-      <Project>{346cee71-c6ea-422e-63aa-8caec87564a8}</Project>
-      <Name>MoreMountains.Feedbacks.Cinemachine</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.HDRP.csproj">
-      <Project>{27992445-cbfd-eef8-4d84-e14db6dbf569}</Project>
-      <Name>MoreMountains.Feedbacks.HDRP</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.InventoryEngine.Editor.csproj">
-      <Project>{869adf9f-0e0a-b7f0-8027-e46997b02777}</Project>
-      <Name>MoreMountains.InventoryEngine.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.Authorizations.csproj">
-      <Project>{fa70a0ac-3734-7cbb-c9a8-02ece6317055}</Project>
-      <Name>MoreMountains.Feedbacks.Authorizations</Name>
+    <ProjectReference Include="MoreMountains.Interface.csproj">
+      <Project>{6088deb5-32de-dc6e-9630-dd9ea462d8c6}</Project>
+      <Name>MoreMountains.Interface</Name>
     </ProjectReference>
     <ProjectReference Include="MoreMountains.Interface.Editor.csproj">
       <Project>{1b345e7e-9c66-a492-fd0c-efb359249d50}</Project>
       <Name>MoreMountains.Interface.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="MoreMountains.Feedbacks.NiceVibrations.csproj">
+      <Project>{f424d6a8-410f-bc4e-0688-09739db00887}</Project>
+      <Name>MoreMountains.Feedbacks.NiceVibrations</Name>
+    </ProjectReference>
     <ProjectReference Include="MoreMountains.Feedbacks.MMTools.csproj">
       <Project>{19d9eead-434f-71cf-fabf-89a11cb2d3f9}</Project>
       <Name>MoreMountains.Feedbacks.MMTools</Name>
     </ProjectReference>
-    <ProjectReference Include="MoreMountains.CorgiEngine.csproj">
-      <Project>{5e9e9580-c18c-6f89-6c8b-63fe22c19360}</Project>
-      <Name>MoreMountains.CorgiEngine</Name>
+    <ProjectReference Include="MoreMountains.Tools.Editor.csproj">
+      <Project>{d5b0966b-e42c-36b1-ba9a-9b193f300eb6}</Project>
+      <Name>MoreMountains.Tools.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="MoreMountains.Interface.csproj">
-      <Project>{6088deb5-32de-dc6e-9630-dd9ea462d8c6}</Project>
-      <Name>MoreMountains.Interface</Name>
+    <ProjectReference Include="MoreMountains.CorgiEngine.Editor.csproj">
+      <Project>{58807224-1aae-7f25-fe68-cb118b2e9233}</Project>
+      <Name>MoreMountains.CorgiEngine.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="MoreMountains.Feedbacks.csproj">
       <Project>{96b33454-7004-b694-b44a-1cc89a85287f}</Project>
       <Name>MoreMountains.Feedbacks</Name>
     </ProjectReference>
+    <ProjectReference Include="MoreMountains.Feedbacks.HDRP.csproj">
+      <Project>{27992445-cbfd-eef8-4d84-e14db6dbf569}</Project>
+      <Name>MoreMountains.Feedbacks.HDRP</Name>
+    </ProjectReference>
     <ProjectReference Include="MoreMountains.Tools.csproj">
       <Project>{1a6df319-9edb-c9b5-5f82-ee4ea04efc06}</Project>
       <Name>MoreMountains.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="MoreMountains.InventoryEngine.csproj">
+      <Project>{4c188787-77b6-28d6-f1b6-47747a80bf2c}</Project>
+      <Name>MoreMountains.InventoryEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="MoreMountains.Feedbacks.Authorizations.csproj">
+      <Project>{fa70a0ac-3734-7cbb-c9a8-02ece6317055}</Project>
+      <Name>MoreMountains.Feedbacks.Authorizations</Name>
+    </ProjectReference>
+    <ProjectReference Include="MoreMountains.InventoryEngine.Editor.csproj">
+      <Project>{869adf9f-0e0a-b7f0-8027-e46997b02777}</Project>
+      <Name>MoreMountains.InventoryEngine.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="MoreMountains.Feedbacks.PostProcessing.csproj">
+      <Project>{fd162c50-cc2c-d590-5861-7dfdde4e57c8}</Project>
+      <Name>MoreMountains.Feedbacks.PostProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="MoreMountains.Feedbacks.URP.csproj">
+      <Project>{d080b5c7-64cc-ff29-888b-c6d031880547}</Project>
+      <Name>MoreMountains.Feedbacks.URP</Name>
+    </ProjectReference>
+    <ProjectReference Include="MoreMountains.CorgiEngine.csproj">
+      <Project>{5e9e9580-c18c-6f89-6c8b-63fe22c19360}</Project>
+      <Name>MoreMountains.CorgiEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="MoreMountains.Feedbacks.Cinemachine.csproj">
+      <Project>{346cee71-c6ea-422e-63aa-8caec87564a8}</Project>
+      <Name>MoreMountains.Feedbacks.Cinemachine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
