@@ -21,7 +21,7 @@ public class Drivefr : MonoBehaviour
 
     IEnumerator waitForCg()
     {
-        yield return new WaitForSeconds(25.0f);
+        yield return new WaitForSeconds(24.0f);
         gtnl.GetComponent<FinishLevel>().GoToNextLevel();
         yield return null;
     }
