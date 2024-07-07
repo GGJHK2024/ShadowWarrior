@@ -559,12 +559,12 @@ namespace MoreMountains.CorgiEngine
 					CurrentHealth = 0;
 					// _character.CancelOutlineCharacter();
 					Kill();
-					if (gameObject.name.Contains("Boss"))
+					/*if (gameObject.name.Contains("Boss"))
 					{
 						// print("boss killer!");
 						LevelSelector ls = gameObject.GetComponent<LevelSelector>();
 						ls.GoToLevel();
-					}
+					}*/
 				}
 			}
 		}
@@ -593,6 +593,10 @@ namespace MoreMountains.CorgiEngine
 				}
 			}
 			SetHealth(0f, _thisObject);
+			if (gameObject.name.Contains("Boss"))
+			{
+				Invoke(nameof(BossKiller),0.5f);
+			}
 			// we prevent further damage
 			DamageDisabled();
 
@@ -681,6 +685,16 @@ namespace MoreMountains.CorgiEngine
 				// finally we destroy the object
 				DestroyObject();
 			}
+		}
+
+		/// <summary>
+		/// 击杀boss后回到cg
+		/// </summary>
+		public void BossKiller()
+		{
+			_character.CancelOutlineCharacter();
+			LevelSelector ls = gameObject.GetComponent<LevelSelector>();
+			ls.GoToLevel();
 		}
 
 		/// <summary>

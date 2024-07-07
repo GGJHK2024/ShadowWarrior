@@ -675,7 +675,7 @@ MonoBehaviour:
   AlsoPerformChecksOnStay: 0
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   UnlimitedActivations: 1
   MaxNumberOfActivations: 100000
   DelayBetweenUses: 0
@@ -2390,7 +2390,7 @@ MonoBehaviour:
   AlsoPerformChecksOnStay: 0
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   UnlimitedActivations: 1
   MaxNumberOfActivations: 100000
   DelayBetweenUses: 0
