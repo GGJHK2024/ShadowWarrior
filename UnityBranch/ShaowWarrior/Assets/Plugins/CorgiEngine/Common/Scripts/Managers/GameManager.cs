@@ -170,6 +170,8 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("the target frame rate for the game")]
 		public int TargetFrameRate=300;
 
+		public string language;
+
 		[Header("Lives")]
 
 		/// the maximum amount of lives the character can currently have
@@ -240,7 +242,16 @@ namespace MoreMountains.CorgiEngine
 			Paused = false;
 			GUIManager.Instance.RefreshPoints ();
 			PointsOfEntry?.Clear ();
-		}	
+		}
+
+		/// <summary>
+		/// 全局语言设置
+		/// </summary>
+		/// <param name="lan"></param>
+		public void SetLanguage(string lan)
+		{
+			language = lan;
+		}
 
 		/// <summary>
 		/// Use this method to decrease the current number of lives

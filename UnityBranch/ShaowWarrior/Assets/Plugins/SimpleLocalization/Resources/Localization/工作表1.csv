@@ -8,35 +8,52 @@ Position Applied: Game Designer","22岁
 LU.Experience1,Education Experience,教育经历
 LU.Experience2,Work Experience,实习经历
 LU.Experience3,Project Experience,项目经历
-LU.LevelUpEvent1,,提升1格血条
-LU.LevelUpEvent2,,攻击升级
-LU.LevelUpEvent3,,闪避CD减少1S
-LU.LevelUpEvent4,,获得一次额外奇遇机会
-LU.LevelUpEvent5,,【大招】血魔流-吸干你的血。击杀敌人触发吸血技能。击杀成功恢复2%血量，累计杀害敌人血量达2000，触发10秒无敌状态。
-LU.LevelUpEvent6,,【大招】低血流-打不倒的小强。当血量低于10%时，闪避无CD且主动攻击伤害翻倍。累计杀害敌人血量达2000，15秒主动攻击一击毙命。
-LU.LevelUpEvent7,,提升2格血条
-LU.LevelUpEvent8,,发财了，获得5货币
+LU.LevelUpEvent1,Increase Health Bar by 1 Segment,提升1格血条
+LU.LevelUpEvent2,Upgrade Attack,攻击升级
+LU.LevelUpEvent3,Reduce Dodge Cooldown by 1s,闪避CD减少1S
+LU.LevelUpEvent4,Gain an Extra Encounter Opportunity,获得一次额外奇遇机会
+LU.LevelUpEvent5,"【Ultimate】 Blood Demon Flow - Drain your blood. Trigger life steal skill upon killing enemies. Restores 2% health per kill. When total enemy health killed reaches 2000, trigger 10 seconds of invincibility.",【大招】血魔流-吸干你的血。击杀敌人触发吸血技能。击杀成功恢复2%血量，累计杀害敌人血量达2000，触发10秒无敌状态。
+LU.LevelUpEvent6,"【Ultimate】 Low Health Flow - The unyielding cockroach. When health is below 10%, dodge has no cooldown and active attack damage doubles. When total enemy health killed reaches 2000, active attack becomes an instant kill for 15 seconds.",【大招】低血流-打不倒的小强。当血量低于10%时，闪避无CD且主动攻击伤害翻倍。累计杀害敌人血量达2000，15秒主动攻击一击毙命。
+LU.LevelUpEvent7,Increase Health Bar by 2 Segments,提升2格血条
+LU.LevelUpEvent8,"Got Rich, Gain 5 Currency",发财了，获得5货币
 Shop.ConfirmBuying,Pay,结账
 SpecialEvent.Sp_Good1_name,TOP OFFER!!,顶级OFFER！
-SpecialEvent.Sp_Good1_info,,"“恭喜你！顺利通过了简历评估中心的培训，并且获得了优秀学生的称号。”你收到了这样一条短信。
+SpecialEvent.Sp_Good1_info,"“Congratulations! You successfully completed the training at the Resume Evaluation Center and earned the title of Excellent Student.” You received this message.  
+At the same time, an email popped up on your phone: Congratulations on passing the final interview...  
+You open it to see the detailed content below—  
+  Dear XXX{change to player's name, if not feasible delete this line}  
+    We are pleased to welcome you as a colleague. We have another excellent partner...  
+You finally got the OFFER from the project group you most wanted to join! As a campus recruit, you have won.","“恭喜你！顺利通过了简历评估中心的培训，并且获得了优秀学生的称号。”你收到了这样一条短信。
 同时，手机上方弹出了一封邮件：恭喜你顺利通过终面...
 你点开查看，蹦出下面的详细内容——
   Dear XXX{变成玩家名字，如果不好实现就删除这行}
     很高兴能和你成为同事，我们又迎来了一位优秀的伙伴...
 
 你终于拿到了最想去的项目组的OFFER！身为校招生的你已经赢了。"
-SpecialEvent.Sp_Good1_button,,攻击提升一段【若攻击满段，则攻击力提升50点】
-SpecialEvent.Sp_Good2_name,,升职加薪！！
-SpecialEvent.Sp_Good2_info,,"你成功通过了简历评估中心的培训，并且拿到了一个还不错的OFFER。
+SpecialEvent.Sp_Good1_button,"Attack Boost by One Segment【If Attack is Maxed, Attack Power Increases by 50 Points】",攻击提升一段【若攻击满段，则攻击力提升50点】
+SpecialEvent.Sp_Good2_name,Promotion and Pay Raise!!,升职加薪！！
+SpecialEvent.Sp_Good2_info,"You successfully completed the training at the Resume Evaluation Center and received a decent OFFER.  
+You have been working at this company for one or two years. Colleagues are kind, never arguing over requirements; the project is stable, and there is never any overtime; the team leader values you and always assigns you important tasks.  
+Finally, after a calm daily life, you adapted to the game industry.  
+And today, just like every day, you arrived at your desk at ten in the morning and found a company email:  
+“Congratulations, your promotion request has been approved!”  
+Your life is smooth sailing, this is the best thing.","你成功通过了简历评估中心的培训，并且拿到了一个还不错的OFFER。
 你在这个公司已经上班了一两年。同事和善，对需求从没吵过架；项目稳定，加班也是从来没有的事情；组长器重你，总是给你安排一些重要的内容。
 终于，你在日复一日的平静生活后，适应了游戏行业。
 而这一天，正如每天所做的一样，你早上十点到了自己的工位，发现了一封公司邮件：
 “恭喜你，提交的升职需求通过了！”
 
 你的人生一帆风顺，这是再好不过的事情。"
-SpecialEvent.Sp_Good2_button,,获得金钱100点。
-SpecialEvent.Sp_Good3_name,,天降馅饼！！！
-SpecialEvent.Sp_Good3_info,,"虽然你已经通过了简历评估中心的培训，但是你仍然没有收到满意的OFFER。
+SpecialEvent.Sp_Good2_button,Gain 100 Currency.,获得金钱100点。
+SpecialEvent.Sp_Good3_name,Windfall!!!,天降馅饼！！！
+SpecialEvent.Sp_Good3_info,"Although you completed the training at the Resume Evaluation Center, you still did not receive a satisfactory OFFER.  
+At two in the afternoon, you were awakened by a phone call: “Hello, who is this?”  
+“Hello, are you XXX? We are from the Game Investment Center and are interested in the game you posted on the website and would like to discuss the cooperation details with you.”  
+“What... what?” You felt like you were hit by a pie falling from the sky.  
+After hanging up the phone, you discovered that the half-finished game you posted on the website had gone viral, and many players expressed their expectations for your game.  
+After negotiations, your project received investment.  
+You can now comfortably develop solo games. The kid who played the red and white machine years ago has finally merged with the present you.  
+You don't have to be a tool for making charts, or create games you don't like. Now, you just need to be yourself.","虽然你已经通过了简历评估中心的培训，但是你仍然没有收到满意的OFFER。
 下午两点，你被一个电话声吵醒：“喂，是谁？”
 “你好，请问您是XXX吗？我们这边是游戏投资中心的，对您发在网站上的游戏很感兴趣，想和您谈一下具体的合作事项。”
 “什...什么？”你仿佛被馅饼砸晕了脑袋。
@@ -45,18 +62,26 @@ SpecialEvent.Sp_Good3_info,,"虽然你已经通过了简历评估中心的培训
 
 你可以安心做独游了，多年前玩红白机的那个小孩和现在的你终于重合了。
 不用当只会配表的工具，不用做不喜欢的游戏。现在，你只需要做你自己。"
-SpecialEvent.Sp_Good3_buttonA,,闪避变为无CD。
-SpecialEvent.Sp_Good3_buttonB,,攻击力提升75点。
-SpecialEvent.Sp_Good3_buttonC,,血量最大值提升三格且回满。
-SpecialEvent.Sp_Normal1_name,Choose Offer (?),OFFER选择？
-SpecialEvent.Sp_Normal1_info,,"你成功通过了简历培训中心的培训，并且拿到了几个OFFER。
+SpecialEvent.Sp_Good3_buttonA,Dodge becomes No Cooldown.,闪避变为无CD。
+SpecialEvent.Sp_Good3_buttonB,Attack Power Increases by 75 Points.,攻击力提升75点。
+SpecialEvent.Sp_Good3_buttonC,Max Health Increases by Three Segments and Fully Healed.,血量最大值提升三格且回满。
+SpecialEvent.Sp_Normal1_name,Offer Selection?,OFFER选择？
+SpecialEvent.Sp_Normal1_info,"You successfully completed the training at the Resume Evaluation Center and received several OFFERS.  
+You were not very satisfied with these OFFERS, but you had to choose one.  
+In the end, you were torn between Company A and Company B. Company A's salary was average, but the project group you wanted to join was already online and relatively stable; Company B offered a higher salary, but the project was still under development, with rumors of severe overtime on Maimai.  
+What's your decision?","你成功通过了简历培训中心的培训，并且拿到了几个OFFER。
 这几个OFFER你都没有很满意，但你不得不在其中选出一个。
 最后只剩下A公司和B公司让你难以定夺。A公司的薪酬一般但要去的项目组已经上线，较为稳定；B公司的薪酬较高但要去的项目还在研发，脉脉上传言项目加班极其严重。
 你决定？"
-SpecialEvent.Sp_Normal1_buttonA,A Company,A公司。
-SpecialEvent.Sp_Normal1_buttonB,B Company,B公司。
-SpecialEvent.Sp_Normal1_buttonC,"Leave, and look for better opportunities",离开，等待更好机会。
-SpecialEvent.Sp_Normal1_A_info,,"来到这个公司后，你确实感到了稳定，虽然项目你并没有那么喜欢。
+SpecialEvent.Sp_Normal1_buttonA,Company A.,A公司。
+SpecialEvent.Sp_Normal1_buttonB,Company B.,B公司。
+SpecialEvent.Sp_Normal1_buttonC,"Leave, wait for a better opportunity.",离开，等待更好机会。
+SpecialEvent.Sp_Normal1_A_info,"After joining this company, you indeed felt stable, although you didn't like the project that much.  
+You worked normal hours every day, sometimes playing games with colleagues at the company, sometimes loafing around and having coffee downstairs.  
+But you seem to have gradually forgotten why you wanted to join the game industry in the first place.  
+Maybe it was to have a well-paid job.  
+Maybe it was for something else?  
+But you can't remember.","来到这个公司后，你确实感到了稳定，虽然项目你并没有那么喜欢。
 
 你每天正常上下班，有时候和同事相约在公司“加班”打游戏，有时候去公司楼下摸鱼喝咖啡。
 但是你好像逐渐忘了，到底为什么想进入游戏行业。
@@ -64,8 +89,13 @@ SpecialEvent.Sp_Normal1_A_info,,"来到这个公司后，你确实感到了稳�
 可能，也是为了什么别的？
     
 但是你不记得了。"
-SpecialEvent.Sp_Normal1_A_button,,回复当前血量的30%，但攻击力降低25点。
-SpecialEvent.Sp_Normal1_B_info,,"你想要在研项目来挑战自己。但你每天都在加班，日复一日地加班。
+SpecialEvent.Sp_Normal1_A_button,"Restore 30% of current health, but attack power decreases by 25%.",回复当前血量的30%，但攻击力降低25点。
+SpecialEvent.Sp_Normal1_B_info,"You want to challenge yourself with an ongoing project. But you work overtime every day, day after day.  
+When friends play the new Elden Ring DLC, you're working overtime; when friends reach Master rank in Street Fighter, you're working overtime; when friends summon Jin Xi in Ming Tide, you're working overtime.  
+Your salary is high, so you rented an expensive big house near the company. Although you open your eyes and close them only to work.  
+You no longer have time to buy games to play, so you bought many game peripherals to fill the emptiness, using material things to fill the entire room.  
+At midnight, in the drizzling rain, you left the company's gate with an umbrella.  
+Thinking: What is it for?","你想要在研项目来挑战自己。但你每天都在加班，日复一日地加班。
 
 当朋友在玩老头环新DLC的时候，你在加班；当朋友街霸升到了大师，你在加班；当朋友鸣潮一连出今汐，你在加班。
 
@@ -75,35 +105,54 @@ SpecialEvent.Sp_Normal1_B_info,,"你想要在研项目来挑战自己。但你�
     
 半夜十二点，雨浠沥沥的下，你撑伞离开了公司的大门。
 想：是为了什么呢。"
-SpecialEvent.Sp_Normal1_B_button,,获得金币150点，但血量扣除为当前血量的50%。
-SpecialEvent.Sp_Normal2_name,,是否跳槽？？
-SpecialEvent.Sp_Normal2_info,,"你经过简历评估中心的培训，已经拿到了适合自己的OFFER。
+SpecialEvent.Sp_Normal1_B_button,"Gain 150 Currency, but health is reduced to 50% of current health.",获得金币150点，但血量扣除为当前血量的50%。
+SpecialEvent.Sp_Normal2_name,Switch Jobs?,是否跳槽？？
+SpecialEvent.Sp_Normal2_info,"After completing the training at the Resume Evaluation Center, you received an OFFER suitable for you.  
+You have been working at this company for one or two years. After being “baptized” by the company, you feel numb about making games.  
+Repetitive and boring execution work, gradually worsening overtime system, leaders who like to cultivate their close aides.  
+You are looking for new opportunities, but you haven't made up your mind to leave.  
+What's your decision?","你经过简历评估中心的培训，已经拿到了适合自己的OFFER。
 你已经在这个公司上班了一两年，经过公司的“洗礼”，你感觉自己对做游戏已经变得麻木。
 重复乏味的执行工作，逐渐严重的加班制度，喜欢培养嫡系的领导。
 你在寻找新的机会，但你还没下定离开的决心。
 你决定？"
 SpecialEvent.Sp_Normal2_buttonA,STAY,留下。
 SpecialEvent.Sp_Normal2_buttonB,LEAVE,离开。
-SpecialEvent.Sp_Normal2_A_info,,"你无法下定决心离开，毕竟当时费尽千辛万苦拿到了这个OFFER。
+SpecialEvent.Sp_Normal2_A_info,"You can't make up your mind to leave, after all, you worked so hard to get this OFFER.  
+As you grow older, you feel afraid of the unknown.  
+So you have to endure the torment day after day.  
+One day, your leader suddenly called you over and said: “I think you've been in a bad state recently. Hand over to the new colleague and then take charge of other parts.”  
+Are you still staying?","你无法下定决心离开，毕竟当时费尽千辛万苦拿到了这个OFFER。
 随着年龄的增长，你对未知的事情感到害怕。
 于是你只好日复一日的受到折磨。
 
 这天，你的领导突然把你叫了过去，跟你说：“我觉得你最近状态很差，你和新来的同事交接一下，然后去负责其他部分吧。”
 
 你还要留下吗？"
-SpecialEvent.Sp_Normal1_A_buttonA,,继续留下。扣除当前血量40%，闪避CD减1秒。
-SpecialEvent.Sp_Normal1_A_buttonB,,离开。回复当前血量30%。
-SpecialEvent.Sp_Normal2_B1_info,,"你不断寻找新的机会，终于你找到了新的工作。
+SpecialEvent.Sp_Normal1_A_buttonA,"Continue to stay. Deduct 40% of current health, reduce dodge cooldown by 1 second.",继续留下。扣除当前血量40%，闪避CD减1秒。
+SpecialEvent.Sp_Normal1_A_buttonB,Leave. Restore 30% of current health.,离开。回复当前血量30%。
+SpecialEvent.Sp_Normal2_B1_info,"You kept looking for new opportunities, and finally found a new job.  
+Because of your previous work experience, the new job offers a higher salary.  
+But it also comes with more severe overtime.","你不断寻找新的机会，终于你找到了新的工作。
 因为之前工作经验的积累，新的工作薪酬更高。
 但是随之而来的是更严重的加班。"
-SpecialEvent.Sp_Normal2_B1_button,,血量扣除30%，获得150点金币。
-SpecialEvent.Sp_Normal2_B2_info,,"你去了一个较小公司的在研项目组，薪酬相比之前略微降低了。
+SpecialEvent.Sp_Normal2_B1_button,"Health reduced by 30%, gain 150 Currency.",血量扣除30%，获得150点金币。
+SpecialEvent.Sp_Normal2_B2_info,"You joined a smaller company's project group under development, with a slightly lower salary compared to before.  
+But this project group is the single-player martial arts game you always wanted to make.  
+In this project group, you are no longer just executing simple tasks. You learned a lot and felt happy.  
+Although you don't have much money now, who knows what the future holds?","你去了一个较小公司的在研项目组，薪酬相比之前略微降低了。
 但是这个项目组是你一直想做的单机武侠游戏。
 你在这个项目组终于不是简单的执行了。你学到了很多东西，你感觉到了快乐。
 虽然现在没钱，但未来谁知道呢？"
-SpecialEvent.Sp_Normal2_B2_button,,攻击力提升50点，扣除50点金币。
+SpecialEvent.Sp_Normal2_B2_button,"Attack power increases by 50 points, deduct 50 Currency.",攻击力提升50点，扣除50点金币。
 SpecialEvent.Sp_Bad_name,Overtime overwork† Ascension†,加班过劳†升天†
-SpecialEvent.Sp_Bad_info,,"你惊险的通过了简历评估中心的培训，并且通过在简历评估中心修改的简历拿到了OFFER。
+SpecialEvent.Sp_Bad_info,"You barely passed the training at the Resume Evaluation Center and got an OFFER with the revised resume.  
+In the first week of joining the company, you worked overtime until ten o'clock. Others comforted you: the game industry is like this, if you don't work, there are plenty of people who will.  
+You had to endure it.  
+Then the overtime became more and more severe, more and more severe.  
+The leader said: the project group needs you, how can you leave today when it's release day?  
+On release day, at three in the morning, you fainted on the way home.  
+So your only goal this year is: to stay alive.","你惊险的通过了简历评估中心的培训，并且通过在简历评估中心修改的简历拿到了OFFER。
 刚进公司的第一周，就加班到了十点。其他人都安慰你：游戏行业是这样的，你不干活有的是人干。
 你只能忍着。
 然后加班越来越严重，越来越严重。
@@ -111,9 +160,9 @@ SpecialEvent.Sp_Bad_info,,"你惊险的通过了简历评估中心的培训，�
   
 发版日凌晨三点，你昏倒在了回家的路上。
 于是你今年的目标只有：活着。"
-SpecialEvent.Sp_Bad_button,,扣除当前血量80%，攻击力降低25点。
-Pause.BackGame,Back To Game,返回游戏
+SpecialEvent.Sp_Bad_button,"Deduct 80% of current health, reduce attack power by 25%.",扣除当前血量80%，攻击力降低25点。
+Pause.BackGame,Return to Game,返回游戏
 Pause.SaveAndExit,Save And Exit (Not functional yet.),保存并退出（饼）
-Pause.BackToCg,Return To Title,回到标题
-Tutorial.AskName,Type your name: ,输入你的名字：
-Tutorial.Confirm,OK,确认
+Pause.BackToCg,Back to Title,回到标题
+Tutorial.AskName,Enter your name:,输入你的名字：
+Tutorial.Confirm,Confirm,确认

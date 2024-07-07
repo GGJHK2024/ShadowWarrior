@@ -1,5 +1,6 @@
 using System;
 using Assets.SimpleLocalization.Scripts;
+using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,6 +34,7 @@ public class LanguageMgr : MMSingleton<LanguageMgr>
         LocalizationManager.Language = (LocalizationManager.Language == "Chinese")
             ? "English"
             : "Chinese";
+        GameManager.Instance.SetLanguage(LocalizationManager.Language);
     }
 
     /// <summary>

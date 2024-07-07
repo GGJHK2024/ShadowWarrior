@@ -966,8 +966,8 @@ namespace MoreMountains.CorgiEngine
 					ssB.highlightedSprite = btsB[1];
 					optionA.spriteState = ssA;
 					optionB.spriteState = ssB;
-					bttA.text = "提升1格血条";
-					bttB.text = "攻击升级";
+					bttA.text = (GameManager.Instance.language == "Chinese") ? "提升1格血条" : "Increase Health Bar by 1 Segment";
+					bttB.text = (GameManager.Instance.language == "Chinese") ?"攻击升级" : "Upgrade Attack";
 					optionA.onClick.AddListener(()=>LU_AddXHP(1));
 					optionB.onClick.AddListener(LU_SkillUp);
 					break;
@@ -980,8 +980,10 @@ namespace MoreMountains.CorgiEngine
 					ssB.highlightedSprite = btsB[1];
 					optionA.spriteState = ssA;
 					optionB.spriteState = ssB;
-					bttA.text = "闪避CD减少1S";
-					bttB.text = "提升1格血条";
+					// bttA.text = "闪避CD减少1S";
+					// bttB.text = "提升1格血条";
+					bttA.text = (GameManager.Instance.language == "Chinese") ? "闪避CD减少1S" : "Reduce Dodge Cooldown by 1s";
+					bttB.text = (GameManager.Instance.language == "Chinese") ? "提升1格血条" : "Increase Health Bar by 1 Segment";
 					optionA.onClick.AddListener(()=>LU_SubXDashCD(1));
 					optionB.onClick.AddListener(()=>LU_AddXHP(1));
 					break;
@@ -994,8 +996,10 @@ namespace MoreMountains.CorgiEngine
 					ssB.highlightedSprite = btsB[1];
 					optionA.spriteState = ssA;
 					optionB.spriteState = ssB;
-					bttA.text = "提升1格血条";
-					bttB.text = "获得一次额外奇遇机会";
+					// bttA.text = "提升1格血条";
+					// bttB.text = "获得一次额外奇遇机会";
+					bttA.text = (GameManager.Instance.language == "Chinese") ? "提升1格血条" : "Increase Health Bar by 1 Segment";
+					bttB.text = (GameManager.Instance.language == "Chinese") ? "获得一次额外奇遇机会" : "Gain an Extra Encounter Opportunity";
 					optionA.onClick.AddListener(()=>LU_AddXHP(1));
 					optionB.onClick.AddListener(LU_OpenSpecialEvent);
 					break;
@@ -1008,8 +1012,14 @@ namespace MoreMountains.CorgiEngine
 					ssB.highlightedSprite = btsB[1];
 					optionA.spriteState = ssA;
 					optionB.spriteState = ssB;
-					bttA.text = "【大招】血魔流-吸干你的血。击杀敌人触发吸血技能。击杀成功恢复2%血量，累计杀害敌人血量达2000，触发10秒无敌状态。";
-					bttB.text = "【大招】低血流-打不倒的小强。当血量低于10%时，闪避无CD且主动攻击伤害翻倍。累计杀害敌人血量达2000，15秒主动攻击一击毙命。";
+					// bttA.text = "【大招】血魔流-吸干你的血。击杀敌人触发吸血技能。击杀成功恢复2%血量，累计杀害敌人血量达2000，触发10秒无敌状态。";
+					// bttB.text = "【大招】低血流-打不倒的小强。当血量低于10%时，闪避无CD且主动攻击伤害翻倍。累计杀害敌人血量达2000，15秒主动攻击一击毙命。";
+					bttA.text = (GameManager.Instance.language == "Chinese") 
+						? "【大招】血魔流-吸干你的血。击杀敌人触发吸血技能。击杀成功恢复2%血量，累计杀害敌人血量达2000，触发10秒无敌状态。" 
+						: "【Ultimate】 Blood Demon Flow - Drain your blood. Trigger life steal skill upon killing enemies. Restores 2% health per kill. When total enemy health killed reaches 2000, trigger 10 seconds of invincibility.";
+					bttB.text = (GameManager.Instance.language == "Chinese")
+						? "【大招】低血流-打不倒的小强。当血量低于10%时，闪避无CD且主动攻击伤害翻倍。累计杀害敌人血量达2000，15秒主动攻击一击毙命。"
+						: "【Ultimate】 Low Health Flow - The unyielding cockroach. When health is below 10%, dodge has no cooldown and active attack damage doubles. When total enemy health killed reaches 2000, active attack becomes an instant kill for 15 seconds.";
 					// 大招-血魔流
 					// 大招-低血流
 					break;
@@ -1022,8 +1032,10 @@ namespace MoreMountains.CorgiEngine
 					ssB.highlightedSprite = btsB[1];
 					optionA.spriteState = ssA;
 					optionB.spriteState = ssB;
-					bttA.text = "攻击升级";
-					bttB.text = "提升2格血条";
+					// bttA.text = "攻击升级";
+					// bttB.text = "提升2格血条";
+					bttA.text = (GameManager.Instance.language == "Chinese") ? "攻击升级" : "Upgrade Attack";
+					bttB.text = (GameManager.Instance.language == "Chinese") ? "提升2格血条" : "Increase Health Bar by 2 Segments";
 					optionA.onClick.AddListener(LU_SkillUp);
 					optionB.onClick.AddListener(()=>LU_AddXHP(2));
 					break;
@@ -1036,8 +1048,10 @@ namespace MoreMountains.CorgiEngine
 					ssB.highlightedSprite = btsB[1];
 					optionA.spriteState = ssA;
 					optionB.spriteState = ssB;
-					bttA.text = "发财了，获得5货币";
-					bttB.text = "获得一次额外奇遇机会";
+					// bttA.text = "发财了，获得5货币";
+					// bttB.text = "获得一次额外奇遇机会";
+					bttB.text = (GameManager.Instance.language == "Chinese") ? "发财了，获得5货币" : "Got Rich, Gain 5 Currency";
+					bttB.text = (GameManager.Instance.language == "Chinese") ? "获得一次额外奇遇机会" : "Gain an Extra Encounter Opportunity";
 					optionA.onClick.AddListener(()=>LU_AddXMoney(5));
 					optionB.onClick.AddListener(LU_OpenSpecialEvent);
 					break;
