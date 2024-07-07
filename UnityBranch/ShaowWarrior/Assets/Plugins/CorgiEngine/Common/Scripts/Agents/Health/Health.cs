@@ -693,6 +693,7 @@ namespace MoreMountains.CorgiEngine
 		public void BossKiller()
 		{
 			_character.CancelOutlineCharacter();
+			PlayerManager.Instance.ResetPlayerParams();
 			LevelSelector ls = gameObject.GetComponent<LevelSelector>();
 			ls.GoToLevel();
 		}

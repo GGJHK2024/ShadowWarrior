@@ -17,7 +17,7 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     public string playerName = "哈哈";
     public int hp = 5;
     public int attack = 25;
-    public int cd = 5;
+    public float cd = 5;
     public int money = 0;
     public int lucky = 50;
     public bool hasBigSkill = false;
@@ -195,6 +195,17 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     public void AddHP(int i)
     {
         hp += i;
+    }
+
+    /// <summary>
+    /// 减少is cd
+    /// </summary>
+    /// <param name="i"></param>
+    public void SubCD(float i)
+    {
+        cd -= i;
+        player.GetComponent<CharacterDash>().DashCooldown = (player.GetComponent<CharacterDash>().DashCooldown - i) >= 0 ? 
+            player.GetComponent<CharacterDash>().DashCooldown - i : player.GetComponent<CharacterDash>().DashCooldown;
     }
 
     /// <summary>

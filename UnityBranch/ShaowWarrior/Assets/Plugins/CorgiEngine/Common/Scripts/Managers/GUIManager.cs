@@ -582,15 +582,7 @@ namespace MoreMountains.CorgiEngine
 			CharacterHandleWeapon curWeapon = player.GetComponent<CharacterHandleWeapon>();
 			string curName = curWeapon.InitialWeapon.name;
 			int curStage = int.Parse(curName.Substring(curName.Length - 1, 1));
-			if (curStage < 3)	// 未升满
-			{
-				LU_SkillUp();
-			}
-			else
-			{
-				// 攻击力+50
-				LU_AddAttack(50);
-			}
+			LU_SkillUp();
 			CloseSpecialEvent();
 		}
 		
@@ -941,7 +933,7 @@ namespace MoreMountains.CorgiEngine
 			lucky_text.text = PlayerManager.Instance.lucky.ToString();
 			attack_text.text = PlayerManager.Instance.attack.ToString();
 			player_text.text = PlayerManager.Instance.playerName;
-			cd_text.text = player.GetComponent<CharacterDash>().DashCooldown.ToString();
+			cd_text.text = PlayerManager.Instance.cd.ToString();
 			hp_bar.value = PlayerManager.Instance.hp;
 			// buttons
 			optionA.onClick.RemoveAllListeners();
@@ -1074,8 +1066,7 @@ namespace MoreMountains.CorgiEngine
 		/// <param name="x"></param>
 		public void LU_SubXDashCD(float x)
 		{
-			player.GetComponent<CharacterDash>().DashCooldown = (player.GetComponent<CharacterDash>().DashCooldown - x) >= 0 ? 
-				player.GetComponent<CharacterDash>().DashCooldown - x : player.GetComponent<CharacterDash>().DashCooldown;
+			PlayerManager.Instance.SubCD(x);
 		}
 
 		/// <summary>
@@ -1117,6 +1108,7 @@ namespace MoreMountains.CorgiEngine
 					curWeapon.Setup();
 					break;
 				case 3:
+					LU_AddAttack(25);
 					break;
 			}
 		}
