@@ -664,7 +664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ButtonActivatedRequirement: 2
   RequiresPlayerType: 1
-  RequiresButtonActivationAbility: 0
+  RequiresButtonActivationAbility: 1
   PreventJumpsWhileInThisZone: 0
   Activable: 1
   AutoActivation: 0
@@ -677,14 +677,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   UnlimitedActivations: 1
-  MaxNumberOfActivations: 0
+  MaxNumberOfActivations: 100000
   DelayBetweenUses: 0
   DisableAfterUse: 0
   InputType: 2
   InputButton: Interact
   InputKey: 101
-  AnimationTriggerParameterName: 
-  UseVisualPrompt: 1
+  AnimationTriggerParameterName: inDoor
+  UseVisualPrompt: 0
   ButtonPromptPrefab: {fileID: 0}
   ButtonPromptText: A
   ButtonPromptColor: {r: 0.4862745, g: 0.9882353, b: 0, a: 1}
@@ -719,7 +719,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   LevelName: Test
-  DelayBeforeTransition: 0
+  DelayBeforeTransition: 0.02
   TriggerFade: 0
   FaderID: 0
   FadeTween:
@@ -2379,7 +2379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ButtonActivatedRequirement: 2
   RequiresPlayerType: 1
-  RequiresButtonActivationAbility: 0
+  RequiresButtonActivationAbility: 1
   PreventJumpsWhileInThisZone: 0
   Activable: 1
   AutoActivation: 0
@@ -2392,14 +2392,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   UnlimitedActivations: 1
-  MaxNumberOfActivations: 0
+  MaxNumberOfActivations: 100000
   DelayBetweenUses: 0
   DisableAfterUse: 0
   InputType: 2
   InputButton: Interact
   InputKey: 101
-  AnimationTriggerParameterName: 
-  UseVisualPrompt: 1
+  AnimationTriggerParameterName: inDoor
+  UseVisualPrompt: 0
   ButtonPromptPrefab: {fileID: 0}
   ButtonPromptText: A
   ButtonPromptColor: {r: 0.4862745, g: 0.9882353, b: 0, a: 1}
@@ -2434,7 +2434,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   LevelName: Test
-  DelayBeforeTransition: 0
+  DelayBeforeTransition: 0.02
   TriggerFade: 0
   FaderID: 0
   FadeTween:

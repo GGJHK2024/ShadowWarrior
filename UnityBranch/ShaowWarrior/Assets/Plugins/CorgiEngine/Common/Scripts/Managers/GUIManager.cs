@@ -473,7 +473,7 @@ namespace MoreMountains.CorgiEngine
 		public virtual void CloseSpecialEvent()
 		{
 			Time.timeScale = 1;
-			if (SepcialEventScreen != null)
+			if (SepcialEventScreen != null && curPanel != null)
 			{ 
 				if(curSubPanel)
 				{

@@ -4168,6 +4168,46 @@ PrefabInstance:
       propertyPath: hasBigSkill
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7152564281072170116, guid: 6059d977d1f210348bfbe1a82f4f9883,
+        type: 3}
+      propertyPath: levels.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152564281072170116, guid: 6059d977d1f210348bfbe1a82f4f9883,
+        type: 3}
+      propertyPath: levels.Array.data[1].id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152564281072170116, guid: 6059d977d1f210348bfbe1a82f4f9883,
+        type: 3}
+      propertyPath: levels.Array.data[2].id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152564281072170116, guid: 6059d977d1f210348bfbe1a82f4f9883,
+        type: 3}
+      propertyPath: levels.Array.data[1].name
+      value: Normal1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152564281072170116, guid: 6059d977d1f210348bfbe1a82f4f9883,
+        type: 3}
+      propertyPath: levels.Array.data[2].name
+      value: Normal1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152564281072170116, guid: 6059d977d1f210348bfbe1a82f4f9883,
+        type: 3}
+      propertyPath: levels.Array.data[0].childId.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152564281072170116, guid: 6059d977d1f210348bfbe1a82f4f9883,
+        type: 3}
+      propertyPath: levels.Array.data[0].childId.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152564281072170116, guid: 6059d977d1f210348bfbe1a82f4f9883,
+        type: 3}
+      propertyPath: levels.Array.data[0].childId.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
 --- !u!1 &2122634799
