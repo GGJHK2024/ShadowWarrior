@@ -339,7 +339,7 @@ namespace MoreMountains.CorgiEngine
 		public virtual void CloseLevelUp()
 		{
 			Time.timeScale = 1.0f;
-			if (LevelUpScreen!= null)
+			if (LevelUpScreen != null)
 			{ 
 				LevelUpScreen.SetActive(false);
 			}
@@ -441,7 +441,7 @@ namespace MoreMountains.CorgiEngine
 		public virtual void CLoseShop()
 		{
 			Time.timeScale = 1.0f;
-			if (ShopScreen!= null)
+			if (ShopScreen != null)
 			{
 				foreach (var b in buyingItems)
 				{

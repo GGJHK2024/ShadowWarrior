@@ -127,6 +127,11 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void GoToNextLevel()
 		{
+			Time.timeScale = 1.0f;
+			GUIManager.Instance.ClosePause();
+			GUIManager.Instance.CloseLevelUp();
+			GUIManager.Instance.CloseSpecialEvent();
+			GUIManager.Instance.CLoseShop();
 			if (LevelManager.HasInstance)
 			{
 				LevelManager.Instance.GotoLevel(LevelName, (DelayBeforeTransition == 0f));
