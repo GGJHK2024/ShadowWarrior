@@ -322,7 +322,6 @@ namespace MoreMountains.CorgiEngine
 		{
 			_collidingCollider = collider;
 			Weapon ownerWeapon;
-			DamageOnTouch enemyTouch;
 			if ( this.gameObject.layer!=12 && Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 13) {
 				print("武器攻击到敌人");
 				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player && ownerWeapon.damageSrcType == DamageSrcType.B)				
@@ -332,15 +331,31 @@ namespace MoreMountains.CorgiEngine
 						print("敌人处于预攻击（出现感叹号）状态");
 						// 如果处于预攻击（出现感叹号）状态，弹反成功
 						var hp = collider.gameObject.GetComponent<Health>();
+						if (collider.gameObject.name.Contains("Boom"))
+						{
+							Vector2 ePos = new Vector2(collider.gameObject.transform.position.x,
+								collider.gameObject.transform.position.y);
+							Vector2 pPos = new Vector2(ownerWeapon.Owner.transform.position.x,
+							                           ownerWeapon.Owner.transform.position.y);
+							collider.gameObject.GetComponent<CorgiController>().AddForce(4.0f * (ePos - pPos));
+							print("弹反成功, 且弹反对象为自爆怪");
+							return;
+						}
 						if (hp!= null) {
 							hp.Kill();
-							print("弹反成功");
+							print("弹反成功, 且弹反对象为近战/远程普通敌人");
 							ownerWeapon.WeaponBounceSuccessNear();	// 近战效果
 							MMGameEvent.Trigger(GameEventType.BounceSuccess);
 							return;
 						}
 					}
-					
+				}
+				// 普通攻击命中自爆怪，则直接爆炸
+				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player &&
+				    ownerWeapon.damageSrcType == DamageSrcType.A && collider.name.Contains("Boom"))
+				{
+					collider.GetComponent<AIBrain>().TransitionToState("ShowMark");
+					return;
 				}
 			}
 			if ( this.gameObject.layer!=12 && Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 12) {

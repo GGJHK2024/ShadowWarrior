@@ -36,6 +36,9 @@ GameObject:
   - component: {fileID: 5721351961219026926}
   - component: {fileID: 6679734689149926407}
   - component: {fileID: 4415451982424550728}
+  - component: {fileID: 8349155150727831041}
+  - component: {fileID: 4453433679604177470}
+  - component: {fileID: 6426465449015350735}
   m_Layer: 13
   m_Name: RobotBoom
   m_TagString: Player
@@ -281,8 +284,8 @@ MonoBehaviour:
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
-  InitialHealth: 25
-  MaximumHealth: 25
+  InitialHealth: 40
+  MaximumHealth: 40
   Invulnerable: 0
   ImmuneToDamage: 0
   DamageFeedbacks: {fileID: 3305337592286691155}
@@ -511,6 +514,7 @@ MonoBehaviour:
     Actions:
       array:
       - {fileID: 2854295689687570740}
+      - {fileID: 4453433679604177470}
     Transitions:
       array:
       - Decision: {fileID: 824525950}
@@ -520,6 +524,9 @@ MonoBehaviour:
     Actions:
       array:
       - {fileID: 7126097633941721371}
+      - {fileID: 7126097633941721371}
+      - {fileID: 8349155150727831041}
+      - {fileID: 6426465449015350735}
     Transitions:
       array:
       - Decision: {fileID: 5893394884078251563}
@@ -530,6 +537,7 @@ MonoBehaviour:
       array:
       - {fileID: 7126097633941721371}
       - {fileID: 2005204315842673551}
+      - {fileID: 6426465449015350735}
     Transitions:
       array:
       - Decision: {fileID: 119847008708912785}
@@ -973,6 +981,83 @@ MonoBehaviour:
   TestMaxHealth: 100
   TestCurrentHealth: 25
   TestUpdateHealthButton: 0
+--- !u!114 &8349155150727831041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653b45e453e54664e9b7ea62fbd9d3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
+  Label: "\u79FB\u901F\u589E\u52A0"
+  TargetEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114937525856734860}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.CharacterHorizontalMovement,
+          MoreMountains.CorgiEngine
+        m_MethodName: SetContextSpeedMultiplier
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnlyPlayWhenEnteringState: 1
+--- !u!114 &4453433679604177470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653b45e453e54664e9b7ea62fbd9d3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
+  Label: "\u79FB\u901F\u6062\u590D"
+  TargetEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114937525856734860}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.CharacterHorizontalMovement,
+          MoreMountains.CorgiEngine
+        m_MethodName: SetContextSpeedMultiplier
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnlyPlayWhenEnteringState: 1
+--- !u!114 &6426465449015350735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fce3bcf6da4a2d46a0a02c021b5bb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
+  Label: 
+  MinimumDistance: 0.1
 --- !u!1 &1906052747890022
 GameObject:
   m_ObjectHideFlags: 0
