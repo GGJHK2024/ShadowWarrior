@@ -678,7 +678,6 @@ GameObject:
   - component: {fileID: 6818802770801737222}
   - component: {fileID: 6818980704704118916}
   - component: {fileID: 6818980704704118923}
-  - component: {fileID: 6818980704704118920}
   - component: {fileID: 6818980704704118925}
   - component: {fileID: 6818980704704118924}
   - component: {fileID: 6818980704704118919}
@@ -769,7 +768,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.11808896, y: -0.0321337}
+  m_Offset: {x: -0.38731575, y: 1.0789425}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -780,7 +779,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7761774, y: 1.8257325}
+  m_Size: {x: 1.5396004, y: 4.0478845}
   m_EdgeRadius: 0
 --- !u!114 &6860181345996994894
 MonoBehaviour:
@@ -1080,26 +1079,6 @@ MonoBehaviour:
   Left: 1
   Right: 1
   ResetForcesOnConstrain: 1
---- !u!114 &6818980704704118920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6860181345986219180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 157b891c059034cea94ae0c9e235df50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  ShakeParameters: {x: 1.5, y: 0.5, z: 1}
-  DiveAcceleration: 2
 --- !u!114 &6818980704704118925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1263,10 +1242,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
-  DetectMethod: 0
+  DetectMethod: 1
   DetectionDirection: 0
-  RayWidth: 1
-  DetectionDistance: 10
+  RayWidth: 15
+  DetectionDistance: 15
   DetectionOriginOffset: {x: 0, y: 0, z: 0}
   TargetLayer:
     serializedVersion: 2
@@ -1332,7 +1311,7 @@ MonoBehaviour:
   InitializationMode: 0
   Label: 
   FaceTarget: 1
-  AimAtTarget: 0
+  AimAtTarget: 1
   TargetOffset: {x: 0, y: 0, z: 0}
   TargetHandleWeapon: {fileID: 0}
   isMeleeWeapon: 0

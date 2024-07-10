@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 114703903213212616}
   - component: {fileID: 4786710359462847881}
   - component: {fileID: 2854295689687570740}
-  - component: {fileID: 8010756260577516807}
   - component: {fileID: 1772864488767088690}
   - component: {fileID: 7126097633941721371}
   - component: {fileID: 824525932}
@@ -38,7 +37,7 @@ GameObject:
   - component: {fileID: 4415451982424550728}
   - component: {fileID: 8349155150727831041}
   - component: {fileID: 4453433679604177470}
-  - component: {fileID: 6426465449015350735}
+  - component: {fileID: 2542878665497499042}
   m_Layer: 13
   m_Name: RobotBoom
   m_TagString: Player
@@ -526,7 +525,7 @@ MonoBehaviour:
       - {fileID: 7126097633941721371}
       - {fileID: 7126097633941721371}
       - {fileID: 8349155150727831041}
-      - {fileID: 6426465449015350735}
+      - {fileID: 2542878665497499042}
     Transitions:
       array:
       - Decision: {fileID: 5893394884078251563}
@@ -537,7 +536,7 @@ MonoBehaviour:
       array:
       - {fileID: 7126097633941721371}
       - {fileID: 2005204315842673551}
-      - {fileID: 6426465449015350735}
+      - {fileID: 2542878665497499042}
     Transitions:
       array:
       - Decision: {fileID: 119847008708912785}
@@ -598,21 +597,6 @@ MonoBehaviour:
   BoundsMethod: 0
   BoundsExtentsLeft: 4.59
   BoundsExtentsRight: 3.24
---- !u!114 &8010756260577516807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fce3bcf6da4a2d46a0a02c021b5bb0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationMode: 0
-  Label: Player
-  MinimumDistance: 1
 --- !u!114 &1772864488767088690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,8 +659,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
-  Radius: 2.4
-  DetectionOriginOffset: {x: 3.88, y: 0, z: 0}
+  Radius: 5.71
+  DetectionOriginOffset: {x: 5.72, y: 0.88, z: 0}
   TargetLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -1038,12 +1022,12 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 1
+          m_FloatArgument: 2
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   OnlyPlayWhenEnteringState: 1
---- !u!114 &6426465449015350735
+--- !u!114 &2542878665497499042
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1057,7 +1041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 0
   Label: 
-  MinimumDistance: 0.1
+  MinimumDistance: 1
 --- !u!1 &1906052747890022
 GameObject:
   m_ObjectHideFlags: 0

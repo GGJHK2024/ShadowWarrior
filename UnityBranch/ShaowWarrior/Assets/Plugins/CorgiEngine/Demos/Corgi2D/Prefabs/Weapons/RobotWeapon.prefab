@@ -4819,6 +4819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000010674082004}
+  - component: {fileID: 1766814538175537490}
   - component: {fileID: 114000010596316938}
   - component: {fileID: 114587324304491438}
   m_Layer: 0
@@ -4848,6 +4849,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1766814538175537490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013547539612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0514d297deadac74fb15a7b7326ff0d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AimControl: 4
+  RotationMode: 0
+  WeaponRotationSpeed: 0
+  InstantFlip: 0
+  PreventAimWhileWeaponIsInUse: 0
+  MinimumAngle: -180
+  MaximumAngle: 180
+  IgnoreSlopeRotation: 0
+  IgnoreDownWhenGrounded: 0
+  Reticle: {fileID: 0}
+  DisplayReticle: 0
+  ReticleDistance: 0
+  ReticleZPosition: 0
+  ReticleAtMousePosition: 0
+  RotateReticle: 0
+  ReplaceMousePointer: 1
+  DisableReticleOnDeath: 1
 --- !u!114 &114000010596316938
 MonoBehaviour:
   m_ObjectHideFlags: 0
