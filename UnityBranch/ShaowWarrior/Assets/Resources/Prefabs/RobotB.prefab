@@ -652,7 +652,6 @@ MonoBehaviour:
       array:
       - {fileID: 7126097633941721371}
       - {fileID: 1772864488767088690}
-      - {fileID: 8010756260577516807}
     Transitions:
       array:
       - Decision: {fileID: 824525950}
@@ -660,9 +659,6 @@ MonoBehaviour:
         FalseState: Idle
       - Decision: {fileID: 3374749970672222704}
         TrueState: ShowMark
-        FalseState: 
-      - Decision: {fileID: 824525932}
-        TrueState: Attack
         FalseState: 
   TimeInThisState: 0
   Target: {fileID: 0}
@@ -733,10 +729,10 @@ MonoBehaviour:
   InitializationMode: 1
   Label: 
   FaceTarget: 1
-  AimAtTarget: 0
+  AimAtTarget: 1
   TargetOffset: {x: 0, y: 0, z: 0}
   TargetHandleWeapon: {fileID: 114238553675504360}
-  isMeleeWeapon: 0
+  isMeleeWeapon: 1
 --- !u!114 &7126097633941721371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,8 +839,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: "\u5B9E\u9645\u9020\u6210\u4F24\u5BB3\u7684\u653B\u51FB\u52A8\u753B\u65F6\u957F"
-  AfterTimeMin: 0.5
-  AfterTimeMax: 0.5
+  AfterTimeMin: 0.8
+  AfterTimeMax: 0.8
 --- !u!114 &8117333926711839525
 MonoBehaviour:
   m_ObjectHideFlags: 0
