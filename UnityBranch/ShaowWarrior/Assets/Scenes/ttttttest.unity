@@ -881,7 +881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1383539409296422, guid: 6d7d6c75e24fdfd4480ff08d72cb381d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 6d7d6c75e24fdfd4480ff08d72cb381d, type: 3}
       propertyPath: m_RootOrder
@@ -1080,7 +1080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1383539409296422, guid: 25a3e1a5eb389174495c5670ce676eff, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 25a3e1a5eb389174495c5670ce676eff, type: 3}
       propertyPath: m_RootOrder
@@ -1138,6 +1138,16 @@ PrefabInstance:
         type: 3}
       propertyPath: Label
       value: "\u9884\u8B66\u65F6\u95F4\uFF08\u663E\u793A\u611F\u53F9\u53F7\uFF09"
+      objectReference: {fileID: 0}
+    - target: {fileID: 119847008708912785, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: AfterTimeMax
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 119847008708912785, guid: 25a3e1a5eb389174495c5670ce676eff,
+        type: 3}
+      propertyPath: AfterTimeMin
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5893394884078251563, guid: 25a3e1a5eb389174495c5670ce676eff,
         type: 3}
