@@ -119,13 +119,13 @@ GameObject:
   - component: {fileID: 1772864488767088690}
   - component: {fileID: 7126097633941721371}
   - component: {fileID: 824525932}
-  - component: {fileID: 824525950}
   - component: {fileID: 5893394884078251563}
   - component: {fileID: 119847008708912785}
   - component: {fileID: 2005204315842673551}
   - component: {fileID: 3374749970672222704}
   - component: {fileID: 8117333926711839525}
   - component: {fileID: 167059064127891269}
+  - component: {fileID: 2013175890686400376}
   - component: {fileID: 7048689645299194107}
   - component: {fileID: 215356222859256989}
   m_Layer: 13
@@ -592,7 +592,7 @@ MonoBehaviour:
       - {fileID: 2854295689687570740}
     Transitions:
       array:
-      - Decision: {fileID: 824525950}
+      - Decision: {fileID: 2013175890686400376}
         TrueState: Pre-Attack
         FalseState: Idle
   - StateName: Pre-Attack
@@ -604,7 +604,7 @@ MonoBehaviour:
       - Decision: {fileID: 824525932}
         TrueState: 
         FalseState: Idle
-      - Decision: {fileID: 824525950}
+      - Decision: {fileID: 2013175890686400376}
         TrueState: 
         FalseState: Idle
       - Decision: {fileID: 5893394884078251563}
@@ -617,7 +617,7 @@ MonoBehaviour:
       - {fileID: 2005204315842673551}
     Transitions:
       array:
-      - Decision: {fileID: 824525950}
+      - Decision: {fileID: 2013175890686400376}
         TrueState: 
         FalseState: Idle
       - Decision: {fileID: 824525932}
@@ -634,7 +634,7 @@ MonoBehaviour:
       - {fileID: 8010756260577516807}
     Transitions:
       array:
-      - Decision: {fileID: 824525950}
+      - Decision: {fileID: 2013175890686400376}
         TrueState: 
         FalseState: Idle
       - Decision: {fileID: 3374749970672222704}
@@ -746,24 +746,6 @@ MonoBehaviour:
   Label: 
   ComparisonMode: 1
   Distance: 2
---- !u!114 &824525950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c522f668e1b331438fd11022c69a8a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Label: 
-  Radius: 2.4
-  DetectionOriginOffset: {x: 3.88, y: 0, z: 0}
-  TargetLayer:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!114 &5893394884078251563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -855,6 +837,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
+--- !u!114 &2013175890686400376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817e5a5fe0898ae4789b92ad0fb3cc01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: 
+  DetectMethod: 1
+  DetectionDirection: 2
+  RayWidth: 7
+  DetectionDistance: 18
+  DetectionOriginOffset: {x: 0, y: 0, z: 0}
+  TargetLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  ObstaclesLayer:
+    serializedVersion: 2
+    m_Bits: 264448
 --- !u!114 &7048689645299194107
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -881,7 +881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1383539409296422, guid: 6d7d6c75e24fdfd4480ff08d72cb381d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 6d7d6c75e24fdfd4480ff08d72cb381d, type: 3}
       propertyPath: m_RootOrder
@@ -2342,6 +2342,10 @@ PrefabInstance:
     - target: {fileID: 1383539409296422, guid: 4deb2f3b8dbb9b54d98b9f3086deed41, type: 3}
       propertyPath: m_Name
       value: "\u7CBE\u82F1\u602A\u6D4B\u8BD5\u5355\u5143RobotHard"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1383539409296422, guid: 4deb2f3b8dbb9b54d98b9f3086deed41, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 4deb2f3b8dbb9b54d98b9f3086deed41, type: 3}
       propertyPath: m_RootOrder

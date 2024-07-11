@@ -809,8 +809,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: "\u53D1\u73B0\u73A9\u5BB6\u5230\u9884\u8B66\u4E2D\u95F4\u7684\u95F4\u9694\u65F6\u95F4"
-  AfterTimeMin: 0.8
-  AfterTimeMax: 0.8
+  AfterTimeMin: 0.4
+  AfterTimeMax: 0.4
 --- !u!114 &119847008708912785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,8 +824,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: "\u9884\u8B66\u65F6\u95F4"
-  AfterTimeMin: 1
-  AfterTimeMax: 1
+  AfterTimeMin: 0.8
+  AfterTimeMax: 0.8
 --- !u!114 &2005204315842673551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1121,7 +1121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 0
   Label: "\u671D\u73A9\u5BB6\u51B2\u523A"
-  MinimumDistance: 2
+  MinimumDistance: 0
 --- !u!114 &4208969040246872227
 MonoBehaviour:
   m_ObjectHideFlags: 0
