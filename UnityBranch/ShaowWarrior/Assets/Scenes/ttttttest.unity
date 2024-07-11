@@ -1076,7 +1076,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1383539409296422, guid: 25a3e1a5eb389174495c5670ce676eff, type: 3}
       propertyPath: m_Name
-      value: "\u81EA\u7206\u602A\u6D4B\u8BD5\u5355\u5143"
+      value: "\u81EA\u7206\u602A\u6D4B\u8BD5\u5355\u5143RobotBoom"
       objectReference: {fileID: 0}
     - target: {fileID: 1383539409296422, guid: 25a3e1a5eb389174495c5670ce676eff, type: 3}
       propertyPath: m_IsActive
@@ -2311,7 +2311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1951000166
 Transform:
   m_ObjectHideFlags: 0
@@ -2341,7 +2341,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1383539409296422, guid: 4deb2f3b8dbb9b54d98b9f3086deed41, type: 3}
       propertyPath: m_Name
-      value: "\u7CBE\u82F1\u602A\u6D4B\u8BD5\u5355\u5143"
+      value: "\u7CBE\u82F1\u602A\u6D4B\u8BD5\u5355\u5143RobotHard"
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 4deb2f3b8dbb9b54d98b9f3086deed41, type: 3}
       propertyPath: m_RootOrder

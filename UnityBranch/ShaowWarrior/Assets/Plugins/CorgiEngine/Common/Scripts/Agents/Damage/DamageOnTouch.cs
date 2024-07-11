@@ -341,6 +341,14 @@ namespace MoreMountains.CorgiEngine
 							print("弹反成功, 且弹反对象为自爆怪");
 							return;
 						}
+
+						if (collider.gameObject.name.Contains("Hard"))
+						{
+							collider.GetComponent<AIBrain>().TransitionToState("Stun");
+							collider.GetComponent<CharacterStun>().StunFor(2.0f);
+							print("弹反成功, 且弹反对象为精英怪");
+							return;
+						}
 						if (hp!= null) {
 							hp.Kill();
 							print("弹反成功, 且弹反对象为近战/远程普通敌人");
