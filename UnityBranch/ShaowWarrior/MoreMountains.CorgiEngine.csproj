@@ -252,6 +252,7 @@
     <Compile Include="Assets\Plugins\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterInventory.cs" />
     <Compile Include="Assets\Plugins\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIActionPatrolWithinBounds.cs" />
     <Compile Include="Assets\Plugins\CorgiEngine\Demos\SuperHipsterBros\Scripts\SuperHipsterBrosHealth.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIActionRotate.cs" />
     <Compile Include="Assets\Plugins\CorgiEngine\Common\Scripts\Agents\Weapons\WeaponIK.cs" />
     <Compile Include="Assets\Plugins\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterPause.cs" />
     <Compile Include="Assets\Plugins\CorgiEngine\Common\Scripts\Achievements\AchievementRules.cs" />
@@ -298,7 +299,6 @@
     <Compile Include="Assets\Plugins\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterDash.cs" />
     <Compile Include="Assets\Plugins\CorgiEngine\Common\Scripts\Items\PickableWeapon.cs" />
     <Compile Include="Assets\Plugins\CorgiEngine\Common\Scripts\Agents\CharacterAbilities\CharacterAbilityNodeSwap.cs" />
-    <Compile Include="Assets\Plugins\CorgiEngine\Common\Scripts\Agents\AI\Advanced\AIActionRotate.cs" />
     <None Include="Assets\Plugins\CorgiEngine\Demos\Corgi2D\Spine\SpaceCorgi\space-corgi.json" />
     <None Include="Assets\Plugins\CorgiEngine\Demos\Corgi2D\Spine\Heavy\heavy-corgi.atlas.txt" />
     <None Include="Assets\Plugins\CorgiEngine\Demos\Brobro\Spine\Brobro\space-corgi.json" />

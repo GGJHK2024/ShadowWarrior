@@ -1233,8 +1233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: "\u9884\u8B66\u65F6\u95F4"
-  AfterTimeMin: 0.4
-  AfterTimeMax: 0.4
+  AfterTimeMin: 1
+  AfterTimeMax: 1
 --- !u!114 &3374749970672222704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1347,9 +1347,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d939bdb47054442b867a5a47651971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Label: "\u8DDD\u79BB\u5927\u4E8E5\uFF1F"
+  Label: "\u8DDD\u79BB\u5927\u4E8E10\uFF1F"
   ComparisonMode: 3
-  Distance: 5
+  Distance: 10
 --- !u!114 &8330690462192422163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6804,7 +6804,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260318467413441195}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4263149, y: 0.26968426, z: 0}
+  m_LocalPosition: {x: 0.4263149, y: 1.05, z: 0}
   m_LocalScale: {x: 0.20000005, y: 0.20000005, z: 0.20000005}
   m_ConstrainProportionsScale: 1
   m_Children: []

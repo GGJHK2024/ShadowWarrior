@@ -50,6 +50,7 @@ namespace MoreMountains.CorgiEngine
 		/// <returns></returns>
 		protected virtual bool EvaluateHealth()
 		{
+			print("blood decision");
 			bool returnValue = false;
 
 			if (OnlyOnce && _once)
