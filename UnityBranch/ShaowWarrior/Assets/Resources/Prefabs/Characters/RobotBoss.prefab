@@ -136,6 +136,8 @@ GameObject:
   - component: {fileID: 6212283320294887756}
   - component: {fileID: 3304581857466076515}
   - component: {fileID: 3370762444585894986}
+  - component: {fileID: 8305416174236230723}
+  - component: {fileID: 7608608646974358090}
   - component: {fileID: 3255771495159675196}
   - component: {fileID: 3803977867398092095}
   - component: {fileID: 6164455834399737532}
@@ -143,6 +145,9 @@ GameObject:
   - component: {fileID: 5212799900775100112}
   - component: {fileID: 1368819302597522832}
   - component: {fileID: 1810765653916226746}
+  - component: {fileID: 8985169662372611453}
+  - component: {fileID: 4859686400614716388}
+  - component: {fileID: 1275225872333852819}
   m_Layer: 13
   m_Name: RobotBoss
   m_TagString: Untagged
@@ -896,11 +901,34 @@ MonoBehaviour:
       - Decision: {fileID: 2013175890686400376}
         TrueState: 
         FalseState: Idle
-      - Decision: {fileID: 0}
+      - Decision: {fileID: 119847008708912785}
+        TrueState: Attack2-hittt_1
+        FalseState: 
+  - StateName: ShowMark2.1
+    Actions:
+      array:
+      - {fileID: 7126097633941721371}
+      - {fileID: 2005204315842673551}
+    Transitions:
+      array:
+      - Decision: {fileID: 2013175890686400376}
         TrueState: 
         FalseState: Idle
       - Decision: {fileID: 119847008708912785}
-        TrueState: Attack2-hittt
+        TrueState: Attack2-hittt_2
+        FalseState: 
+  - StateName: ShowMark2.2
+    Actions:
+      array:
+      - {fileID: 7126097633941721371}
+      - {fileID: 2005204315842673551}
+    Transitions:
+      array:
+      - Decision: {fileID: 2013175890686400376}
+        TrueState: 
+        FalseState: Idle
+      - Decision: {fileID: 119847008708912785}
+        TrueState: Attack2-hittt_3
         FalseState: 
   - StateName: ShowMark3
     Actions:
@@ -988,21 +1016,46 @@ MonoBehaviour:
       - Decision: {fileID: 1368819302597522832}
         TrueState: Idle
         FalseState: 
-  - StateName: Attack2-hittt
+  - StateName: Attack2-hittt_1
     Actions:
       array:
       - {fileID: 7126097633941721371}
       - {fileID: 3370762444585894986}
-      - {fileID: 5474159603087942100}
+      - {fileID: 1772864488767088690}
     Transitions:
       array:
       - Decision: {fileID: 2013175890686400376}
         TrueState: 
         FalseState: Idle
-      - Decision: {fileID: 0}
+      - Decision: {fileID: 8985169662372611453}
+        TrueState: ShowMark2.1
+        FalseState: 
+  - StateName: Attack2-hittt_2
+    Actions:
+      array:
+      - {fileID: 7126097633941721371}
+      - {fileID: 8305416174236230723}
+      - {fileID: 1772864488767088690}
+    Transitions:
+      array:
+      - Decision: {fileID: 2013175890686400376}
         TrueState: 
         FalseState: Idle
-      - Decision: {fileID: 3374749970672222704}
+      - Decision: {fileID: 4859686400614716388}
+        TrueState: ShowMark2.2
+        FalseState: 
+  - StateName: Attack2-hittt_3
+    Actions:
+      array:
+      - {fileID: 7126097633941721371}
+      - {fileID: 7608608646974358090}
+      - {fileID: 1772864488767088690}
+    Transitions:
+      array:
+      - Decision: {fileID: 2013175890686400376}
+        TrueState: 
+        FalseState: Idle
+      - Decision: {fileID: 1275225872333852819}
         TrueState: Idle
         FalseState: 
   - StateName: Attack3-dash
@@ -1419,8 +1472,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitializationMode: 0
+  Label: switch_weapon_Hit
+  NewWeapon: {fileID: 114246937138071502, guid: 4f81aa0af8ef8f448ab952453722b091,
+    type: 3}
+--- !u!114 &8305416174236230723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a93d6b69d88cf584492eef833cde0479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
+  Label: switch_weapon_Hitt
+  NewWeapon: {fileID: 114246937138071502, guid: 77c78734c9a53924782a4605e1f4ac06,
+    type: 3}
+--- !u!114 &7608608646974358090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a93d6b69d88cf584492eef833cde0479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
   Label: switch_weapon_Hittt
-  NewWeapon: {fileID: 0}
+  NewWeapon: {fileID: 114246937138071502, guid: d85c4fb483549ca4b84eb52e2fe13545,
+    type: 3}
 --- !u!114 &3255771495159675196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1559,6 +1645,51 @@ MonoBehaviour:
   Label: "\u5927\u98CE\u8F66\u65F6\u95F4"
   AfterTimeMin: 0.8
   AfterTimeMax: 0.8
+--- !u!114 &8985169662372611453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b7939ffd2f5df4e8efb5fa83e99637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: "\u4E00\u6BB5\u653B\u51FB\u65F6\u95F4"
+  AfterTimeMin: 0.3
+  AfterTimeMax: 0.3
+--- !u!114 &4859686400614716388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b7939ffd2f5df4e8efb5fa83e99637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: "\u4E8C\u6BB5\u653B\u51FB\u65F6\u95F4"
+  AfterTimeMin: 0.6
+  AfterTimeMax: 0.6
+--- !u!114 &1275225872333852819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b7939ffd2f5df4e8efb5fa83e99637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: "\u4E09\u6BB5\u653B\u51FB\u65F6\u95F4"
+  AfterTimeMin: 0.7
+  AfterTimeMax: 0.7
 --- !u!1 &1906052747890022
 GameObject:
   m_ObjectHideFlags: 0
