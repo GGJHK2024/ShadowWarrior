@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4576885046594878}
   - component: {fileID: 114246937138071502}
+  - component: {fileID: 1809132945177769687}
   m_Layer: 0
   m_Name: Attack4-360_4
   m_TagString: Untagged
@@ -175,6 +176,27 @@ MonoBehaviour:
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
+--- !u!95 &1809132945177769687
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987079591012776}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3aea725ba4cd8e34ea17328cd4eddb42, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &263493511036029803
 GameObject:
   m_ObjectHideFlags: 0
