@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 8330690462192422163}
   - component: {fileID: 7778989946428147533}
   - component: {fileID: 5474159603087942100}
-  - component: {fileID: 7409168425940226837}
   - component: {fileID: 6212283320294887756}
   - component: {fileID: 3304581857466076515}
   - component: {fileID: 3370762444585894986}
@@ -143,6 +142,7 @@ GameObject:
   - component: {fileID: 3496265214787690737}
   - component: {fileID: 5212799900775100112}
   - component: {fileID: 1368819302597522832}
+  - component: {fileID: 1810765653916226746}
   m_Layer: 13
   m_Name: RobotBoss
   m_TagString: Untagged
@@ -868,8 +868,8 @@ MonoBehaviour:
         TrueState: 
         FalseState: Idle
       - Decision: {fileID: 8330690462192422163}
-        TrueState: ShowMark4.5
-        FalseState: Teleportation
+        TrueState: ShowMark4
+        FalseState: ShowMark5
   - StateName: ShowMark1
     Actions:
       array:
@@ -928,11 +928,8 @@ MonoBehaviour:
       - Decision: {fileID: 2013175890686400376}
         TrueState: 
         FalseState: Idle
-      - Decision: {fileID: 0}
-        TrueState: 
-        FalseState: Idle
       - Decision: {fileID: 119847008708912785}
-        TrueState: Attack4-360-1
+        TrueState: Attack4-360-2
         FalseState: 
   - StateName: ShowMark4.5
     Actions:
@@ -948,7 +945,7 @@ MonoBehaviour:
         TrueState: 
         FalseState: Idle
       - Decision: {fileID: 119847008708912785}
-        TrueState: Attack4.5-360-2
+        TrueState: Attack3-dash
         FalseState: 
   - StateName: ShowMark4.5-2
     Actions:
@@ -960,11 +957,8 @@ MonoBehaviour:
       - Decision: {fileID: 2013175890686400376}
         TrueState: 
         FalseState: Idle
-      - Decision: {fileID: 0}
-        TrueState: 
-        FalseState: Idle
       - Decision: {fileID: 119847008708912785}
-        TrueState: Attack4.2-2-360-4
+        TrueState: Attack4-360-4
         FalseState: 
   - StateName: ShowMark5
     Actions:
@@ -1027,21 +1021,7 @@ MonoBehaviour:
       - Decision: {fileID: 3374749970672222704}
         TrueState: Idle
         FalseState: 
-  - StateName: Attack4-360-1
-    Actions:
-      array:
-      - {fileID: 7126097633941721371}
-      - {fileID: 7409168425940226837}
-      - {fileID: 1772864488767088690}
-    Transitions:
-      array:
-      - Decision: {fileID: 2013175890686400376}
-        TrueState: 
-        FalseState: Idle
-      - Decision: {fileID: 0}
-        TrueState: 
-        FalseState: Idle
-  - StateName: Attack4.5-360-2
+  - StateName: Attack4-360-2
     Actions:
       array:
       - {fileID: 7126097633941721371}
@@ -1052,10 +1032,19 @@ MonoBehaviour:
       - Decision: {fileID: 2013175890686400376}
         TrueState: 
         FalseState: Idle
-      - Decision: {fileID: 0}
-        TrueState: 
-        FalseState: Idle
-  - StateName: Attack4.2-2-360-4
+      - Decision: {fileID: 1810765653916226746}
+        TrueState: Attack4_stage2Check
+        FalseState: 
+  - StateName: Attack4_stage2Check
+    Actions:
+      array:
+      - {fileID: 6164455834399737532}
+    Transitions:
+      array:
+      - Decision: {fileID: 1121443921426021619}
+        TrueState: Idle
+        FalseState: ShowMark4.5-2
+  - StateName: Attack4-360-4
     Actions:
       array:
       - {fileID: 7126097633941721371}
@@ -1066,9 +1055,9 @@ MonoBehaviour:
       - Decision: {fileID: 2013175890686400376}
         TrueState: 
         FalseState: Idle
-      - Decision: {fileID: 0}
-        TrueState: 
-        FalseState: Idle
+      - Decision: {fileID: 1810765653916226746}
+        TrueState: Idle
+        FalseState: 
   - StateName: Attack5-boomer
     Actions:
       array:
@@ -1333,9 +1322,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d939bdb47054442b867a5a47651971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Label: "\u8DDD\u79BB\u5927\u4E8E10\uFF1F"
+  Label: "\u8DDD\u79BB\u5927\u4E8E12\uFF1F"
   ComparisonMode: 3
-  Distance: 10
+  Distance: 12
 --- !u!114 &8330690462192422163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1385,21 +1374,6 @@ MonoBehaviour:
   Label: "\u653B\u51FB3-\u51B2\u523A"
   MinimumDistance: 0
   speedMultiplier: 1
---- !u!114 &7409168425940226837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a93d6b69d88cf584492eef833cde0479, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationMode: 0
-  Label: switch_weapon_360-1
-  NewWeapon: {fileID: 0}
 --- !u!114 &6212283320294887756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1414,7 +1388,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 0
   Label: switch_weapon_360-2
-  NewWeapon: {fileID: 0}
+  NewWeapon: {fileID: 114246937138071502, guid: 16254598d6d7a4f4e9afc844c89cbcf3,
+    type: 3}
 --- !u!114 &3304581857466076515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1429,7 +1404,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 0
   Label: switch_weapon_360-4
-  NewWeapon: {fileID: 0}
+  NewWeapon: {fileID: 114246937138071502, guid: c7bd2cb1fef3cd4429693109dff2eebb,
+    type: 3}
 --- !u!114 &3370762444585894986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1568,6 +1544,21 @@ MonoBehaviour:
   Label: "\u5C04\u51FB\u65F6\u95F4"
   AfterTimeMin: 3
   AfterTimeMax: 3
+--- !u!114 &1810765653916226746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b7939ffd2f5df4e8efb5fa83e99637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: "\u5927\u98CE\u8F66\u65F6\u95F4"
+  AfterTimeMin: 0.8
+  AfterTimeMax: 0.8
 --- !u!1 &1906052747890022
 GameObject:
   m_ObjectHideFlags: 0

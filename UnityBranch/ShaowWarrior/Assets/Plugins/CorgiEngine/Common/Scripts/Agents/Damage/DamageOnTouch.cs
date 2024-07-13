@@ -362,9 +362,10 @@ namespace MoreMountains.CorgiEngine
 					if (collider.gameObject.name.Contains("Boss"))
 					{
 						string curStateName = collider.GetComponent<AIBrain>().CurrentState.StateName;
+						// print(curStateName);
 						// 晕2s
 						if (curStateName.Contains("ShowMark2")
-						    ||  curStateName == "ShowMark3")
+						    ||  curStateName == "ShowMark3" ||  curStateName == "ShowMark4")
 						{
 							// print("boss 眩晕 2s");
 							collider.GetComponent<AIBrain>().TransitionToState("Stun2s");
