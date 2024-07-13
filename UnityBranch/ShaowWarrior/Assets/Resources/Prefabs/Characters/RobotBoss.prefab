@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 8985169662372611453}
   - component: {fileID: 4859686400614716388}
   - component: {fileID: 1275225872333852819}
+  - component: {fileID: 4760074071532878544}
   m_Layer: 13
   m_Name: RobotBoss
   m_TagString: Untagged
@@ -908,6 +909,7 @@ MonoBehaviour:
     Actions:
       array:
       - {fileID: 7126097633941721371}
+      - {fileID: 4760074071532878544}
       - {fileID: 2005204315842673551}
     Transitions:
       array:
@@ -921,6 +923,7 @@ MonoBehaviour:
     Actions:
       array:
       - {fileID: 7126097633941721371}
+      - {fileID: 4760074071532878544}
       - {fileID: 2005204315842673551}
     Transitions:
       array:
@@ -1690,6 +1693,22 @@ MonoBehaviour:
   Label: "\u4E09\u6BB5\u653B\u51FB\u65F6\u95F4"
   AfterTimeMin: 0.7
   AfterTimeMax: 0.7
+--- !u!114 &4760074071532878544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fce3bcf6da4a2d46a0a02c021b5bb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
+  Label: "\u8D70\u5411\u73A9\u5BB6"
+  MinimumDistance: 3
+  speedMultiplier: 1
 --- !u!1 &1906052747890022
 GameObject:
   m_ObjectHideFlags: 0
