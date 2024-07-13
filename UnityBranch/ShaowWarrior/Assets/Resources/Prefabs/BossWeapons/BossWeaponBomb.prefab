@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 6100000}
   - component: {fileID: 5000000}
-  - component: {fileID: 114000014182369340}
   - component: {fileID: 114000013273397352}
   - component: {fileID: 114000010385110490}
   m_Layer: 12
-  m_Name: BossWeaponProjectile
+  m_Name: BossWeaponBomb
   m_TagString: Untagged
   m_Icon: {fileID: 1177953632, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -85,39 +84,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &114000014182369340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e1a732e2aa364c569bbb79498af8c5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BoundsBasedOn: 1
-  ExecuteOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-  ExecuteOnDisable:
-    m_PersistentCalls:
-      m_Calls: []
-  LifeTime: 5
-  FaceDirection: 1
-  Speed: 200
-  Acceleration: 0
-  Direction: {x: -1, y: 0, z: 0}
-  DirectionCanBeChangedBySpawner: 1
-  FlipValue: {x: -1, y: 1, z: 1}
-  ProjectileIsFacingRight: 1
-  InitialInvulnerabilityDuration: 0
-  DamageOwner: 0
-  SpawnSecurityCheck: 0
-  SpawnSecurityCheckLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &114000013273397352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,8 +101,8 @@ MonoBehaviour:
     m_Bits: 768
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 25
-  MaxDamageCaused: 25
+  MinDamageCaused: 30
+  MaxDamageCaused: 30
   TypedDamages: []
   DamageCausedKnockbackType: 1
   DamageCausedKnockbackDirection: 0
@@ -491,7 +457,7 @@ MonoBehaviour:
         PlayEvents:
           m_PersistentCalls:
             m_Calls:
-            - m_Target: {fileID: 114000014182369340}
+            - m_Target: {fileID: 0}
               m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.Projectile, MoreMountains.CorgiEngine
               m_MethodName: SetDamage
               m_Mode: 3
