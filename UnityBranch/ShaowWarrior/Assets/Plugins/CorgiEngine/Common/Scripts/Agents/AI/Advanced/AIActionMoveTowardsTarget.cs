@@ -16,6 +16,8 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("The minimum distance to the target that this Character can reach")]
 		public float MinimumDistance = 1f;
 
+		public int speedMultiplier = 1;
+
 		protected CharacterHorizontalMovement _characterHorizontalMovement;
         
 		/// <summary>
@@ -52,12 +54,25 @@ namespace MoreMountains.CorgiEngine
 
 			if (this.transform.position.x < _brain.Target.position.x)
 			{
-				_characterHorizontalMovement.SetHorizontalMove(1f);
+				//_characterHorizontalMovement.SetHorizontalMove(1f);
+				transform.position = Vector3.MoveTowards(transform.position, _brain.Target.position, _characterHorizontalMovement.WalkSpeed
+					* speedMultiplier * 2 * Time.deltaTime);
 			}            
 			else
 			{
-				_characterHorizontalMovement.SetHorizontalMove(-1f);
+				//_characterHorizontalMovement.SetHorizontalMove(-1f);
+				transform.position = Vector3.MoveTowards(transform.position, _brain.Target.position, _characterHorizontalMovement.WalkSpeed
+					* speedMultiplier * 2 * Time.deltaTime);
 			}
+		}
+
+		/// <summary>
+		/// 设置冲刺系数
+		/// </summary>
+		/// <param name="x"></param>
+		public void SetSpeedMultiplier(int x)
+		{
+			speedMultiplier = x;
 		}
 
 		/// <summary>

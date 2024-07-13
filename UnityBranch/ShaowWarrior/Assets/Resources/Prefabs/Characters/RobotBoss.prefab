@@ -115,10 +115,10 @@ GameObject:
   - component: {fileID: 963064780020555775}
   - component: {fileID: 8117333926711839525}
   - component: {fileID: 114703903213212616}
+  - component: {fileID: 3662834441137322243}
   - component: {fileID: 215356222859256989}
   - component: {fileID: 4786710359462847881}
   - component: {fileID: 2854295689687570740}
-  - component: {fileID: 8010756260577516807}
   - component: {fileID: 7126097633941721371}
   - component: {fileID: 2005204315842673551}
   - component: {fileID: 1772864488767088690}
@@ -139,10 +139,13 @@ GameObject:
   - component: {fileID: 3304581857466076515}
   - component: {fileID: 3370762444585894986}
   - component: {fileID: 3255771495159675196}
+  - component: {fileID: 3803977867398092095}
   - component: {fileID: 6164455834399737532}
+  - component: {fileID: 3496265214787690737}
+  - component: {fileID: 5212799900775100112}
   m_Layer: 13
   m_Name: RobotBoss
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,7 +218,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.057739258, y: 0.19379699}
+  m_Offset: {x: -0.45218015, y: -0.95716363}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -226,7 +229,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.4812317, y: 7.0394144}
+  m_Size: {x: 2.4799905, y: 4.737493}
   m_EdgeRadius: 0
 --- !u!114 &114993703828558004
 MonoBehaviour:
@@ -768,6 +771,46 @@ MonoBehaviour:
   BlockingWeaponStates: 
   PreventJumpWhenInZone: 1
   ActivationCooldownDuration: 0
+--- !u!114 &3662834441137322243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76891b3b532f84acaaeed44c357bd00c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  ApplyDamageOnTriggerEnter: 1
+  ApplyDamageOnTriggerStay: 1
+  MinDamageCaused: 10
+  MaxDamageCaused: 10
+  TypedDamages: []
+  DamageCausedKnockbackType: 1
+  DamageCausedKnockbackDirection: 0
+  DamageCausedKnockbackForce: {x: 10, y: 2}
+  InvincibilityDuration: 0.5
+  RepeatDamageOverTime: 0
+  AmountOfRepeats: 3
+  DurationBetweenRepeats: 1
+  DamageOverTimeInterruptible: 1
+  RepeatedDamageType: {fileID: 0}
+  DamageTakenEveryTime: 0
+  DamageTakenDamageable: 0
+  DamageTakenNonDamageable: 0
+  DamageTakenKnockbackType: 0
+  DamageTakenKnockbackDirection: 0
+  DamageTakenKnockbackForce: {x: 0, y: 0}
+  DamageTakenInvincibilityDuration: 0.5
+  HitDamageableFeedback: {fileID: 0}
+  HitNonDamageableFeedback: {fileID: 0}
+  FreezeFramesOnHitDuration: 0
+  Owner: {fileID: 0}
 --- !u!114 &215356222859256989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,6 +844,7 @@ MonoBehaviour:
     Actions:
       array:
       - {fileID: 2854295689687570740}
+      - {fileID: 5212799900775100112}
     Transitions:
       array:
       - Decision: {fileID: 2013175890686400376}
@@ -1014,13 +1058,13 @@ MonoBehaviour:
     Actions:
       array:
       - {fileID: 7126097633941721371}
+      - {fileID: 3496265214787690737}
+      - {fileID: 3803977867398092095}
       - {fileID: 5474159603087942100}
+      - {fileID: 1772864488767088690}
     Transitions:
       array:
       - Decision: {fileID: 2013175890686400376}
-        TrueState: 
-        FalseState: Idle
-      - Decision: {fileID: 0}
         TrueState: 
         FalseState: Idle
       - Decision: {fileID: 3374749970672222704}
@@ -1141,21 +1185,6 @@ MonoBehaviour:
   BoundsMethod: 0
   BoundsExtentsLeft: 4.59
   BoundsExtentsRight: 3.24
---- !u!114 &8010756260577516807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fce3bcf6da4a2d46a0a02c021b5bb0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationMode: 0
-  Label: Player
-  MinimumDistance: 1
 --- !u!114 &7126097633941721371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1201,7 +1230,7 @@ MonoBehaviour:
   InitializationMode: 1
   Label: 
   FaceTarget: 1
-  AimAtTarget: 0
+  AimAtTarget: 1
   TargetOffset: {x: 0, y: 0, z: 0}
   TargetHandleWeapon: {fileID: 114238553675504360}
   isMeleeWeapon: 0
@@ -1248,8 +1277,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: "\u51B2\u523A\u65F6\u957F"
-  AfterTimeMin: 0.5
-  AfterTimeMax: 0.5
+  AfterTimeMin: 1
+  AfterTimeMax: 1
 --- !u!114 &3922361805616120248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1398,6 +1427,7 @@ MonoBehaviour:
   InitializationMode: 0
   Label: "\u653B\u51FB3-\u51B2\u523A"
   MinimumDistance: 0
+  speedMultiplier: 1
 --- !u!114 &7409168425940226837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1472,7 +1502,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 0
   Label: switch_weapon_Shottt
-  NewWeapon: {fileID: 0}
+  NewWeapon: {fileID: 114000010596316938, guid: 1ba8fe229e2a2ab4fa45cb366f293b45,
+    type: 3}
+--- !u!114 &3803977867398092095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a93d6b69d88cf584492eef833cde0479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
+  Label: switch_weapon_Dash
+  NewWeapon: {fileID: 114246937138071502, guid: 5b2a7dbad82b0444bb61cd593e200c11,
+    type: 3}
 --- !u!114 &6164455834399737532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1487,6 +1534,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 0
   Label: "\u6211\u6655\u4E86"
+--- !u!114 &3496265214787690737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653b45e453e54664e9b7ea62fbd9d3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
+  Label: "\u79FB\u901F\u589E\u52A0\uFF08\u51B2\u523A\uFF09"
+  TargetEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5474159603087942100}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.AIActionMoveTowardsTarget,
+          MoreMountains.CorgiEngine
+        m_MethodName: SetSpeedMultiplier
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 4
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnlyPlayWhenEnteringState: 1
+--- !u!114 &5212799900775100112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653b45e453e54664e9b7ea62fbd9d3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
+  Label: "\u79FB\u901F\u6062\u590D"
+  TargetEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5474159603087942100}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.AIActionMoveTowardsTarget,
+          MoreMountains.CorgiEngine
+        m_MethodName: SetSpeedMultiplier
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnlyPlayWhenEnteringState: 1
 --- !u!1 &1906052747890022
 GameObject:
   m_ObjectHideFlags: 0

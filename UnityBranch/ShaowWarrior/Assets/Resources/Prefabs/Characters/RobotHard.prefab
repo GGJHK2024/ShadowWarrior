@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 774042246002766047}
   m_Layer: 13
   m_Name: RobotHard
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1195,7 +1195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 0
   Label: 
-  MinimumDistance: 5
+  MinimumDistance: 2
 --- !u!1 &1906052747890022
 GameObject:
   m_ObjectHideFlags: 0

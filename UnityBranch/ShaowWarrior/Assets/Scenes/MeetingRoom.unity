@@ -428,7 +428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 6d7d6c75e24fdfd4480ff08d72cb381d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -26.3
+      value: -23.34
       objectReference: {fileID: 0}
     - target: {fileID: 4135398658232238, guid: 6d7d6c75e24fdfd4480ff08d72cb381d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -471,6 +471,21 @@ PrefabInstance:
         type: 3}
       propertyPath: MaximumHealth
       value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854295689687570740, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
+        type: 3}
+      propertyPath: BoundsMethod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854295689687570740, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
+        type: 3}
+      propertyPath: BoundsExtentsLeft
+      value: 5.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854295689687570740, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
+        type: 3}
+      propertyPath: BoundsExtentsRight
+      value: 6.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d7d6c75e24fdfd4480ff08d72cb381d, type: 3}
@@ -5873,11 +5888,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7a343ffc127af4b41b1e509d55d21956, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.86
+      value: -15.79
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7a343ffc127af4b41b1e509d55d21956, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.28
+      value: -1.73
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7a343ffc127af4b41b1e509d55d21956, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6560,7 +6575,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 190956, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 490956, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
       propertyPath: m_RootOrder
@@ -6693,7 +6708,7 @@ MonoBehaviour:
   BoundsMode: 1
   LevelBounds:
     m_Center: {x: -0.42, y: 0, z: 0}
-    m_Extent: {x: 23, y: 8.32, z: 5}
+    m_Extent: {x: 26.21, y: 12.8, z: 5}
   ConvertToColliderBoundsButton: 0
   LoadingSceneMode: 1
   LoadingSceneName: LoadingScreen
@@ -6820,14 +6835,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578735966}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.64, y: -3.22, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.03271813, w: 0.99946463}
+  m_LocalPosition: {x: -10.598987, y: -2.6298275, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 207578707}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.75}
 --- !u!61 &1578735968
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7027,7 +7042,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659939657}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.18, y: -3.57, z: 0}
+  m_LocalPosition: {x: 4.69, y: -2.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

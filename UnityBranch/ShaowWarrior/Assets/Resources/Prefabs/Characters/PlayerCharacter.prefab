@@ -5036,7 +5036,7 @@ MonoBehaviour:
     DisplayWarnings: 1
   PlatformMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 33024
   MovingPlatformMask:
     serializedVersion: 2
     m_Bits: 262144
