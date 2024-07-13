@@ -115,7 +115,6 @@ GameObject:
   - component: {fileID: 963064780020555775}
   - component: {fileID: 8117333926711839525}
   - component: {fileID: 114703903213212616}
-  - component: {fileID: 3662834441137322243}
   - component: {fileID: 215356222859256989}
   - component: {fileID: 4786710359462847881}
   - component: {fileID: 2854295689687570740}
@@ -143,6 +142,7 @@ GameObject:
   - component: {fileID: 6164455834399737532}
   - component: {fileID: 3496265214787690737}
   - component: {fileID: 5212799900775100112}
+  - component: {fileID: 1368819302597522832}
   m_Layer: 13
   m_Name: RobotBoss
   m_TagString: Untagged
@@ -771,46 +771,6 @@ MonoBehaviour:
   BlockingWeaponStates: 
   PreventJumpWhenInZone: 1
   ActivationCooldownDuration: 0
---- !u!114 &3662834441137322243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383539409296422}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76891b3b532f84acaaeed44c357bd00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  ApplyDamageOnTriggerEnter: 1
-  ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 10
-  MaxDamageCaused: 10
-  TypedDamages: []
-  DamageCausedKnockbackType: 1
-  DamageCausedKnockbackDirection: 0
-  DamageCausedKnockbackForce: {x: 10, y: 2}
-  InvincibilityDuration: 0.5
-  RepeatDamageOverTime: 0
-  AmountOfRepeats: 3
-  DurationBetweenRepeats: 1
-  DamageOverTimeInterruptible: 1
-  RepeatedDamageType: {fileID: 0}
-  DamageTakenEveryTime: 0
-  DamageTakenDamageable: 0
-  DamageTakenNonDamageable: 0
-  DamageTakenKnockbackType: 0
-  DamageTakenKnockbackDirection: 0
-  DamageTakenKnockbackForce: {x: 0, y: 0}
-  DamageTakenInvincibilityDuration: 0.5
-  HitDamageableFeedback: {fileID: 0}
-  HitNonDamageableFeedback: {fileID: 0}
-  FreezeFramesOnHitDuration: 0
-  Owner: {fileID: 0}
 --- !u!114 &215356222859256989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1031,12 +991,9 @@ MonoBehaviour:
       - {fileID: 7778989946428147533}
     Transitions:
       array:
-      - Decision: {fileID: 2013175890686400376}
-        TrueState: 
-        FalseState: Idle
-      - Decision: {fileID: 0}
+      - Decision: {fileID: 1368819302597522832}
         TrueState: Idle
-        FalseState: Attack1-shoot
+        FalseState: 
   - StateName: Attack2-hittt
     Actions:
       array:
@@ -1277,8 +1234,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: "\u51B2\u523A\u65F6\u957F"
-  AfterTimeMin: 1
-  AfterTimeMax: 1
+  AfterTimeMin: 0.9
+  AfterTimeMax: 0.9
 --- !u!114 &3922361805616120248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1596,6 +1553,21 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   OnlyPlayWhenEnteringState: 1
+--- !u!114 &1368819302597522832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b7939ffd2f5df4e8efb5fa83e99637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: "\u5C04\u51FB\u65F6\u95F4"
+  AfterTimeMin: 3
+  AfterTimeMax: 3
 --- !u!1 &1906052747890022
 GameObject:
   m_ObjectHideFlags: 0
