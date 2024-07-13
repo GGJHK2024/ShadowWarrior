@@ -322,7 +322,7 @@ namespace MoreMountains.CorgiEngine
 		{
 			_collidingCollider = collider;
 			Weapon ownerWeapon;
-			if ( this.gameObject.layer!=12 && Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 13) {
+			if ( this.gameObject.layer != 12 && Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 13) {
 				print("武器攻击到敌人");
 				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player && ownerWeapon.damageSrcType == DamageSrcType.B)				
 				{
@@ -331,6 +331,7 @@ namespace MoreMountains.CorgiEngine
 						print("敌人处于预攻击（出现感叹号）状态");
 						// 如果处于预攻击（出现感叹号）状态，弹反成功
 						var hp = collider.gameObject.GetComponent<Health>();
+						// 对象为自爆怪
 						if (collider.gameObject.name.Contains("Boom"))
 						{
 							Vector2 ePos = new Vector2(collider.gameObject.transform.position.x,
@@ -341,7 +342,7 @@ namespace MoreMountains.CorgiEngine
 							print("弹反成功, 且弹反对象为自爆怪");
 							return;
 						}
-
+						// 对象为精英怪
 						if (collider.gameObject.name.Contains("Hard"))
 						{
 							collider.GetComponent<AIBrain>().TransitionToState("Stun");
@@ -355,6 +356,27 @@ namespace MoreMountains.CorgiEngine
 							ownerWeapon.WeaponBounceSuccessNear();	// 近战效果
 							MMGameEvent.Trigger(GameEventType.BounceSuccess);
 							return;
+						}
+					}
+					// 对象为boss
+					if (collider.gameObject.name.Contains("Boss"))
+					{
+						string curStateName = collider.GetComponent<AIBrain>().CurrentState.StateName;
+						// 晕2s
+						if (curStateName.Contains("ShowMark2")
+						    ||  curStateName == "ShowMark3")
+						{
+							// print("boss 眩晕 2s");
+							collider.GetComponent<AIBrain>().TransitionToState("Stun2s");
+							collider.GetComponent<CharacterStun>().StunFor(2.0f);
+							return;
+						}
+						// 晕5s
+						if (curStateName == "ShowMark4.5-2")
+						{
+							// print("boss 眩晕 5s");
+							collider.GetComponent<AIBrain>().TransitionToState("Stun5s");
+							collider.GetComponent<CharacterStun>().StunFor(5.0f);
 						}
 					}
 				}
