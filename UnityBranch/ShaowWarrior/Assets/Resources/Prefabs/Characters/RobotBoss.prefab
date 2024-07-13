@@ -149,6 +149,9 @@ GameObject:
   - component: {fileID: 4859686400614716388}
   - component: {fileID: 1275225872333852819}
   - component: {fileID: 4760074071532878544}
+  - component: {fileID: 8340358070666417857}
+  - component: {fileID: 2698394564676031043}
+  - component: {fileID: 4129096321749932512}
   m_Layer: 13
   m_Name: RobotBoss
   m_TagString: Untagged
@@ -809,6 +812,7 @@ MonoBehaviour:
   - StateName: Idle
     Actions:
       array:
+      - {fileID: 4129096321749932512}
       - {fileID: 2854295689687570740}
       - {fileID: 5212799900775100112}
     Transitions:
@@ -831,6 +835,7 @@ MonoBehaviour:
   - StateName: Stage1
     Actions:
       array:
+      - {fileID: 4129096321749932512}
       - {fileID: 7126097633941721371}
     Transitions:
       array:
@@ -867,6 +872,7 @@ MonoBehaviour:
   - StateName: Stage2
     Actions:
       array:
+      - {fileID: 4129096321749932512}
       - {fileID: 7126097633941721371}
     Transitions:
       array:
@@ -1117,14 +1123,11 @@ MonoBehaviour:
   - StateName: Attack5-boomer
     Actions:
       array:
-      - {fileID: 7126097633941721371}
-      - {fileID: 0}
+      - {fileID: 8340358070666417857}
+      - {fileID: 2698394564676031043}
     Transitions:
       array:
       - Decision: {fileID: 2013175890686400376}
-        TrueState: 
-        FalseState: Idle
-      - Decision: {fileID: 0}
         TrueState: 
         FalseState: Idle
       - Decision: {fileID: 3922361805616120248}
@@ -1709,6 +1712,53 @@ MonoBehaviour:
   Label: "\u8D70\u5411\u73A9\u5BB6"
   MinimumDistance: 3
   speedMultiplier: 1
+--- !u!114 &8340358070666417857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9dabd09b9e0b14699b4e18f9ec0778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
+  Label: "\u7206\u70B8\u4E2D\u5FC3"
+  TargetTransform: {fileID: 0}
+  OnlyRunOnce: 1
+--- !u!114 &2698394564676031043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fce3bcf6da4a2d46a0a02c021b5bb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
+  Label: "\u77AC\u79FB\u5230\u4E2D\u5FC3"
+  MinimumDistance: 0
+  speedMultiplier: 3
+--- !u!114 &4129096321749932512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383539409296422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee527d38bff61bf41bc40507f7d4342a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
+  Label: 
+  OnlyRunOnce: 1
 --- !u!1 &1906052747890022
 GameObject:
   m_ObjectHideFlags: 0
