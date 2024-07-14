@@ -67495,7 +67495,7 @@ MonoBehaviour:
   Mode: 2
   Timescale: 1
   Intensity: 0.005
-  MaximumVelocity: 5
+  MaximumVelocity: 3
   MinimumScale: {x: 0.5, y: 0.5, z: 0.5}
   MaximumScale: {x: 2, y: 2, z: 2}
   RescaleX: 1
