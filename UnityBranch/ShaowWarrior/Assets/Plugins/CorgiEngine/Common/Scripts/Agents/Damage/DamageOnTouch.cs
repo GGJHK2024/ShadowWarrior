@@ -123,6 +123,9 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("the duration of freeze frames on hit (leave it at 0 to ignore)")]
 		public float FreezeFramesOnHitDuration = 0f;
 
+		[Tooltip("magnification, 伤害倍率，默认为1，敌人眩晕时调整")]
+		public int magnification = 1;
+
 		/// the owner of the DamageOnTouch zone
 		[MMReadOnly]
 		[Tooltip("the owner of the DamageOnTouch zone")]
@@ -282,7 +285,7 @@ namespace MoreMountains.CorgiEngine
 			{
 				return;
 			}
-			Colliding (collider);
+			Colliding (collider, magnification);
 		}
 
 		public virtual void OnTriggerEnter2D(Collider2D collider)
@@ -293,7 +296,7 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			BounceCheck(collider);
-			Colliding (collider);
+			Colliding (collider, magnification);
 		}
 
 		/// <summary>
@@ -321,9 +324,20 @@ namespace MoreMountains.CorgiEngine
 		private void BounceCheck(Collider2D collider)
 		{
 			_collidingCollider = collider;
+			magnification = 1;
 			Weapon ownerWeapon;
 			if ( this.gameObject.layer != 12 && Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 13) {
 				print("武器攻击到敌人");
+				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player &&
+				    ownerWeapon.damageSrcType == DamageSrcType.A)
+				{
+					print("是玩家，且攻击类型为A（普通攻击）");
+					if (collider.gameObject.GetComponent<AIBrain>().CurrentState.StateName.Contains("Stun"))
+					{
+						// 敌人处于眩晕状态，此时伤害倍率为2倍
+						magnification = 2;
+					}
+				}	
 				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player && ownerWeapon.damageSrcType == DamageSrcType.B)				
 				{
 					// print("是玩家，且攻击类型为B（弹反）");
@@ -400,7 +414,7 @@ namespace MoreMountains.CorgiEngine
 				{
 					// print("是玩家，且攻击类型为B（弹反）");
 					collider.gameObject.GetComponent<Projectile>().SetOwner(Owner);
-					collider.gameObject.GetComponent<Projectile>().SetDamage(999);
+					collider.gameObject.GetComponent<Projectile>().SetDamage((collider.gameObject.name.Contains("Boss") ? PlayerManager.Instance.attack * 2 : 300));
 					// 将player(9)移除出伤害的layermask
 					collider.gameObject.GetComponent<DamageOnTouch>().TargetLayerMask &= ~(1 << 9);
 					// 将enemy(13)加入伤害的layermask
@@ -426,7 +440,7 @@ namespace MoreMountains.CorgiEngine
 			}
 		}
 
-		protected virtual void Colliding(Collider2D collider)
+		protected virtual void Colliding(Collider2D collider, int magnification)
 		{
 
 			if (!this.isActiveAndEnabled)
@@ -457,7 +471,7 @@ namespace MoreMountains.CorgiEngine
 			{
 				if(_colliderHealth.CurrentHealth > 0)
 				{
-					OnCollideWithDamageable(_colliderHealth);
+					OnCollideWithDamageable(_colliderHealth, magnification);
 				}
 			}
 			// if what we're colliding with can't be damaged
@@ -471,14 +485,15 @@ namespace MoreMountains.CorgiEngine
 		/// Describes what happens when colliding with a damageable object
 		/// </summary>
 		/// <param name="health">Health.</param>
-		protected virtual void OnCollideWithDamageable(Health health)
+		/// <param name="magnification">伤害倍率</param>
+		protected virtual void OnCollideWithDamageable(Health health, int magnification)
 		{
 			if (health.CanTakeDamageThisFrame())
 			{			
 				// if what we're colliding with is a CorgiController, we apply a knockback force
 				_colliderCorgiController = health.AssociatedController;
 	
-				float randomDamage = UnityEngine.Random.Range(MinDamageCaused, Mathf.Max(MaxDamageCaused, MinDamageCaused));
+				float randomDamage = UnityEngine.Random.Range(MinDamageCaused, Mathf.Max(MaxDamageCaused, MinDamageCaused)) * magnification;
 				
 				ApplyDamageCausedKnockback(randomDamage, TypedDamages);
 				
