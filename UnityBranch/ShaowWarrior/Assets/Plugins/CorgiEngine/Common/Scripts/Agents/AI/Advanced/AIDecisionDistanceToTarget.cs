@@ -41,7 +41,7 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			float distance = Vector3.Distance(this.transform.position, _brain.Target.position);
-			print("distance decision, current distance: " + distance);
+			// print("distance decision, current distance: " + distance);
 			if (ComparisonMode == ComparisonModes.StrictlyLowerThan)
 			{
 				return (distance < Distance);
