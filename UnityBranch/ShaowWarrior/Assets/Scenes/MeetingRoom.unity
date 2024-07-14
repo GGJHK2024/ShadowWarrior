@@ -336,12 +336,12 @@ PrefabInstance:
     - target: {fileID: 114961038306698606, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
         type: 3}
       propertyPath: InitialHealth
-      value: 300
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 114961038306698606, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
         type: 3}
       propertyPath: MaximumHealth
-      value: 300
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 2854295689687570740, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
         type: 3}
@@ -357,6 +357,46 @@ PrefabInstance:
         type: 3}
       propertyPath: BoundsExtentsRight
       value: 6.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786710359462847881, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
+        type: 3}
+      propertyPath: States.Array.data[25].Actions.array.Array.data[1]
+      value: 
+      objectReference: {fileID: 2067066168}
+    - target: {fileID: 4786710359462847881, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
+        type: 3}
+      propertyPath: States.Array.data[25].Actions.array.Array.data[2]
+      value: 
+      objectReference: {fileID: 2067066166}
+    - target: {fileID: 4786710359462847881, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
+        type: 3}
+      propertyPath: States.Array.data[26].Actions.array.Array.data[1]
+      value: 
+      objectReference: {fileID: 2067066168}
+    - target: {fileID: 4786710359462847881, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
+        type: 3}
+      propertyPath: States.Array.data[26].Actions.array.Array.data[2]
+      value: 
+      objectReference: {fileID: 2067066166}
+    - target: {fileID: 4786710359462847881, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
+        type: 3}
+      propertyPath: States.Array.data[25].Transitions.array.Array.data[1].Decision
+      value: 
+      objectReference: {fileID: 2067066194}
+    - target: {fileID: 4786710359462847881, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
+        type: 3}
+      propertyPath: States.Array.data[26].Transitions.array.Array.data[1].Decision
+      value: 
+      objectReference: {fileID: 2067066194}
+    - target: {fileID: 4786710359462847881, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
+        type: 3}
+      propertyPath: States.Array.data[25].Transitions.array.Array.data[1].TrueState
+      value: Stage2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786710359462847881, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
+        type: 3}
+      propertyPath: States.Array.data[26].Transitions.array.Array.data[1].TrueState
+      value: Stage2
       objectReference: {fileID: 0}
     - target: {fileID: 8340358070666417857, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
         type: 3}
@@ -6982,6 +7022,42 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 237040747}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2067066166 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3195015866491744253, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
+    type: 3}
+  m_PrefabInstance: {fileID: 237040747}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8da9ed72410c1c49b0264e4e5045e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2067066168 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2698394564676031043, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
+    type: 3}
+  m_PrefabInstance: {fileID: 237040747}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fce3bcf6da4a2d46a0a02c021b5bb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2067066194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3922361805616120248, guid: 6d7d6c75e24fdfd4480ff08d72cb381d,
+    type: 3}
+  m_PrefabInstance: {fileID: 237040747}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b7939ffd2f5df4e8efb5fa83e99637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2068913847
 GameObject:
   m_ObjectHideFlags: 0
