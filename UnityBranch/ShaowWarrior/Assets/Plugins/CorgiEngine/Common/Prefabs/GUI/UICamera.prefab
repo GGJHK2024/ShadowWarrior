@@ -312,6 +312,7 @@ MonoBehaviour:
   skill_3: {fileID: 7058067678677806727}
   optionA: {fileID: 4979356231974666323}
   optionB: {fileID: 6188695944521853814}
+  exitBut: {fileID: 6679255540881831776}
   ShopScreen: {fileID: 181820428794378391}
   SkillUpdate: {fileID: 2046884338557341938}
   BigSkill: {fileID: 118675485079647621}

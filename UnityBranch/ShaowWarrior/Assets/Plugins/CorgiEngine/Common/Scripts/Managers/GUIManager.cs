@@ -80,6 +80,8 @@ namespace MoreMountains.CorgiEngine
 		public Button optionA;
 		[Tooltip("LU界面升级B")] 
 		public Button optionB;
+		[Tooltip("关闭界面")] 
+		public Button exitBut;
 		
 		[Header("ShopTexts")]
 		/// 商店界面
@@ -353,6 +355,7 @@ namespace MoreMountains.CorgiEngine
 		{
 			optionA.gameObject.SetActive(state);
 			optionB.gameObject.SetActive(state);
+			exitBut.gameObject.SetActive(state);
 		}
 		
 		/// <summary>

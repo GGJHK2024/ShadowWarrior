@@ -4876,7 +4876,7 @@ MonoBehaviour:
   ReticleZPosition: 0
   ReticleAtMousePosition: 0
   RotateReticle: 0
-  ReplaceMousePointer: 1
+  ReplaceMousePointer: 0
   DisableReticleOnDeath: 1
 --- !u!114 &114000010596316938
 MonoBehaviour:
