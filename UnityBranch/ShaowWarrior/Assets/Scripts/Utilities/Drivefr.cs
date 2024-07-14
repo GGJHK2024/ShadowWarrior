@@ -19,6 +19,15 @@ public class Drivefr : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// 跳过cg
+    /// </summary>
+    public void SkipButton()
+    {
+        StopAllCoroutines();
+        gtnl.GetComponent<FinishLevel>().GoToNextLevel();
+    }
+
     IEnumerator waitForCg()
     {
         yield return new WaitForSeconds(22.0f);
