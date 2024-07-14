@@ -326,9 +326,9 @@ namespace MoreMountains.CorgiEngine
 				print("武器攻击到敌人");
 				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player && ownerWeapon.damageSrcType == DamageSrcType.B)				
 				{
-					print("是玩家，且攻击类型为B（弹反）");
+					// print("是玩家，且攻击类型为B（弹反）");
 					if (collider.gameObject.GetComponent<AIBrain>().CurrentState.StateName == "ShowMark") {
-						print("敌人处于预攻击（出现感叹号）状态");
+						// print("敌人处于预攻击（出现感叹号）状态");
 						// 如果处于预攻击（出现感叹号）状态，弹反成功
 						var hp = collider.gameObject.GetComponent<Health>();
 						// 对象为自爆怪
@@ -339,7 +339,7 @@ namespace MoreMountains.CorgiEngine
 							Vector2 pPos = new Vector2(ownerWeapon.Owner.transform.position.x,
 							                           ownerWeapon.Owner.transform.position.y);
 							collider.gameObject.GetComponent<CorgiController>().AddForce(10.0f * (ePos - pPos));
-							print("弹反成功, 且弹反对象为自爆怪");
+							// print("弹反成功, 且弹反对象为自爆怪");
 							return;
 						}
 						// 对象为精英怪
@@ -347,12 +347,12 @@ namespace MoreMountains.CorgiEngine
 						{
 							collider.GetComponent<AIBrain>().TransitionToState("Stun");
 							collider.GetComponent<CharacterStun>().StunFor(2.0f);
-							print("弹反成功, 且弹反对象为精英怪");
+							// print("弹反成功, 且弹反对象为精英怪");
 							return;
 						}
 						if (hp!= null) {
 							hp.Kill();
-							print("弹反成功, 且弹反对象为近战/远程普通敌人");
+							// print("弹反成功, 且弹反对象为近战/远程普通敌人");
 							ownerWeapon.WeaponBounceSuccessNear();	// 近战效果
 							MMGameEvent.Trigger(GameEventType.BounceSuccess);
 							return;
@@ -389,11 +389,16 @@ namespace MoreMountains.CorgiEngine
 					return;
 				}
 			}
-			if ( this.gameObject.layer!=12 && Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 12) {
-				print("武器攻击到子弹");
+			if ( this.gameObject.layer != 12 && Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 12) {
+				if (collider.gameObject.name.Contains("BossWeaponBomb"))
+				{
+					// print("武器攻击到boss炸弹");
+					return;
+				}
+				// print("武器攻击到子弹");
 				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player && ownerWeapon.damageSrcType == DamageSrcType.B)				
 				{
-					print("是玩家，且攻击类型为B（弹反）");
+					// print("是玩家，且攻击类型为B（弹反）");
 					collider.gameObject.GetComponent<Projectile>().SetOwner(Owner);
 					collider.gameObject.GetComponent<Projectile>().SetDamage(999);
 					// 将player(9)移除出伤害的layermask
