@@ -31,7 +31,6 @@ public class EnemyManager : MMSingleton<EnemyManager>,
     public void BeKilled()
     {
         _enemyCount--;
-        PlayerManager.Instance.AddMoney(5);
         print("current reaming: " + _enemyCount);
     }
 

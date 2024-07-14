@@ -337,6 +337,22 @@ namespace MoreMountains.CorgiEngine
 						// 敌人处于眩晕状态，此时伤害倍率为2倍
 						magnification = 2;
 					}
+					else
+					{
+						// 非眩晕状态下
+						if (collider.name.Contains("Boss"))
+						{
+							PlayerManager.Instance.AddMoney(0);
+						}
+						else
+						{
+							_colliderHealth = collider.gameObject.MMGetComponentNoAlloc<Health>();
+							if (MinDamageCaused >= _colliderHealth.CurrentHealth)
+							{
+								PlayerManager.Instance.AddMoney(collider.name.Contains("Hard") ? 3 : 1);
+							}
+						}
+					}
 				}	
 				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player && ownerWeapon.damageSrcType == DamageSrcType.B)				
 				{
@@ -364,10 +380,11 @@ namespace MoreMountains.CorgiEngine
 							// print("弹反成功, 且弹反对象为精英怪");
 							return;
 						}
-						if (hp!= null) {
+						if (hp != null) {
 							hp.Kill();
 							// print("弹反成功, 且弹反对象为近战/远程普通敌人");
 							ownerWeapon.WeaponBounceSuccessNear();	// 近战效果
+							PlayerManager.Instance.AddMoney(2);
 							MMGameEvent.Trigger(GameEventType.BounceSuccess);
 							return;
 						}
