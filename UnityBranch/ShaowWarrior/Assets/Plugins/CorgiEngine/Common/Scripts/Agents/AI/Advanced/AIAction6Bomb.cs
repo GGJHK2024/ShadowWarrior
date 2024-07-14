@@ -21,7 +21,6 @@ namespace MoreMountains.CorgiEngine
         public override void Initialization()
         {
             _character = GetComponentInParent<Character>();
-            _character._animator.SetBool("Attack5", true);;
         }
 
         /// <summary>
@@ -81,6 +80,18 @@ namespace MoreMountains.CorgiEngine
         public override void PerformAction()
         {
             Bomb();
+        }
+        
+        public override void OnEnterState()
+        {
+            base.OnEnterState();
+            _character._animator.SetBool("Attack5", true);
+        }
+        
+        public override void OnExitState()
+        {
+            base.OnExitState();
+            _character._animator.SetBool("Attack5", false);
         }
     }
 }
