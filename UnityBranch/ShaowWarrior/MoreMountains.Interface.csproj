@@ -41,15 +41,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MMSpriteReplace.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MMCarousel.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MMCheckbox.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MMSwitch.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MMSpriteReplaceCycle.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MMScrollviewButton.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MMRadioButton.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MMPopup.cs" />
-    <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MoreMountains.Interface.asmdef" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MMSpriteReplace.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MMCarousel.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MMCheckbox.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MMSwitch.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MMSpriteReplaceCycle.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MMScrollviewButton.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MMRadioButton.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MMPopup.cs" />
+    <None Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMInterface\Common\Scripts\MoreMountains.Interface.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.34f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -334,6 +334,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.visualscripting@1.9.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.34f1\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

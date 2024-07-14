@@ -591,7 +591,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.49290133, y: 0.95513463}
+  m_Offset: {x: -0.49290133, y: 0.57164407}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -602,7 +602,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8266973, y: 3.4022307}
+  m_Size: {x: 1.8266973, y: 4.169212}
   m_EdgeRadius: 0
 --- !u!114 &3246661051285006081
 MonoBehaviour:
@@ -629,16 +629,16 @@ MonoBehaviour:
   AlsoPerformChecksOnStay: 0
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   UnlimitedActivations: 1
-  MaxNumberOfActivations: 0
+  MaxNumberOfActivations: 1000000
   DelayBetweenUses: 0
   DisableAfterUse: 0
   InputType: 2
   InputButton: Interact
   InputKey: 101
-  AnimationTriggerParameterName: 
-  UseVisualPrompt: 1
+  AnimationTriggerParameterName: inDoor
+  UseVisualPrompt: 0
   ButtonPromptPrefab: {fileID: 0}
   ButtonPromptText: A
   ButtonPromptColor: {r: 0.4862745, g: 0.9882353, b: 0, a: 1}
@@ -673,7 +673,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   LevelName: Test
-  DelayBeforeTransition: 0
+  DelayBeforeTransition: 0.02
   TriggerFade: 0
   FaderID: 0
   FadeTween:
@@ -1348,10 +1348,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.48908997, y: 0.94809747}
+  m_Offset: {x: -0.48908997, y: 0.5762274}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1362,7 +1362,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8456287, y: 3.4463973}
+  m_Size: {x: 1.8456287, y: 4.1901374}
   m_EdgeRadius: 0
 --- !u!114 &3246661051928326371
 MonoBehaviour:
@@ -1389,16 +1389,16 @@ MonoBehaviour:
   AlsoPerformChecksOnStay: 0
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   UnlimitedActivations: 1
-  MaxNumberOfActivations: 0
+  MaxNumberOfActivations: 1000000
   DelayBetweenUses: 0
   DisableAfterUse: 0
   InputType: 2
   InputButton: Interact
   InputKey: 101
-  AnimationTriggerParameterName: 
-  UseVisualPrompt: 1
+  AnimationTriggerParameterName: inDoor
+  UseVisualPrompt: 0
   ButtonPromptPrefab: {fileID: 0}
   ButtonPromptText: A
   ButtonPromptColor: {r: 0.4862745, g: 0.9882353, b: 0, a: 1}
@@ -1433,7 +1433,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   LevelName: Test
-  DelayBeforeTransition: 0
+  DelayBeforeTransition: 0.02
   TriggerFade: 0
   FaderID: 0
   FadeTween:

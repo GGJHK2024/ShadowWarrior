@@ -169,8 +169,8 @@ MonoBehaviour:
     m_Bits: 8448
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 1
-  MaxDamageCaused: 1
+  MinDamageCaused: 0
+  MaxDamageCaused: 0
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
@@ -436,7 +436,7 @@ MonoBehaviour:
     - rid: 1
       type: {class: MMF_CameraShake, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
-        Active: 1
+        Active: 0
         UniqueID: 1106317365
         Label: Camera Shake
         ChannelMode: 0
@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fe7e41857f44348b52714b3238715c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Active: 1
+  Active: 0
   Label: Camera Shake
   Chance: 100
   Timing:
@@ -1400,7 +1400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fe7e41857f44348b52714b3238715c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Active: 1
+  Active: 0
   Label: Camera Shake
   Chance: 100
   Timing:

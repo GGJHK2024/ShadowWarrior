@@ -41,39 +41,39 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventoryCounterDisplay.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\InventoryInputActions.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\InventoryDemoStorageBox.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\InventoryDemoCharacter.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventoryDisplayGrid.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\Inventory.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\ItemPicker.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\PixelRogueDemoResetAll.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Items\BaseItem.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Tests\InventoryTester.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\InventoryItem.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\SerializedInventory.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\InventoryInputManager.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventoryDisplay.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\InventoryDemoGameManager.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventorySoundPlayer.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\InventoryCharacterIdentifier.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\DemoCharacterInputManager.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\InventoryEvents.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\ChangeLevel.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\Items\WeaponItem.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventoryHotbar.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\InventoryItemClasses.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\Items\ArmorItem.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventorySelectionMarker.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\Items\BombItem.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventoryDisplayTitle.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Tests\EventTester.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\Items\HealthBonusItem.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventorySlot.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventoryDetails.cs" />
-    <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\MoreMountains.InventoryEngine.Demos.asmref" />
-    <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\MoreMountains.InventoryEngine.asmdef" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventoryCounterDisplay.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\InventoryInputActions.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\InventoryDemoStorageBox.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\InventoryDemoCharacter.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventoryDisplayGrid.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\Inventory.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\ItemPicker.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\PixelRogueDemoResetAll.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Items\BaseItem.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Tests\InventoryTester.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\InventoryItem.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\SerializedInventory.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\InventoryInputManager.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventoryDisplay.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\InventoryDemoGameManager.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventorySoundPlayer.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\InventoryCharacterIdentifier.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\DemoCharacterInputManager.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\InventoryEvents.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\ChangeLevel.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\Items\WeaponItem.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventoryHotbar.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Core\InventoryItemClasses.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\Items\ArmorItem.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventorySelectionMarker.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\Items\BombItem.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventoryDisplayTitle.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\Tests\EventTester.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\Items\HealthBonusItem.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventorySlot.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\GUI\InventoryDetails.cs" />
+    <None Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\Demos\PixelRogue\Scripts\MoreMountains.InventoryEngine.Demos.asmref" />
+    <None Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\InventoryEngine\InventoryEngine\Scripts\MoreMountains.InventoryEngine.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.34f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -358,6 +358,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.visualscripting@1.9.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.34f1\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

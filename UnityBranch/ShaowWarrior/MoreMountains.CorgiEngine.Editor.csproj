@@ -41,24 +41,24 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Editor\Agents\Weapons\WeaponEditor.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Editor\Welcome\DependencyInstaller.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\Demos\Editor\RetroAdventure\RetroAdventureProgressManagerMenu.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\Common\ScriptsCinemachine\Editor\Environment\TeleporterEditor.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Editor\Items\PickableAbilityInspector.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Editor\Menu\MoreMountainsMenu.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Editor\Agents\CharacterAbilities\CharacterAbilityInspector.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\Common\ScriptsCinemachine\Editor\Environment\RoomEditor.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Editor\Managers\LevelManagerEditor.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Editor\Agents\CorgiController\CorgiControllerInspector.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\Demos\Editor\LevelSelection\LevelMapPathElementEditor.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Editor\Environment\MovingPlatformFreeInspector.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Editor\Agents\Core\CharacterInspector.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Editor\Welcome\WelcomeWindow.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\Common\Editor\DefineSymbols\CorgiEngineDefineSymbols.cs" />
-    <None Include="Assets\Third-Party\CorgiEngine\Common\ScriptsCinemachine\Editor\MoreMountains.CorgiEngine.Cinemachine.Editor.asmref" />
-    <None Include="Assets\Third-Party\CorgiEngine\Common\Editor\MoreMountains.CorgiEngine.Editor.asmdef" />
-    <None Include="Assets\Third-Party\CorgiEngine\Demos\Editor\MoreMountains.CorgiEngine.Demos.Editor.asmref" />
+    <Compile Include="Assets\Plugins\CorgiEngine\Common\Editor\Agents\Weapons\WeaponEditor.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\Common\Editor\Welcome\DependencyInstaller.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\Demos\Editor\RetroAdventure\RetroAdventureProgressManagerMenu.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\Common\ScriptsCinemachine\Editor\Environment\TeleporterEditor.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\Common\Editor\Items\PickableAbilityInspector.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\Common\Editor\Menu\MoreMountainsMenu.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\Common\Editor\Agents\CharacterAbilities\CharacterAbilityInspector.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\Common\ScriptsCinemachine\Editor\Environment\RoomEditor.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\Common\Editor\Managers\LevelManagerEditor.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\Common\Editor\Agents\CorgiController\CorgiControllerInspector.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\Demos\Editor\LevelSelection\LevelMapPathElementEditor.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\Common\Editor\Environment\MovingPlatformFreeInspector.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\Common\Editor\Agents\Core\CharacterInspector.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\Common\Editor\Welcome\WelcomeWindow.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\Common\Editor\DefineSymbols\CorgiEngineDefineSymbols.cs" />
+    <None Include="Assets\Plugins\CorgiEngine\Common\ScriptsCinemachine\Editor\MoreMountains.CorgiEngine.Cinemachine.Editor.asmref" />
+    <None Include="Assets\Plugins\CorgiEngine\Common\Editor\MoreMountains.CorgiEngine.Editor.asmdef" />
+    <None Include="Assets\Plugins\CorgiEngine\Demos\Editor\MoreMountains.CorgiEngine.Demos.Editor.asmref" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.34f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -346,6 +346,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.visualscripting@1.9.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>

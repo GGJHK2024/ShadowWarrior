@@ -41,13 +41,24 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Third-Party\SimpleLocalization\Scripts\Editor\LocalizationEditor.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Sprite_Editor(Beta)\Script\Editor\SPUM_Eye.cs" />
+    <Compile Include="Assets\Third-Party\SimpleLocalization\Scripts\Editor\EditorActions.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Editor\SPUM_Editor.cs" />
+    <Compile Include="Assets\Third-Party\SimpleLocalization\Scripts\Editor\LocalizationSettingsWindow.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Sprite_SheetExporter(Beta)\Script\Editor\SetGameSizeWindow.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Script\Editor\SPUM_SpriteEditor.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Sprite_Editor(Beta)\Script\Editor\SPUM_Sync.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Sprite_SheetExporter(Beta)\Script\Editor\SPUM_Exporter.cs" />
     <Compile Include="Assets\Third-Party\SPUM\Sprite_Editor(Beta)\Script\Editor\SPUM_SpriteEdit.cs" />
+    <Compile Include="Assets\Third-Party\SimpleLocalization\Scripts\Editor\TextEditor.cs" />
+    <Compile Include="Assets\Third-Party\SimpleLocalization\Scripts\Editor\LocalizationSyncEditor.cs" />
+    <Compile Include="Assets\Third-Party\SimpleLocalization\Scripts\Editor\LocalizedTranslate.cs" />
+    <Compile Include="Assets\Third-Party\SimpleLocalization\Scripts\Editor\LocalizedTextEditor.cs" />
+    <Compile Include="Assets\Third-Party\SimpleLocalization\Scripts\Editor\DropdownEditor.cs" />
+    <Compile Include="Assets\Third-Party\SimpleLocalization\Scripts\Editor\LocalizationSettingsEditor.cs" />
+    <Compile Include="Assets\Third-Party\SimpleLocalization\Scripts\Editor\LocalizationUtils.cs" />
+    <Compile Include="Assets\Third-Party\SimpleLocalization\Scripts\Editor\LocalizationEditorWindow.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.34f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -335,6 +346,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.visualscripting@1.9.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -780,6 +794,9 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.EditorCoroutines.Editor">
+      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
     </Reference>
@@ -924,22 +941,6 @@
       <Project>{24095813-adfc-271f-c832-5614081823a5}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
-    <ProjectReference Include="MoreMountains.Tools.Editor.csproj">
-      <Project>{d5b0966b-e42c-36b1-ba9a-9b193f300eb6}</Project>
-      <Name>MoreMountains.Tools.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.URP.csproj">
-      <Project>{d080b5c7-64cc-ff29-888b-c6d031880547}</Project>
-      <Name>MoreMountains.Feedbacks.URP</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.PostProcessing.csproj">
-      <Project>{fd162c50-cc2c-d590-5861-7dfdde4e57c8}</Project>
-      <Name>MoreMountains.Feedbacks.PostProcessing</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.NiceVibrations.csproj">
-      <Project>{f424d6a8-410f-bc4e-0688-09739db00887}</Project>
-      <Name>MoreMountains.Feedbacks.NiceVibrations</Name>
-    </ProjectReference>
     <ProjectReference Include="MoreMountains.Feedbacks.Editor.csproj">
       <Project>{1f53b246-03cc-ec99-9b52-6fc3e93a7417}</Project>
       <Name>MoreMountains.Feedbacks.Editor</Name>
@@ -948,53 +949,69 @@
       <Project>{d66047c7-3592-4cea-9135-0af64c0d192d}</Project>
       <Name>MoreMountains.Feedbacks.TextMeshPro</Name>
     </ProjectReference>
-    <ProjectReference Include="MoreMountains.InventoryEngine.csproj">
-      <Project>{4c188787-77b6-28d6-f1b6-47747a80bf2c}</Project>
-      <Name>MoreMountains.InventoryEngine</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.CorgiEngine.Editor.csproj">
-      <Project>{58807224-1aae-7f25-fe68-cb118b2e9233}</Project>
-      <Name>MoreMountains.CorgiEngine.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.Cinemachine.csproj">
-      <Project>{346cee71-c6ea-422e-63aa-8caec87564a8}</Project>
-      <Name>MoreMountains.Feedbacks.Cinemachine</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.HDRP.csproj">
-      <Project>{27992445-cbfd-eef8-4d84-e14db6dbf569}</Project>
-      <Name>MoreMountains.Feedbacks.HDRP</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.InventoryEngine.Editor.csproj">
-      <Project>{869adf9f-0e0a-b7f0-8027-e46997b02777}</Project>
-      <Name>MoreMountains.InventoryEngine.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.Authorizations.csproj">
-      <Project>{fa70a0ac-3734-7cbb-c9a8-02ece6317055}</Project>
-      <Name>MoreMountains.Feedbacks.Authorizations</Name>
+    <ProjectReference Include="MoreMountains.Interface.csproj">
+      <Project>{6088deb5-32de-dc6e-9630-dd9ea462d8c6}</Project>
+      <Name>MoreMountains.Interface</Name>
     </ProjectReference>
     <ProjectReference Include="MoreMountains.Interface.Editor.csproj">
       <Project>{1b345e7e-9c66-a492-fd0c-efb359249d50}</Project>
       <Name>MoreMountains.Interface.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="MoreMountains.Feedbacks.NiceVibrations.csproj">
+      <Project>{f424d6a8-410f-bc4e-0688-09739db00887}</Project>
+      <Name>MoreMountains.Feedbacks.NiceVibrations</Name>
+    </ProjectReference>
     <ProjectReference Include="MoreMountains.Feedbacks.MMTools.csproj">
       <Project>{19d9eead-434f-71cf-fabf-89a11cb2d3f9}</Project>
       <Name>MoreMountains.Feedbacks.MMTools</Name>
     </ProjectReference>
-    <ProjectReference Include="MoreMountains.CorgiEngine.csproj">
-      <Project>{5e9e9580-c18c-6f89-6c8b-63fe22c19360}</Project>
-      <Name>MoreMountains.CorgiEngine</Name>
+    <ProjectReference Include="MoreMountains.Tools.Editor.csproj">
+      <Project>{d5b0966b-e42c-36b1-ba9a-9b193f300eb6}</Project>
+      <Name>MoreMountains.Tools.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="MoreMountains.Interface.csproj">
-      <Project>{6088deb5-32de-dc6e-9630-dd9ea462d8c6}</Project>
-      <Name>MoreMountains.Interface</Name>
+    <ProjectReference Include="MoreMountains.CorgiEngine.Editor.csproj">
+      <Project>{58807224-1aae-7f25-fe68-cb118b2e9233}</Project>
+      <Name>MoreMountains.CorgiEngine.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="MoreMountains.Feedbacks.csproj">
       <Project>{96b33454-7004-b694-b44a-1cc89a85287f}</Project>
       <Name>MoreMountains.Feedbacks</Name>
     </ProjectReference>
+    <ProjectReference Include="MoreMountains.Feedbacks.HDRP.csproj">
+      <Project>{27992445-cbfd-eef8-4d84-e14db6dbf569}</Project>
+      <Name>MoreMountains.Feedbacks.HDRP</Name>
+    </ProjectReference>
     <ProjectReference Include="MoreMountains.Tools.csproj">
       <Project>{1a6df319-9edb-c9b5-5f82-ee4ea04efc06}</Project>
       <Name>MoreMountains.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="MoreMountains.InventoryEngine.csproj">
+      <Project>{4c188787-77b6-28d6-f1b6-47747a80bf2c}</Project>
+      <Name>MoreMountains.InventoryEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="MoreMountains.Feedbacks.Authorizations.csproj">
+      <Project>{fa70a0ac-3734-7cbb-c9a8-02ece6317055}</Project>
+      <Name>MoreMountains.Feedbacks.Authorizations</Name>
+    </ProjectReference>
+    <ProjectReference Include="MoreMountains.InventoryEngine.Editor.csproj">
+      <Project>{869adf9f-0e0a-b7f0-8027-e46997b02777}</Project>
+      <Name>MoreMountains.InventoryEngine.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="MoreMountains.Feedbacks.PostProcessing.csproj">
+      <Project>{fd162c50-cc2c-d590-5861-7dfdde4e57c8}</Project>
+      <Name>MoreMountains.Feedbacks.PostProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="MoreMountains.Feedbacks.URP.csproj">
+      <Project>{d080b5c7-64cc-ff29-888b-c6d031880547}</Project>
+      <Name>MoreMountains.Feedbacks.URP</Name>
+    </ProjectReference>
+    <ProjectReference Include="MoreMountains.CorgiEngine.csproj">
+      <Project>{5e9e9580-c18c-6f89-6c8b-63fe22c19360}</Project>
+      <Name>MoreMountains.CorgiEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="MoreMountains.Feedbacks.Cinemachine.csproj">
+      <Project>{346cee71-c6ea-422e-63aa-8caec87564a8}</Project>
+      <Name>MoreMountains.Feedbacks.Cinemachine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

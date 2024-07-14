@@ -41,35 +41,35 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPFontSize.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPOutlineWidth.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPCharacterSpacing.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPColor.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPText.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPOutlineColor.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\MMFloatingText\MMFloatingTextMeshPro.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPSoftness.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPText.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPOutlineWidth.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPAlpha.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPWordSpacing.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPDilate.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPOutlineColor.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPWordSpacing.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPAlpha.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPParagraphSpacing.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPLineSpacing.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPFontSize.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPColor.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPSoftness.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPParagraphSpacing.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPCharacterSpacing.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPTextReveal.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPTextReveal.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPCountTo.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPDilate.cs" />
-    <Compile Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPLineSpacing.cs" />
-    <None Include="Assets\Third-Party\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\MoreMountains.Feedbacks.TextMeshPro.asmdef" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPFontSize.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPOutlineWidth.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPCharacterSpacing.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPColor.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPText.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPOutlineColor.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\MMFloatingText\MMFloatingTextMeshPro.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPSoftness.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPText.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPOutlineWidth.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPAlpha.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPWordSpacing.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPDilate.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPOutlineColor.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPWordSpacing.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPAlpha.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPParagraphSpacing.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPLineSpacing.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPFontSize.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPColor.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPSoftness.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPParagraphSpacing.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPCharacterSpacing.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPTextReveal.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPTextReveal.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPCountTo.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\Legacy\MMFeedbackTMPDilate.cs" />
+    <Compile Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\Feedbacks\MMF_TMPLineSpacing.cs" />
+    <None Include="Assets\Plugins\CorgiEngine\ThirdParty\MoreMountains\MMFeedbacks\MMFeedbacksForThirdParty\TextMeshPro\MoreMountains.Feedbacks.TextMeshPro.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.34f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -354,6 +354,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.visualscripting@1.9.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>F:\github\ShadowWarrior\UnityBranch\ShaowWarrior\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.34f1\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

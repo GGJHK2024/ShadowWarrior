@@ -138,6 +138,7 @@ MonoBehaviour:
   AutomaticallyUnparentOnAwake: 1
   playerPrefab: {fileID: 114473069959786316, guid: d9a03ec1f93191f48af48c379887e585,
     type: 3}
+  playerName: "\u54C8\u54C8"
   hp: 5
   attack: 25
   cd: 5
@@ -146,6 +147,7 @@ MonoBehaviour:
   hasBigSkill: 0
   passiveSkill1: 0
   passiveSkill2: 0
+  enemyBlood: 0
   bulletTimeCanKillEnemyNumber: 3
   skillChargeTime: 0
   bulletTime: 0
@@ -356,8 +358,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -557,6 +559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AutomaticallyUnparentOnAwake: 1
   TargetFrameRate: 300
+  language: 
   MaximumLives: 1
   CurrentLives: 1
   ResetLivesOnGameOver: 1
@@ -914,7 +917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -698}
+  m_AnchoredPosition: {x: 0, y: -2939}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1403562264
