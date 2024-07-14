@@ -158,6 +158,7 @@ MonoBehaviour:
   HitDamageableFeedback: {fileID: 0}
   HitNonDamageableFeedback: {fileID: 0}
   FreezeFramesOnHitDuration: 0
+  magnification: 1
   Owner: {fileID: 0}
 --- !u!114 &114000010385110490
 MonoBehaviour:

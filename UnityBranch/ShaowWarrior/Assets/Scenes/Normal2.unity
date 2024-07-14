@@ -718,7 +718,7 @@ MonoBehaviour:
   TargetsList: []
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 536879104
   AutoSetKillThreshold: 1
   DeathThreshold: 5
   RemainingDeaths: 0
