@@ -21,6 +21,9 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     public int money = 0;
     public int lucky = 50;
     public bool hasBigSkill = false;
+
+    protected float _cd;
+    protected int _attack;
     /// <summary>
     /// 【大招】血魔流-吸干你的血。击杀敌人触发吸血技能。击杀成功恢复X%血量，累计杀害敌人血量达N，触发S秒无敌状态。
     /// </summary>
@@ -34,7 +37,7 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     /// 统计击杀敌人的血量
     /// </summary>
     [SerializeField]
-    private int enemyBlood = 0;
+    private int _enemyBlood = 0;
 
     [Tooltip("击杀敌人上限")] 
     public int bulletTimeCanKillEnemyNumber;
@@ -58,6 +61,19 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     public void OnMMEvent(MMGameEvent eventType)
     {
         switch (eventType.EventName) {
+            case GameEventType.PassiveSkill2Effect:
+            {
+                // 当血量低于10%时，闪避无CD且主动攻击伤害翻倍
+                cd = 0;
+                attack *= 2;
+                break;
+            }
+            case GameEventType.ExitPassiveSkill2Effect:
+            {
+                cd = _cd;
+                attack = _attack;
+                break;
+            }
             case GameEventType.BounceSuccess: {
                 _bounce++;
                 GUIManager.Instance.SetBounceBar(_bounce);
@@ -66,6 +82,8 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
             case GameEventType.Dead: {
                 _bounce = 0;
                 GUIManager.Instance.SetBounceBar(_bounce);
+                _enemyBlood = 0;
+                GUIManager.Instance.SetBloodBar(_enemyBlood);
                 return;
             }
         }
@@ -116,6 +134,31 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
             }
         }
     }
+
+    /// <summary>
+    /// 十秒钟无敌
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator UnHittableFor10Second()
+    {
+        player.gameObject.GetComponent<Health>().Invulnerable = true;
+        yield return new WaitForSeconds(10.0f);
+        player.gameObject.GetComponent<Health>().Invulnerable = false;
+        yield return null;
+    }
+
+    /// <summary>
+    /// 十五秒一刀毙命
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator OneHit999For15Second()
+    {
+        int temp = attack;
+        attack = 999;
+        yield return new WaitForSeconds(15.0f);
+        attack = temp;
+        yield return null;
+    }
     
     /// <summary>
     /// Loads the level specified in the inspector
@@ -144,6 +187,8 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     void Start()
     {
         // hasBigSkill = false;    // 初始无法使用双键大招
+        _cd = cd;
+        _attack = attack;
         var health = player.GetComponent<Health>(); 
         health.SetHealth(health.InitialHealth, null);
         MMEventManager.AddListener<CorgiEngineEvent>(this);
@@ -167,6 +212,22 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
         hasBigSkill = false;
     }
 
+    /// <summary>
+    /// 是否允许使用被动大招1
+    /// </summary>
+    public void EnablePSkill1(bool state)
+    {
+        passiveSkill1 = state;
+    }
+
+    /// <summary>
+    /// 是否允许使用被动大招2
+    /// </summary>
+    public void EnablePSkill2(bool state)
+    {
+        passiveSkill2 = state;
+    }
+
     public void UseSkill() {
         if (_bounce >= skillRequiement && !_isBulletTime) {
             _bounce = 0;
@@ -177,6 +238,34 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
 
     public void Stun(float time) {
         player.FindAbility<CharacterStun>().StunFor(time);
+    }
+
+    /// <summary>
+    /// 更新累计击杀血量
+    /// </summary>
+    /// <param name="v"></param>
+    public void UpdateBloodBar(int v)
+    {
+        _enemyBlood += v;
+        if (_enemyBlood >= 2000)
+        {
+            if (passiveSkill1)
+            {
+                // 触发10秒无敌状态
+                StartCoroutine("UnHittableFor10Second");
+            }
+            if (passiveSkill2)
+            {
+                // 触发15秒主动攻击一击毙命效果
+                StartCoroutine("OneHit999For15Second");
+            }
+            _enemyBlood = 0;
+            GUIManager.Instance.SetBloodBar(_enemyBlood);
+        }
+        else
+        {
+            GUIManager.Instance.SetBloodBar(_enemyBlood);
+        }
     }
 
     /// <summary>
@@ -204,6 +293,7 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     public void SubCD(float i)
     {
         cd -= i;
+        _cd = cd;
         player.GetComponent<CharacterDash>().DashCooldown = (player.GetComponent<CharacterDash>().DashCooldown - i) >= 0 ? 
             player.GetComponent<CharacterDash>().DashCooldown - i : player.GetComponent<CharacterDash>().DashCooldown;
     }
@@ -229,6 +319,16 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     }
 
     /// <summary>
+    /// 增加 i 点攻击
+    /// </summary>
+    /// <param name="i"></param>
+    public void AddAttack(int i)
+    {
+        attack += i;
+        _attack = attack;
+    }
+
+    /// <summary>
     /// 重置所有玩家属性（这里没有连招
     /// </summary>
     public void ResetPlayerParams()
@@ -238,9 +338,11 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
         cd = 5;
         money = 0;
         lucky = 50;
+        _cd = cd;
+        _attack = attack;
         DisableBigSKill();
-        passiveSkill1 = false;
-        passiveSkill2 = false;
+        EnablePSkill1(false);
+        EnablePSkill2(false);
     }
 
 }

@@ -331,22 +331,24 @@ namespace MoreMountains.CorgiEngine
 				print("武器攻击到敌人");
 				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player &&
 				    ownerWeapon.damageSrcType == DamageSrcType.A)
-				{
+				 {
 					print("是玩家，且攻击类型为A（普通攻击）");
 					// 普通攻击命中自爆怪，则直接爆炸
 					if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player &&
 					    ownerWeapon.damageSrcType == DamageSrcType.A && collider.name.Contains("Boom"))
 					{
-						collider.GetComponent<AIBrain>().TransitionToState("ShowMark");
+						collider.GetComponent<AIBrain>().TransitionToState("Attack");
 						return;
 					}
 					// 敌人处于眩晕状态，此时伤害倍率为2倍
 					if (collider.gameObject.GetComponent<AIBrain>().CurrentState.StateName.Contains("Stun"))
 					{
+						PlayerManager.Instance.UpdateBloodBar(PlayerManager.Instance.attack * 2);
 						magnification = 2;
 					}
 					else
 					{
+						PlayerManager.Instance.UpdateBloodBar(PlayerManager.Instance.attack);
 						// 非眩晕状态下
 						if (collider.name.Contains("Boss"))
 						{
@@ -361,7 +363,7 @@ namespace MoreMountains.CorgiEngine
 							}
 						}
 					}
-				}	
+				 }	
 				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player && ownerWeapon.damageSrcType == DamageSrcType.B)				
 				{
 					// print("是玩家，且攻击类型为B（弹反）");
@@ -393,6 +395,7 @@ namespace MoreMountains.CorgiEngine
 							return;
 						}
 						if (hp != null) {
+							PlayerManager.Instance.UpdateBloodBar((collider.name.Contains("RobotA")) ? 100 : 150);
 							hp.Kill();
 							// print("弹反成功, 且弹反对象为近战/远程普通敌人");
 							ownerWeapon.WeaponBounceSuccessNear();	// 近战效果
@@ -463,7 +466,6 @@ namespace MoreMountains.CorgiEngine
 					
 					MMGameEvent.Trigger(GameEventType.BounceSuccess);
 					return;
-
 				}
 			}
 		}

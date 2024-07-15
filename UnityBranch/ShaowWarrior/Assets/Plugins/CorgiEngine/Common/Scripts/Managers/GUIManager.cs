@@ -25,6 +25,8 @@ namespace MoreMountains.CorgiEngine
 		///  the bounce bar
 		[Tooltip("大招准备条")]
 		public Slider bounceBar;
+		[Tooltip("累计击杀条")]
+		public Slider bloodBar;
 		[Tooltip("头像")]
 		public Image avater;
 		[Tooltip("头像遮罩")]
@@ -890,6 +892,15 @@ namespace MoreMountains.CorgiEngine
 		}
 
 		/// <summary>
+		/// 设置血条
+		/// </summary>
+		/// <param name="v"></param>
+		public void SetBloodBar(float v)
+		{
+			bloodBar.value = v;
+		}
+
+		/// <summary>
 		/// Updates the (optional) ammo displays.
 		/// </summary>
 		/// <param name="magazineBased">If set to <c>true</c> magazine based.</param>
@@ -1016,7 +1027,9 @@ namespace MoreMountains.CorgiEngine
 						? "【大招】低血流-打不倒的小强。当血量低于10%时，闪避无CD且主动攻击伤害翻倍。累计杀害敌人血量达2000，15秒主动攻击一击毙命。"
 						: "【Ultimate】 Low Health Flow - The unyielding cockroach. When health is below 10%, dodge has no cooldown and active attack damage doubles. When total enemy health killed reaches 2000, active attack becomes an instant kill for 15 seconds.";
 					// 大招-血魔流
+					optionA.onClick.AddListener(LU_EnablePSkill1);
 					// 大招-低血流
+					optionB.onClick.AddListener(LU_EnablePSkill2);
 					break;
 				case 5:
 					btsA = Resources.LoadAll<Sprite>("LU/攻击加");
@@ -1051,6 +1064,23 @@ namespace MoreMountains.CorgiEngine
 					optionB.onClick.AddListener(LU_OpenSpecialEvent);
 					break;
 			}
+		}
+		/// <summary>
+		/// 开启被动大招1
+		/// 【大招】血魔流-吸干你的血。击杀敌人触发吸血技能。击杀成功恢复2%血量，累计杀害敌人血量达2000，触发10秒无敌状态。
+		/// </summary>
+		public void LU_EnablePSkill1()
+		{
+			PlayerManager.Instance.EnablePSkill1(true);
+		}
+
+		/// <summary>
+		/// 开启被动大招2
+		/// 【大招】低血流-打不倒的小强。当血量低于10%时，闪避无CD且主动攻击伤害翻倍。累计杀害敌人血量达2000，15秒主动攻击一击毙命。
+		/// </summary>
+		public void LU_EnablePSkill2()
+		{
+			PlayerManager.Instance.EnablePSkill2(true);
 		}
 
 		/// <summary>
@@ -1099,7 +1129,7 @@ namespace MoreMountains.CorgiEngine
 			CharacterHandleWeapon curWeapon = player.GetComponent<CharacterHandleWeapon>();
 			string curName = curWeapon.InitialWeapon.name;
 			int curStage = int.Parse(curName.Substring(curName.Length - 1, 1));
-			PlayerManager.Instance.attack += 25;
+			PlayerManager.Instance.AddAttack(25);
 			switch (curStage)
 			{
 				case 1:
@@ -1121,6 +1151,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public void LU_AddAttack(int x)
 		{
+			PlayerManager.Instance.AddAttack( PlayerManager.Instance.attack + x > 25 ? x : 25);
 			GameObject weapon = null;
 			for (int i = 0; i < player.gameObject.transform.childCount; i++)
 			{
