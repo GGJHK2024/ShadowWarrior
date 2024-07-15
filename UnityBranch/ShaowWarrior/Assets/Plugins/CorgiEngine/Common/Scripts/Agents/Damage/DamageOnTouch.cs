@@ -326,15 +326,23 @@ namespace MoreMountains.CorgiEngine
 			_collidingCollider = collider;
 			magnification = 1;
 			Weapon ownerWeapon;
-			if ( this.gameObject.layer != 12 && Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 13) {
+			if ( this.gameObject.layer != 12 && Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && 
+			     (collider.gameObject.layer == 13 || collider.gameObject.layer == 29)) {
 				print("武器攻击到敌人");
 				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player &&
 				    ownerWeapon.damageSrcType == DamageSrcType.A)
 				{
 					print("是玩家，且攻击类型为A（普通攻击）");
+					// 普通攻击命中自爆怪，则直接爆炸
+					if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player &&
+					    ownerWeapon.damageSrcType == DamageSrcType.A && collider.name.Contains("Boom"))
+					{
+						collider.GetComponent<AIBrain>().TransitionToState("ShowMark");
+						return;
+					}
+					// 敌人处于眩晕状态，此时伤害倍率为2倍
 					if (collider.gameObject.GetComponent<AIBrain>().CurrentState.StateName.Contains("Stun"))
 					{
-						// 敌人处于眩晕状态，此时伤害倍率为2倍
 						magnification = 2;
 					}
 					else
@@ -370,6 +378,8 @@ namespace MoreMountains.CorgiEngine
 							                           ownerWeapon.Owner.transform.position.y);
 							collider.gameObject.GetComponent<CorgiController>().AddForce(10.0f * (ePos - pPos));
 							// print("弹反成功, 且弹反对象为自爆怪");
+							if(PlayerManager.Instance.hasBigSkill)
+								MMGameEvent.Trigger(GameEventType.BounceSuccess);
 							return;
 						}
 						// 对象为精英怪
@@ -378,6 +388,8 @@ namespace MoreMountains.CorgiEngine
 							collider.GetComponent<AIBrain>().TransitionToState("Stun");
 							collider.GetComponent<CharacterStun>().StunFor(2.0f);
 							// print("弹反成功, 且弹反对象为精英怪");
+							if(PlayerManager.Instance.hasBigSkill)
+								MMGameEvent.Trigger(GameEventType.BounceSuccess);
 							return;
 						}
 						if (hp != null) {
@@ -385,7 +397,8 @@ namespace MoreMountains.CorgiEngine
 							// print("弹反成功, 且弹反对象为近战/远程普通敌人");
 							ownerWeapon.WeaponBounceSuccessNear();	// 近战效果
 							PlayerManager.Instance.AddMoney(2);
-							MMGameEvent.Trigger(GameEventType.BounceSuccess);
+							if(PlayerManager.Instance.hasBigSkill)
+								MMGameEvent.Trigger(GameEventType.BounceSuccess);
 							return;
 						}
 					}
@@ -401,6 +414,8 @@ namespace MoreMountains.CorgiEngine
 							// print("boss 眩晕 2s");
 							collider.GetComponent<AIBrain>().TransitionToState("Stun2s");
 							collider.GetComponent<CharacterStun>().StunFor(2.0f);
+							if(PlayerManager.Instance.hasBigSkill)
+								MMGameEvent.Trigger(GameEventType.BounceSuccess);
 							return;
 						}
 						// 晕5s
@@ -409,15 +424,11 @@ namespace MoreMountains.CorgiEngine
 							// print("boss 眩晕 5s");
 							collider.GetComponent<AIBrain>().TransitionToState("Stun5s");
 							collider.GetComponent<CharacterStun>().StunFor(5.0f);
+							if(PlayerManager.Instance.hasBigSkill)
+								MMGameEvent.Trigger(GameEventType.BounceSuccess);
+							return;
 						}
 					}
-				}
-				// 普通攻击命中自爆怪，则直接爆炸
-				if (ownerWeapon.Owner.CharacterType == Character.CharacterTypes.Player &&
-				    ownerWeapon.damageSrcType == DamageSrcType.A && collider.name.Contains("Boom"))
-				{
-					collider.GetComponent<AIBrain>().TransitionToState("ShowMark");
-					return;
 				}
 			}
 			if ( this.gameObject.layer != 12 && Owner != null && Owner.TryGetComponent<Weapon>(out ownerWeapon) && collider.gameObject.layer == 12) {

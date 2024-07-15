@@ -148,7 +148,14 @@ public class BulletTime : CharacterAbility,
         // 一击必杀所有选中的敌人
         foreach (var e in enemies)
         {
-            e.Kill();
+            if (e.gameObject.name.Contains("Boss"))
+            {
+                e.GetHealth(e.CurrentHealth - _playerManager.attack * 3, gameObject);
+            }
+            else
+            {
+                e.Kill();
+            }
         }
         // _bulletTime = 0;
         enemies.Clear();
