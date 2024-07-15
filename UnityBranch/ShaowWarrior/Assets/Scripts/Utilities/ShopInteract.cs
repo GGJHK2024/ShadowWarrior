@@ -22,6 +22,7 @@ public class ShopInteract : MonoBehaviour
         {
             isPlayerInside = true;
         }
+        this.transform.GetChild(0).gameObject.SetActive(true);
     }
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -30,6 +31,7 @@ public class ShopInteract : MonoBehaviour
         {
             isPlayerInside = false; // 玩家离开触发区域
         }
+        this.transform.GetChild(0).gameObject.SetActive(false);
     }
     void Update()
     {

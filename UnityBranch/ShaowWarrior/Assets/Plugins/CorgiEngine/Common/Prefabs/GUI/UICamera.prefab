@@ -11274,7 +11274,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 2000
   m_WholeNumbers: 1
-  m_Value: 2000
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -11577,7 +11577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f56a2eb7227f34e85a188bde0403ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LocalizationKey: LU.LevelUpEvent7
+  LocalizationKey: LU.LevelUpEvent9
 --- !u!1 &3583365962205604841
 GameObject:
   m_ObjectHideFlags: 0

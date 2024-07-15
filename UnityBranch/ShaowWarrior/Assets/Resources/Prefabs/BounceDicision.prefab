@@ -159,8 +159,8 @@ MonoBehaviour:
   weaponLable: 
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
-  AreaOffset: {x: 1.04, y: 0.66}
-  AreaSize: {x: 3.2, y: 2.12}
+  AreaOffset: {x: -1.04, y: 0.25}
+  AreaSize: {x: 2.94, y: 2.07}
   ExistingDamageArea: {fileID: 0}
   InitialDelay: 0
   ActiveDuration: 0.3

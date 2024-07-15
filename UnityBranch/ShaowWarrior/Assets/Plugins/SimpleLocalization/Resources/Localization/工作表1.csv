@@ -166,4 +166,4 @@ Pause.SaveAndExit,Save And Exit (Not functional yet.),保存并退出（饼）
 Pause.BackToCg,Back to Title,回到标题
 Tutorial.AskName,Enter your name:,输入你的名字：
 Tutorial.Confirm,Confirm,确认
-LU.LevelUpEvent7,"【Active Skill】Activate by simultaneously using the left and right mouse buttons. Upon activation, time freezes, allowing you to select and eliminate three enemies within your field of view.",【主动技能】同时使用鼠标左右键开启。开启后可静止时间，然后选择视图内的3个敌人并清空。
+LU.LevelUpEvent9,"【Active Skill】Activate by simultaneously using the left and right mouse buttons. Upon activation, time freezes, allowing you to select and eliminate three enemies within your field of view.",【主动技能】同时使用鼠标左右键开启。开启后可静止时间，然后选择视图内的3个敌人并清空。

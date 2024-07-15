@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using MoreMountains.CorgiEngine;
 using UnityEngine;
 
-public class PhoneInteract : MonoBehaviour
+public class DoorInteract : MonoBehaviour
 {
-    public GameObject canvas;
     private BoxCollider2D boxCollider2D;
     private bool isPlayerInside = false;
     
@@ -15,7 +14,7 @@ public class PhoneInteract : MonoBehaviour
         boxCollider2D = GetComponent<BoxCollider2D>();
         boxCollider2D.isTrigger = true;
     }
-    
+
     void OnTriggerEnter2D(Collider2D other)
     {
         // 检查进入的物体是否是玩家
@@ -23,9 +22,8 @@ public class PhoneInteract : MonoBehaviour
         {
             isPlayerInside = true;
         }
-        this.transform.GetChild(0).gameObject.SetActive(true);
+        this.transform.GetChild(2).gameObject.SetActive(true);
     }
-    
     private void OnTriggerExit2D(Collider2D other)
     {
         // 检查离开的物体是否是玩家
@@ -33,17 +31,21 @@ public class PhoneInteract : MonoBehaviour
         {
             isPlayerInside = false; // 玩家离开触发区域
         }
-        this.transform.GetChild(0).gameObject.SetActive(false);
+        this.transform.GetChild(2).gameObject.SetActive(false);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         // 如果玩家在触发区域内并且按下了E键，则执行FunctionA
         if (isPlayerInside && Input.GetKeyDown(KeyCode.E))
         {
-            LevelManager.Instance.FreezeCharacters();
-            canvas.SetActive(true);
+            // GUIManager.Instance.OpenShop();
+            FinishLevel fl = this.gameObject.GetComponent<FinishLevel>();
+            if (KillsManager.Instance.RemainingDeaths == 0)
+            {
+                LevelChooseManager.Instance.GoToNextLevel(fl.doorID);
+                fl.GoToNextLevelButNotIE();
+            }
         }
     }
 }

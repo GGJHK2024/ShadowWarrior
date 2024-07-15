@@ -75,8 +75,11 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
                 break;
             }
             case GameEventType.BounceSuccess: {
-                _bounce++;
-                GUIManager.Instance.SetBounceBar(_bounce);
+                if (hasBigSkill)
+                {
+                    _bounce++;
+                    GUIManager.Instance.SetBounceBar(_bounce);
+                }
                 return;
             }
             case GameEventType.Dead: {
