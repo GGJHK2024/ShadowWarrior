@@ -63,14 +63,20 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
         switch (eventType.EventName) {
             case GameEventType.PassiveSkill2Effect:
             {
+                if (cd == 0 && attack != _attack) return;
                 // 当血量低于10%时，闪避无CD且主动攻击伤害翻倍
+                player.GetComponent<CharacterDash>().DashCooldown = (player.GetComponent<CharacterDash>().DashCooldown - cd) >= 0 ? 
+                    player.GetComponent<CharacterDash>().DashCooldown - cd : player.GetComponent<CharacterDash>().DashCooldown;
                 cd = 0;
                 attack *= 2;
                 break;
             }
             case GameEventType.ExitPassiveSkill2Effect:
             {
+                if (cd == _cd) return;
                 cd = _cd;
+                player.GetComponent<CharacterDash>().DashCooldown =
+                    player.GetComponent<CharacterDash>().DashCooldown + cd;
                 attack = _attack;
                 break;
             }
