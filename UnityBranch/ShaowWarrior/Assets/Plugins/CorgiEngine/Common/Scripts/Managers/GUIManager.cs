@@ -25,6 +25,8 @@ namespace MoreMountains.CorgiEngine
 		///  the bounce bar
 		[Tooltip("大招准备条")]
 		public Slider bounceBar;
+		[Tooltip("累计击杀条")]
+		public Slider bloodBar;
 		[Tooltip("头像")]
 		public Image avater;
 		[Tooltip("头像遮罩")]
@@ -80,6 +82,8 @@ namespace MoreMountains.CorgiEngine
 		public Button optionA;
 		[Tooltip("LU界面升级B")] 
 		public Button optionB;
+		[Tooltip("关闭界面")] 
+		public Button exitBut;
 		
 		[Header("ShopTexts")]
 		/// 商店界面
@@ -353,6 +357,7 @@ namespace MoreMountains.CorgiEngine
 		{
 			optionA.gameObject.SetActive(state);
 			optionB.gameObject.SetActive(state);
+			exitBut.gameObject.SetActive(state);
 		}
 		
 		/// <summary>
@@ -626,6 +631,10 @@ namespace MoreMountains.CorgiEngine
 			LU_AddXHP(3);
 			// 回满血量
 			player.GetComponent<Health>().GetHealth(PlayerManager.Instance.hp, gameObject);
+			if (player.GetComponent<Health>().CurrentHealth > player.GetComponent<Health>().MaximumHealth * 0.1)
+			{
+				MMGameEvent.Trigger("ExitPassiveSkill2Effect");
+			}
 			CloseSpecialEvent();
 		}
 
@@ -672,6 +681,10 @@ namespace MoreMountains.CorgiEngine
 		{
 			float curhp = player.GetComponent<Health>().CurrentHealth;
 			player.GetComponent<Health>().GetHealth(curhp * 0.3f, gameObject);
+			if (player.GetComponent<Health>().CurrentHealth > player.GetComponent<Health>().MaximumHealth * 0.1)
+			{
+				MMGameEvent.Trigger("ExitPassiveSkill2Effect");
+			}
 			// 降低25点攻击
 			LU_AddAttack(-25);
 			CloseSpecialEvent();
@@ -686,6 +699,10 @@ namespace MoreMountains.CorgiEngine
 			float curhp = player.GetComponent<Health>().CurrentHealth;
 			LU_AddXMoney(150);	// +150金币
 			player.GetComponent<Health>().GetHealth(-curhp * 0.5f, gameObject);	// -50%当前血量
+			if (player.GetComponent<Health>().CurrentHealth <= player.GetComponent<Health>().MaximumHealth * 0.1)
+			{
+				MMGameEvent.Trigger("PassiveSkill2Effect");
+			}
 			CloseSpecialEvent();
 		}
 
@@ -722,6 +739,10 @@ namespace MoreMountains.CorgiEngine
 			// -40%
 			float curhp = player.GetComponent<Health>().CurrentHealth;
 			player.GetComponent<Health>().GetHealth(-curhp * 0.4f, gameObject);
+			if (player.GetComponent<Health>().CurrentHealth <= player.GetComponent<Health>().MaximumHealth * 0.1)
+			{
+				MMGameEvent.Trigger("PassiveSkill2Effect");
+			}
 			// cd-1
 			LU_SubXDashCD(1);
 			CloseSpecialEvent();
@@ -737,6 +758,10 @@ namespace MoreMountains.CorgiEngine
 			player = GameManager.Instance.PersistentCharacter;
 			float curhp = player.GetComponent<Health>().CurrentHealth;
 			player.GetComponent<Health>().GetHealth(curhp * 0.3f, gameObject);	// 回复当前的30%
+			if (player.GetComponent<Health>().CurrentHealth > player.GetComponent<Health>().MaximumHealth * 0.1)
+			{
+				MMGameEvent.Trigger("ExitPassiveSkill2Effect");
+			}
 			CloseSpecialEvent();
 		}
 
@@ -750,6 +775,10 @@ namespace MoreMountains.CorgiEngine
 			player = GameManager.Instance.PersistentCharacter;
 			float curhp = player.GetComponent<Health>().CurrentHealth;
 			player.GetComponent<Health>().GetHealth(-curhp * 0.3f, gameObject);	// 扣除当前的30%
+			if (player.GetComponent<Health>().CurrentHealth <= player.GetComponent<Health>().MaximumHealth * 0.1)
+			{
+				MMGameEvent.Trigger("PassiveSkill2Effect");
+			}
 			LU_AddXMoney(150);	//+150 money
 			CloseSpecialEvent();
 		}
@@ -785,6 +814,10 @@ namespace MoreMountains.CorgiEngine
 			player = GameManager.Instance.PersistentCharacter;
 			float curhp = player.GetComponent<Health>().CurrentHealth;
 			player.GetComponent<Health>().GetHealth(-curhp * 0.8f, gameObject);	// 扣除当前的80%
+			if (player.GetComponent<Health>().CurrentHealth <= player.GetComponent<Health>().MaximumHealth * 0.1)
+			{
+				MMGameEvent.Trigger("PassiveSkill2Effect");
+			}
 			// 攻击-25
 			CloseSpecialEvent();
 		}
@@ -884,6 +917,15 @@ namespace MoreMountains.CorgiEngine
 		public void SetBounceBar(float v)
 		{
 			bounceBar.value = v;
+		}
+
+		/// <summary>
+		/// 设置血条
+		/// </summary>
+		/// <param name="v"></param>
+		public void SetBloodBar(float v)
+		{
+			bloodBar.value = v;
 		}
 
 		/// <summary>
@@ -1013,7 +1055,9 @@ namespace MoreMountains.CorgiEngine
 						? "【大招】低血流-打不倒的小强。当血量低于10%时，闪避无CD且主动攻击伤害翻倍。累计杀害敌人血量达2000，15秒主动攻击一击毙命。"
 						: "【Ultimate】 Low Health Flow - The unyielding cockroach. When health is below 10%, dodge has no cooldown and active attack damage doubles. When total enemy health killed reaches 2000, active attack becomes an instant kill for 15 seconds.";
 					// 大招-血魔流
+					optionA.onClick.AddListener(LU_EnablePSkill1);
 					// 大招-低血流
+					optionB.onClick.AddListener(LU_EnablePSkill2);
 					break;
 				case 5:
 					btsA = Resources.LoadAll<Sprite>("LU/攻击加");
@@ -1049,6 +1093,23 @@ namespace MoreMountains.CorgiEngine
 					break;
 			}
 		}
+		/// <summary>
+		/// 开启被动大招1
+		/// 【大招】血魔流-吸干你的血。击杀敌人触发吸血技能。击杀成功恢复2%血量，累计杀害敌人血量达2000，触发10秒无敌状态。
+		/// </summary>
+		public void LU_EnablePSkill1()
+		{
+			PlayerManager.Instance.EnablePSkill1(true);
+		}
+
+		/// <summary>
+		/// 开启被动大招2
+		/// 【大招】低血流-打不倒的小强。当血量低于10%时，闪避无CD且主动攻击伤害翻倍。累计杀害敌人血量达2000，15秒主动攻击一击毙命。
+		/// </summary>
+		public void LU_EnablePSkill2()
+		{
+			PlayerManager.Instance.EnablePSkill2(true);
+		}
 
 		/// <summary>
 		/// Level Up 事件
@@ -1057,6 +1118,10 @@ namespace MoreMountains.CorgiEngine
 		public void LU_AddXHP(int x)
 		{
 			PlayerManager.Instance.AddHP(x);
+			if (player.GetComponent<Health>().CurrentHealth <= player.GetComponent<Health>().MaximumHealth * 0.1)
+			{
+				MMGameEvent.Trigger("PassiveSkill2Effect");
+			}
 		}
 
 		/// <summary>
@@ -1096,7 +1161,7 @@ namespace MoreMountains.CorgiEngine
 			CharacterHandleWeapon curWeapon = player.GetComponent<CharacterHandleWeapon>();
 			string curName = curWeapon.InitialWeapon.name;
 			int curStage = int.Parse(curName.Substring(curName.Length - 1, 1));
-			PlayerManager.Instance.attack += 25;
+			PlayerManager.Instance.AddAttack(25);
 			switch (curStage)
 			{
 				case 1:
@@ -1118,6 +1183,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public void LU_AddAttack(int x)
 		{
+			PlayerManager.Instance.AddAttack( PlayerManager.Instance.attack + x > 25 ? x : 25);
 			GameObject weapon = null;
 			for (int i = 0; i < player.gameObject.transform.childCount; i++)
 			{
@@ -1155,6 +1221,10 @@ namespace MoreMountains.CorgiEngine
 		public void S_Add3HP()
 		{
 			player.GetComponent<Health>().GetHealth(3 * 20, gameObject);
+			if (player.GetComponent<Health>().CurrentHealth > player.GetComponent<Health>().MaximumHealth * 0.1)
+			{
+				MMGameEvent.Trigger("ExitPassiveSkill2Effect");
+			}
 			// PlayerManager.Instance.AddHP(3);
 		}
 

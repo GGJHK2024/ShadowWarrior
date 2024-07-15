@@ -148,6 +148,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1951000166}
     m_Modifications:
+    - target: {fileID: 6818802770552507356, guid: 561595cf0a8a6af4f9ffbc360f96765a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6818980704704118918, guid: 561595cf0a8a6af4f9ffbc360f96765a,
         type: 3}
       propertyPath: MaxDamageCaused
@@ -693,7 +698,7 @@ MonoBehaviour:
   TargetsList: []
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 536879104
   AutoSetKillThreshold: 1
   DeathThreshold: 5
   RemainingDeaths: 0
@@ -1170,7 +1175,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506901126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28, y: -2, z: 0}
+  m_LocalPosition: {x: -25, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2578,6 +2583,11 @@ PrefabInstance:
       propertyPath: MinDamageCaused
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6818980704704118926, guid: 561595cf0a8a6af4f9ffbc360f96765a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6818980704704118929, guid: 561595cf0a8a6af4f9ffbc360f96765a,
         type: 3}
       propertyPath: BoundsExtentsLeft
@@ -3312,6 +3322,7 @@ GameObject:
   - component: {fileID: 1653363045}
   - component: {fileID: 1653363050}
   - component: {fileID: 1653363043}
+  - component: {fileID: 1653363051}
   m_Layer: 0
   m_Name: 3DCamera
   m_TagString: MainCamera
@@ -3484,6 +3495,19 @@ MonoBehaviour:
   TargetController: {fileID: 0}
   StartFollowingBtn: 0
   StopFollowingBtn: 0
+--- !u!114 &1653363051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653363041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e84bec6c36ca5419922f3def4d4267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorVisibility: 0
 --- !u!1001 &1771393991
 PrefabInstance:
   m_ObjectHideFlags: 0

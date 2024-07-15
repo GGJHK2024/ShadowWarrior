@@ -147,7 +147,7 @@ MonoBehaviour:
   hasBigSkill: 0
   passiveSkill1: 0
   passiveSkill2: 0
-  enemyBlood: 0
+  _enemyBlood: 0
   bulletTimeCanKillEnemyNumber: 3
   skillChargeTime: 0
   bulletTime: 0
@@ -325,7 +325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.26519966}
+  m_AnchoredPosition: {x: 0, y: 0.26519775}
   m_SizeDelta: {x: 240, y: 88.5863}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212065696
@@ -348,7 +348,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5F00\u59CB\u6E38\u620F"
+  m_text: 'Skip >>
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 31766b456668c984d987b0b6bd269997, type: 2}
   m_sharedMaterial: {fileID: 6727856693376162040, guid: 31766b456668c984d987b0b6bd269997,
@@ -358,8 +360,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -453,7 +455,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251860220}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: e6b084cd553eec34eb04c8904453acc7, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 2b973080c1415af4da3d868b38c739ed, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -466,14 +468,12 @@ VideoPlayer:
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
+  m_TargetAudioSources: []
+  m_DirectAudioVolumes: []
   m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
+  m_EnabledAudioTracks: 
+  m_DirectAudioMutes: 
+  m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 0
@@ -579,7 +579,6 @@ GameObject:
   - component: {fileID: 114903718694225779}
   - component: {fileID: 14}
   - component: {fileID: 7152564280740380819}
-  - component: {fileID: 383671125}
   - component: {fileID: 383671130}
   m_Layer: 0
   m_Name: GameManagers
@@ -603,19 +602,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &383671125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 349920763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98e84bec6c36ca5419922f3def4d4267, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CursorVisibility: 0
 --- !u!114 &383671130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,6 +679,7 @@ GameObject:
   - component: {fileID: 968895834}
   - component: {fileID: 968895833}
   - component: {fileID: 968895832}
+  - component: {fileID: 968895835}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -766,6 +753,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &968895835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968895831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e84bec6c36ca5419922f3def4d4267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorVisibility: 0
 --- !u!1 &1204986863
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,8 +892,9 @@ GameObject:
   - component: {fileID: 1403562266}
   - component: {fileID: 1403562265}
   - component: {fileID: 1403562264}
+  - component: {fileID: 1403562267}
   m_Layer: 5
-  m_Name: Test
+  m_Name: Skip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -915,10 +916,10 @@ RectTransform:
   m_Father: {fileID: 1204986864}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2939}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -171.48975, y: -64.54089}
+  m_SizeDelta: {x: 342.9795, y: 129.0818}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1403562264
 MonoBehaviour:
@@ -964,33 +965,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.LevelChooseManager, MoreMountains.CorgiEngine
-        m_MethodName: GoToNextLevel
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.FinishLevel, MoreMountains.CorgiEngine
-        m_MethodName: GoToNextLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.LevelManager, MoreMountains.CorgiEngine
-        m_MethodName: UnFreezeCharacters
+      - m_Target: {fileID: 1695200597}
+        m_TargetAssemblyTypeName: Drivefr, Assembly-CSharp
+        m_MethodName: SkipButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1038,6 +1015,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403562262}
   m_CullTransparentMesh: 1
+--- !u!95 &1403562267
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403562262}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd5298fc97105174eae7c5dac3f265bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1623146372
 PrefabInstance:
   m_ObjectHideFlags: 0

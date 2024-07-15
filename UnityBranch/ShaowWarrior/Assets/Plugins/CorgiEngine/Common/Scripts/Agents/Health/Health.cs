@@ -497,6 +497,17 @@ namespace MoreMountains.CorgiEngine
 			{
 				CurrentHealth = 0;
 			}
+			
+			// 低血流-打不倒的小强。当血量低于10%时，闪避无CD且主动攻击伤害翻倍。
+			if (CurrentHealth <= MaximumHealth * 0.1f && _character.CharacterType == Character.CharacterTypes.Player)
+			{
+				print("进入低血流被动");
+				MMGameEvent.Trigger("PassiveSkill2Effect");
+			}
+			else
+			{
+				MMGameEvent.Trigger("ExitPassiveSkill2Effect");
+			}
 
 			// we prevent the character from colliding with Projectiles, Player and Enemies
 			if ((invincibilityDuration > 0) && gameObject.activeInHierarchy)
@@ -590,6 +601,16 @@ namespace MoreMountains.CorgiEngine
 				{
 					MMGameEvent.Trigger(GameEventType.Dead);
 					CorgiEngineEvent.Trigger(CorgiEngineEventTypes.PlayerDeath, _character);
+				}
+				else
+				{
+					if (PlayerManager.Instance.passiveSkill1)
+					{
+						// 击杀成功恢复2%血量
+						Character player = GameManager.Instance.PersistentCharacter;
+						float curhp = player.GetComponent<Health>().CurrentHealth;
+						player.GetComponent<Health>().GetHealth(curhp * 0.02f, gameObject);
+					}
 				}
 			}
 			SetHealth(0f, _thisObject);

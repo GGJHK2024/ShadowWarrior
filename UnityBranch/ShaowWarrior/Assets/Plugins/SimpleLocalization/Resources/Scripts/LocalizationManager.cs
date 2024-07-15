@@ -33,7 +33,7 @@ namespace Assets.SimpleLocalization.Scripts
 		/// </summary>
         public static void AutoLanguage()
         {
-            Language = "English";
+            Language = "Chinese";
         }
 
         /// <summary>

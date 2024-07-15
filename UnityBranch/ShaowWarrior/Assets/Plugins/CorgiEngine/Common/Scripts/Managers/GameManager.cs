@@ -14,6 +14,8 @@ namespace MoreMountains.CorgiEngine
    		public const string FreezeNpc = "FreezeNpc";
    		public const string UnFreezeNpc = "UnFreezeNpc";
 		public const string BounceSuccess = "BounceSuccess";
+		public const string PassiveSkill2Effect = "PassiveSkill2Effect";
+		public const string ExitPassiveSkill2Effect = "ExitPassiveSkill2Effect";
 		public const string Dead = "Dead";
 		}
 

@@ -69,7 +69,7 @@ public class BulletTime : CharacterAbility,
 
             Vector2 ray = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
             RaycastHit2D hit = Physics2D.Raycast(ray, ray);
-            if (hit.collider != null && hit.collider.gameObject.layer == 13)
+            if (hit.collider != null && (hit.collider.gameObject.layer == 13 || hit.collider.gameObject.layer == 29))
             {
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -148,7 +148,14 @@ public class BulletTime : CharacterAbility,
         // 一击必杀所有选中的敌人
         foreach (var e in enemies)
         {
-            e.Kill();
+            if (e.gameObject.name.Contains("Boss"))
+            {
+                e.GetHealth(e.CurrentHealth - _playerManager.attack * 3, gameObject);
+            }
+            else
+            {
+                e.Kill();
+            }
         }
         // _bulletTime = 0;
         enemies.Clear();

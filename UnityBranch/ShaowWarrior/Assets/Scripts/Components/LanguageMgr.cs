@@ -15,6 +15,7 @@ public class LanguageMgr : MMSingleton<LanguageMgr>
     public void Awake()
     {
         LocalizationManager.Read();
+        GameManager.Instance.SetLanguage(LocalizationManager.Language);
     }
 
     /// <summary>

@@ -72,13 +72,7 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			base.TriggerButtonAction (instigator);
-			if (KillsManager.Instance.RemainingDeaths == 0)
-			{
-				LevelChooseManager.Instance.GoToNextLevel(doorID);
-				StartCoroutine(GoToNextLevelCoroutine());
-				ActivateZone ();
-			}
-			
+
 		}
 
 		/// <summary>
@@ -117,6 +111,22 @@ namespace MoreMountains.CorgiEngine
 
 			// we wait for the duration of the specified delay
 			yield return _delayWaitForSeconds;
+
+			// finally we move to the next level
+			GoToNextLevel();
+		}
+		
+		/// <summary>
+			/// A coroutine used to handle the finish level sequence
+			/// </summary>
+			/// <returns></returns>
+		public void GoToNextLevelButNotIE()
+		{
+			// we trigger a fade if needed
+			if (TriggerFade && (DelayBeforeTransition > 0f))
+			{
+				MMFadeInEvent.Trigger(DelayBeforeTransition, FadeTween, FaderID, false, LevelManager.Instance.Players[0].transform.position);
+			}
 
 			// finally we move to the next level
 			GoToNextLevel();
