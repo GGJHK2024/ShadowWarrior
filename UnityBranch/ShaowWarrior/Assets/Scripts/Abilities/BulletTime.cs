@@ -69,7 +69,7 @@ public class BulletTime : CharacterAbility,
 
             Vector2 ray = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
             RaycastHit2D hit = Physics2D.Raycast(ray, ray);
-            if (hit.collider != null && hit.collider.gameObject.layer is 13 or 29)
+            if (hit.collider != null && (hit.collider.gameObject.layer == 13 || hit.collider.gameObject.layer == 29))
             {
                 if (Input.GetMouseButtonDown(0))
                 {
