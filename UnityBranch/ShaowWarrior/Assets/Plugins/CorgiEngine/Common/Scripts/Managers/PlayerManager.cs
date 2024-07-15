@@ -255,6 +255,7 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     /// <param name="v"></param>
     public void UpdateBloodBar(int v)
     {
+        if(!passiveSkill1 && !passiveSkill2)    return;
         _enemyBlood += v;
         if (_enemyBlood >= 2000)
         {
