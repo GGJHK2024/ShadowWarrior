@@ -147,7 +147,7 @@ MonoBehaviour:
   hasBigSkill: 0
   passiveSkill1: 0
   passiveSkill2: 0
-  enemyBlood: 0
+  _enemyBlood: 0
   bulletTimeCanKillEnemyNumber: 3
   skillChargeTime: 0
   bulletTime: 0
