@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.CorgiEngine;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class DoorInteract : MonoBehaviour
 {
     private BoxCollider2D boxCollider2D;
     private bool isPlayerInside = false;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +22,9 @@ public class DoorInteract : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isPlayerInside = true;
+            this.transform.GetChild(2).gameObject.SetActive(true);
+            this.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Materials/Custom_Outline_Door");
         }
-        this.transform.GetChild(2).gameObject.SetActive(true);
     }
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -30,8 +32,9 @@ public class DoorInteract : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInside = false; // 玩家离开触发区域
+            this.transform.GetChild(2).gameObject.SetActive(false);
+            this.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Materials/LitSprite");
         }
-        this.transform.GetChild(2).gameObject.SetActive(false);
     }
     
     void Update()
@@ -39,13 +42,23 @@ public class DoorInteract : MonoBehaviour
         // 如果玩家在触发区域内并且按下了E键，则执行FunctionA
         if (isPlayerInside && Input.GetKeyDown(KeyCode.E))
         {
-            // GUIManager.Instance.OpenShop();
-            FinishLevel fl = this.gameObject.GetComponent<FinishLevel>();
             if (KillsManager.Instance.RemainingDeaths == 0)
             {
-                LevelChooseManager.Instance.GoToNextLevel(fl.doorID);
-                fl.GoToNextLevelButNotIE();
+                // 过0.5s（玩家进门动画时间）进入下一场景
+                LevelManager.Instance.Players[0].GetComponent<Character>()._animator.SetBool("inDoor", true);
+                Invoke(nameof(GTNL),0.5f);
             }
         }
+    }
+
+    /// <summary>
+    /// 去下一关1
+    /// </summary>
+    public void GTNL()
+    {
+        LevelManager.Instance.Players[0].GetComponent<Character>()._animator.SetBool("inDoor", false);
+        FinishLevel fl = this.gameObject.GetComponent<FinishLevel>();
+        LevelChooseManager.Instance.GoToNextLevel(fl.doorID);
+        fl.GoToNextLevelButNotIE();
     }
 }
