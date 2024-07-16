@@ -813,7 +813,7 @@ MonoBehaviour:
     - rid: 2
       type: {class: MMF_Flash, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
-        Active: 1
+        Active: 0
         UniqueID: 1957093741
         Label: Flash
         ChannelMode: 0
@@ -1642,7 +1642,7 @@ MonoBehaviour:
     - rid: 2
       type: {class: MMF_Flash, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
-        Active: 1
+        Active: 0
         UniqueID: -1604397383
         Label: Flash
         ChannelMode: 0
@@ -2471,7 +2471,7 @@ MonoBehaviour:
     - rid: 2
       type: {class: MMF_Flash, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
-        Active: 1
+        Active: 0
         UniqueID: 1223580911
         Label: Flash
         ChannelMode: 0
