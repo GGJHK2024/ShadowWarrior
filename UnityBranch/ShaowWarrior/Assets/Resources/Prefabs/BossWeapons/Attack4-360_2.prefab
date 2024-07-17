@@ -171,8 +171,8 @@ MonoBehaviour:
     m_Bits: 512
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 50
-  MaxDamageCaused: 50
+  MinDamageCaused: 12
+  MaxDamageCaused: 12
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
@@ -2873,4 +2873,5 @@ MonoBehaviour:
   HitDamageableFeedback: {fileID: 0}
   HitNonDamageableFeedback: {fileID: 0}
   FreezeFramesOnHitDuration: 0
+  magnification: 1
   Owner: {fileID: 0}

@@ -168,8 +168,8 @@ MonoBehaviour:
     m_Bits: 8704
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 40
-  MaxDamageCaused: 40
+  MinDamageCaused: 20
+  MaxDamageCaused: 20
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5

@@ -104,8 +104,8 @@ MonoBehaviour:
     m_Bits: 768
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 30
-  MaxDamageCaused: 30
+  MinDamageCaused: 20
+  MaxDamageCaused: 20
   TypedDamages: []
   DamageCausedKnockbackType: 1
   DamageCausedKnockbackDirection: 0
@@ -126,6 +126,7 @@ MonoBehaviour:
   HitDamageableFeedback: {fileID: 0}
   HitNonDamageableFeedback: {fileID: 0}
   FreezeFramesOnHitDuration: 0
+  magnification: 1
   Owner: {fileID: 0}
 --- !u!114 &114000010385110490
 MonoBehaviour:
