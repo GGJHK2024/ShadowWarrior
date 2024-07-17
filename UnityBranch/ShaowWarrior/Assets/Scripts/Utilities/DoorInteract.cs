@@ -8,6 +8,7 @@ public class DoorInteract : MonoBehaviour
 {
     private BoxCollider2D boxCollider2D;
     private bool isPlayerInside = false;
+    public MMF_Player soundFeedback;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,7 @@ public class DoorInteract : MonoBehaviour
             if (KillsManager.Instance.RemainingDeaths == 0)
             {
                 // 过0.5s（玩家进门动画时间）进入下一场景
+                soundFeedback.PlayFeedbacks();
                 LevelManager.Instance.Players[0].GetComponent<Character>()._animator.SetTrigger("inDoor");
                 Invoke(nameof(GTNL),0.5f);
             }
