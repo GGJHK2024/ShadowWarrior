@@ -1181,10 +1181,22 @@ namespace MoreMountains.CorgiEngine
 				case 1:
 					curWeapon.InitialWeapon = Resources.Load<MeleeWeapon>("Prefabs/MeleeWeapon_2");
 					curWeapon.Setup();
+					MeleeWeapon[] mw = curWeapon.GetComponents<MeleeWeapon>();
+					for (int i = 0; i < mw.Length; i++ )
+					{
+						 mw[i].MinDamageCaused = (i + 1) * PlayerManager.Instance.attack;
+						 mw[i].MaxDamageCaused = (i + 1) * PlayerManager.Instance.attack;
+					}
 					break;
 				case 2:
 					curWeapon.InitialWeapon = Resources.Load<MeleeWeapon>("Prefabs/MeleeWeapon_3");
 					curWeapon.Setup();
+					MeleeWeapon[] m = curWeapon.GetComponents<MeleeWeapon>();
+					for (int i = 0; i < m.Length; i++ )
+					{
+						m[i].MinDamageCaused = (i + 1) * PlayerManager.Instance.attack;
+						m[i].MaxDamageCaused = (i + 1) * PlayerManager.Instance.attack;
+					}
 					break;
 				case 3:
 					LU_AddAttack(25);

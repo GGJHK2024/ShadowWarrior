@@ -120,10 +120,10 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
                 if (weapon)
                 {
                     MeleeWeapon[] mw = weapon.GetComponents<MeleeWeapon>();
-                    foreach (var a in mw)
+                    for (int i = 0; i < mw.Length; i++)
                     {
-                        a.MinDamageCaused = attack;
-                        a.MaxDamageCaused = attack;
+                        mw[i].MinDamageCaused = (i + 1) * attack;
+                        mw[i].MaxDamageCaused = (i + 1) * attack;
                     }
                 }
                 // set cd
