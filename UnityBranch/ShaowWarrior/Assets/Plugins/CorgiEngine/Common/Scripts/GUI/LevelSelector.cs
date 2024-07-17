@@ -34,6 +34,7 @@ namespace MoreMountains.CorgiEngine
 		public virtual void GoToLevel()
 		{
 			// 由于目前这个函数仅用于不保存回到标题的功能，因此需要重置角色和关卡进度。
+			player = GameManager.Instance.PersistentCharacter;
 			CharacterHandleWeapon curWeapon = player.GetComponent<CharacterHandleWeapon>();
 			curWeapon.InitialWeapon = Resources.Load<MeleeWeapon>("Prefabs/MeleeWeapon_1");
 			curWeapon.Setup();

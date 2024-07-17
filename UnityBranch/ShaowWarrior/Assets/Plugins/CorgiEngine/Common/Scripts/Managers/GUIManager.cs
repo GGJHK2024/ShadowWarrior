@@ -36,6 +36,8 @@ namespace MoreMountains.CorgiEngine
 		/// the panels and bars used to display current weapon ammo
 		[Tooltip("the panels and bars used to display current weapon ammo")]
 		public AmmoDisplay[] AmmoDisplays;
+		[Tooltip("结算界面")]
+		public GameObject WinScreen;
 		/// the pause screen game object
 		[Tooltip("the pause screen game object")]
 		public GameObject PauseScreen;
@@ -272,6 +274,18 @@ namespace MoreMountains.CorgiEngine
 			{ 
 				PauseScreen.SetActive(state);
 				EventSystem.current.sendNavigationEvents = state;
+			}
+		}
+
+		/// <summary>
+		/// 打开胜利结算
+		/// </summary>
+		public void OpenWinner()
+		{
+			Time.timeScale = 0;
+			if (WinScreen != null)
+			{ 
+				WinScreen.SetActive(true);
 			}
 		}
 
@@ -1244,6 +1258,19 @@ namespace MoreMountains.CorgiEngine
 		public void S_Add1Lucky()
 		{
 			PlayerManager.Instance.AddLcuky(5);
+		}
+		
+		/// <summary>
+		/// 结算界面按钮
+		/// </summary>
+		public void BossKillerForButton()
+		{
+			PlayerManager.Instance.ResetPlayerParams();
+			Time.timeScale = 1;
+			WinScreen.SetActive(false);
+			LevelSelector lss = new LevelSelector();
+			lss.LevelName = "CG";
+			lss.GoToLevel();
 		}
 
 		/// <summary>
