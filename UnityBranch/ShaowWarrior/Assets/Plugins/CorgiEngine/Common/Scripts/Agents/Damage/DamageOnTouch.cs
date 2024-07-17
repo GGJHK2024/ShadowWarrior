@@ -378,7 +378,7 @@ namespace MoreMountains.CorgiEngine
 								collider.gameObject.transform.position.y);
 							Vector2 pPos = new Vector2(ownerWeapon.Owner.transform.position.x,
 							                           ownerWeapon.Owner.transform.position.y);
-							collider.gameObject.GetComponent<CorgiController>().AddForce(10.0f * (ePos - pPos));
+							collider.gameObject.GetComponent<CorgiController>().AddForce(30.0f * (ePos - pPos));
 							// print("弹反成功, 且弹反对象为自爆怪");
 							MMGameEvent.Trigger(GameEventType.BounceSuccess);
 							return;
