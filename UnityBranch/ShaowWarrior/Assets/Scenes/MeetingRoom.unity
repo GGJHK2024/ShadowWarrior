@@ -5432,6 +5432,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICamera
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: ace2d4bf56f98df4196ff81845a465d7, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: ace2d4bf56f98df4196ff81845a465d7, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -5476,12 +5480,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 22400000, guid: ace2d4bf56f98df4196ff81845a465d7, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3298223115186057540, guid: ace2d4bf56f98df4196ff81845a465d7,
         type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3298223115186057540, guid: ace2d4bf56f98df4196ff81845a465d7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310267930665517083, guid: ace2d4bf56f98df4196ff81845a465d7,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6381,6 +6394,10 @@ PrefabInstance:
     - target: {fileID: 490956, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 349811737, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
+      propertyPath: attack
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 349811737, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
       propertyPath: hasBigSkill
