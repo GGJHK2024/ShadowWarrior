@@ -23,6 +23,7 @@ public class DoorInteract : MonoBehaviour
         {
             isPlayerInside = true;
             this.transform.GetChild(2).gameObject.SetActive(true);
+            LevelManager.Instance.Players[0].GetComponent<Character>()._animator.ResetTrigger("inDoor");
             this.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Materials/Custom_Outline_Door");
         }
     }
@@ -33,6 +34,7 @@ public class DoorInteract : MonoBehaviour
         {
             isPlayerInside = false; // 玩家离开触发区域
             this.transform.GetChild(2).gameObject.SetActive(false);
+            LevelManager.Instance.Players[0].GetComponent<Character>()._animator.ResetTrigger("inDoor");
             this.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Materials/LitSprite");
         }
     }
@@ -45,7 +47,8 @@ public class DoorInteract : MonoBehaviour
             if (KillsManager.Instance.RemainingDeaths == 0)
             {
                 // 过0.5s（玩家进门动画时间）进入下一场景
-                LevelManager.Instance.Players[0].GetComponent<Character>()._animator.SetBool("inDoor", true);
+                print("woc, 开门！");
+                LevelManager.Instance.Players[0].GetComponent<Character>()._animator.SetTrigger("inDoor");
                 Invoke(nameof(GTNL),0.5f);
             }
         }
@@ -56,7 +59,6 @@ public class DoorInteract : MonoBehaviour
     /// </summary>
     public void GTNL()
     {
-        LevelManager.Instance.Players[0].GetComponent<Character>()._animator.SetBool("inDoor", false);
         FinishLevel fl = this.gameObject.GetComponent<FinishLevel>();
         LevelChooseManager.Instance.GoToNextLevel(fl.doorID);
         fl.GoToNextLevelButNotIE();
