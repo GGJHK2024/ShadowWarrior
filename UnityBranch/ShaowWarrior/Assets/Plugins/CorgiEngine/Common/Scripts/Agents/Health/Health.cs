@@ -709,14 +709,12 @@ namespace MoreMountains.CorgiEngine
 		}
 
 		/// <summary>
-		/// 击杀boss后回到cg
+		/// 击杀boss后打开结算界面
 		/// </summary>
 		public void BossKiller()
 		{
 			_character.CancelOutlineCharacter();
-			PlayerManager.Instance.ResetPlayerParams();
-			LevelSelector ls = gameObject.GetComponent<LevelSelector>();
-			ls.GoToLevel();
+			GUIManager.Instance.OpenWinner();
 		}
 
 		/// <summary>
