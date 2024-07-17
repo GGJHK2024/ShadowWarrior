@@ -714,6 +714,7 @@ MonoBehaviour:
   InitializationMode: 0
   Label: Player
   MinimumDistance: 1
+  speedMultiplier: 1
 --- !u!114 &1772864488767088690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -888,7 +889,7 @@ MonoBehaviour:
   TimeScale: 0
   HealthBarPrefab: {fileID: 0}
   TargetProgressBar: {fileID: 0}
-  Size: {x: 4, y: 0.9}
+  Size: {x: 4, y: 0.2}
   BackgroundPadding: {x: 0.06, y: 0.06}
   InitialRotationAngles: {x: 0, y: 0, z: 0}
   ForegroundColor:
@@ -1043,7 +1044,7 @@ MonoBehaviour:
   NestDrawnHealthBar: 0
   Billboard: 0
   InstantiatedOnDeath: {fileID: 0}
-  HealthBarOffset: {x: 0, y: 4.8, z: 0}
+  HealthBarOffset: {x: 0, y: 4, z: 0}
   AlwaysVisible: 1
   DisplayDurationOnHit: 1
   HideBarAtZero: 1
