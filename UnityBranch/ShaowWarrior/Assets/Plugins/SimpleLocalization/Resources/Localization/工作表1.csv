@@ -167,3 +167,10 @@ Pause.BackToCg,Back to Title,回到标题
 Tutorial.AskName,Enter your name:,输入你的名字：
 Tutorial.Confirm,Confirm,确认
 LU.LevelUpEvent9,"【Active Skill】Activate by simultaneously using the left and right mouse buttons. Upon activation, time freezes, allowing you to select and eliminate three enemies within your field of view.",【主动技能】同时使用鼠标左右键开启。开启后可静止时间，然后选择视图内的3个敌人并清空。
+Shop.Item1,Restore 3 HP,恢复3格血量
+Shop.Item2,Upgrade one attack move (if the normal attack has not yet been upgraded to the third level),升级一段攻击招式（若普通攻击还未升级至三段）
+Shop.Item3,Increase 15 points LUCK,增加15点幸运值
+Shop.Intro,Introduction:,物品说明：
+Win.win,Back to the Main Menu,回到主界面
+Win.text,TO BE CONTINUED,未完待续
+Shop.Leave,Leave,离开
