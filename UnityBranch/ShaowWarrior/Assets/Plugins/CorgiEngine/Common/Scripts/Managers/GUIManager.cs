@@ -1086,7 +1086,7 @@ namespace MoreMountains.CorgiEngine
 					optionB.spriteState = ssB;
 					// bttA.text = "发财了，获得5货币";
 					// bttB.text = "获得一次额外奇遇机会";
-					bttB.text = (GameManager.Instance.language == "Chinese") ? "发财了，获得5货币" : "Got Rich, Gain 5 Currency";
+					bttA.text = (GameManager.Instance.language == "Chinese") ? "发财了，获得5货币" : "Got Rich, Gain 5 Currency";
 					bttB.text = (GameManager.Instance.language == "Chinese") ? "获得一次额外奇遇机会" : "Gain an Extra Encounter Opportunity";
 					optionA.onClick.AddListener(()=>LU_AddXMoney(5));
 					optionB.onClick.AddListener(LU_OpenSpecialEvent);
