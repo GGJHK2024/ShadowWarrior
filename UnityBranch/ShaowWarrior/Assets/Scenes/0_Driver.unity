@@ -455,7 +455,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251860220}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 2b973080c1415af4da3d868b38c739ed, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 02ce055d4f0b35841a8b4f3c43100705, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -468,12 +468,14 @@ VideoPlayer:
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
   m_Url: 
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 0
@@ -1304,7 +1306,7 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 1526497724}
         DebugActive: 0
-        Sfx: {fileID: 8300000, guid: 2e66f0795156e42f1bb55316f73f568e, type: 3}
+        Sfx: {fileID: 8300000, guid: a0b5f3444c2cb11418b20be7e54376d7, type: 3}
         RandomSfx: []
         TestPlayButton:
           ButtonText: Debug Play Sound
@@ -2218,7 +2220,7 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 1673387845}
         DebugActive: 0
-        Sfx: {fileID: 8300000, guid: 0afe9eb2692dc79428286fa4e1b0c30d, type: 3}
+        Sfx: {fileID: 8300000, guid: 3f71ce8894d9f2d4d8a688013ed2d13e, type: 3}
         RandomSfx: []
         TestPlayButton:
           ButtonText: Debug Play Sound

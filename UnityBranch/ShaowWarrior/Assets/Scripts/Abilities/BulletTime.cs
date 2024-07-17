@@ -86,13 +86,15 @@ public class BulletTime : CharacterAbility,
                         currentEne.GetComponent<Character>().OutlineCharacter();
                         // Debug.Log("选中：" + hit.collider.gameObject.name);
                     }
+                    // print("reamining enemy: " + EnemyManager.Instance.RemainingEnemies() + ", enemies count: " + enemies.Count);
                 }
             }
             /*if (!_isBulletTime)
                 ExitBulletTime();*/
-            if (enemies.Count >= ((EnemyManager.Instance.RemainingEnemies()>_bulletTimeCanKillEnemyNumber)?
-                    _bulletTimeCanKillEnemyNumber:EnemyManager.Instance.RemainingEnemies()))
+            if (enemies.Count >= ((EnemyManager.Instance.RemainingEnemies()>_bulletTimeCanKillEnemyNumber) ? 
+                    _bulletTimeCanKillEnemyNumber : EnemyManager.Instance.RemainingEnemies()))
             {
+                // print("exit bullet time");
                 ExitBulletTime();
             }
         }
@@ -135,6 +137,7 @@ public class BulletTime : CharacterAbility,
         LevelManager.Instance.FreezeCharacters(false);
         _isBulletTime = true;
         enemies.Clear();
+        // print("进入子弹时间");
         // _bulletTime = _playerManager.bulletTime;
         return true;
     }
@@ -151,6 +154,7 @@ public class BulletTime : CharacterAbility,
             if (e.gameObject.name.Contains("Boss"))
             {
                 e.GetHealth(e.CurrentHealth - _playerManager.attack * 3, gameObject);
+                e.GetComponent<Character>().CancelOutlineCharacter();
             }
             else
             {
@@ -158,6 +162,7 @@ public class BulletTime : CharacterAbility,
             }
         }
         // _bulletTime = 0;
+        // print("离开子弹时间");
         enemies.Clear();
         _isBulletTime = false;
         LevelManager.Instance.UnFreezeCharacters();

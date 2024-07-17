@@ -314,7 +314,7 @@ public class PlayerManager : MMPersistentSingleton<PlayerManager>,
     /// <param name="i"></param>
     public void AddMoney(int i)
     {
-        money += i;
+        money = (money + i < 0) ? 0 : money + i;
         GUIManager.Instance.UpdateMoneyText(money);
     }
 

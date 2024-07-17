@@ -501,7 +501,7 @@ namespace MoreMountains.CorgiEngine
 			// 低血流-打不倒的小强。当血量低于10%时，闪避无CD且主动攻击伤害翻倍。
 			if (CurrentHealth <= MaximumHealth * 0.1f && _character.CharacterType == Character.CharacterTypes.Player)
 			{
-				print("进入低血流被动");
+				// print("进入低血流被动");
 				MMGameEvent.Trigger("PassiveSkill2Effect");
 			}
 			else

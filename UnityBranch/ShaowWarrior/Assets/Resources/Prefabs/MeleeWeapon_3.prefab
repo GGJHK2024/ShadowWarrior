@@ -162,8 +162,8 @@ MonoBehaviour:
   weaponLable: 
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
-  AreaOffset: {x: 2.116406, y: -0.255502}
-  AreaSize: {x: 4.554827, y: 1.511006}
+  AreaOffset: {x: 0.9, y: -0.96}
+  AreaSize: {x: 5.47, y: 1.97}
   ExistingDamageArea: {fileID: 0}
   InitialDelay: 0.1
   ActiveDuration: 0.2
@@ -301,8 +301,8 @@ MonoBehaviour:
   weaponLable: 
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
-  AreaOffset: {x: 1.422341, y: -0.166632}
-  AreaSize: {x: 3.999586, y: 1.666735}
+  AreaOffset: {x: 0.21, y: -0.94}
+  AreaSize: {x: 7.66, y: 2.15}
   ExistingDamageArea: {fileID: 0}
   InitialDelay: 0
   ActiveDuration: 0.2
@@ -440,8 +440,8 @@ MonoBehaviour:
   weaponLable: 
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
-  AreaOffset: {x: 1.855276, y: 0.6554208}
-  AreaSize: {x: 4.699345, y: 3.921724}
+  AreaOffset: {x: 1.7, y: -0.27}
+  AreaSize: {x: 6.71, y: 5.6}
   ExistingDamageArea: {fileID: 0}
   InitialDelay: 0
   ActiveDuration: 0.3

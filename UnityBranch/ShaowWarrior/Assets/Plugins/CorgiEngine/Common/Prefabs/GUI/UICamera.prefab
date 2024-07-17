@@ -1093,7 +1093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &22426990
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3694,7 +3694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &224864152675878450
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4273,7 +4273,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00091552734, y: -365}
+  m_AnchoredPosition: {x: 0.00091552734, y: -307}
   m_SizeDelta: {x: 568, y: 124.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &95837095979767760
@@ -4860,7 +4860,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00018310547, y: -15}
+  m_AnchoredPosition: {x: 0.00018310547, y: -80}
   m_SizeDelta: {x: 568, y: 124.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &95380736795725128
@@ -26932,7 +26932,7 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 3475867602176837797}
         DebugActive: 0
-        Sfx: {fileID: 8300000, guid: 00cf92732b4a342acb456b39378f53bc, type: 3}
+        Sfx: {fileID: 8300000, guid: a0b5f3444c2cb11418b20be7e54376d7, type: 3}
         RandomSfx: []
         TestPlayButton:
           ButtonText: Debug Play Sound
