@@ -503,6 +503,7 @@ GameObject:
   - component: {fileID: 3246661051285006080}
   - component: {fileID: 3246661051285006081}
   - component: {fileID: 6011683427138959304}
+  - component: {fileID: 7618244411335268899}
   m_Layer: 0
   m_Name: T_Door_1
   m_TagString: Untagged
@@ -721,6 +722,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab82e0fdbe638114f8fb92424953fb03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &7618244411335268899
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3246661051285006140}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d2a3e596e12857f498d6bccd43f86065, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3246661051289654138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,8 +1297,8 @@ GameObject:
   - component: {fileID: 3246661051928326174}
   - component: {fileID: 3246661051928326172}
   - component: {fileID: 3246661051928326371}
-  - component: {fileID: 8354207175048068342}
   - component: {fileID: 1298695249939811113}
+  - component: {fileID: 8354207175048068342}
   m_Layer: 0
   m_Name: T_Door_0
   m_TagString: Untagged
@@ -1483,6 +1505,18 @@ MonoBehaviour:
   FreezeTime: 0
   FreezeCharacter: 0
   doorID: 1
+--- !u!114 &1298695249939811113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3246661051928326168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab82e0fdbe638114f8fb92424953fb03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &8354207175048068342
 Animator:
   serializedVersion: 5
@@ -1504,18 +1538,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1298695249939811113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3246661051928326168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab82e0fdbe638114f8fb92424953fb03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3246661052140889249
 GameObject:
   m_ObjectHideFlags: 0
