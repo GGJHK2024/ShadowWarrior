@@ -667,6 +667,7 @@ GameObject:
   - component: {fileID: 307153035}
   - component: {fileID: 307153034}
   - component: {fileID: 307153038}
+  - component: {fileID: 307153039}
   m_Layer: 0
   m_Name: T_Door_1
   m_TagString: Untagged
@@ -885,6 +886,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab82e0fdbe638114f8fb92424953fb03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &307153039
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307153033}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e4c36bfbc7838814ba66c5b84a0fa22a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &379979211
 GameObject:
   m_ObjectHideFlags: 0
@@ -2802,8 +2824,8 @@ GameObject:
   - component: {fileID: 1739839463}
   - component: {fileID: 1739839462}
   - component: {fileID: 1739839461}
-  - component: {fileID: 1739839460}
   - component: {fileID: 1739839465}
+  - component: {fileID: 1739839460}
   m_Layer: 0
   m_Name: T_Door_0
   m_TagString: Untagged
