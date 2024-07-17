@@ -3,7 +3,7 @@ Shader "Custom/Outline"
     Properties
     {
         [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
-        _Color ("Tint Color", Color) = (1,1,1,1)
+        [HDR]_Color ("Tint Color", Color) = (1,1,1,1)
         _TintColorFactor ("Tint Color Factor", Range(0, 1)) = 1
         _FillColor ("Fill Color", Color) = (1,1,1,1)
         _FillColorFactor ("Fill Color Factor", Range(0, 1)) = 0

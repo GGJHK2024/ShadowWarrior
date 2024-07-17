@@ -2860,7 +2860,7 @@ MonoBehaviour:
   InputType: 2
   InputButton: Interact
   InputKey: 101
-  AnimationTriggerParameterName: inDoor
+  AnimationTriggerParameterName: 
   UseVisualPrompt: 0
   ButtonPromptPrefab: {fileID: 0}
   ButtonPromptText: A
