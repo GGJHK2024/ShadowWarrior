@@ -7,28 +7,36 @@ using UnityEngine.SceneManagement;
 
 namespace MoreMountains.CorgiEngine
 {
+    [System.Serializable]
+    public class LevelData
+    {
+        public List<LevelChooseManager.LevelStruct> levels;
+    }
+    
     public class LevelChooseManager : MMSingleton<LevelChooseManager>,
         MMEventListener<CorgiEngineEvent>
     {
-        [System.Serializable]public struct LevelStruct
+        [System.Serializable]
+        public struct LevelStruct
         {
             public string name;
             public int id;
             public int[] childId;
-            public LevelStruct(string n, int i, int[] p)
-            {
-                name = n;
-                id = i;
-                childId = p;
-            }
         }
+        
     
-        [SerializeField] public List<LevelStruct> levels = new List<LevelStruct>();
+        public List<LevelStruct> levels = new List<LevelStruct>();
 
         public int curID;
         public int stage;
         public List<int> nextLevel;
         public FinishLevel[] gates;
+
+        void Awake()
+        {
+            LoadLevelData();
+        }
+        
         // Start is called before the first frame update
         void Start()
         {
@@ -36,13 +44,35 @@ namespace MoreMountains.CorgiEngine
             // 第一次打开游戏
             curID = 0;
             stage = -1;
+            nextLevel = new List<int>();
             InitLevel(curID);
             InitNextLevelGate();
+        }
+        
+        /// <summary>
+        /// 从JSON中读取关卡信息
+        /// </summary>
+        void LoadLevelData()
+        {
+            // 读取文件
+            TextAsset jsonFile = Resources.Load<TextAsset>("Configs/Levels");
+            if(jsonFile != null)
+            {
+                LevelData levelData = JsonUtility.FromJson<LevelData>(jsonFile.text);
+                levels = levelData.levels;
+                Debug.Log("成功加载关卡数据！");
+                print(jsonFile.text);
+            }
+            else
+            {
+                Debug.LogError("未找到 Levels.json 文件！");
+            }
         }
 
         public void InitLevel(int id)
         {
             // child level number(0/1/2)
+            print("cur first child: " + levels[id].childId[0]);
             int cn = levels[id].childId.Length;
             while (cn > 0)
             {
@@ -57,6 +87,8 @@ namespace MoreMountains.CorgiEngine
         /// <param name="i"></param>
         public void GoToNextLevel(int i)
         {
+            print("i: " + i);
+            print("curID: " + levels[curID]);
             curID = levels[curID].childId[i];
             stage++;
             print("curID in GOTONEXTLEVEL: " + curID);

@@ -1,0 +1,129 @@
+﻿{
+  "levels": [
+    {
+      "name": "CG",
+      "id": 0,
+      "childId": [1]
+    },
+    {
+      "name": "Tutorial",
+      "id": 1,
+      "childId": [2]
+    },
+    {
+      "name": "Normal1",
+      "id": 2,
+      "childId": [3,4]
+    },
+    {
+      "name": "Normal2",
+      "id": 3,
+      "childId": [5,6]
+    },
+    {
+      "name": "Toilet",
+      "id": 4,
+      "childId": [6,7]
+    },
+    {
+      "name": "RestRoom",
+      "id": 5,
+      "childId": [8,9]
+    },
+    {
+      "name": "Normal2",
+      "id": 6,
+      "childId": [9,10]
+    },
+    {
+      "name": "RestRoom",
+      "id": 7,
+      "childId": [10,11]
+    },
+    {
+      "name": "Toilet",
+      "id": 8,
+      "childId": [12,13]
+    },
+    {
+      "name": "Normal3",
+      "id": 9,
+      "childId": [13,14]
+    },
+    {
+      "name": "Hard1",
+      "id": 10,
+      "childId": [14,15]
+    },
+    {
+      "name": "Normal2",
+      "id": 11,
+      "childId": [15,16]
+    },
+    {
+      "name": "Normal2",
+      "id": 12,
+      "childId": [17,18]
+    },
+    {
+      "name": "Hard1",
+      "id": 13,
+      "childId": [18,19]
+    },
+    {
+      "name": "Toilet",
+      "id": 14,
+      "childId": [19,20]
+    },
+    {
+      "name": "Normal3",
+      "id": 15,
+      "childId": [20,21]
+    },
+    {
+      "name": "Hard2",
+      "id": 16,
+      "childId": [21,22]
+    },
+    {
+      "name": "Hard2",
+      "id": 17,
+      "childId": [23]
+    },
+    {
+      "name": "Toilet",
+      "id": 18,
+      "childId": [23]
+    },
+    {
+      "name": "Hard1",
+      "id": 19,
+      "childId": [23]
+    },
+    {
+      "name": "Hard2",
+      "id": 20,
+      "childId": [23]
+    },
+    {
+      "name": "Toilet",
+      "id": 21,
+      "childId": [23]
+    },
+    {
+      "name": "Hard3",
+      "id": 22,
+      "childId": [23]
+    },
+    {
+      "name": "RestRoom",
+      "id": 23,
+      "childId": [24]
+    },
+    {
+      "name": "MeetingRoom",
+      "id": 24,
+      "childId": []
+    }
+  ]
+}
